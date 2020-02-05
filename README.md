@@ -1,8 +1,7 @@
 # Yves-Delorme-H4
 
-### Dev branch
+## Lancer le projet
 
-To push on master, use jenkins or
+    npm install
 
-> git checkout master
-> git push
+    npm run dev
