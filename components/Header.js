@@ -1,17 +1,31 @@
 import Link from 'next/link';
 
-const linkStyle = {
-  marginRight: 15
+const backStyle = {
+  backgroundColor :'rgba(0, 0, 0, 0.1)',
+  color : '#FFF',
+  paddingTop : 10 
 };
 
+const absolute = {
+  position : 'fixed',
+  zIndex : 5
+};
+
+const back = {
+  width : 30
+}
+
 const Header = () => (
-  <div>
-    <Link href="/">
-      <a style={linkStyle}>Home</a>
+  <div style={absolute}>
+    <Link href="/" style={{ textDecoration : 'none'}}>
+      <a style={backStyle}>
+        <img src="/img/back.svg" alt="my image" style={back} />
+        Retour au site
+      </a>
     </Link>
-    <Link href="/about">
-      <a style={linkStyle}>About</a>
-    </Link>
+    <div>
+      <a>Settings</a>
+    </div>
   </div>
 );
 
