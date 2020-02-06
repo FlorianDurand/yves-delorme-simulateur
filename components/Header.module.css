@@ -2,8 +2,24 @@
     width : 100%;
     height: auto;
     position: absolute;
+    display: inline-flex;
+    justify-content: space-between;
 }
 
 .back{
-    width: 20px;
+    width: 30px;
+    margin-right: 27px;
+}
+
+.link{
+    margin-left: 40px;
+    margin-top: 30px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.1);
+    font-size: 24px;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 18px 15px 27px;
+    font-weight: bold;
 }

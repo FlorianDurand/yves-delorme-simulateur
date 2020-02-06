@@ -4,8 +4,8 @@ import styles from './Header.module.css';
 const Header = () => (
   <div className={styles.header}>
     <Link href="/" >
-      <a >
-        <img src="/static/return.png" alt="my image" className={styles.back} />        
+      <a className={styles.link}>
+        <img src="/static/return.png" alt="back icon" className={styles.back} />        
         Retour au site
       </a>
     </Link>
