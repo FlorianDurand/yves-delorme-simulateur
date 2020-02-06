@@ -4,6 +4,9 @@
     left: 40px;
     width: 100%;
     height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .buttons{
@@ -16,4 +19,9 @@
 }
 .button:first-child{
     margin-left: 0;
+}
+
+.buttonsRight{
+    display: flex;
+    flex-direction: column;
 }

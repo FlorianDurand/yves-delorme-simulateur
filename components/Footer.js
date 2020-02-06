@@ -11,10 +11,21 @@ const Footer = () => (
             <div className={styles.button}><Button>Drap plat</Button></div>
             <div className={styles.button}><Button>Drap housse</Button></div>
         </div>
-    <div>
+
+        <div className={styles.buttonsRight}>
+            <button className={styles.buttonRight}>
+                <img src="/static/cross.png" alt="croix" />
+                Enregistrer la parure
+            </button>
+
+            <button className={styles.buttonRight}>
+                <img src="/static/saved.svg" alt="saved" />
+                Parures enregistrés
+            </button>
+        </div>
+    </div>
         
-    </div>
-    </div>
+    
 );
 
 export default Footer;
