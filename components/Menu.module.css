@@ -1,0 +1,17 @@
+.menu{    
+    position: absolute;
+    width : 591px;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    background-color: white;
+    z-index: 50;
+}
+
+.title{    
+    margin-left: 80px; 
+    font-size: 48px;    
+    font-weight: bold;
+    font-family: 'Poppins';
+    color: rgba(62, 128, 135, 86%);
+}
