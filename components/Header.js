@@ -1,28 +1,15 @@
 import Link from 'next/link';
-
-const backStyle = {
-  backgroundColor :'rgba(0, 0, 0, 0.1)',
-  color : '#FFF',
-  paddingTop : 10 
-};
-
-const absolute = {
-  position : 'fixed',
-  zIndex : 5
-};
-
-const back = {
-  width : 30
-}
+import styles from './Header.module.css';
 
 const Header = () => (
-  <div style={absolute}>
-    <Link href="/" style={{ textDecoration : 'none'}}>
-      <a style={backStyle}>
-        <img src="/img/back.svg" alt="my image" style={back} />
+  <div className={styles.header}>
+    <Link href="/" >
+      <a >
+        
         Retour au site
       </a>
     </Link>
+    <img src="/public/static/return.png" alt="my image" className={styles.back} />
     <div>
       <a>Settings</a>
     </div>

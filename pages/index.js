@@ -1,20 +1,13 @@
 import Header from '../components/Header';
+import Bed from '../components/Bed';
 
-const background = {
-    width : '100vw',
-    heigth : '100vh',
-}
+import styles from './index.module.css'
 
 export default function Index() {
     return (
-      <div>
+      <div className={styles.background}>
         <Header />
-        <img src="/img/background.png" alt="my image" style={background} />
-        <style jsx global>{`
-        body {
-          margin: 0;
-        }
-      `}</style>
+        <Bed />
       </div>
     );
 }

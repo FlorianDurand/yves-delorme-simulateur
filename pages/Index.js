@@ -1,11 +1,13 @@
-import Header from '../components/Header'
+import Header from '../components/Header';
+import Bed from '../components/Bed';
+
+import styles from './index.module.css'
 
 export default function Index() {
     return (
-      <div>
+      <div className={styles.background}>
         <Header />
-        <p>Hello Next.js</p>
+        <Bed />
       </div>
     );
 }
-  
