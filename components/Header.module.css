@@ -4,6 +4,10 @@
     position: absolute;
 }
 
+.link{
+    text-decoration: none;
+}
+
 .back{
     width: 20px;
 }
