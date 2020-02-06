@@ -12,6 +12,7 @@
 .buttons{
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
 }
 
 .button{
@@ -24,4 +25,25 @@
 .buttonsRight{
     display: flex;
     flex-direction: column;
+    margin-right: 80px;
+}
+
+.buttonRight{
+    width: 300px;
+    height: 55px;
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    background-color: #3E8087;
+    border: none;
+    border-radius: 5px;
+}
+
+.buttonRight:first-child{
+    margin-bottom: 20px;
+    color: #447679;
+    background-color: white;
 }

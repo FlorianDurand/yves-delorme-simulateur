@@ -20,7 +20,7 @@ const Footer = () => (
 
             <button className={styles.buttonRight}>
                 <img src="/static/saved.svg" alt="saved" />
-                Parures enregistrés
+                Parures enregistrées
             </button>
         </div>
     </div>
