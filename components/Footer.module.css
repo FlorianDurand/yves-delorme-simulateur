@@ -15,3 +15,6 @@
 .button{
     margin-left: 20px;
 }
+.button:first-child{
+    margin-left: 0;
+}
