@@ -5,11 +5,10 @@ const Header = () => (
   <div className={styles.header}>
     <Link href="/" >
       <a >
-        
+        <img src="/static/return.png" alt="my image" className={styles.back} />        
         Retour au site
       </a>
     </Link>
-    <img src="/public/static/return.png" alt="my image" className={styles.back} />
     <div>
       <a>Settings</a>
     </div>
