@@ -1,4 +1,5 @@
 .header{
+    margin-top: 30px;
     width : 100%;
     height: auto;
     position: absolute;
@@ -15,12 +16,21 @@
     margin-right: 27px;
 }
 
+.settings{
+    width: 30px;
+    height: 27.78px;
+    display: flex;
+}
+.right{
+    height: fit-content;
+    margin-right: 40px;
+}
+
 .link{
     margin-left: 40px;
-    margin-top: 30px;
     border-radius: 5px;
     background-color: rgba(0, 0, 0, 0.1);
-    font-size: 24px;
+    font-size: 22px;
     color: white;
     display: inline-flex;
     align-items: center;

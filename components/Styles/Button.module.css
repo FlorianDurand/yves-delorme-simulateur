@@ -1,12 +1,11 @@
 .home{
     background-color: rgba(0, 0, 0, 20%);
     border: solid 1px white;
-    padding: 10px;
     color: white;
-    font-weight: bold;
+    font-weight: 600;
     border-radius: 5px;
     width: auto;
     height: auto;
-    font-size: 24px;
+    font-size: 22px;
     padding: 16px 20px;
 }

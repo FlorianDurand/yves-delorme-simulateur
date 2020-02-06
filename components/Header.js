@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './Header.module.css';
+import Button from './Styles/Button';
 
 const Header = () => (
   <div className={styles.header}>
@@ -9,8 +10,10 @@ const Header = () => (
         Retour au site
       </a>
     </Link>
-    <div>
-      <a>Settings</a>
+    <div className={styles.right}>
+      <Button>
+        <img src="/static/settings.svg" alt="settings icon" className={styles.settings} />       
+      </Button>
     </div>
   </div>
 );
