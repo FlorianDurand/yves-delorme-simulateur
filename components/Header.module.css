@@ -1,29 +1,15 @@
 .header{
     margin-top: 30px;
     width : 100%;
-    height: auto;
+    height: 60px;
     position: absolute;
     display: inline-flex;
     justify-content: space-between;
 }
 
-.link{
-    text-decoration: none;
-}
-
 .back{
     width: 30px;
     margin-right: 27px;
-}
-
-.settings{
-    width: 30px;
-    height: 27.78px;
-    display: flex;
-}
-.right{
-    height: fit-content;
-    margin-right: 40px;
 }
 
 .link{
@@ -37,3 +23,36 @@
     padding: 15px 18px 15px 27px;
     font-weight: bold;
 }
+
+.settings{
+    width: 30px;
+    height: 27.78px;
+    display: flex;
+}
+.right{
+    height: fit-content;
+    margin-right: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: fit-content
+}
+
+.openMenu{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.filterMenu{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.image{
+    width: 80px;
+    padding-left:15px;
+    display: flex;
+    align-items: center;
+}
+
