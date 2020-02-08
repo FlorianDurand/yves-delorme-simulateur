@@ -10,7 +10,7 @@ export default function Index() {
       <div className={styles.background}>
         <Header />
         <Bed />
-        <Menu />
+        {/* <Menu /> */}
         <Footer />
       </div>
     );
