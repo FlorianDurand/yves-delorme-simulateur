@@ -17,7 +17,7 @@ const Bed = () => {
 			<img className={styles.back} src="/static/Bed/groscoussins.png" alt="Grands Oreillers" />
 			<img className={styles.middle} src="/static/Bed/moyencoussin.png" alt="Oreilles du milieu" />
 			<img className={styles.front} src="/static/Bed/petitcoussin.png" alt="Petit Oreiller" />
-			<Menu onCouetteChange={handleCouetteChange} />
+			{/* <Menu onCouetteChange={handleCouetteChange} /> */}
 		</div>
 	)
 

@@ -7,11 +7,11 @@ import styles from './index.module.css'
 
 export default function Index() {
     return (
-      <div className={styles.background}>
-        <Header />
-        <Bed />
-        {/* <Menu /> */}
-        <Footer />
-      </div>
+		<div className={styles.background}>
+			<Header />
+			<Bed />
+			{/* <Menu /> */}
+			<Footer />
+		</div>
     );
 }
