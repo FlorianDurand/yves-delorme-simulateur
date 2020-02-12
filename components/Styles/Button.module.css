@@ -24,9 +24,6 @@
     align-items: center;
     width: 308px;
 }
-.buttonSettings:last-child{
-    margin-bottom: 0;
-}
 
 .buttonSettings img{
     max-width: 45px;
