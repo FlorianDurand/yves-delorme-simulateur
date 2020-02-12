@@ -16,7 +16,8 @@ const Article = props => {
 Article.propTypes = {
 	image: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
-	description: PropTypes.string
+    description: PropTypes.string,
+    couette: PropTypes.string
 };
 
 export default Article

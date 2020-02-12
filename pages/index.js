@@ -11,6 +11,7 @@ export default function Index() {
         <Header />
         <Bed />
         {/* <Menu /> */}
+        {/* <MenuLeft /> */}
         <Footer />
       </div>
     );
