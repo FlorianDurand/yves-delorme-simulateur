@@ -19,10 +19,10 @@ const articles = [
 		couette: '/static/Bed/couette.png'
 	},
 	{
-		name : 'calypso',
-		image : '/static/article.png',
+		name : 'palmea',
+		image : '/static/palmea.png',
 		description: 'Coton - 120 fil/m²',
-		couette: '/static/Bed/couette.png'
+		couette: '/static/Bed/palmea.png'
 	}
 
 ]
