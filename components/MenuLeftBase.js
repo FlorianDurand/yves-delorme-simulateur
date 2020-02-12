@@ -10,7 +10,7 @@ const MenuLeftBase = props => {
 			<h2 className={styles.subtitle}>{props.name}</h2>
 			<div className={styles.contents}>
 				{props.contents.map(content=>
-					<button className={styles.button} style={{width: `${props.column}`}}> {content} </button>
+					<button className={styles.button}> {content} </button>
 				)} 
 			</div>
 		</div>

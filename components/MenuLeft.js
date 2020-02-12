@@ -12,8 +12,8 @@ const MenuLeft = () => {
 		<div className={styles.menu}>
 		<h1 className={styles.title}>Tailles</h1>
 		<div className={styles.articles}>
-			<MenuLeftBase name={'Taies'} contents={['3x2','8x3','8x3','8x3','8x3']} column={"187px"} />
-			<MenuLeftBase name={'Housse de couette'} contents={['3x2','8x3','8x3','8x3','8x3']} column={"225px"} />
+			<MenuLeftBase name={'Taies'} contents={['31x42 cm','50x75 cm','54x75 cm','65x65 cm']} />
+			<MenuLeftBase name={'Housse de couette'} contents={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']}  />
 		</div>
 		</div>
 	)
