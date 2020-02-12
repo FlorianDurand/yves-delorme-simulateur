@@ -22,7 +22,7 @@ const articles = [
 		name : 'palmea',
 		image : '/static/palmea.png',
 		description: 'Coton - 120 fil/m²',
-		couette: '/static/Bed/palmea.png'
+		couette: '/static/Bed/couette.png'
 	}
 
 ]
