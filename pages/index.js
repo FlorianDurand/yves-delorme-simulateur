@@ -12,7 +12,7 @@ export default function Index() {
         <Header />
         <Bed />
         {/* <Menu /> */}
-        <MenuLeft />
+        {/* <MenuLeft /> */}
         <Footer />
       </div>
     );
