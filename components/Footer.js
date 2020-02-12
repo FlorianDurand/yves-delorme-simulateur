@@ -1,13 +1,15 @@
 import Link from 'next/link';
 import styles from './Footer.module.css';
 import Button from './Styles/Button'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 
-const Footer = () => (
+const Footer = props => (
     <div className={styles.footer}>
         <div className={styles.buttons}>
             <div className={styles.button}><Button>Taies</Button></div>
-            <div className={styles.button}><Button>Housse de couette</Button></div>
+            <div className={styles.button} onClick={() => props.toggleMenu()}><Button>Housse de couette</Button></div>
             <div className={styles.button}><Button>Drap plat</Button></div>
             <div className={styles.button}><Button>Drap housse</Button></div>
         </div>

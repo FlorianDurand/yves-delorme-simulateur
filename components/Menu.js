@@ -7,19 +7,19 @@ import Article from './Article';
 
 const articles = [
 	{
-		name : 'article 1',
-		image : '/static/article.png',
+		name : 'escale',
+		image : '/static/escale.png',
 		description: 'Satin - 120 fil/m²',
 		couette: '/static/Bed/couette2.png'
 	},
 	{
-		name : 'article 2',
+		name : 'calypso',
 		image : '/static/article.png',
 		description: 'Coton - 120 fil/m²',
 		couette: '/static/Bed/couette.png'
 	},
 	{
-		name : 'article 3',
+		name : 'calypso',
 		image : '/static/article.png',
 		description: 'Coton - 120 fil/m²',
 		couette: '/static/Bed/couette.png'

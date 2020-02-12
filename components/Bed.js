@@ -2,10 +2,9 @@ import styles from './Bed.module.css';
 import React, { useState } from 'react';
 import Menu from './Menu'
 
-const Bed = () => {
+const Bed = props => {
 
 	const [couette, setCouette] = useState('/static/Bed/couette.png');
-
 
 	return (
 		<div className={styles.background}>
@@ -17,7 +16,9 @@ const Bed = () => {
 			<img className={styles.middle} src="/static/Bed/moyencoussin.png" alt="Oreilles du milieu" />
 			<img className={styles.front} src="/static/Bed/petitcoussin.png" alt="Petit Oreiller" />
 			<img className={styles.couette} src={couette} alt="couette" />
-			{/* <Menu onCouetteChange={handleCouetteChange} /> */}
+			{props.menu ? (
+					<Menu onCouetteChange={handleCouetteChange}/>
+				) : null}		
 		</div>
 	)
 
