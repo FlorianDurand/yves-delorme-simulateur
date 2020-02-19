@@ -9,22 +9,41 @@ import styles from './index.module.css'
 
 export default function Index() {
 	
-	const [menu, setMenu] = useState(false);
+  const [menu, setMenu] = useState(false);
+  const [menuLeft, setMenuLeft] = useState(false);
+  const [typeArticle, setTypeArticle] = useState('');
+
     return (
       <div className={styles.background}>
-        <Header />
-        <Bed menu = {menu}/>
-        {/* <MenuLeft /> */}
+        <Header toggleMenuLeft={toggleMenuLeft}/>
+        <Bed menu = {menu} title={typeArticle}/>
+        {menuLeft ? (<MenuLeft />) : null}
         <Footer toggleMenu={toggleMenu} />
       </div>
 	);
 	
-	function toggleMenu(){
+	function toggleMenu(type){
 		if(!menu){
 			setMenu(true);
+			setTypeArticle(type)
 		}
 		else{
-			setMenu(false)
+			if(typeArticle != type){				
+				setTypeArticle(type)
+			}
+			else{
+				setMenu(false)
+				setTypeArticle(type)
+			}
+			
+		}		
+  }
+  function toggleMenuLeft(){
+		if(!menuLeft){
+			setMenuLeft(true);
+		}
+		else{
+			setMenuLeft(false)
 		}		
 	}
 }
