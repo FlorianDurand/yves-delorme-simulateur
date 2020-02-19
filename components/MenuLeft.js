@@ -17,6 +17,7 @@ const MenuLeft = () => {
 			<MenuLeftBase name={'Draps plat'} contents={['180x295 cm','240x295 cm','270x295 cm']}  />
 			<MenuLeftBase name={'Draps housse'} contents={['140x200 cm','160x200 cm','180x200 cm','200x200 cm']}  />
 		</div>
+		<div className={styles.barre}><div className={styles.littleRectangle}></div></div>
 		</div>
 	)
 

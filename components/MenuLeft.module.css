@@ -10,7 +10,9 @@
     font-family: Roboto;
     overflow-y:scroll; 
 }
-
+.menu::-webkit-scrollbar{
+    display: none;
+}
 .title{    
     font-size: 48px;    
     font-weight: bold;
@@ -56,4 +58,23 @@
     width: 187px;
     height: 60px;
     margin-bottom: 37px;
+}
+
+.barre{
+    z-index: 8000;
+    position: fixed;
+    width: 40px;
+    top: 0;
+    left:714px;
+    border-left: 1px solid #E2E2E2;
+    height: 100%;
+}
+.littleRectangle{
+    position: fixed;
+    width:8px;
+    height: 80px;
+    background: #E2E2E2;
+    border-radius: 30px;
+    left:730px;
+    top:50%;
 }
