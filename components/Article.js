@@ -13,12 +13,30 @@ const Article = props => {
                 <h2 className={styles.subtitle}>{props.name}</h2>
                 <p className={styles.description}>{props.description}</p>
             </div>
-        : 
-            <div className={styles.article} onClick={() => props.onSmallPillowChange(props.taies)}>
+        : props.taiesPetit != null ?
+
+            <div className={styles.article} onClick={() => props.onSmallPillowChange(props.taiesPetit)}>
                 <img className={styles.image} src={props.image} />
                 <h2 className={styles.subtitle}>{props.name}</h2>
                 <p className={styles.description}>{props.description}</p>
             </div>
+
+        : props.taiesMoyen != null ?
+
+        <div className={styles.article} onClick={() => props.onMediumPillowChange(props.taiesMoyen)}>
+            <img className={styles.image} src={props.image} />
+            <h2 className={styles.subtitle}>{props.name}</h2>
+            <p className={styles.description}>{props.description}</p>
+        </div>
+        
+        : 
+
+        <div className={styles.article} onClick={() => props.onLargePillowChange(props.taiesGrand)}>
+            <img className={styles.image} src={props.image} />
+            <h2 className={styles.subtitle}>{props.name}</h2>
+            <p className={styles.description}>{props.description}</p>
+        </div>
+
         }
         </div>
     )

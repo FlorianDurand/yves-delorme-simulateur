@@ -5,7 +5,9 @@ import Menu from './Menu'
 const Bed = props => {
 
 	const [couette, setCouette] = useState('/static/Bed/couette.png');
-	const [petitcoussin, setPetitCoussin] = useState('/static/Bed/petitcoussin.png');
+	const [smallPillow, setSmallPillow] = useState('/static/Bed/petitcoussin.png');
+	const [mediumPillow, setMediumPillow] = useState('/static/Bed/moyencoussin.png');
+	const [largePillow, setLargePillow] = useState('/static/Bed/groscoussin.png');
 
 	return (
 		<div className={styles.background}>
@@ -13,12 +15,20 @@ const Bed = props => {
 			<img className={styles.joint} src="/static/Bed/joint.png" alt="joint" />
 			<img className={styles.floor} src="/static/Bed/sol.png" alt="sol" />
 			<img className={styles.tete} src="/static/Bed/tetedelit.png" alt="tete de lit" />
-			<img className={styles.back} src="/static/Bed/groscoussins.png" alt="Grands Oreillers" />
-			<img className={styles.middle} src="/static/Bed/moyencoussin.png" alt="Oreilles du milieu" />
-			<img className={styles.front} src={petitcoussin} alt="Petit Oreiller" />
+			<img className={styles.back} src={largePillow} alt="Grands Oreillers" />
+			<img className={styles.backRight} src={largePillow} alt="Grands Oreillers" />
+			<img className={styles.middle} src={mediumPillow} alt="Oreilles du milieu" />
+			<img className={styles.middleRight} src={mediumPillow} alt="Oreilles du milieu" />
+			<img className={styles.front} src={smallPillow} alt="Petit Oreiller" />
 			<img className={styles.couette} src={couette} alt="couette" />
+
 			{props.menu ? (
-					<Menu onCouetteChange={handleCouetteChange} onSmallPillowChange={handleSmallPillowChange} title={props.title}/>
+					<Menu 
+						onCouetteChange={handleCouetteChange}
+						onSmallPillowChange={handleSmallPillowChange}
+					  	onMediumPillowChange={handleMediumPillowChange}
+					   	onLargePillowChange={handleLargePillowChange}
+					    title={props.title}/>
 				) : null}		
 		</div>
 	)
@@ -28,7 +38,15 @@ const Bed = props => {
 	}
 
 	function handleSmallPillowChange(petitcoussin){
-		setPetitCoussin(petitcoussin);
+		setSmallPillow(petitcoussin);
+	}
+
+	function handleMediumPillowChange(moyencoussin){
+		setMediumPillow(moyencoussin);
+	}
+
+	function handleLargePillowChange(grandcoussin){
+		setLargePillow(grandcoussin);
 	}
 };
 

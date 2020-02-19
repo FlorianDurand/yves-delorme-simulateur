@@ -1,15 +1,16 @@
 .menu{    
     position: absolute;
-    width : 591px;
+    width : 511px;
     height: 100%;
     top: 0px;
     right: 0px;
     background-color: white;
     z-index: 100;
+    padding: 40px;
 }
 
 .title{    
-    margin: 20px 0px 20px 80px;
+    margin: 20px 0px 20px 40px;
     font-size: 48px;    
     font-weight: bold;
     font-family: 'Poppins';
@@ -23,4 +24,46 @@
     flex-wrap: wrap;
     width: 100%;
     padding: 0 20px;
+}
+
+.pillowSelector{
+    height: 200px;
+    width: 391px;
+    margin: 50px auto;
+    position: relative;
+    display: block;
+}
+
+.pillowSelector::after{
+    content: "";
+    width: 441px;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: -25px;
+    background-color: #E2E2E2;
+}
+
+.pillowSelector img{
+    position: absolute;
+    top: 0;
+}
+
+.pillowSelector img:nth-child(2){
+    right: 0;
+}
+
+.pillowSelector img:nth-child(3){
+    left: 42px;
+    top: 33px;
+}
+
+.pillowSelector img:nth-child(4){
+    right: 42px;
+    top: 33px;
+}
+
+.pillowSelector img:last-child{
+    left: 150px;
+    top: 100px;
 }
