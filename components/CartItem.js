@@ -1,0 +1,37 @@
+import React, { useState } from 'react';
+import PropTypes from 'prop-types'
+
+import styles from './AddCart.module.css';
+
+const CartItem = props => {
+
+        const [state, setState] = useState({stock_wanted:1})
+       
+	return(
+                <div className={styles.addedToCart} >
+                        <img className={styles.img} src={'/static/Bed/moyencoussin.png'} alt="Oreilles du milieu" />
+                         <div className={styles.name}>
+                                {props.name}
+                        </div>
+                        <div className={styles.color}>
+                                {props.color}
+                        </div>
+                        <div className={styles.picker}>
+                                <select>
+                                        {props.widths.map(width=>
+                                        <option value={width}>{width}</option>
+                                        )} 
+                                </select>
+                        </div>        
+                        <div className={styles.number}>
+                                <button onClick={() => setState({ stock_wanted: state.stock_wanted - 1 })}><img className={styles.btn} src="/static/moins.svg" alt="moins" /></button>
+                                <input className={styles.inputNumber} type="number" value={state.stock_wanted}/>
+                                <button onClick={() => setState({ stock_wanted: state.stock_wanted + 1 })}><img className={styles.btn} src="/static/plus.svg" alt="plus" /></button>
+                        </div>
+                </div>
+        )
+};
+
+
+
+export default CartItem;

@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import React, { useState } from 'react';
 import Menu from '../components/Menu';
 import MenuLeft from '../components/MenuLeft';
+import AddCart from '../components/AddCart';
 
 import styles from './index.module.css'
 
@@ -18,6 +19,7 @@ export default function Index() {
         <Header toggleMenuLeft={toggleMenuLeft}/>
         <Bed menu = {menu} title={typeArticle}/>
         {menuLeft ? (<MenuLeft />) : null}
+		<AddCart />
         <Footer toggleMenu={toggleMenu} />
       </div>
 	);
