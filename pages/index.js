@@ -19,7 +19,7 @@ export default function Index() {
         <Header toggleMenuLeft={toggleMenuLeft}/>
         <Bed menu = {menu} title={typeArticle}/>
         {menuLeft ? (<MenuLeft />) : null}
-		<AddCart />
+		{/* <AddCart /> */}
         <Footer toggleMenu={toggleMenu} />
       </div>
 	);

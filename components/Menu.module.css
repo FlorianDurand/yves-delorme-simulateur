@@ -44,26 +44,37 @@
     background-color: #E2E2E2;
 }
 
-.pillowSelector img{
+.pillowSelector svg{
     position: absolute;
     top: 0;
 }
 
-.pillowSelector img:nth-child(2){
+.pillowSelector svg:nth-child(2){
     right: 0;
 }
 
-.pillowSelector img:nth-child(3){
+.pillowSelector svg:nth-child(3){
     left: 42px;
     top: 33px;
 }
 
-.pillowSelector img:nth-child(4){
+.pillowSelector svg:nth-child(4){
     right: 42px;
     top: 33px;
 }
 
-.pillowSelector img:last-child{
+.pillowSelector svg:last-child{
     left: 150px;
     top: 100px;
+}
+
+.bluePillow{
+    fill: #599298;
+    transition-duration: 500ms;
+    
+}
+
+.whitePillow{
+    fill: white;
+    transition-duration: 500ms;
 }
