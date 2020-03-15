@@ -34,30 +34,30 @@
 
 .back{
     position: absolute;
-    top: 256px;
+    top: 276px;
     left: 370px;
 }
 
 .backRight{
     position: absolute;
-    top: 256px;
+    top: 276px;
     left: 710px;
 }
 
 .middle{
     position: absolute;
-    top: 281px;
+    top: 311px;
     left: 397px;
 }
 
 .middleRight{
     position: absolute;
-    top: 281px;
+    top: 311px;
     left: 697px;
 }
 
 .front{
     position: absolute;
-    top: 334px;
+    top: 354px;
     left: 590px;
 }

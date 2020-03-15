@@ -5,7 +5,13 @@ import Button from './Styles/Button';
 import Filter from './Filter';
 import Article from './Article';
 
-const articlesCouette = [
+const articlesCouette = [	
+	{
+		name : 'aucun',
+		image : '/static/none.svg',
+		description: '',
+		couette: '/static/Bed/none.png'
+	},
 	{
 		name : 'escale',
 		image : '/static/MenuCouettes/escale.png',
@@ -15,12 +21,6 @@ const articlesCouette = [
 	{
 		name : 'calypso',
 		image : '/static/MenuCouettes/article.png',
-		description: 'Coton - 120 fil/m²',
-		couette: '/static/Bed/couette.png'
-	},
-	{
-		name : 'palmea',
-		image : '/static/MenuCouettes/palmea.png',
 		description: 'Coton - 120 fil/m²',
 		couette: '/static/Bed/couette.png'
 	}
