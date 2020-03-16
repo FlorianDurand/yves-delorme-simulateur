@@ -5,7 +5,7 @@ import styles from './AddCart.module.css';
 
 const CartItem = props => {
 
-        const [state, setState] = useState({stock_wanted:1})
+        const [state, setState] = useState({stock_wanted:props.number})
        
 	return(
                 <div className={styles.addedToCart} >

@@ -20,13 +20,13 @@ const AddCart = () => {
 				<div className={styles.subtitle} >
 					Composition de la parure
 				</div>
-				<CartItem name={'Housse couette Calypso'} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={"2"} />
-				<CartItem name={'Housse couette Calypso'} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={"2"} />
-				<CartItem name={'Housse couette Calypso'} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={"2"} />
-				<CartItem name={'Housse couette Calypso'} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={"2"} />
-				<CartItem name={'Housse couette Calypso'} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={"2"} />
-				<CartItem name={'Housse couette Calypso'} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={"2"} />
-				<CartItem name={'Housse couette Calypso'} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={"2"} />
+				<CartItem name={'Housse couette Calypso'} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={3} />
+				<CartItem name={'Housse couette Calypso'} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={4} />
+				<CartItem name={'Housse couette Calypso'} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={1} />
+				<CartItem name={'Housse couette Calypso'} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={2} />
+				<CartItem name={'Housse couette Calypso'} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={2} />
+				<CartItem name={'Housse couette Calypso'} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={2} />
+				<CartItem name={'Housse couette Calypso'} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={2} />
 
 			</div>
 		</div>

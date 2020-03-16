@@ -20,7 +20,7 @@ const Footer = props => (
                 Ajouter au panier
             </button>
 
-            <button className={styles.buttonRight}>
+            <button className={styles.buttonRight} onClick={() => props.toggleCart()}>
                 <img src="/static/cross.png" alt="croix" />
                 Enregistrer la parure
             </button>
