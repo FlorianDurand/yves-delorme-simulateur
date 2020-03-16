@@ -1,7 +1,7 @@
 .footer{
     position: absolute;
     bottom: 40px;
-    left: 40px;
+    left: 0;
     width: 100%;
     height: auto;
     display: flex;
@@ -13,6 +13,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
+    margin-left: 40px;
 }
 
 .button{
@@ -25,7 +26,7 @@
 .buttonsRight{
     display: flex;
     flex-direction: column;
-    margin-right: 80px;
+    margin-right: 40px;
 }
 
 .buttonRight{
@@ -36,8 +37,8 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    color: white;
-    background-color: #3E8087;
+    color: #447679;
+    background-color: white;
     border: none;
     border-radius: 5px;
 }

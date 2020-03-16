@@ -10,7 +10,7 @@ const Bed = props => {
 	const [largePillow, setLargePillow] = useState('/static/Bed/groscoussin.png');
 
 	return (
-		<div className={styles.background}>
+		<div className={styles.background} onClick={() => props.resetMenu()}>
 			<img className={styles.wall} src="/static/Bed/wall.png" alt="wall" />
 			<img className={styles.joint} src="/static/Bed/joint.png" alt="joint" />
 			<img className={styles.floor} src="/static/Bed/sol.png" alt="sol" />
