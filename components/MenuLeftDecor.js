@@ -4,16 +4,44 @@ import styles from './MenuLeft.module.css';
 import Button from './Styles/Button';
 import MenuLeftBase from './MenuLeftBase';
 
-const MenuLeftDecor = () => {
+const MenuLeftDecor = props => {
 
+	const walls = [	
+		{
+			name : 'wall1',
+			imagePreview : '/static/Background/wall_preview_1.png',
+			image : '/static/Background/wall_1.png'
+		},
+		{
+			name : 'wall2',
+			imagePreview : '/static/Background/wall_preview_2.png',
+			image : '/static/Background/wall_2.png'
+		}
+	
+	]
 
+	const floors = [	
+		{
+			name : 'floor1',
+			imagePreview : '/static/Background/floor_preview_1.png',
+			image : '/static/Background/floor_1.png',
+			joint : '/static/Background/joint_1.png'
+		},
+		{
+			name : 'floor2',
+			imagePreview : '/static/Background/floor_preview_2.png',
+			image : '/static/Background/floor_2.png',
+			joint : '/static/Background/joint_2.png'
+		}
+	
+	]
 
 	return (
 		<div className={styles.menu}>
 		<h1 className={styles.title}>Décor</h1>
 		<div className={styles.articles}>
-			<MenuLeftBase name={'Mur'} contents={['31x42 cm','50x75 cm','54x75 cm','65x65 cm']} />
-			<MenuLeftBase name={'Sol'}  />
+			<MenuLeftBase name={'Mur'}  onWallChange={props.onWallChange} contentWalls={walls.map(wall=>wall)}/>
+			<MenuLeftBase name={'Sol'}  onFloorChange={props.onFloorChange} onJointChange={props.onJointChange} contentFloors={floors.map(floor=>floor)}/>
 		</div>
 		<div className={styles.barre}><div className={styles.littleRectangle}></div></div>
 		</div>

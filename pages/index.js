@@ -20,9 +20,8 @@ export default function Index() {
 	  return (
 		<div className={styles.background}>
 		  <Header toggleMenuLeft={toggleMenuLeft} toggleMenuLeftDecor={toggleMenuLeftDecor}/>
-		  <Bed menu = {menu} title={typeArticle} resetMenu={resetMenu}/>
+		  <Bed menu = {menu} menuLeftDecor={menuLeftDecor} title={typeArticle} resetMenu={resetMenu}/>
 		  {menuLeft ? (<MenuLeft />) : null}
-		  {menuLeftDecor ? (<MenuLeftDecor />) : null}
 		  {addCart  ? (<AddCart />) : null}
 		  <Footer toggleMenu={toggleMenu} toggleCart={toggleCart} />
 		</div>
@@ -70,8 +69,8 @@ export default function Index() {
 	}
 	function resetMenu(){
 		setAddCart(false)
-		setMenuLeftDecor(false)
 		setMenuLeft(false)
 		setMenu(false)
+		setMenuLeftDecor(false)
 	}
   }
