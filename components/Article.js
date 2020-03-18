@@ -11,8 +11,8 @@ const Article = props => {
         { couette != null ? 
 
             activeCouette ?
-
-                <div className={`${styles.article} ${styles.articleActive}`}  onClick={() => {props.onCouetteChange(props.couette), setActiveCouette(true)}}>
+                // Recupère les différentes informations de l element et les passent à la fonction onCouetteChange
+                <div className={`${styles.article} ${styles.articleActive}`}  onClick={() => {props.onCouetteChange({couetteImage : props.couette,  couetteName : props.name}), setActiveCouette(true)}}>
                     <img className={styles.image} src={props.image} />
                     <h2 className={styles.subtitle}>{props.name}</h2>
                     <p className={styles.description}>{props.description}</p>
@@ -20,7 +20,7 @@ const Article = props => {
 
             :
 
-                <div className={`${styles.article}`}  onClick={() => {props.onCouetteChange(props.couette), setActiveCouette(true)}}>
+                <div className={`${styles.article}`}  onClick={() => {props.onCouetteChange({couetteImage : props.couette,  couetteName : props.name}), setActiveCouette(true)}}>
                     <img className={styles.image} src={props.image} />
                     <h2 className={styles.subtitle}>{props.name}</h2>
                     <p className={styles.description}>{props.description}</p>
@@ -28,7 +28,7 @@ const Article = props => {
 
         : props.taiesPetit != null ?
 
-            <div className={styles.article} onClick={() => props.onSmallPillowChange(props.taiesPetit)}>
+            <div className={styles.article} onClick={() => props.onSmallPillowChange({pillowImage : props.taiesPetit, pillowName : props.name})}>
                 <img className={styles.image} src={props.image} />
                 <h2 className={styles.subtitle}>{props.name}</h2>
                 <p className={styles.description}>{props.description}</p>
@@ -36,21 +36,34 @@ const Article = props => {
 
         : props.taiesMoyen != null ?
 
-        <div className={styles.article} onClick={() => props.onMediumPillowChange(props.taiesMoyen)}>
+        <div className={styles.article} onClick={() => props.onMediumPillowChange({pillowImage : props.taiesMoyen, pillowName : props.name})}>
             <img className={styles.image} src={props.image} />
             <h2 className={styles.subtitle}>{props.name}</h2>
             <p className={styles.description}>{props.description}</p>
         </div>
         
-        : 
+        : props.taiesGrand != null ?
 
-        <div className={styles.article} onClick={() => props.onLargePillowChange(props.taiesGrand)}>
+        <div className={styles.article} onClick={() => props.onLargePillowChange({pillowImage : props.taiesGrand, pillowName : props.name})}>
             <img className={styles.image} src={props.image} />
             <h2 className={styles.subtitle}>{props.name}</h2>
             <p className={styles.description}>{props.description}</p>
         </div>
-
-        }
+         :  props.drapHousse != null ?
+         <div className={styles.article} onClick={() => props.onDrapHousseChange({drapImage : props.drapHousse, drapName : props.name})}>
+         <img className={styles.image} src={props.image} />
+         <h2 className={styles.subtitle}>{props.name}</h2>
+         <p className={styles.description}>{props.description}</p>
+         </div>
+         
+        :  
+            <div className={styles.article} onClick={() => props.onDrapChange({drapImage : props.drapPlat, drapName : props.name})}>
+            <img className={styles.image} src={props.image} />
+            <h2 className={styles.subtitle}>{props.name}</h2>
+            <p className={styles.description}>{props.description}</p>
+            </div>
+            
+        } 
         </div>
     )
 }
@@ -60,7 +73,7 @@ Article.propTypes = {
 	name: PropTypes.string.isRequired,
     description: PropTypes.string,
     couette: PropTypes.string,
-    taies: PropTypes.string
+    taies: PropTypes.string,
 };
 
 export default Article

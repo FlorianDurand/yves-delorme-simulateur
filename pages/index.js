@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 import Menu from '../components/Menu';
 import MenuLeft from '../components/MenuLeft';
 import MenuLeftDecor from '../components/MenuLeftDecor';
-import AddCart from '../components/AddCart';
+
 
 import styles from './index.module.css'
 
@@ -20,9 +20,8 @@ export default function Index() {
 	  return (
 		<div className={styles.background}>
 		  <Header toggleMenuLeft={toggleMenuLeft} toggleMenuLeftDecor={toggleMenuLeftDecor}/>
-		  <Bed menu = {menu} menuLeftDecor={menuLeftDecor} title={typeArticle} resetMenu={resetMenu}/>
+		  <Bed menu = {menu} addCart={addCart} menuLeftDecor={menuLeftDecor} title={typeArticle} resetMenu={resetMenu}/>
 		  {menuLeft ? (<MenuLeft />) : null}
-		  {addCart  ? (<AddCart />) : null}
 		  <Footer toggleMenu={toggleMenu} toggleCart={toggleCart} />
 		</div>
 	  );

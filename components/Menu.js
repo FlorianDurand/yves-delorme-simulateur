@@ -21,7 +21,7 @@ const articlesCouette = [
 	{
 		name : 'calypso',
 		image : '/static/MenuCouettes/article.png',
-		description: 'Coton - 120 fil/m²',
+		description: 'Coton - 120 fil/m²²',
 		couette: '/static/Bed/couette.png'
 	}
 
@@ -91,6 +91,52 @@ const articlesTaiesGrand = [
 		taiesGrand: '/static/Bed/groscoussin.png'
 	}
 ]
+const articlesDrapPlat = [
+	{
+		name : 'aucun',
+		image : '/static/none.svg',
+		description: 'pas fou',
+		drapPlat: '/static/Bed/none.png',
+		id: 0
+	},
+	{
+		name : 'Drap plat calypso',
+		description: 'Un beau drap',
+		image: '/static/MenuDrap/drap1.png',
+		drapPlat: '/static/MenuDrap/drap1.png',
+		id: 1
+	},
+	{
+		name : 'Drap plat escale',
+		image: '/static/MenuDrap/drap1.png',
+		description: 'Un très beau drap ',
+		drapPlat: '/static/MenuDrap/drap1.png',
+		id: 2
+	},
+]
+const articlesDrapHousse = [
+	{
+		name : 'aucun',
+		image : '/static/none.svg',
+		description: 'pas fou',
+		drapHousse: '/static/Bed/none.png',
+		id: 0
+	},
+	{
+		name : 'Drap Housse 1',
+		description: 'Un beau drap',
+		image: '/static/MenuDrap/drap1.png',
+		drapHousse: '/static/MenuDrap/drap1.png',
+		id: 1
+	},
+	{
+		name : 'Drap Housse 2',
+		image: '/static/MenuDrap/drap1.png',
+		description: 'Un très beau drap ',
+		drapHousse: '/static/MenuDrap/drap1.png',
+		id: 2
+	},
+]
 
 
 const Menu = props => {
@@ -99,7 +145,6 @@ const Menu = props => {
 	const [activeBigPillow,setActiveBigPillow] = useState(true);
 	const [activeMediumPillow,setActiveMediumPillow] = useState(false);
 	const [activeLittlePillow,setActiveLittlePillow] = useState(false);
-
 	return(
 		<div className={styles.menu}>
 			<h1 className={styles.title}>{props.title}</h1>
@@ -184,12 +229,25 @@ const Menu = props => {
 						</div>
 					}
 				</div>
-			: 	
+			: props.title == 'Drap plat' ?
+				<div className={styles.articles}>			
+						{articlesDrapPlat.map(article=>
+							<Article onDrapChange={props.onDrapChange} {...article }  key={article.id} />
+						)} 
+				</div> 	 
+			: props.title == 'Drap housse' ?
+			<div className={styles.articles}>			
+					{articlesDrapHousse.map(article=>
+						<Article onDrapHousseChange={props.onDrapHousseChange} {...article }  key={article.id} />
+					)} 
+			</div> 	 
+			: 	props.title == 'Housse de couette' ?
 				<div className={styles.articles}>			
 					{articlesCouette.map(article=>
 						<Article onCouetteChange={props.onCouetteChange} {...article }  key={article.name} />
 					)} 
 				</div> 		
+				: null
 			}	
 		</div>
 
