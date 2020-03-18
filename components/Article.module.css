@@ -10,13 +10,6 @@
     
 }
 
-.articleActive{	
-    background-color: #599298;
-    border-radius: 5px;
-}
-
-
-
 .image{
     /* display: block;
     margin: auto;*/
@@ -32,3 +25,12 @@
 .description{
     margin: 0;
 }
+
+.articleActive{	
+    background-color: #599298;
+	border-radius: 5px;
+	color: white;
+}
+
+
+

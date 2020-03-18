@@ -6,7 +6,7 @@ import AddCart from '../components/AddCart';
 
 const Bed = props => {
 
-	const [couette, setCouette] = useState({ couetteImage : '/static/Bed/couette.png', couetteName : 'aucun'});
+	const [couette, setCouette] = useState({ couetteImage : '/static/Bed/couette2.png', couetteName : 'aucun'});
 	const [drapPlat, setDrapPlat] = useState({ drapImage : '', drapName : 'aucun'});
 	const [drapHousse, setDrapHousse] = useState({ drapImage : '', drapName : 'aucun'});
 	const [smallPillow, setSmallPillow] = useState({ pillowImage : '/static/Bed/petitcoussin.png', pillowName : 'aucun'});
