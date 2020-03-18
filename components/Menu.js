@@ -7,21 +7,21 @@ import Article from './Article';
 
 const articlesCouette = [	
 	{
-		name : 'aucun',
+		name : 'Aucun',
 		image : '/static/none.svg',
 		description: '',
 		couette: '/static/Bed/none.png',
 		id: "0"
 	},
 	{
-		name : 'escale',
+		name : 'Escale',
 		image : '/static/MenuCouettes/escale.png',
 		description: 'Satin - 120 fil/m²',
 		couette: '/static/Bed/couette2.png',
 		id: "1"
 	},
 	{
-		name : 'calypso',
+		name : 'Calypso',
 		image : '/static/MenuCouettes/article.png',
 		description: 'Coton - 120 fil/m²²',
 		couette: '/static/Bed/couette.png',
@@ -32,21 +32,21 @@ const articlesCouette = [
 
 const articlesTaiesPetit = [
 	{
-		name : 'escale',
+		name : 'Escale',
 		image : '/static/MenuTaies/coussin1.png',
 		description: 'Satin - 120 fil/m²',
 		taiesPetit: '/static/Bed/petitcoussin2.png',
 		id: "0"
 	},
 	{
-		name : 'calypso',
+		name : 'Calypso',
 		image : '/static/MenuTaies/coussin2.png',
 		description: 'Coton - 120 fil/m²',
 		taiesPetit: '/static/Bed/petitcoussin2.png',
 		id: "1"
 	},
 	{
-		name : 'palmea',
+		name : 'Palmea',
 		image : '/static/MenuTaies/coussin3.png',
 		description: 'Coton - 120 fil/m²',
 		taiesPetit: '/static/Bed/petitcoussin.png',
@@ -56,21 +56,21 @@ const articlesTaiesPetit = [
 
 const articlesTaiesMoyen = [
 	{
-		name : 'palmea',
+		name : 'Palmea',
 		image : '/static/MenuTaies/coussin3.png',
 		description: 'Coton - 120 fil/m²',
 		taiesMoyen: '/static/Bed/moyencoussin.png',
 		id: "0"
 	},
 	{
-		name : 'escale',
+		name : 'Escale',
 		image : '/static/MenuTaies/coussin1.png',
 		description: 'Satin - 120 fil/m²',
 		taiesMoyen: '/static/Bed/moyencoussin2.png',
 		id: "1"
 	},
 	{
-		name : 'calypso',
+		name : 'Calypso',
 		image : '/static/MenuTaies/coussin2.png',
 		description: 'Coton - 120 fil/m²',
 		taiesMoyen: '/static/Bed/moyencoussin2.png',
@@ -81,14 +81,14 @@ const articlesTaiesMoyen = [
 
 const articlesTaiesGrand = [
 	{
-		name : 'calypso',
+		name : 'Calypso',
 		image : '/static/MenuTaies/coussin2.png',
 		description: 'Coton - 120 fil/m²',
 		taiesGrand: '/static/Bed/groscoussin2.png',
 		id: "0"
 	},
 	{
-		name : 'escale',
+		name : 'Escale',
 		image : '/static/MenuTaies/coussin1.png',
 		description: 'Satin - 120 fil/m²',
 		taiesGrand: '/static/Bed/groscoussin2.png',
@@ -96,7 +96,7 @@ const articlesTaiesGrand = [
 	},
 	
 	{
-		name : 'palmea',
+		name : 'Palmea',
 		image : '/static/MenuTaies/coussin3.png',
 		description: 'Coton - 120 fil/m²',
 		taiesGrand: '/static/Bed/groscoussin.png',
@@ -105,7 +105,7 @@ const articlesTaiesGrand = [
 ]
 const articlesDrapPlat = [
 	{
-		name : 'aucun',
+		name : 'Aucun',
 		image : '/static/none.svg',
 		description: '',
 		drapPlat: '/static/Bed/none.png',
@@ -128,9 +128,9 @@ const articlesDrapPlat = [
 ]
 const articlesDrapHousse = [
 	{
-		name : 'aucun',
+		name : 'Aucun',
 		image : '/static/none.svg',
-		description: 'pas fou',
+		description: '',
 		drapHousse: '/static/Bed/none.png',
 		id: "0"
 	},
