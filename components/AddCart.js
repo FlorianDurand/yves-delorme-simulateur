@@ -28,12 +28,12 @@ const AddCart = props => {
 					Composition de la parure
 				</div>
 				{/* Check si .elementName est différent de celui de base et l'affiche si oui */}
-				{largePillow.pillowName != base ? <CartItem image={largePillow.pillowImage} name={largePillow.pillowName} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={3} />: null }
-				{mediumPillow.pillowName != base ? <CartItem image={mediumPillow.pillowImage} name={mediumPillow.pillowName} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={4} />: null }
+				{largePillow.pillowName != base ? <CartItem image={largePillow.pillowImage} name={largePillow.pillowName} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={2} />: null }
+				{mediumPillow.pillowName != base ? <CartItem image={mediumPillow.pillowImage} name={mediumPillow.pillowName} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={2} />: null }
 				{smallPillow.pillowName != base ? <CartItem image={smallPillow.pillowImage} name={smallPillow.pillowName} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={1} />: null }
-				{couette.couetteName != base ? <CartItem image={couette.couetteImage} name={couette.couetteName} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={2} />: null }
-				{drapPlat.drapName != base ? <CartItem image={drapPlat.drapImage} name={drapPlat.drapName} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={2} />: null }
-				{drapHousse.drapName != base ? <CartItem image={drapHousse.drapImage} name={drapHousse.drapName} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={2} />: null }
+				{couette.couetteName != base ? <CartItem image={couette.couetteImage} name={couette.couetteName} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={1} />: null }
+				{drapPlat.drapName != base ? <CartItem image={drapPlat.drapImage} name={drapPlat.drapName} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={1} />: null }
+				{drapHousse.drapName != base ? <CartItem image={drapHousse.drapImage} name={drapHousse.drapName} color={"Blanc"} widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} number={1} />: null }
 
 			</div>
 		</div>
