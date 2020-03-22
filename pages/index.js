@@ -17,40 +17,41 @@ export default function Index() {
 	const [addCart, setAddCart] = useState(false);
 	const [typeArticle, setTypeArticle] = useState('');
   
-	  return (
+	return (
 		<div className={styles.background}>
-		  <Header toggleMenuLeft={toggleMenuLeft} toggleMenuLeftDecor={toggleMenuLeftDecor}/>
-		  <Bed menu = {menu} addCart={addCart} menuLeftDecor={menuLeftDecor} title={typeArticle} resetMenu={resetMenu}/>
-		  {menuLeft ? (<MenuLeft />) : null}
-		  <Footer toggleMenu={toggleMenu} toggleCart={toggleCart} />
+			<Header toggleMenuLeft={toggleMenuLeft} toggleMenuLeftDecor={toggleMenuLeftDecor}/>
+			<Bed menu = {menu} addCart={addCart} menuLeftDecor={menuLeftDecor} title={typeArticle} resetMenu={resetMenu}/>
+			{menuLeft ? (<MenuLeft />) : null}
+			<Footer toggleMenu={toggleMenu} toggleCart={toggleCart} />
 		</div>
-	  );
-	  
-	  function toggleMenu(type){
-		  if(!menu){
-			  setMenu(true);
-			  setTypeArticle(type)
-		  }
-		  else{
-			  if(typeArticle != type){				
-				  setTypeArticle(type)
-			  }
-			  else{
-				  setMenu(false)
-				  setTypeArticle(type)
-			  }
-			  
-		  }		
+	);
+		
+	function toggleMenu(type){
+		if(!menu){
+			setMenu(true);
+			setTypeArticle(type)
+		}
+		else{
+			if(typeArticle != type){				
+				setTypeArticle(type)
+			}
+			else{
+				setMenu(false)
+				setTypeArticle(type)
+			}			  
+		}		
 	}
+
 	function toggleMenuLeft(){
-		  if(!menuLeft){
-			  setMenuLeft(true);
-		  }
-		  else{
-			  setMenuLeft(false)
-		  }		
-	  }
-	  function toggleMenuLeftDecor(){
+		if(!menuLeft){
+			setMenuLeft(true);
+		}
+		else{
+			setMenuLeft(false)
+		}		
+	}
+
+	function toggleMenuLeftDecor(){
 		if(!menuLeftDecor){
 			setMenuLeftDecor(true);
 		}
@@ -58,6 +59,7 @@ export default function Index() {
 			setMenuLeftDecor(false)
 		}		
 	}
+
 	function toggleCart(){
 		if(!addCart){
 			setAddCart(true);
@@ -66,10 +68,11 @@ export default function Index() {
 			setAddCart(false)
 		}		
 	}
+
 	function resetMenu(){
 		setAddCart(false)
 		setMenuLeft(false)
 		setMenu(false)
 		setMenuLeftDecor(false)
 	}
-  }
+}

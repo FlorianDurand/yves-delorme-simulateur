@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 import styles from './Article.module.css'
 
 const Article = props => {
-    let duvet = props.duvet;
-    const [activeDuvet,setActiveDuvet] = useState(false);
+	let duvet = props.duvet;
+	
     return(
         <div>
         { duvet != null ? 
@@ -20,7 +20,7 @@ const Article = props => {
 
             :
 
-                <div className={`${styles.article}`}  onClick={() => {props.onDuvetChange({duvetImage : props.duvet,  duvetName : props.name}), setActiveDuvet(true), props.onArticleChange(props.id)}}>
+                <div className={`${styles.article}`}  onClick={() => {props.onDuvetChange({duvetImage : props.duvet,  duvetName : props.name}), props.onArticleChange(props.id)}}>
                     <img className={styles.image} src={props.image} />
                     <h2 className={styles.subtitle}>{props.name}</h2>
                     <p className={styles.description}>{props.description}</p>

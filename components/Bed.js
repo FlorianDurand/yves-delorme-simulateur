@@ -18,56 +18,76 @@ const Bed = props => {
 
 	return (
 		<div>
-		<div className={styles.background} onClick={() => props.resetMenu()}>
-
-			<img className={styles.wall} src={wall} alt="wall" />
-			<img className={styles.joint} src={joint} alt="joint" />
-			<img className={styles.floor} src={floor} alt="sol" />
-			<img className={styles.tete} src="/static/Bed/tetedelit.png" alt="tete de lit" />
-			<img className={styles.back} src={bigPillow.pillowImage} alt="Grands Oreillers" />
-			<img className={styles.backRight} src={bigPillow.pillowImage} alt="Grands Oreillers" />
-			<img className={styles.middle} src={mediumPillow.pillowImage} alt="Oreilles du milieu" />
-			<img className={styles.middleRight} src={mediumPillow.pillowImage} alt="Oreilles du milieu" />
-			<img className={styles.front} src={smallPillow.pillowImage} alt="Petit Oreiller" />
-			<img className={styles.duvet} src={duvet.duvetImage} alt="Couette" />
+			{/* La parure de lit composé des différentes images */}
+			<div className={styles.background} onClick={() => props.resetMenu()}>
+				<img className={styles.wall} src={wall} alt="wall" />
+				<img className={styles.joint} src={joint} alt="joint" />
+				<img className={styles.floor} src={floor} alt="sol" />
+				<img className={styles.tete} src="/static/Bed/tetedelit.png" alt="tete de lit" />
+				<img className={styles.back} src={bigPillow.pillowImage} alt="Grands Oreillers" />
+				<img className={styles.backRight} src={bigPillow.pillowImage} alt="Grands Oreillers" />
+				<img className={styles.middle} src={mediumPillow.pillowImage} alt="Oreilles du milieu" />
+				<img className={styles.middleRight} src={mediumPillow.pillowImage} alt="Oreilles du milieu" />
+				<img className={styles.front} src={smallPillow.pillowImage} alt="Petit Oreiller" />
+				<img className={styles.duvet} src={duvet.duvetImage} alt="Couette" />
 			</div>
+
 			{props.menu ? (
-					<Menu 
-						onDuvetChange={handleDuvetChange}
-						onSmallPillowChange={handleSmallPillowChange}
-					  	onMediumPillowChange={handleMediumPillowChange}
-						onBigPillowChange={handleBigPillowChange}
-						onFlatSheetChange={handleFlatSheetChange}
-						onFittedSheetChange={handleFittedSheetChange}
-					    title={props.title}/>
-				) : null}	
+				<Menu 
+					onDuvetChange={handleDuvetChange}
+					onSmallPillowChange={handleSmallPillowChange}
+					onMediumPillowChange={handleMediumPillowChange}
+					onBigPillowChange={handleBigPillowChange}
+					onFlatSheetChange={handleFlatSheetChange}
+					onFittedSheetChange={handleFittedSheetChange}
+					title={props.title}/>
+				) : null}
+
 			{props.menuLeftDecor ? (
-					<MenuLeftDecor 
-						onWallChange={handleWallChange}
-						onFloorChange={handleFloorChange}
-						onJointChange={handleJointChange}/>) : null}	
-			{props.addCart  ? (<AddCart duvet={duvet} smallPillow={smallPillow} mediumPillow={mediumPillow} bigPillow={bigPillow} flatSheet={flatSheet} fittedSheet={fittedSheet}/>) : null}
+				<MenuLeftDecor 
+					onWallChange={handleWallChange}
+					onFloorChange={handleFloorChange}
+					onJointChange={handleJointChange}/>
+				) : null}
+
+			{props.addCart  ? (
+				<AddCart 
+					duvet={duvet}
+					smallPillow={smallPillow} 
+					mediumPillow={mediumPillow} 
+					bigPillow={bigPillow} 
+					flatSheet={flatSheet} 
+					fittedSheet={fittedSheet}/>
+				) : null}
 		</div>
 	)
+
+	//Gère le changement de la couette
 	function handleDuvetChange(duvet){
 		setDuvet(duvet); //set le state avec l'objet contenant les infos de la couette
 	}
 
+	//Gère le changement du drap plat
 	function handleFlatSheetChange(flatSheet){
 		setFlatSheet(flatSheet);
 	}
+
+	//Gère le changement du drap-housse
 	function handleFittedSheetChange(fittedSheet){
 		setFittedSheet(fittedSheet);
 	}
 
+	//Gère le changement du coussin de devant
 	function handleSmallPillowChange(smallPillow){
 		setSmallPillow(smallPillow);
 	}
 
+	//Gère le changement des coussins du milieu
 	function handleMediumPillowChange(mediumPillow){
 		setMediumPillow(mediumPillow);
 	}
 
+	//Gère le changement des coussins du fond
 	function handleBigPillowChange(bigPillow){
 		setBigPillow(bigPillow);
 	}
