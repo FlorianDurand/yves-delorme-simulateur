@@ -6,12 +6,12 @@ import AddCart from '../components/AddCart';
 
 const Bed = props => {
 
-	const [couette, setCouette] = useState({ couetteImage : '/static/Bed/couette2.png', couetteName : 'aucun'});
-	const [drapPlat, setDrapPlat] = useState({ drapImage : '', drapName : 'aucun'});
-	const [drapHousse, setDrapHousse] = useState({ drapImage : '', drapName : 'aucun'});
+	const [duvet, setDuvet] = useState({ duvetImage : '/static/Bed/couette2.png', duvetName : 'aucun'});
+	const [flatSheet, setFlatSheet] = useState({ sheetImage : '', sheetName : 'aucun'});
+	const [fittedSheet, setFittedSheet] = useState({ sheetImage : '', sheetName : 'aucun'});
 	const [smallPillow, setSmallPillow] = useState({ pillowImage : '/static/Bed/petitcoussin.png', pillowName : 'aucun'});
 	const [mediumPillow, setMediumPillow] = useState({ pillowImage :'/static/Bed/moyencoussin.png', pillowName : 'aucun'} );
-	const [largePillow, setLargePillow] = useState({pillowImage : '/static/Bed/groscoussin.png', pillowName : 'aucun'});
+	const [bigPillow, setBigPillow] = useState({pillowImage : '/static/Bed/groscoussin.png', pillowName : 'aucun'});
 	const [wall, setWall] = useState('/static/Bed/wall.png');
 	const [floor, setFloor] = useState('/static/Bed/sol.png');
 	const [joint, setJoint] = useState('/static/Bed/joint.png');
@@ -24,21 +24,21 @@ const Bed = props => {
 			<img className={styles.joint} src={joint} alt="joint" />
 			<img className={styles.floor} src={floor} alt="sol" />
 			<img className={styles.tete} src="/static/Bed/tetedelit.png" alt="tete de lit" />
-			<img className={styles.back} src={largePillow.pillowImage} alt="Grands Oreillers" />
-			<img className={styles.backRight} src={largePillow.pillowImage} alt="Grands Oreillers" />
+			<img className={styles.back} src={bigPillow.pillowImage} alt="Grands Oreillers" />
+			<img className={styles.backRight} src={bigPillow.pillowImage} alt="Grands Oreillers" />
 			<img className={styles.middle} src={mediumPillow.pillowImage} alt="Oreilles du milieu" />
 			<img className={styles.middleRight} src={mediumPillow.pillowImage} alt="Oreilles du milieu" />
 			<img className={styles.front} src={smallPillow.pillowImage} alt="Petit Oreiller" />
-			<img className={styles.couette} src={couette.couetteImage} alt="Couette" />
+			<img className={styles.duvet} src={duvet.duvetImage} alt="Couette" />
 			</div>
 			{props.menu ? (
 					<Menu 
-						onCouetteChange={handleCouetteChange}
+						onDuvetChange={handleDuvetChange}
 						onSmallPillowChange={handleSmallPillowChange}
 					  	onMediumPillowChange={handleMediumPillowChange}
-						onLargePillowChange={handleLargePillowChange}
-						onDrapChange={handleDrapChange}
-						onDrapHousseChange={handleDrapHousseChange}
+						onBigPillowChange={handleBigPillowChange}
+						onFlatSheetChange={handleFlatSheetChange}
+						onFittedSheetChange={handleFittedSheetChange}
 					    title={props.title}/>
 				) : null}	
 			{props.menuLeftDecor ? (
@@ -46,30 +46,30 @@ const Bed = props => {
 						onWallChange={handleWallChange}
 						onFloorChange={handleFloorChange}
 						onJointChange={handleJointChange}/>) : null}	
-			{props.addCart  ? (<AddCart couette={couette} smallPillow={smallPillow} mediumPillow={mediumPillow} largePillow={largePillow} drapPlat={drapPlat} drapHousse={drapHousse}/>) : null}
+			{props.addCart  ? (<AddCart duvet={duvet} smallPillow={smallPillow} mediumPillow={mediumPillow} bigPillow={bigPillow} flatSheet={flatSheet} fittedSheet={fittedSheet}/>) : null}
 		</div>
 	)
-	function handleCouetteChange(couette){
-		setCouette(couette);//set le state avec l'objet contenant les infos de la couette
+	function handleDuvetChange(duvet){
+		setDuvet(duvet); //set le state avec l'objet contenant les infos de la couette
 	}
 
-	function handleDrapChange(drapPlat){
-		setDrapPlat(drapPlat);
+	function handleFlatSheetChange(flatSheet){
+		setFlatSheet(flatSheet);
 	}
-	function handleDrapHousseChange(drapHousse){
-		setDrapHousse(drapHousse);
-	}
-
-	function handleSmallPillowChange(petitcoussin){
-		setSmallPillow(petitcoussin);
+	function handleFittedSheetChange(fittedSheet){
+		setFittedSheet(fittedSheet);
 	}
 
-	function handleMediumPillowChange(moyencoussin){
-		setMediumPillow(moyencoussin);
+	function handleSmallPillowChange(smallPillow){
+		setSmallPillow(smallPillow);
 	}
 
-	function handleLargePillowChange(grandcoussin){
-		setLargePillow(grandcoussin);
+	function handleMediumPillowChange(mediumPillow){
+		setMediumPillow(mediumPillow);
+	}
+
+	function handleBigPillowChange(bigPillow){
+		setBigPillow(bigPillow);
 	}
 
 	//change le mur en fonction du mur selectionné 

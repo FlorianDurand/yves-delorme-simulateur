@@ -4,14 +4,14 @@ import PropTypes from 'prop-types'
 import styles from './Article.module.css'
 
 const Article = props => {
-    let couette = props.couette;
-    const [activeCouette,setActiveCouette] = useState(false);
+    let duvet = props.duvet;
+    const [activeDuvet,setActiveDuvet] = useState(false);
     return(
         <div>
-        { couette != null ? 
+        { duvet != null ? 
 
             props.idActiveArticle == props.id ?
-                // Recupère les différentes informations de l element et les passent à la fonction onCouetteChange
+                // Recupère les différentes informations de l element et les passent à la fonction onDuvetChange
                 <div className={`${styles.article} ${styles.articleActive}`}  >
                     <img className={styles.image} src={props.image} />
                     <h2 className={styles.subtitle}>{props.name}</h2>
@@ -20,13 +20,13 @@ const Article = props => {
 
             :
 
-                <div className={`${styles.article}`}  onClick={() => {props.onCouetteChange({couetteImage : props.couette,  couetteName : props.name}), setActiveCouette(true), props.onArticleChange(props.id)}}>
+                <div className={`${styles.article}`}  onClick={() => {props.onDuvetChange({duvetImage : props.duvet,  duvetName : props.name}), setActiveDuvet(true), props.onArticleChange(props.id)}}>
                     <img className={styles.image} src={props.image} />
                     <h2 className={styles.subtitle}>{props.name}</h2>
                     <p className={styles.description}>{props.description}</p>
                 </div>
 
-		: props.taiesPetit != null ?
+		: props.smallPillow != null ?
 		
 			props.idActiveArticle == props.id ?
 
@@ -38,13 +38,13 @@ const Article = props => {
 
 			:
 
-			<div className={styles.article} onClick={() => {props.onSmallPillowChange({pillowImage : props.taiesPetit, pillowName : props.name}), props.onArticleChange(props.id)}}>
+			<div className={styles.article} onClick={() => {props.onSmallPillowChange({pillowImage : props.smallPillow, pillowName : props.name}), props.onArticleChange(props.id)}}>
                 <img className={styles.image} src={props.image} />
                 <h2 className={styles.subtitle}>{props.name}</h2>
                 <p className={styles.description}>{props.description}</p>
             </div>
 
-		: props.taiesMoyen != null ?
+		: props.mediumPillow != null ?
 		
 			props.idActiveArticle == props.id ?
 
@@ -56,13 +56,13 @@ const Article = props => {
 
 			:
 
-				<div className={styles.article} onClick={() => {props.onMediumPillowChange({pillowImage : props.taiesMoyen, pillowName : props.name}), props.onArticleChange(props.id)}}>
+				<div className={styles.article} onClick={() => {props.onMediumPillowChange({pillowImage : props.mediumPillow, pillowName : props.name}), props.onArticleChange(props.id)}}>
 					<img className={styles.image} src={props.image} />
 					<h2 className={styles.subtitle}>{props.name}</h2>
 					<p className={styles.description}>{props.description}</p>
 				</div>
         
-		: props.taiesGrand != null ?
+		: props.bigPillow != null ?
 		
 			props.idActiveArticle == props.id ?
 
@@ -74,7 +74,7 @@ const Article = props => {
 
 			:
 
-				<div className={styles.article} onClick={() => {props.onLargePillowChange({pillowImage : props.taiesGrand, pillowName : props.name}), props.onArticleChange(props.id)}}>
+				<div className={styles.article} onClick={() => {props.onBigPillowChange({pillowImage : props.bigPillow, pillowName : props.name}), props.onArticleChange(props.id)}}>
 					<img className={styles.image} src={props.image} />
 					<h2 className={styles.subtitle}>{props.name}</h2>
 					<p className={styles.description}>{props.description}</p>
@@ -82,7 +82,7 @@ const Article = props => {
 
 		 :  
 		 
-		 props.drapHousse != null ?
+		 props.fittedSheet != null ?
 
 			props.idActiveArticle == props.id ?
 			 
@@ -94,7 +94,7 @@ const Article = props => {
 
 			:
 
-				<div className={styles.article} onClick={() => {props.onDrapHousseChange({drapImage : props.drapHousse, drapName : props.name}), props.onArticleChange(props.id)}}>
+				<div className={styles.article} onClick={() => {props.onFittedSheetChange({sheetImage : props.fittedSheet, sheetName : props.name}), props.onArticleChange(props.id)}}>
 					<img className={styles.image} src={props.image} />
 					<h2 className={styles.subtitle}>{props.name}</h2>
 					<p className={styles.description}>{props.description}</p>
@@ -112,7 +112,7 @@ const Article = props => {
 
 			:
 
-				<div className={styles.article} onClick={() => {props.onDrapChange({drapImage : props.drapPlat, drapName : props.name}), props.onArticleChange(props.id)}}>
+				<div className={styles.article} onClick={() => {props.onFlatSheetChange({sheetImage : props.flatSheet, sheetName : props.name}), props.onArticleChange(props.id)}}>
 					<img className={styles.image} src={props.image} />
 					<h2 className={styles.subtitle}>{props.name}</h2>
 					<p className={styles.description}>{props.description}</p>
@@ -128,8 +128,8 @@ Article.propTypes = {
 	image: PropTypes.string.isRequired,
 	name: PropTypes.string.isRequired,
     description: PropTypes.string,
-    couette: PropTypes.string,
-    taies: PropTypes.string,
+    duvet: PropTypes.string,
+    pillow: PropTypes.string,
 };
 
 export default Article

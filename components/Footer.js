@@ -24,11 +24,7 @@ const Footer = props => (
                 <img src="/static/cross.png" alt="croix" />
                 Enregistrer la parure
             </button>
-
-            {/* <button className={styles.buttonRight}>
-                <img src="/static/saved.svg" alt="saved" />
-                Parures enregistrées
-            </button> */}
+			            
         </div>
     </div>
         

@@ -5,147 +5,139 @@ import Button from './Styles/Button';
 import Filter from './Filter';
 import Article from './Article';
 
-const articlesCouette = [	
+const articlesDuvet = [	
 	{
 		name : 'Aucun',
 		image : '/static/none.svg',
 		description: '',
-		couette: '/static/Bed/none.png',
+		duvet: '/static/Bed/none.png',
 		id: "0"
 	},
 	{
 		name : 'Escale',
 		image : '/static/MenuCouettes/escale.png',
 		description: 'Satin - 120 fil/m²',
-		couette: '/static/Bed/couette2.png',
+		duvet: '/static/Bed/couette2.png',
 		id: "1"
 	},
 	{
 		name : 'Calypso',
 		image : '/static/MenuCouettes/article.png',
 		description: 'Coton - 120 fil/m²²',
-		couette: '/static/Bed/couette.png',
+		duvet: '/static/Bed/couette.png',
 		id: "2"
 	}
 
 ]
 
-const articlesTaiesPetit = [
+const articlesSmallPillow = [
 	{
 		name : 'Escale',
-		image : '/static/MenuTaies/coussin1.png',
+		image : '/static/MenuTaies/coussin3.png',
 		description: 'Satin - 120 fil/m²',
-		taiesPetit: '/static/Bed/petitcoussin2.png',
+		smallPillow: '/static/Bed/petitcoussin.png',
 		id: "0"
 	},
 	{
 		name : 'Calypso',
 		image : '/static/MenuTaies/coussin2.png',
 		description: 'Coton - 120 fil/m²',
-		taiesPetit: '/static/Bed/petitcoussin2.png',
+		smallPillow: '/static/Bed/petitcoussin3.png',
 		id: "1"
 	},
 	{
 		name : 'Palmea',
-		image : '/static/MenuTaies/coussin3.png',
+		image : '/static/MenuTaies/coussin1.png',
 		description: 'Coton - 120 fil/m²',
-		taiesPetit: '/static/Bed/petitcoussin.png',
+		smallPillow: '/static/Bed/petitcoussin2.png',
 		id: "2"
 	}
 ]
 
-const articlesTaiesMoyen = [
+const articlesMediumPillow = [
 	{
 		name : 'Palmea',
 		image : '/static/MenuTaies/coussin3.png',
 		description: 'Coton - 120 fil/m²',
-		taiesMoyen: '/static/Bed/moyencoussin.png',
+		mediumPillow: '/static/Bed/moyencoussin.png',
 		id: "0"
 	},
 	{
 		name : 'Escale',
 		image : '/static/MenuTaies/coussin1.png',
 		description: 'Satin - 120 fil/m²',
-		taiesMoyen: '/static/Bed/moyencoussin2.png',
+		mediumPillow: '/static/Bed/moyencoussin2.png',
 		id: "1"
 	},
 	{
 		name : 'Calypso',
 		image : '/static/MenuTaies/coussin2.png',
 		description: 'Coton - 120 fil/m²',
-		taiesMoyen: '/static/Bed/moyencoussin2.png',
+		mediumPillow: '/static/Bed/moyencoussin3.png',
 		id: "2"
 	}
 	
 ]
 
-const articlesTaiesGrand = [
+const articlesBigPillow = [
 	{
 		name : 'Calypso',
 		image : '/static/MenuTaies/coussin2.png',
 		description: 'Coton - 120 fil/m²',
-		taiesGrand: '/static/Bed/groscoussin2.png',
+		bigPillow: '/static/Bed/groscoussin.png',
 		id: "0"
 	},
 	{
 		name : 'Escale',
 		image : '/static/MenuTaies/coussin1.png',
 		description: 'Satin - 120 fil/m²',
-		taiesGrand: '/static/Bed/groscoussin2.png',
+		bigPillow: '/static/Bed/groscoussin2.png',
 		id: "1"
-	},
-	
-	{
-		name : 'Palmea',
-		image : '/static/MenuTaies/coussin3.png',
-		description: 'Coton - 120 fil/m²',
-		taiesGrand: '/static/Bed/groscoussin.png',
-		id: "2"
 	}
 ]
-const articlesDrapPlat = [
+const articlesFlatSheet = [
 	{
 		name : 'Aucun',
 		image : '/static/none.svg',
 		description: '',
-		drapPlat: '/static/Bed/none.png',
+		flatSheet: '/static/Bed/none.png',
 		id: "0"
 	},
 	{
 		name : 'Drap plat calypso',
 		description: 'Un beau drap',
 		image: '/static/MenuDrap/drap1.png',
-		drapPlat: '/static/MenuDrap/drap1.png',
+		flatSheet: '/static/MenuDrap/drap1.png',
 		id: "1"
 	},
 	{
 		name : 'Drap plat escale',
 		image: '/static/MenuDrap/drap1.png',
 		description: 'Un très beau drap ',
-		drapPlat: '/static/MenuDrap/drap1.png',
+		flatSheet: '/static/MenuDrap/drap1.png',
 		id: "2"
 	},
 ]
-const articlesDrapHousse = [
+const articlesFittedSheet = [
 	{
 		name : 'Aucun',
 		image : '/static/none.svg',
 		description: '',
-		drapHousse: '/static/Bed/none.png',
+		fittedSheet: '/static/Bed/none.png',
 		id: "0"
 	},
 	{
 		name : 'Drap Housse 1',
 		description: 'Un beau drap',
 		image: '/static/MenuDrap/drap1.png',
-		drapHousse: '/static/MenuDrap/drap1.png',
+		fittedSheet: '/static/MenuDrap/drap1.png',
 		id: "1"
 	},
 	{
 		name : 'Drap Housse 2',
 		image: '/static/MenuDrap/drap1.png',
 		description: 'Un très beau drap ',
-		drapHousse: '/static/MenuDrap/drap1.png',
+		fittedSheet: '/static/MenuDrap/drap1.png',
 		id: "2"
 	},
 ]
@@ -153,16 +145,16 @@ const articlesDrapHousse = [
 
 const Menu = props => {
 
-	const [sizePillow, setSizePillow] = useState("grand");
+	const [sizePillow, setSizePillow] = useState("big");
 	const [activeBigPillow,setActiveBigPillow] = useState(true);
 	const [activeMediumPillow,setActiveMediumPillow] = useState(false);
 	const [activeLittlePillow,setActiveLittlePillow] = useState(false);
-	const [idActiveCouetteArticle,setIdActiveCouetteArticle] = useState("1");
+	const [idActiveDuvetArticle,setIdActiveDuvetArticle] = useState("1");
 	const [idActiveBigPillowArticle,setIdActiveBigPillowArticle] = useState("0");
 	const [idActiveMediumPillowArticle,setIdActiveMediumPillowArticle] = useState("0");
-	const [idActiveSmallPillowArticle,setIdActiveSmallPillowArticle] = useState("1");
-	const [idActiveDrapPlatArticle,setIdActiveDrapPlatArticle] = useState("0");
-	const [idActiveDrapHousseArticle,setIdActiveDrapHousseArticle] = useState("0");
+	const [idActiveSmallPillowArticle,setIdActiveSmallPillowArticle] = useState("0");
+	const [idActiveFlatSheetArticle,setIdActiveFlatSheetArticle] = useState("0");
+	const [idActiveFittedSheetArticle,setIdActiveFittedSheetArticle] = useState("0");
 
 
 	return(
@@ -231,40 +223,40 @@ const Menu = props => {
 					</div>
 					{sizePillow == 'petit' ? 
 						<div className={styles.articles}>			
-							{articlesTaiesPetit.map(article=>
+							{articlesSmallPillow.map(article=>
 								<Article idActiveArticle={idActiveBigPillowArticle} onArticleChange={onArticleBigPillowChange} onSmallPillowChange={props.onSmallPillowChange} {...article }  key={article.name} />
 							)} 
 						</div>
 					: sizePillow == 'moyen' ? 
 						<div className={styles.articles}>			
-							{articlesTaiesMoyen.map(article=>
+							{articlesMediumPillow.map(article=>
 								<Article idActiveArticle={idActiveMediumPillowArticle} onArticleChange={onArticleMediumPillowChange} onMediumPillowChange={props.onMediumPillowChange} {...article }  key={article.name} />
 							)} 
 						</div>
 					: 
 						<div className={styles.articles}>			
-							{articlesTaiesGrand.map(article=>
-								<Article idActiveArticle={idActiveSmallPillowArticle} onArticleChange={onArticleSmallPillowChange} onLargePillowChange={props.onLargePillowChange} {...article }  key={article.name} />
+							{articlesBigPillow.map(article=>
+								<Article idActiveArticle={idActiveSmallPillowArticle} onArticleChange={onArticleSmallPillowChange} onBigPillowChange={props.onBigPillowChange} {...article }  key={article.name} />
 							)} 
 						</div>
 					}
 				</div>
 			: props.title == 'Drap plat' ?
 				<div className={styles.articles}>			
-						{articlesDrapPlat.map(article=>
-							<Article idActiveArticle={idActiveDrapPlatArticle} onArticleChange={onArticleDrapPlatChange} onDrapChange={props.onDrapChange} {...article }  key={article.id} />
+						{articlesFlatSheet.map(article=>
+							<Article idActiveArticle={idActiveFlatSheetArticle} onArticleChange={onArticleFlatSheetChange} onFlatSheetChange={props.onFlatSheetChange} {...article }  key={article.id} />
 						)} 
 				</div> 	 
 			: props.title == 'Drap housse' ?
 			<div className={styles.articles}>			
-					{articlesDrapHousse.map(article=>
-						<Article idActiveArticle={idActiveDrapHousseArticle} onArticleChange={onArticleDrapHousseChange} onDrapHousseChange={props.onDrapHousseChange} {...article }  key={article.id} />
+					{articlesFittedSheet.map(article=>
+						<Article idActiveArticle={idActiveFittedSheetArticle} onArticleChange={onArticleFittedSheetChange} onFittedSheetChange={props.onFittedSheetChange} {...article }  key={article.id} />
 					)} 
 			</div> 	 
 			: 	props.title == 'Housse de couette' ?
 				<div className={styles.articles}>			
-					{articlesCouette.map(article=>
-						<Article idActiveArticle={idActiveCouetteArticle} onArticleChange={onArticleCouetteChange} onCouetteChange={props.onCouetteChange} {...article }  key={article.name} />
+					{articlesDuvet.map(article=>
+						<Article idActiveArticle={idActiveDuvetArticle} onArticleChange={onArticleDuvetChange} onDuvetChange={props.onDuvetChange} {...article }  key={article.name} />
 					)} 
 				</div> 		
 				: null
@@ -280,27 +272,27 @@ const Menu = props => {
 			setActiveMediumPillow(false);
 			setActiveLittlePillow(false);
 
-			setSizePillow('grand');			
+			setSizePillow('big');			
 		}
 		else if(size == 'medium'){
 			setActiveBigPillow(false);
 			setActiveMediumPillow(true);
 			setActiveLittlePillow(false);
 
-			setSizePillow('moyen');	
+			setSizePillow('medium');	
 		}
 		else{
 			setActiveBigPillow(false);
 			setActiveMediumPillow(false);
 			setActiveLittlePillow(true);
 
-			setSizePillow('petit');	
+			setSizePillow('small');	
 		}
 		
 	}
 
-	function onArticleCouetteChange(id){
-		setIdActiveCouetteArticle(id);
+	function onArticleDuvetChange(id){
+		setIdActiveDuvetArticle(id);
 	}
 
 	function onArticleBigPillowChange(id){
@@ -315,12 +307,12 @@ const Menu = props => {
 		setIdActiveSmallPillowArticle(id);
 	}
 
-	function onArticleDrapPlatChange(id){
-		setIdActiveDrapPlatArticle(id);
+	function onArticleFlatSheetChange(id){
+		setIdActiveFlatSheetArticle(id);
 	}
 
-	function onArticleDrapHousseChange(id){
-		setIdActiveDrapHousseArticle(id);
+	function onArticleFittedSheetChange(id){
+		setIdActiveFittedSheetArticle(id);
 	}
 };
 
