@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from './Footer.module.css';
+import styles from './Footer.module.scss';
 import Button from './Styles/Button'
 import React from 'react'
 import PropTypes from 'prop-types'

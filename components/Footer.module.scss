@@ -1,3 +1,6 @@
+$font-color :#447679;
+$background-color: white;
+
 .footer{
     position: absolute;
     bottom: 40px;
@@ -37,14 +40,14 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    color: #447679;
-    background-color: white;
+    color: $font-color;
+    background-color: $background-color;
     border: none;
-    border-radius: 5px;
+	border-radius: 5px;
+	
+	&:first-child{
+		margin-bottom: 20px;
+	}
 }
 
-.buttonRight:first-child{
-    margin-bottom: 20px;
-    color: #447679;
-    background-color: white;
-}
+
