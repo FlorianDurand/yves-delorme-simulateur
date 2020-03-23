@@ -1,12 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './MenuLeft.module.css';
-import Button from './Styles/Button';
 import MenuLeftBase from './MenuLeftBase';
 
 const MenuLeft = () => {
-
-
 
 	return (
 		<div className={styles.menu}>

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from './Footer.module.css';
+import styles from './Footer.module.scss';
 import Button from './Styles/Button'
 import React from 'react'
 import PropTypes from 'prop-types'
@@ -15,7 +15,7 @@ const Footer = props => (
         </div>
 
         <div className={styles.buttonsRight}>
-        <button className={styles.buttonRight}>
+        	<button className={styles.buttonRight}>
                 <img src="/static/cart.svg" alt="panier" />
                 Ajouter au panier
             </button>
@@ -25,13 +25,8 @@ const Footer = props => (
                 Enregistrer la parure
             </button>
 
-            {/* <button className={styles.buttonRight}>
-                <img src="/static/saved.svg" alt="saved" />
-                Parures enregistrées
-            </button> */}
         </div>
-    </div>
-        
+    </div>        
     
 );
 
