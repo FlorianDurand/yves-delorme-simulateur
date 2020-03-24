@@ -26,7 +26,7 @@ const Article = props => {
                     <p className={styles.description}>{props.description}</p>
                 </div>
 
-		: props.smallPillow != null ?
+		: props.size == "small" ?
 		
 			props.idActiveArticle == props.id ?
 
@@ -38,13 +38,31 @@ const Article = props => {
 
 			:
 
-			<div className={styles.article} onClick={() => {props.onSmallPillowChange({pillowImage : props.smallPillow, pillowName : props.name}), props.onArticleChange(props.id)}}>
+			<div className={styles.article} onClick={() => {props.onSmallPillowChange({pillowImage : props.pillow, pillowName : props.name}), props.onArticleChange(props.id)}}>
                 <img className={styles.image} src={props.image} />
                 <h2 className={styles.subtitle}>{props.name}</h2>
                 <p className={styles.description}>{props.description}</p>
             </div>
 
-		: props.mediumPillow != null ?
+		: props.size == "center" ?
+				
+			props.idActiveArticle == props.id ?
+
+				<div className={`${styles.article} ${styles.articleActive}`}  >
+					<img className={styles.image} src={props.image} />
+					<h2 className={styles.subtitle}>{props.name}</h2>
+					<p className={styles.description}>{props.description}</p>
+				</div>
+
+			:
+
+				<div className={styles.article} onClick={() => {props.onCenterPillowChange({pillowImage : props.pillow, pillowName : props.name}), props.onArticleChange(props.id)}}>
+					<img className={styles.image} src={props.image} />
+					<h2 className={styles.subtitle}>{props.name}</h2>
+					<p className={styles.description}>{props.description}</p>
+				</div>
+
+		: props.size == "medium" ?
 		
 			props.idActiveArticle == props.id ?
 
@@ -56,13 +74,13 @@ const Article = props => {
 
 			:
 
-				<div className={styles.article} onClick={() => {props.onMediumPillowChange({pillowImage : props.mediumPillow, pillowName : props.name}), props.onArticleChange(props.id)}}>
+				<div className={styles.article} onClick={() => {props.onMediumPillowChange({pillowImage : props.pillow, pillowName : props.name}), props.onArticleChange(props.id)}}>
 					<img className={styles.image} src={props.image} />
 					<h2 className={styles.subtitle}>{props.name}</h2>
 					<p className={styles.description}>{props.description}</p>
 				</div>
         
-		: props.bigPillow != null ?
+		: props.size == "big" ?
 		
 			props.idActiveArticle == props.id ?
 
@@ -74,7 +92,7 @@ const Article = props => {
 
 			:
 
-				<div className={styles.article} onClick={() => {props.onBigPillowChange({pillowImage : props.bigPillow, pillowName : props.name}), props.onArticleChange(props.id)}}>
+				<div className={styles.article} onClick={() => {props.onBigPillowChange({pillowImage : props.pillow, pillowName : props.name}), props.onArticleChange(props.id)}}>
 					<img className={styles.image} src={props.image} />
 					<h2 className={styles.subtitle}>{props.name}</h2>
 					<p className={styles.description}>{props.description}</p>

@@ -46,13 +46,19 @@
 .middle{
     position: absolute;
     top: 311px;
-    left: 397px;
+    left: 405px;
 }
 
 .middleRight{
     position: absolute;
     top: 311px;
-    left: 697px;
+    left: 684px;
+}
+
+.frontCenter{
+    position: absolute;
+    top: 380px;
+    left: 555px;
 }
 
 .front{
