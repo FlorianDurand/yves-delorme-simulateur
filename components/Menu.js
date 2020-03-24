@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types'
-import styles from './Menu.module.css';
+import styles from './Menu.module.scss';
 import Button from './Styles/Button';
 import Filter from './Filter';
 import Article from './Article';
 
 const articlesDuvet = [	
 	{
-		name : 'Aucun',
+		name : 'aucun',
 		image : '/static/none.svg',
 		description: '',
 		duvet: '/static/Bed/none.png',
@@ -23,7 +23,7 @@ const articlesDuvet = [
 	{
 		name : 'Calypso',
 		image : '/static/MenuCouettes/article.png',
-		description: 'Coton - 120 fil/m²²',
+		description: 'Coton - 120 fil/m²',
 		duvet: '/static/Bed/couette.png',
 		id: "2"
 	}
@@ -101,21 +101,55 @@ const articlesFlatSheet = [
 		image : '/static/none.svg',
 		description: '',
 		flatSheet: '/static/Bed/none.png',
-		id: "0"
+		id: 0
 	},
 	{
-		name : 'Drap plat calypso',
-		description: 'Un beau drap',
-		image: '/static/MenuDrap/drap1.png',
-		flatSheet: '/static/MenuDrap/drap1.png',
-		id: "1"
+		name : 'Bel Ami',
+		material : 'Satin',
+		grammage: '120 fils/cm²',
+		image: '/static/MenuDrap/DP_Bel_ami_the-satin-120.jpg',
+		flatSheet: '/static/MenuDrap/DP_Bel_ami_the-satin-120.jpg',
+		id: 1
 	},
 	{
-		name : 'Drap plat escale',
-		image: '/static/MenuDrap/drap1.png',
-		description: 'Un très beau drap ',
-		flatSheet: '/static/MenuDrap/drap1.png',
-		id: "2"
+		name : 'Boudoir',
+		material : 'Percale',
+		grammage: '120 fils/cm²',
+		image: '/static/MenuDrap/DP_Boudoir-percale-120.jpg',
+		flatSheet: '/static/MenuDrap/DP_Boudoir-percale-120.jpg',
+		id: 2
+	},
+	{
+		name : 'Herba',
+		material : 'Percale',
+		grammage: '120 fils/cm²',
+		image: '/static/MenuDrap/DP_Herba-percale-120.jpg',
+		flatSheet: '/static/MenuDrap/DP_Herba-percale-120.jpg',
+		id: 3
+	},
+	{
+		name : 'Luna',
+		material : 'Satin',
+		grammage: '120 fils/cm²',
+		image: '/static/MenuDrap/DP_Luna-satin-120.jpg',
+		flatSheet: '/static/MenuDrap/DP_Luna-satin-120.jpg',
+		id: 4
+	},
+	{
+		name : 'Palmio',
+		material : 'Satin',
+		grammage: '120 fils/cm²',
+		image: '/static/MenuDrap/DP_Palmio-satin-120.jpg',
+		flatSheet: '/static/MenuDrap/DP_Palmio-satin-120.jpg',
+		id: 5
+	},
+	{
+		name : 'Triophe',
+		material : 'Satin',
+		grammage: '120 fils/cm²',
+		image: '/static/MenuDrap/DP_Triomphe-satin-120.jpg',
+		flatSheet: '/static/MenuDrap/DP_Triomphe-satin-120.jpg',
+		id: 6
 	},
 ]
 const articlesFittedSheet = [
@@ -127,18 +161,52 @@ const articlesFittedSheet = [
 		id: "0"
 	},
 	{
-		name : 'Drap Housse 1',
-		description: 'Un beau drap',
-		image: '/static/MenuDrap/drap1.png',
-		fittedSheet: '/static/MenuDrap/drap1.png',
-		id: "1"
+		name : 'Calypso',
+		material : 'Satin',
+		grammage: '120 fils/cm²',
+		image: '/static/MenuDrapHousse/DH_Calypso-satin-120.jpg',
+		fittedSheet: '/static/MenuDrapHousse/DH_Calypso-satin-120.jpg',
+		id: 1
 	},
 	{
-		name : 'Drap Housse 2',
-		image: '/static/MenuDrap/drap1.png',
-		description: 'Un très beau drap ',
-		fittedSheet: '/static/MenuDrap/drap1.png',
-		id: "2"
+		name : 'Eolie',
+		material : 'Percale',
+		grammage: '120 fils/cm²',
+		image: '/static/MenuDrapHousse/DH_Eolie-percale-120.jpg',
+		fittedSheet: '/static/MenuDrapHousse/DH_Eolie-percale-120.jpg',
+		id: 2
+	},
+	{
+		name : 'Odysse',
+		material : 'Satin',
+		grammage: '120 fils/cm²',
+		image: '/static/MenuDrapHousse/DH_Odysse-satin-120.jpg',
+		fittedSheet: '/static/MenuDrapHousse/DH_Odysse-satin-120.jpg',
+		id: 3
+	},
+	{
+		name : 'Ondee',
+		material : 'Satin',
+		grammage: '120 fils/cm²',
+		image: '/static/MenuDrapHousse/DH_Ondee-satin-120.jpg',
+		fittedSheet: '/static/MenuDrapHousse/DH_Ondee-satin-120.jpg',
+		id: 4
+	},
+	{
+		name : 'Palmio',
+		material : 'Satin',
+		grammage: '120 fils/cm²',
+		image: '/static/MenuDrapHousse/DH_Palmio-satin-120.jpg',
+		fittedSheet: '/static/MenuDrapHousse/DH_Palmio-satin-120.jpg',
+		id: 5
+	},
+	{
+		name : 'Riviera',
+		material : 'Satin',
+		grammage: '120 fils/cm²',
+		image: '/static/MenuDrapHousse/DH_Riviera-satin-120.jpg',
+		fittedSheet: '/static/MenuDrapHousse/DH_Riviera-satin-120.jpg',
+		id: 6
 	},
 ]
 

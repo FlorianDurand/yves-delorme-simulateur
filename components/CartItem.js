@@ -9,7 +9,7 @@ const CartItem = props => {
        
 	return(
                 <div className={styles.addedToCart} >
-                        <img className={styles.img} src={props.image} />
+                        <div className={styles.imgContainer}><img className={styles.img} src={props.image} /></div>
                          <div className={styles.name}>
                                 {props.name}
                         </div>

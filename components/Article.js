@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types'
 
-import styles from './Article.module.css'
+import styles from './Article.module.scss'
 
 const Article = props => {
 	let duvet = props.duvet;
 	
     return(
-        <div>
+        <div className={styles.articleContent}>
         { duvet != null ? 
 
             props.idActiveArticle == props.id ?
@@ -89,7 +89,7 @@ const Article = props => {
 				<div className={`${styles.article} ${styles.articleActive}`}>
 					<img className={styles.image} src={props.image} />
 					<h2 className={styles.subtitle}>{props.name}</h2>
-					<p className={styles.description}>{props.description}</p>
+		<p className={styles.description}>{props.material} {props.material ? "-" : ""} {props.grammage}</p>
 				</div>
 
 			:
@@ -97,7 +97,7 @@ const Article = props => {
 				<div className={styles.article} onClick={() => {props.onFittedSheetChange({sheetImage : props.fittedSheet, sheetName : props.name}), props.onArticleChange(props.id)}}>
 					<img className={styles.image} src={props.image} />
 					<h2 className={styles.subtitle}>{props.name}</h2>
-					<p className={styles.description}>{props.description}</p>
+					<p className={styles.description}>{props.material} {props.material ? "-" : ""} {props.grammage}</p>
 				</div>
          
 		:  
@@ -107,7 +107,7 @@ const Article = props => {
 				<div className={`${styles.article} ${styles.articleActive}`}>
 					<img className={styles.image} src={props.image} />
 					<h2 className={styles.subtitle}>{props.name}</h2>
-					<p className={styles.description}>{props.description}</p>
+					<p className={styles.description}>{props.material} {props.material ? "-" : ""} {props.grammage}</p>
 				</div>
 
 			:
@@ -115,7 +115,7 @@ const Article = props => {
 				<div className={styles.article} onClick={() => {props.onFlatSheetChange({sheetImage : props.flatSheet, sheetName : props.name}), props.onArticleChange(props.id)}}>
 					<img className={styles.image} src={props.image} />
 					<h2 className={styles.subtitle}>{props.name}</h2>
-					<p className={styles.description}>{props.description}</p>
+					<p className={styles.description}>{props.material} {props.material ? "-" : ""} {props.grammage}</p>
 				</div>
 
             
