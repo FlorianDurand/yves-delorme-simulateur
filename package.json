@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/EaudeJavel/yves-delorme-H4#readme",
   "dependencies": {
+    "html2canvas": "^1.0.0-rc.5",
     "next": "^9.3.1",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",

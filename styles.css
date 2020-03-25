@@ -12,4 +12,10 @@ a{
 button:focus{
     outline: none;
 }
+#trashCanvas{
+    position: absolute;
+    z-index: -8000;
+    width : 100vw;
+    top: 0;
+}
 
