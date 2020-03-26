@@ -237,7 +237,7 @@ const fittedSheet = [
 
 const Menu = props => {
 
-	//define the active size of pillow
+	//define the item and the array that will be call
 	const [typeItem, setTypeItem] = useState(props.typeItem);
 	const [arrayItem,setArrayItem] = useState(duvet);
 	//set the active duvet

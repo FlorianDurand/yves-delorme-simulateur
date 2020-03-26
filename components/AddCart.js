@@ -34,60 +34,60 @@ const AddCart = props => {
 					</div>
 
 					{/* Check si .elementName est différent de celui de base et l'affiche si oui */}
-					{bigPillow.pillowName != base ? 
+					{bigPillow.name != base ? 
 						<CartItem 
-							image={bigPillow.pillowImage} 
-							name={bigPillow.pillowName} 
+							image={bigPillow.image} 
+							name={bigPillow.name} 
 							color={"Blanc"} 
 							widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} 
 							number={2} />
 						: null 
 					}
 
-					{mediumPillow.pillowName != base ?
+					{mediumPillow.name != base ?
 						<CartItem 
-							image={mediumPillow.pillowImage} 
-							name={mediumPillow.pillowName} 
+							image={mediumPillow.image} 
+							name={mediumPillow.name} 
 							color={"Blanc"} 
 							widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} 
 							number={2} />
 						: null 
 					}
 
-					{smallPillow.pillowName != base ?
+					{smallPillow.name != base ?
 						<CartItem 
-							image={smallPillow.pillowImage} 
-							name={smallPillow.pillowName} 
+							image={smallPillow.image} 
+							name={smallPillow.name} 
 							color={"Blanc"} 
 							widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} 
 							number={1} />
 						: null 
 					}
 
-					{duvet.duvetName != base ? 
+					{duvet.name != base ? 
 						<CartItem 
-							image={duvet.duvetImage} 
-							name={duvet.duvetName} 
+							image={duvet.image} 
+							name={duvet.name} 
 							color={"Blanc"} 
 							widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} 
 							number={1} />
 						: null 
 					}				
 
-					{flatSheet.sheetName != base ? 
+					{flatSheet.name != base ? 
 						<CartItem 
-							image={flatSheet.sheetImage} 
-							name={flatSheet.sheetName} 
+							image={flatSheet.image} 
+							name={flatSheet.name} 
 							color={"Blanc"} 
 							widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} 
 							number={1} />
 						: null 
 					}
 
-					{fittedSheet.sheetName != base ? 
+					{fittedSheet.name != base ? 
 						<CartItem 
-							image={fittedSheet.sheetImage} 
-							name={fittedSheet.sheetName} 
+							image={fittedSheet.image} 
+							name={fittedSheet.name} 
 							color={"Blanc"} 
 							widths={['140x200 cm','140x220 cm','200x200 cm','200x220 cm', '240x220 cm', '260x240 cm']} 
 							number={1} />
