@@ -9,21 +9,24 @@ const duvet = [
 	{
 		name : 'aucun',
 		image : '/static/none.svg',
-		description: '',
+		material : '',
+		grammage: '',
 		imageItem: '/static/Bed/none.png',
 		id: "0"
 	},
 	{
 		name : 'Escale',
 		image : '/static/MenuCouettes/escale.png',
-		description: 'Satin - 120 fil/m²',
+		material : 'Percale',
+		grammage: '120 fils/cm²',
 		imageItem: '/static/Bed/couette2.png',
 		id: "1"
 	},
 	{
 		name : 'Calypso',
 		image : '/static/MenuCouettes/article.png',
-		description: 'Coton - 120 fil/m²',
+		material : 'Percale',
+		grammage: '120 fils/cm²',
 		imageItem: '/static/Bed/couette.png',
 		id: "2"
 	}
@@ -34,21 +37,24 @@ const smallPillow = [
 	{
 		name : 'Escale',
 		image : '/static/MenuTaies/coussin3.png',
-		description: 'Satin - 120 fil/m²',
+		material : 'Percale',
+		grammage: '120 fils/cm²',
 		imageItem: '/static/Bed/petitcoussin.png',
 		id: "0"
 	},
 	{
 		name : 'Calypso',
 		image : '/static/MenuTaies/coussin2.png',
-		description: 'Coton - 120 fil/m²',
+		material : 'Percale',
+		grammage: '120 fils/cm²',
 		imageItem: '/static/Bed/petitcoussin3.png',
 		id: "1"
 	},
 	{
 		name : 'Palmea',
 		image : '/static/MenuTaies/coussin1.png',
-		description: 'Coton - 120 fil/m²',
+		material : 'Percale',
+		grammage: '120 fils/cm²',
 		imageItem: '/static/Bed/petitcoussin2.png',
 		id: "2"
 	}
@@ -58,21 +64,24 @@ const centerPillow = [
 	{
 		name : 'Escale',
 		image : '/static/MenuTaies/coussin3.png',
-		description: 'Satin - 120 fil/m²',
+		material : 'Percale',
+		grammage: '120 fils/cm²',
 		imageItem: '/static/Bed/centrecoussin.png',
 		id: "0"
 	},
 	{
 		name : 'Calypso',
 		image : '/static/MenuTaies/coussin2.png',
-		description: 'Coton - 120 fil/m²',
+		material : 'Percale',
+		grammage: '120 fils/cm²',
 		imageItem: '/static/Bed/centrecoussin.png',
 		id: "1"
 	},
 	{
 		name : 'Palmea',
 		image : '/static/MenuTaies/coussin1.png',
-		description: 'Coton - 120 fil/m²',
+		material : 'Percale',
+		grammage: '120 fils/cm²',
 		imageItem: '/static/Bed/centrecoussin.png',
 		id: "2"
 	}
@@ -82,21 +91,24 @@ const mediumPillow = [
 	{
 		name : 'Palmea',
 		image : '/static/MenuTaies/coussin3.png',
-		description: 'Coton - 120 fil/m²',
+		material : 'Percale',
+		grammage: '120 fils/cm²',
 		imageItem: '/static/Bed/moyencoussin.png',
 		id: "0"
 	},
 	{
 		name : 'Escale',
 		image : '/static/MenuTaies/coussin1.png',
-		description: 'Satin - 120 fil/m²',
+		material : 'Percale',
+		grammage: '120 fils/cm²',
 		imageItem: '/static/Bed/moyencoussin2.png',
 		id: "1"
 	},
 	{
 		name : 'Calypso',
 		image : '/static/MenuTaies/coussin2.png',
-		description: 'Coton - 120 fil/m²',
+		material : 'Percale',
+		grammage: '120 fils/cm²',
 		imageItem: '/static/Bed/moyencoussin3.png',
 		id: "2"
 	}
@@ -105,16 +117,18 @@ const mediumPillow = [
 
 const bigPillow = [
 	{
-		name : 'Calypso',
+		name : 'Ecume Céladonn',
 		image : '/static/MenuTaies/coussin2.png',
-		description: 'Coton - 120 fil/m²',
+		material : 'Percale',
+		grammage: '120 fils/cm²',
 		imageItem: '/static/Bed/groscoussin.png',
 		id: "0"
 	},
 	{
 		name : 'Escale',
 		image : '/static/MenuTaies/coussin1.png',
-		description: 'Satin - 120 fil/m²',
+		material : 'Percale',
+		grammage: '120 fils/cm²',
 		imageItem: '/static/Bed/groscoussin2.png',
 		id: "1"
 	}
@@ -123,7 +137,8 @@ const flatSheet = [
 	{
 		name : 'Aucun',
 		image : '/static/none.svg',
-		description: '',
+		material : '',
+		grammage: '',
 		imageItem: '/static/Bed/none.png',
 		id: 0
 	},
@@ -180,13 +195,14 @@ const fittedSheet = [
 	{
 		name : 'Aucun',
 		image : '/static/none.svg',
-		description: '',
+		material : '',
+		grammage: '',
 		imageItem: '/static/Bed/none.png',
 		id: "0"
 	},
 	{
 		name : 'Calypso',
-		material : 'Satin',
+		material : 'Satin de coton',
 		grammage: '120 fils/cm²',
 		image: '/static/MenuDrapHousse/DH_Calypso-satin-120.jpg',
 		imageItem: '/static/MenuDrapHousse/DH_Calypso-satin-120.jpg',

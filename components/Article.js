@@ -13,7 +13,7 @@ const Article = props => {
 				<div className={`${styles.article} ${styles.articleActive}`}  >
 					<img className={styles.image} src={props.image} />
 					<h2 className={styles.subtitle}>{props.name}</h2>
-					<p className={styles.description}>{props.description}</p>
+					<p className={styles.description}>{props.material} - {props.grammage}</p>
 				</div>
 
 			:
@@ -21,7 +21,7 @@ const Article = props => {
 				<div className={`${styles.article}`}  onClick={() => {props.onItemChange({image : props.imageItem,  name : props.name}, props.typeItem), props.onArticleChange(props.id,props.typeItem)}}>
 					<img className={styles.image} src={props.image} />
 					<h2 className={styles.subtitle}>{props.name}</h2>
-					<p className={styles.description}>{props.description}</p>
+					<p className={styles.description}>{props.material} - {props.grammage}</p>
 				</div>
 			}        
         </div>
