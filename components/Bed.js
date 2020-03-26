@@ -20,7 +20,7 @@ const Bed = props => {
 	return (
 		<div>
 			{/* La parure de lit composé des différentes images */}
-			<div className={styles.background} onClick={() => props.resetMenu()}>
+			<div className={styles.background} id="bed" onClick={() => props.resetMenu()}>
 				<img className={styles.wall} src={wall} alt="wall" />
 				<img className={styles.joint} src={joint} alt="joint" />
 				<img className={styles.floor} src={floor} alt="sol" />
@@ -33,6 +33,7 @@ const Bed = props => {
 				<img className={styles.front} src={smallPillow.pillowImage} alt="Petit Oreiller" />
 				<img className={styles.duvet} src={duvet.duvetImage} alt="Couette" />
 			</div>
+		
 
 			{props.menu ? (
 				<Menu 
@@ -55,6 +56,8 @@ const Bed = props => {
 
 			{props.addCart  ? (
 				<AddCart 
+					preview={props.preview}
+					reset={resetMenu}
 					duvet={duvet}
 					smallPillow={smallPillow}
 					centerPillow={centerPillow} 
@@ -65,7 +68,9 @@ const Bed = props => {
 				) : null}
 		</div>
 	)
-
+	function resetMenu() {
+		props.resetMenu()
+	}
 	//Gère le changement de la couette
 	function handleDuvetChange(duvet){
 		setDuvet(duvet); //set le state avec l'objet contenant les infos de la couette

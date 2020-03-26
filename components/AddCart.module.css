@@ -1,7 +1,17 @@
 .addcart{
+    background: rgba(69, 69, 69, 0.5);
+    top: 0;
+    width: 1366px;
+    height: 1024px;
+    position: fixed;
+    z-index: 99;
+}
+
+.addcartContent{
     position: absolute;
     top: 40px;
     left: 110px;
+    width: 1146px;
     background-color: white;
     border-radius: 5px;
     height: 984px;
@@ -9,10 +19,15 @@
     z-index: 100;
 }
 
-.addcart .background{
+.addcartContent .background{
     margin-top: 70px;
 }
-.addcart .header{
+.addcartContent .background .preview{
+    width: 1146px;
+    height: 414px;
+}
+
+.addcartContent .header{
     width: 1146px;
     display: flex;
     height: 70px;
@@ -49,13 +64,13 @@
    outline: none;
 }
 
-.addcart .cartContent{
+.addcartContent .cartContent{
     padding: 38px 0 38px 0;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
-.addcart .subtitle{
+.addcartContent .subtitle{
     font-family: Poppins;
     font-style: normal;
     font-weight: bold;
@@ -67,21 +82,21 @@
     margin-left: 30px;
     width: fit-content;
 }
-.addcart .addedToCart{
+.addcartContent .addedToCart{
     display: inline-flex;
     align-items: center;
     width: 100%;
     padding: 30px 0;
     border-bottom: 1px solid #E0E0E0;
 }
-.addcart .addedToCart .imgContainer{
+.addcartContent .addedToCart .imgContainer{
     width: 138px;
     height: 100px;
     margin-left: 30px;
     display: flex;
     justify-content: center;
 }
-.addcart .addedToCart .img{
+.addcartContent .addedToCart .img{
     max-width: 100%;
     max-height: 100%;
 }
