@@ -20,7 +20,7 @@ const MenuLeftBase = props => {
 			{props.contentWalls ? 
 				(<div className={styles.contents}>
 					{props.contentWalls.map(contentWall=>
-						<img onClick={() => {props.onWallChange(contentWall.image)}} className={styles.wallPreview} src={contentWall.imagePreview} alt="wall Preview" />
+						<img onClick={() => {props.onWallChange(contentWall.image,"wall")}} className={styles.wallPreview} src={contentWall.imagePreview} alt="wall Preview" />
 					)}
 				</div>)
 			: null }
@@ -28,7 +28,7 @@ const MenuLeftBase = props => {
 			{props.contentFloors ? 
 				(<div className={styles.contents}>
 					{props.contentFloors.map(contentFloor=>
-						<img onClick={() => {props.onFloorChange(contentFloor.image), props.onJointChange(contentFloor.joint)}} className={styles.floorPreview} src={contentFloor.imagePreview} alt="floor Preview" />
+						<img onClick={() => {props.onFloorChange(contentFloor.image,"floor"), props.onJointChange(contentFloor.joint,"joint")}} className={styles.floorPreview} src={contentFloor.imagePreview} alt="floor Preview" />
 					)}
 				</div>) 
 			: null } 

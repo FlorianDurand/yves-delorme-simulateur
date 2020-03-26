@@ -9,10 +9,10 @@ const Footer = props => {
     return (
     <div className={styles.footer}>
         <div className={styles.buttons}>
-            <div className={styles.button} onClick={() => props.toggleMenu('Taies')}><Button>Taies</Button></div>
-            <div className={styles.button} onClick={() => props.toggleMenu('Housse de couette')}><Button>Housse de couette</Button></div>
-            <div className={styles.button} onClick={() => props.toggleMenu('Drap plat')}><Button>Drap plat</Button></div>
-            <div className={styles.button} onClick={() => props.toggleMenu('Drap housse')}><Button>Drap housse</Button></div>
+            <div className={styles.button} onClick={() => props.toggleMenu('Taies',"bigPillow")}><Button>Taies</Button></div>
+            <div className={styles.button} onClick={() => props.toggleMenu('Housse de couette',"duvet")}><Button>Housse de couette</Button></div>
+            <div className={styles.button} onClick={() => props.toggleMenu('Drap plat',"flatSheet")}><Button>Drap plat</Button></div>
+            <div className={styles.button} onClick={() => props.toggleMenu('Drap housse',"fittedSheet")}><Button>Drap housse</Button></div>
         </div>
 
         <div className={styles.buttonsRight}>

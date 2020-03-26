@@ -16,12 +16,13 @@ export default function Index() {
 	const [menuLeftDecor, setMenuLeftDecor] = useState(false);
 	const [addCart, setAddCart] = useState(false);
 	const [typeArticle, setTypeArticle] = useState('');
+	const [titleArticle, setTitleArticle] = useState('');
 	const [preview, setPreview] = useState();
   
 	return (
 		<div className={styles.background}>
 			<Header toggleMenuLeft={toggleMenuLeft} toggleMenuLeftDecor={toggleMenuLeftDecor}/>
-			<Bed menu = {menu} addCart={addCart} menuLeftDecor={menuLeftDecor} title={typeArticle} resetMenu={resetMenu} preview={preview}/>
+			<Bed menu = {menu} addCart={addCart} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview}/>
 			{menuLeft ? (<MenuLeft />) : null}
 			<Footer toggleMenu={toggleMenu} toggleCart={toggleCart} preview={previewF}/>
 			<div id="trashCanvas">
@@ -33,10 +34,11 @@ export default function Index() {
 	function previewF(preview){
 		setPreview(preview)
 	}
-	function toggleMenu(type){
+	function toggleMenu(title,type){
 		if(!menu){
 			setMenu(true);
-			setTypeArticle(type)
+			setTypeArticle(type);
+			setTitleArticle(title);
 		}
 		else{
 			if(typeArticle != type){				

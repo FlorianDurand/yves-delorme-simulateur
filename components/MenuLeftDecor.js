@@ -40,8 +40,8 @@ const MenuLeftDecor = props => {
 		<div className={styles.menu}>
 			<h1 className={styles.title}>Décor</h1>
 			<div className={styles.articles}>
-				<MenuLeftBase name={'Mur'}  onWallChange={props.onWallChange} contentWalls={walls.map(wall=>wall)}/>
-				<MenuLeftBase name={'Sol'}  onFloorChange={props.onFloorChange} onJointChange={props.onJointChange} contentFloors={floors.map(floor=>floor)}/>
+				<MenuLeftBase name={'Mur'}  onWallChange={props.onItemChange} contentWalls={walls.map(wall=>wall)}/>
+				<MenuLeftBase name={'Sol'}  onFloorChange={props.onItemChange} onJointChange={props.onItemChange} contentFloors={floors.map(floor=>floor)}/>
 			</div>
 			<div className={styles.barre}>
 				<div className={styles.littleRectangle} />				
