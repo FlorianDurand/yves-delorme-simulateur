@@ -1,54 +1,58 @@
-.filter{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	.search{
-		display: flex;
-		border: 1px solid #9C9C9C;
-		border-radius: 5px;
-		height: 60px;
-		box-sizing:content-box;
-	}
+.filter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .search {
+    display: flex;
+    box-sizing: content-box;
+    height: 60px;
+    border: 1px solid #9C9C9C;
+    border-radius: 5px;
+  }
 }
 
-.searchButton, .filterButton, .searchInput{
-	border: none;
-	padding: 18px 20px;
-	color: #A6A6A6;
-	background-color: white;
-	height: 60px;
-	font-family: Roboto;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 20px;
-	line-height: 23px;
-	color: #A6A6A6;
-	&:focus{
-		outline: none;
-	}
+.searchButton,
+.filterButton,
+.searchInput {
+  height: 60px;
+  padding: 18px 20px;
+  color: #A6A6A6;
+  color: #A6A6A6;
+  font-weight: normal;
+  font-size: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  line-height: 23px;
+  background-color: white;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
 }
 
-.searchInput{
-	width: 250px;
+.searchInput {
+  width: 250px;
 }
 
-.searchButton{
-	width: 60px;
-	padding: 16px;
-	border-left: 1px solid #9C9C9C;
+.searchButton {
+  width: 60px;
+  padding: 16px;
+  border-left: 1px solid #9C9C9C;
 
 }
 
-.filterButton{
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	font-size: 22px;
-	font-weight: bold;
-	width: 115px;
-	margin-left: 20px;
-	padding: 10px 10px;
-	border: 1px solid #A6A6A6;
-	border-radius: 5px;
+.filterButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 115px;
+  margin-left: 20px;
+  padding: 10px 10px;
+  font-weight: bold;
+  font-size: 22px;
+  border: 1px solid #A6A6A6;
+  border-radius: 5px;
 }

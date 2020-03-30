@@ -37,23 +37,13 @@ const Bed = props => {
 
 			{props.menu ? (
 				<Menu 
-					// onDuvetChange={handleDuvetChange}
-					// onSmallPillowChange={handleSmallPillowChange}
-					// onCenterPillowChange={handleCenterPillowChange}
-					// onMediumPillowChange={handleMediumPillowChange}
-					// onBigPillowChange={handleBigPillowChange}
-					// onFlatSheetChange={handleFlatSheetChange}
-					// onFittedSheetChange={handleFittedSheetChange}
 					onItemChange={handleItemChange}
 					typeItem={props.typeItem}
 					title={props.title}/>
 				) : null}
 
 			{props.menuLeftDecor ? (
-				<MenuLeftDecor 
-					// onWallChange={handleWallChange}
-					// onFloorChange={handleFloorChange}
-					// onJointChange={handleJointChange}
+				<MenuLeftDecor 					
 					onItemChange={handleItemChange}/>
 				) : null}
 
@@ -117,56 +107,6 @@ const Bed = props => {
 		}
 		
 	}
-
-	// //Gère le changement de la couette
-	// function handleDuvetChange(duvet){
-	// 	setDuvet(duvet); //set le state avec l'objet contenant les infos de la couette
-	// }
-
-	// //Gère le changement du drap plat
-	// function handleFlatSheetChange(flatSheet){
-	// 	setFlatSheet(flatSheet);
-	// }
-
-	// //Gère le changement du drap-housse
-	// function handleFittedSheetChange(fittedSheet){
-	// 	setFittedSheet(fittedSheet);
-	// }
-
-	// //Gère le changement du coussin de devant
-	// function handleSmallPillowChange(smallPillow){
-	// 	setSmallPillow(smallPillow);
-	// }
-
-	// //Gère le changement du coussin de devant qui est derriere celui de tout devant
-	// function handleCenterPillowChange(centerPillow){
-	// 	setCenterPillow(centerPillow);
-	// }
-
-
-	// //Gère le changement des coussins du milieu
-	// function handleMediumPillowChange(mediumPillow){
-	// 	setMediumPillow(mediumPillow);
-	// }
-
-	// //Gère le changement des coussins du fond
-	// function handleBigPillowChange(bigPillow){
-	// 	setBigPillow(bigPillow);
-	// }
-
-	// //change le mur en fonction du mur selectionné 
-	// function handleWallChange(wall){
-	// 	setWall(wall);
-	// }
-	// //change le sol en fonction du sol selectionné 		
-	// function handleFloorChange(floor){
-	// 	setFloor(floor);
-	// }
-	// //change le joint en fonction du sol selectionné 
-	// function handleJointChange(joint){
-	// 	setJoint(joint);
-	// }
-
 };
 
 

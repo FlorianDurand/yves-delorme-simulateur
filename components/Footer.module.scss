@@ -1,53 +1,54 @@
 $font-color :#447679;
 $background-color: white;
 
-.footer{
-    position: absolute;
-    bottom: 40px;
-    left: 0;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.footer {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
 }
 
-.buttons{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    margin-left: 40px;
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-left: 40px;
 }
 
-.button{
-    margin-left: 20px;
-}
-.button:first-child{
-    margin-left: 0;
+.button {
+  margin-left: 20px;
 }
 
-.buttonsRight{
-    display: flex;
-    flex-direction: column;
-    margin-right: 40px;
+.button:first-child {
+  margin-left: 0;
 }
 
-.buttonRight{
-    width: 300px;
-    height: 55px;
-    font-size: 22px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    color: $font-color;
-    background-color: $background-color;
-    border: none;
-	border-radius: 5px;
+.buttonsRight {
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+}
+
+.buttonRight {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 300px;
+  height: 55px;
+  color: $font-color;
+  font-weight: bold;
+  font-size: 22px;
+  background-color: $background-color;
+  border: none;
+  border-radius: 5px;
 	
-	&:first-child{
-		margin-bottom: 20px;
-	}
+  &:first-child {
+    margin-bottom: 20px;
+  }
 }
 
 

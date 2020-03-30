@@ -1,86 +1,86 @@
-.menu{    
-    position: absolute;
-    width : 471px;
-    height: 100%;
-    overflow-y: scroll;
-    top: 0px;
-    right: 0px;
-    background-color: white;
-    z-index: 100;
-    padding: 0 40px;
+.menu {    
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 100;
+  width: 471px;
+  height: 100%;
+  padding: 0 40px;
+  overflow-y: scroll;
+  background-color: white;
 }
 
-.title{    
-    margin: 25px 0px;
-    font-size: 48px;    
-    font-weight: bold;
-    font-family: 'Poppins';
-    color: rgba(62, 128, 135, 86%);
+.title {    
+  margin: 25px 0px;
+  color: rgba(62, 128, 135, 86%);    
+  font-weight: bold;
+  font-size: 48px;
+  font-family: "Poppins";
 }
 
-.articles{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: 40px;
+.articles {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 40px;
 }
 
-.pillowSelector{
-    height: 200px;
-    width: 391px;
-    margin: 50px auto;
-    position: relative;
-    display: block;
+.pillowSelector {
+  position: relative;
+  display: block;
+  width: 391px;
+  height: 200px;
+  margin: 50px auto;
 }
 
-.pillowSelector::after{
-    content: "";
-    width: 441px;
-    height: 2px;
-    position: absolute;
-    bottom: 0;
-    left: -25px;
-    background-color: #E2E2E2;
+.pillowSelector::after {
+  position: absolute;
+  bottom: 0;
+  left: -25px;
+  width: 441px;
+  height: 2px;
+  background-color: #E2E2E2;
+  content: "";
 }
 
-.pillowSelector svg{
-    position: absolute;
-    top: 0;
+.pillowSelector svg {
+  position: absolute;
+  top: 0;
 }
 
-.pillowSelector svg:nth-child(2){
-    right: 0;
+.pillowSelector svg:nth-child(2) {
+  right: 0;
 }
 
-.pillowSelector svg:nth-child(3){
-    left: 42px;
-    top: 33px;
+.pillowSelector svg:nth-child(3) {
+  top: 33px;
+  left: 42px;
 }
 
-.pillowSelector svg:nth-child(4){
-    right: 42px;
-    top: 33px;
+.pillowSelector svg:nth-child(4) {
+  top: 33px;
+  right: 42px;
 }
 
-.pillowSelector svg:nth-child(5){
-    left: 120px;
-    top: 69px;
+.pillowSelector svg:nth-child(5) {
+  top: 69px;
+  left: 120px;
 }
 
-.pillowSelector svg:last-child{
-    left: 150px;
-    top: 115px;
+.pillowSelector svg:last-child {
+  top: 115px;
+  left: 150px;
 }
 
-.bluePillow{
-    fill: #599298;
-    transition-duration: 500ms;
+.bluePillow {
+  transition-duration: 500ms;
+  fill: #599298;
     
 }
 
-.whitePillow{
-    fill: white;
-    transition-duration: 500ms;
+.whitePillow {
+  transition-duration: 500ms;
+  fill: white;
 }
