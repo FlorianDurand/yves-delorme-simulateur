@@ -34,6 +34,21 @@ const MenuLeftDecor = (props) => {
     },
 
   ];
+  const teteLit = [
+    {
+      name: 'floor1',
+      imagePreview: '/static/Background/teteLit_preview_1.png',
+      image: '/static/Background/floor_1.png',
+      joint: '/static/Background/joint_1.png',
+    },
+    {
+      name: 'floor2',
+      imagePreview: '/static/Background/teteLit_preview_2.png',
+      image: '/static/Background/floor_2.png',
+      joint: '/static/Background/joint_2.png',
+    },
+
+  ];
 
   return (
     <div className={styles.menu}>
@@ -41,6 +56,7 @@ const MenuLeftDecor = (props) => {
       <div className={styles.articles}>
         <MenuLeftBase name="Mur" onWallChange={props.onItemChange} contentWalls={walls.map((wall) => wall)} />
         <MenuLeftBase name="Sol" onFloorChange={props.onItemChange} onJointChange={props.onItemChange} contentFloors={floors.map((floor) => floor)} />
+        <MenuLeftBase name="Tête de lit" onFloorChange={props.onItemChange} onJointChange={props.onItemChange} contentFloors={teteLit.map((floor) => floor)} />
       </div>
       <div className={styles.barre}>
         <div className={styles.littleRectangle} />

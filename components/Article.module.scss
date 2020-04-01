@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     max-width: 100%;
-    height: 250px;
+    height: 260px;
     margin: 0;
     margin-top: 10px;
     cursor: pointer;
@@ -36,6 +36,7 @@
   display: block;
   width: 159px;
   margin: 10px auto 0 auto;
+  max-height: 165px;
 }
 
 .subtitle {
@@ -44,6 +45,7 @@
   color: #599298;
   font-weight: bold;
   font-size: 22px;
+  text-align: center;
 }
 
 .articleActive .subtitle {
@@ -52,12 +54,16 @@
 
 .description {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   margin: 0;
-  padding: 0 38px;
+  padding: 3 38px;
   font-size: 18px;
   line-height: 21px;
+  p {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 

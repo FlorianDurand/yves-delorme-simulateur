@@ -15,10 +15,8 @@ const Article = (props) => {
             <img className={styles.image} src={props.image} />
             <h2 className={styles.subtitle}>{props.name}</h2>
             <p className={styles.description}>
-              {' '}
-              -
-              {' '}
-              {props.grammage}
+              <p>{props.material}</p>
+              <p>{props.grammage}</p>
             </p>
           </div>
         )
@@ -28,11 +26,8 @@ const Article = (props) => {
             <img className={styles.image} src={props.image} />
             <h2 className={styles.subtitle}>{props.name}</h2>
             <p className={styles.description}>
-              {props.material}
-              {' '}
-              -
-              {' '}
-              {props.grammage}
+            <p>{props.material}</p>
+            <p>{props.grammage}</p>
             </p>
           </div>
         )}

@@ -16,13 +16,13 @@ const Header = (props) => {
         </a>
       </Link>
       <div className={styles.right}>
-        <div className={styles.openMenu} onClick={() => toggleSettings()}>
+        {/*<div className={styles.openMenu} onClick={() => toggleSettings()}>
           <Button>
             <img src="/static/settings.svg" alt="Réglages" className={styles.settings} />
           </Button>
         </div>
 
-        {settings ? (
+         {settings ? (
           <div className={styles.filterMenu}>
             <div onClick={() => props.toggleMenuLeft()}>
               <Button classCustom="settings">
@@ -31,18 +31,18 @@ const Header = (props) => {
                 </div>
                 Tailles
               </Button>
-            </div>
+            </div> */}
             <div onClick={() => props.toggleMenuLeftDecor()}>
               <Button classCustom="settings">
                 <div className={styles.image}>
                   <img src="/static/decor.svg" alt="Décor" className={styles.iconMenu} />
                 </div>
-                Décor
+                Décoration intérieure
               </Button>
             </div>
-          </div>
+          {/* </div>
         )
-				  : null}
+				  : null} */}
 
       </div>
     </div>
