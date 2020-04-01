@@ -381,54 +381,54 @@ const Menu = (props) => {
   );
 
   function onIdChange(id, type) {
-    if (type == 'duvet') {
+    if (type === 'duvet') {
       setDuvetId(id);
     }
 
-    if (type == 'flatSheet') {
+    if (type === 'flatSheet') {
       setFlatSheetId(id);
     }
 
-    if (type == 'fittedSheet') {
+    if (type === 'fittedSheet') {
       setFittedSheetId(id);
     }
 
-    if (type == 'bigPillow') {
+    if (type === 'bigPillow') {
       setBigPillowId(id);
     }
-    if (type == 'mediumPillow') {
+    if (type === 'mediumPillow') {
       setMediumPillowId(id);
     }
-    if (type == 'centerPillow') {
+    if (type === 'centerPillow') {
       setCenterPillowId(id);
     }
-    if (type == 'smallPillow') {
+    if (type === 'smallPillow') {
       setSmallPillowId(id);
     }
   }
 
   function itemId(type) {
-    if (type == 'duvet') {
+    if (type === 'duvet') {
       return duvetId;
     }
-    if (type == 'flatSheet') {
+    if (type === 'flatSheet') {
       return flatSheetId;
     }
 
-    if (type == 'fittedSheet') {
+    if (type === 'fittedSheet') {
       return fittedSheetId;
     }
 
-    if (type == 'bigPillow') {
+    if (type === 'bigPillow') {
       return bigPillowId;
     }
-    if (type == 'mediumPillow') {
+    if (type === 'mediumPillow') {
       return mediumPillowId;
     }
-    if (type == 'centerPillow') {
+    if (type === 'centerPillow') {
       return centerPillowId;
     }
-    if (type == 'smallPillow') {
+    if (type === 'smallPillow') {
       return smallPillowId;
     }
   }
