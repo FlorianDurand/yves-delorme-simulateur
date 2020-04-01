@@ -1,0 +1,23 @@
+$colors: (
+  primary-700: #454545,
+  primary-500: #3E8087,
+  primary-400: #599298,
+  primary-300: #66A8AF,
+  secondary: #fff,
+  tertiary-700: #323232,
+  tertiary-500: #4E4E56,
+  tertiary-300: #D3D3D3,
+  dark: #000,
+);
+
+@function color($name, $opacity: 1) {
+  $value: nth(map-get($colors, $name), 1);
+
+  @if $opacity != 1 {
+    @return unquote("rgba(#{red($value)}, #{green($value)}, #{blue($value)}, #{$opacity})");
+  }
+
+  @else {
+    @return map-get($colors, $name);
+  }
+}

@@ -5,16 +5,14 @@
   color: white;
   font-weight: 600;
   font-size: 22px;
-  background-color: rgba(0, 0, 0, 20%);
+  background-color: color(dark, 0.2);
   border: solid 1px white;
   border-radius: 5px;
-
-  /* font-family: "Roboto", sans-serif; */
 }
 
 .buttonSettings {
   display: flex;
-  align-items: center; 
+  align-items: center;
   justify-content: flex-start;
   width: auto;
   width: 308px;
@@ -22,8 +20,8 @@
   margin-bottom: 20px;
   color: white;
   font-weight: 600;
-  font-size: 22px;   
-  background-color: rgba(0, 0, 0, 20%);
+  font-size: 22px;
+  background-color: color(dark, 0.2);
   border: solid 1px white;
   border-radius: 5px;
 }

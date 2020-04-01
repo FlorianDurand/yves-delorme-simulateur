@@ -1,4 +1,4 @@
-.menu {    
+.menu {
   position: absolute;
   top: 0px;
   left: 0px;
@@ -7,21 +7,21 @@
   height: 100%;
   padding: 0 0 0 40px;
   overflow-y: scroll;
-  font-family: Roboto;
-  background-color: white; 
+  font-family: $font-base;
+  background-color: white;
 }
 
 .menu::-webkit-scrollbar {
   display: none;
 }
 
-.title {    
+.title {
   margin-top: 25px;
   margin-bottom: 33px;
-  color: rgba(62, 128, 135, 86%);    
+  color: rgba(62, 128, 135, 86%);
   font-weight: bold;
   font-size: 48px;
-  font-family: "Poppins";
+  font-family: $font-title;
   line-height: 72px;
 }
 
@@ -30,7 +30,7 @@
   color: #565656;
   font-weight: bold;
   font-size: 30px;
-  font-family: Roboto;
+  font-family: $font-base;
   font-style: normal;
   line-height: 35px;
 }
@@ -56,7 +56,7 @@
   color: #222222;
   font-weight: normal;
   font-size: 24px;
-  font-family: Roboto;
+  font-family: $font-base;
   font-style: normal;
   line-height: 28px;
   text-align: center;

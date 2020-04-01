@@ -10,6 +10,7 @@ $background-color: white;
   justify-content: space-between;
   width: 100%;
   height: auto;
+  // font-family: $font-base;
 }
 
 .buttons {
@@ -43,9 +44,9 @@ $background-color: white;
   font-weight: bold;
   font-size: 22px;
   background-color: $background-color;
-  border: none;
+  border: 0;
   border-radius: 5px;
-	
+
   &:first-child {
     margin-bottom: 20px;
   }

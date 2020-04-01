@@ -1,4 +1,4 @@
-.menu {    
+.menu {
   position: absolute;
   top: 0px;
   right: 0px;
@@ -10,12 +10,12 @@
   background-color: white;
 }
 
-.title {    
+.title {
   margin: 25px 0px;
-  color: rgba(62, 128, 135, 86%);    
+  color: rgba(62, 128, 135, 86%);
   font-weight: bold;
   font-size: 48px;
-  font-family: "Poppins";
+  font-family: $font-title;
 }
 
 .articles {
@@ -77,7 +77,7 @@
 .bluePillow {
   transition-duration: 500ms;
   fill: #599298;
-    
+
 }
 
 .whitePillow {
