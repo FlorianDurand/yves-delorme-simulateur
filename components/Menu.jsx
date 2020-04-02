@@ -74,16 +74,8 @@ const centerPillow = [
     image: '/static/MenuTaies/coussin2.png',
     material: 'Percale',
     grammage: '120 fils/cm²',
-    imageItem: '/static/Bed/centrecoussin.png',
+    imageItem: '/static/Bed/centrecoussin2.png',
     id: '1',
-  },
-  {
-    name: 'Palmea',
-    image: '/static/MenuTaies/coussin1.png',
-    material: 'Percale',
-    grammage: '120 fils/cm²',
-    imageItem: '/static/Bed/centrecoussin.png',
-    id: '2',
   },
 ];
 

@@ -1,5 +1,4 @@
-import Link from 'next/link';
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Footer.module.scss';
 import Button from './Styles/Button';

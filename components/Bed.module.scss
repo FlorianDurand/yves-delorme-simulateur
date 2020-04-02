@@ -1,3 +1,18 @@
+$bigPillowWidth: 300px;
+$bigPillowHeight: 259px;
+
+$mediumPillowWidth: 300px;
+$mediumPillowHeight: 243px;
+
+$centerPillowWidth: 378px;
+$centerPillowHeight: 201px;
+
+$smallPillowWidth: 213px;
+$smallPillowHeight: 194px;
+
+$duvetWidth: 1259px;
+$duvetHeight: 493px;
+
 .background {
   width: 100%;
   height: 100%;
@@ -26,42 +41,56 @@
 
 .duvet {
   position: absolute;
-  bottom: 17px;
-  left: 63px;
+  top: 480px;
+  left: 53px;
+  width: $duvetWidth;
+  height: $duvetHeight;
 }
 
 .back {
   position: absolute;
-  top: 276px;
-  left: 370px;
+  top: 254px;
+  left: 336px;
+  width: $bigPillowWidth;
+  height: $bigPillowHeight;
 }
 
 .backRight {
   position: absolute;
-  top: 276px;
-  left: 710px;
+  top: 260px;
+  right: 346px;
+  width: $bigPillowWidth;
+  height: $bigPillowHeight;
 }
 
 .middle {
   position: absolute;
-  top: 311px;
-  left: 405px;
+  top: 269px;
+  left: 388px;
+  width: $mediumPillowWidth;
+  height: $mediumPillowHeight;
 }
 
 .middleRight {
   position: absolute;
-  top: 311px;
-  left: 684px;
+  top: 271px;
+  right: 410px;
+  width: $mediumPillowWidth;
+  height: $mediumPillowHeight;
 }
 
 .frontCenter {
   position: absolute;
-  top: 380px;
-  left: 555px;
+  top: 316px;
+  left: 496px;
+  width: $centerPillowWidth;
+  height: $centerPillowHeight;
 }
 
 .front {
   position: absolute;
-  top: 354px;
-  left: 590px;
+  top: 326px;
+  left: 572px;
+  width: $smallPillowWidth;
+  height: $smallPillowHeight;
 }
