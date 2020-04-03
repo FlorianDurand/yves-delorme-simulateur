@@ -1,0 +1,33 @@
+.filters {
+  display: block;
+  margin: auto;
+  margin-top: 46px;
+
+  .title {
+    margin-bottom: 24px;
+    color: #565656;
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+
+    .item {
+      width: 225px;
+      margin-bottom: 20px;
+      padding: 16px 0px;
+      color: #222;
+      font-size: 24px;
+      text-align: center;
+      border: 1px solid color(tertiary-300);
+
+      &:nth-child(2n) {
+        margin-left: 20px;
+      }
+    }
+  }
+}
