@@ -15,6 +15,7 @@ const Bed = (props) => {
   const [wall, setWall] = useState('/static/Bed/wall.png');
   const [floor, setFloor] = useState('/static/Bed/sol.png');
   const [joint, setJoint] = useState('/static/Bed/joint.png');
+  const [tete, setTete] = useState('/static/Background/teteLit_1.png');
 
   return (
     <div>
@@ -23,7 +24,7 @@ const Bed = (props) => {
         <img className={styles.wall} src={wall} alt="wall" />
         <img className={styles.joint} src={joint} alt="joint" />
         <img className={styles.floor} src={floor} alt="sol" />
-        <img className={styles.tete} src="/static/Bed/tetedelit.png" alt="tete de lit" />
+        <img className={styles.tete} src={tete} alt="tete de lit" />
         <img className={styles.back} src={bigPillow.image} alt="Grands Oreillers" />
         <img className={styles.backRight} src={bigPillow.image} alt="Grands Oreillers" />
         <img className={styles.middle} src={mediumPillow.image} alt="Oreilles du milieu" />
@@ -106,6 +107,10 @@ const Bed = (props) => {
 
     if (typeItem == 'joint') {
       setJoint(item);
+    }
+
+    if (typeItem == 'tete') {
+      setTete(item);
     }
   }
 };

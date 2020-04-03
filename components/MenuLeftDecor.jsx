@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './MenuLeft.module.scss';
 import Button from './Styles/Button';
@@ -7,12 +7,12 @@ import MenuLeftBase from './MenuLeftBase';
 const MenuLeftDecor = (props) => {
   const walls = [
     {
-      name: 'wall1',
+      id: '0',
       imagePreview: '/static/Background/wall_preview_1.png',
       image: '/static/Background/wall_1.png',
     },
     {
-      name: 'wall2',
+      id: '1',
       imagePreview: '/static/Background/wall_preview_2.png',
       image: '/static/Background/wall_2.png',
     },
@@ -21,48 +21,69 @@ const MenuLeftDecor = (props) => {
 
   const floors = [
     {
-      name: 'floor1',
+      id: '0',
       imagePreview: '/static/Background/floor_preview_1.png',
       image: '/static/Background/floor_1.png',
       joint: '/static/Background/joint_1.png',
     },
     {
-      name: 'floor2',
+      id: '1',
       imagePreview: '/static/Background/floor_preview_2.png',
       image: '/static/Background/floor_2.png',
       joint: '/static/Background/joint_2.png',
     },
 
   ];
-  const teteLit = [
+  const teteLits = [
     {
-      name: 'floor1',
-      imagePreview: '/static/Background/teteLit_preview_1.png',
-      image: '/static/Background/floor_1.png',
-      joint: '/static/Background/joint_1.png',
+      id: '0',
+      imagePreview: '/static/none_white.svg',
+      image: '',
     },
     {
-      name: 'floor2',
+      id: '1',
+      imagePreview: '/static/Background/teteLit_preview_1.png',
+      image: '/static/Background/teteLit_1.png',
+    },
+    {
+      id: '2',
       imagePreview: '/static/Background/teteLit_preview_2.png',
-      image: '/static/Background/floor_2.png',
-      joint: '/static/Background/joint_2.png',
+      image: '/static/Background/teteLit_2.png',
+    },
+    {
+      id: '3',
+      imagePreview: '/static/Background/teteLit_preview_3.png',
+      image: '/static/Background/teteLit_3.png',
     },
 
   ];
+  //Set active wall Id
+  const [activeWall, setWallActiveId] = useState('1');
+  const [activeFloor, setFloorActiveId] = useState('1');
+  const [activeTeteLit, setTeteLitActiveId] = useState('1');
 
   return (
     <div className={styles.menu}>
       <h1 className={styles.title}>Décor</h1>
       <div className={styles.articles}>
-        <MenuLeftBase name="Mur" onWallChange={props.onItemChange} contentWalls={walls.map((wall) => wall)} />
-        <MenuLeftBase name="Sol" onFloorChange={props.onItemChange} onJointChange={props.onItemChange} contentFloors={floors.map((floor) => floor)} />
-        <MenuLeftBase name="Tête de lit" onFloorChange={props.onItemChange} onJointChange={props.onItemChange} contentFloors={teteLit.map((floor) => floor)} />
-      </div>
-      <div className={styles.barre}>
-        <div className={styles.littleRectangle} />
+        <MenuLeftBase name="Mur" onWallChange={props.onItemChange} onArticleChange={onWallChange} contentWalls={walls.map((wall) => wall)} activeWall={activeWall} />
+        <MenuLeftBase name="Sol" onFloorChange={props.onItemChange} onJointChange={props.onItemChange} onArticleChange={onFloorChange} contentFloors={floors.map((floor) => floor)} activeFloor={activeFloor}/>
+        <MenuLeftBase name="Tête de lit" onTeteLitChange={props.onItemChange} onArticleChange={onTeteLitChange} contentTeteLits={teteLits.map((teteLit) => teteLit)} activeTeteLit={activeTeteLit}/>
       </div>
     </div>
   );
+
+  function onWallChange(id) {
+    setWallActiveId(id)
+  };
+
+  function onFloorChange(id) {
+    setFloorActiveId(id)
+  };
+
+  function onTeteLitChange(id) {
+    setTeteLitActiveId(id)
+  };
 };
 
 export default MenuLeftDecor;
