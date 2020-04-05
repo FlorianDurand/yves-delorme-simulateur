@@ -24,7 +24,7 @@ export default function Index() {
       <Header toggleMenuLeftDecor={toggleMenuLeftDecor} />
       <Bed menu={menu} addCart={addCart} popModal={popModal} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} />
       {modal ? (<Modal type={typeOfModal} resetModal={resetModal}/>) : null}
-      <Footer toggleMenu={toggleMenu} toggleCart={toggleCart} preview={previewF} />
+      <Footer popModal={popModal} toggleMenu={toggleMenu} toggleCart={toggleCart} preview={previewF} />
       <div id="trashCanvas">
         <canvas id="canvas" />
       </div>
@@ -83,6 +83,7 @@ export default function Index() {
   }
 
   function popModal(typeOfModal) {
-    typeOfModal === 'addedToCart' ?  (setTypeOfModal(typeOfModal), setModal(true)) : null
+    typeOfModal === 'addedToCart' ?  (setTypeOfModal(typeOfModal), setModal(true)) : null;
+    typeOfModal === 'unlogged' ?  (setTypeOfModal(typeOfModal), setModal(true)) : null
   }
 }

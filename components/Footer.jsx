@@ -21,10 +21,10 @@ const Footer = (props) => {
         </button>
 
         <div className={styles.bottomGroup}>
-        <button className={styles.buttonRightLeft}>
+        <button className={styles.buttonRightLeft} onClick={() => {props.popModal('unlogged')}}>
             <img src="/static/list_green.svg" alt="Voir la liste" />
           </button>
-          <button className={styles.buttonRight} >
+          <button className={styles.buttonRight}  onClick={() => {props.popModal('unlogged')}}>
             <img src="/static/list_plus_green.svg" alt="Ajouter dans la liste" />
             Enregistrer le lit
           </button>
