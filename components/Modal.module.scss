@@ -1,0 +1,85 @@
+.modalContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .modalOpacityBg {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 1366px;
+    height: 1024px;
+    background: rgba(69, 69, 69, .5);
+  }
+
+  .modal {
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    max-height: 500px;
+    padding: 35px 100px;
+    background: #FFFFFF;
+    border-radius: 5px;
+
+    .greenText {
+      display: flex;
+      align-items: center;
+      color: #3E8087;
+      font-weight: bold;
+      font-size: 32px;
+      font-family: Poppins;
+      font-style: normal;
+      line-height: 48px;
+
+    }
+
+    .groupButtons {
+      display: flex;
+      flex-direction: column;
+      width: 330px;
+      margin-top: 40px;
+
+      .buttonTop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 60px;
+        margin-bottom: 20px;
+        color: white;
+        font-weight: bold;
+        font-size: 22px;
+        background-color: #3E8087;
+        border: 0;
+        border-radius: 5px;
+      }
+
+      .buttonBottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 60px;
+        padding: 0 48px;
+        color: #3E8087;
+        font-weight: bold;
+        font-size: 24px;
+        font-family: Roboto;
+        font-style: normal;
+        line-height: 28px;
+        border: 1.62px solid #3E8087;
+        border-radius: 5px;
+
+        img {
+          width: 25px;
+        }
+      }
+    }
+  }
+}
+

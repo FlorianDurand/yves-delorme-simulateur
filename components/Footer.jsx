@@ -15,15 +15,20 @@ const Footer = (props) => {
       </div>
 
       <div className={styles.buttonsRight}>
-        <button className={styles.buttonRight}>
-          <img src="/static/cart.svg" alt="panier" />
+        <button className={styles.buttonRight_green} onClick={previewRender}>
+          <img src="/static/cart_white.svg" alt="panier" />
           Ajouter au panier
         </button>
 
-        <button className={styles.buttonRight} onClick={previewRender}>
-          <img src="/static/cross.png" alt="croix" />
-          Enregistrer la parure
-        </button>
+        <div className={styles.bottomGroup}>
+        <button className={styles.buttonRightLeft}>
+            <img src="/static/list_green.svg" alt="Voir la liste" />
+          </button>
+          <button className={styles.buttonRight} >
+            <img src="/static/list_plus_green.svg" alt="Ajouter dans la liste" />
+            Enregistrer le lit
+          </button>
+        </div>
 
       </div>
     </div>
