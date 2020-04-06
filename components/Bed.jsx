@@ -67,47 +67,47 @@ const Bed = (props) => {
   );
 
   function handleItemChange(item, typeItem) {
-    if (typeItem == 'duvet') {
+    if (typeItem === 'duvet') {
       setDuvet(item); // set le state avec l'objet contenant les infos de la couette
     }
 
-    if (typeItem == 'fittedSheet') {
+    if (typeItem === 'fittedSheet') {
       setFittedSheet(item);
     }
 
-    if (typeItem == 'flatSheet') {
+    if (typeItem === 'flatSheet') {
       setFlatSheet(item);
     }
 
-    if (typeItem == 'smallPillow') {
+    if (typeItem === 'smallPillow') {
       setSmallPillow(item);
     }
 
-    if (typeItem == 'centerPillow') {
+    if (typeItem === 'centerPillow') {
       setCenterPillow(item);
     }
 
-    if (typeItem == 'mediumPillow') {
+    if (typeItem === 'mediumPillow') {
       setMediumPillow(item);
     }
 
-    if (typeItem == 'bigPillow') {
+    if (typeItem === 'bigPillow') {
       setBigPillow(item);
     }
 
-    if (typeItem == 'wall') {
+    if (typeItem === 'wall') {
       setWall(item);
     }
 
-    if (typeItem == 'floor') {
+    if (typeItem === 'floor') {
       setFloor(item);
     }
 
-    if (typeItem == 'joint') {
+    if (typeItem === 'joint') {
       setJoint(item);
     }
 
-    if (typeItem == 'tete') {
+    if (typeItem === 'tete') {
       setTete(item);
     }
   }

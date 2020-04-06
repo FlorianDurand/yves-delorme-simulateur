@@ -8,13 +8,13 @@ const FilterBar = (props) => (
   <div className={styles.filter}>
     <div className={styles.search}>
       <input className={styles.searchInput} type="search" id="item-search" name="item-search" placeholder="Rechercher..." />
-      <button className={styles.searchButton}>
+      <button type="button" className={styles.searchButton}>
         {' '}
         <img src="/static/search.png" alt="search" />
         {' '}
       </button>
     </div>
-    <button className={styles.filterButton} onClick={() => props.onFilterActive()}>
+    <button type="button" className={styles.filterButton} onClick={() => props.onFilterActive()}>
       {props.isFilterActive ? <img src="/static/validate.svg" alt="search" /> : <img src="/static/filter.png" alt="search" /> }
       {props.isFilterActive ? 'Valider' : 'Filtres' }
     </button>

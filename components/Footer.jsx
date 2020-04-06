@@ -15,16 +15,16 @@ const Footer = (props) => {
       </div>
 
       <div className={styles.buttonsRight}>
-        <button className={styles.buttonRight_green} onClick={previewRender}>
+        <button type="button" className={styles.buttonRight_green} onClick={previewRender}>
           <img src="/static/cart_white.svg" alt="panier" />
           Ajouter au panier
         </button>
 
         <div className={styles.bottomGroup}>
-        <button className={styles.buttonRightLeft} onClick={() => {props.popModal('unlogged')}}>
+          <button type="button" className={styles.buttonRightLeft} onClick={() => { props.popModal('unlogged'); }}>
             <img src="/static/list_green.svg" alt="Voir la liste" />
           </button>
-          <button className={styles.buttonRight}  onClick={() => {props.popModal('unlogged')}}>
+          <button type="button" className={styles.buttonRight} onClick={() => { props.popModal('unlogged'); }}>
             <img src="/static/list_plus_green.svg" alt="Ajouter dans la liste" />
             Enregistrer le lit
           </button>
@@ -49,6 +49,11 @@ const Footer = (props) => {
       });
     }).catch((e) => { console.log('load failed'); });
   }
+};
+
+Footer.propTypes = {
+  toggleMenu: PropTypes.func.isRequired,
+  toggleCart: PropTypes.func.isRequired,
 };
 
 export default Footer;

@@ -2,16 +2,15 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Filters.module.scss';
-import Button from './Styles/Button';
 
 const Filters = (props) => {
   const [isFilterActive, setIsFilterActive] = useState('');
   const filters = props.arrayFilters;
 
   const listFilters = filters.map((filter) => (
-    <p className={isFilterActive.includes(filter) ? (styles.itemActive) : (styles.itemNotActive)} onClick={() => activeFilter(filter)}>
+    <button type="button" className={isFilterActive.includes(filter) ? (styles.itemActive) : (styles.itemNotActive)} onClick={() => activeFilter(filter)}>
       {filter}
-    </p>
+    </button>
   ));
 
   return (

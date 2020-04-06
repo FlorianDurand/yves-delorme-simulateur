@@ -24,8 +24,8 @@ const AddCart = (props) => {
         <div className={styles.background}>
           <img className={styles.preview} src={props.preview} alt="preview" />
           <div className={styles.floatingButtons}>
-            <button className={styles.buttonRight}>Retour</button>
-            <button className={styles.buttonRight_green} onClick={() => {props.popModal('addedToCart'), props.reset()}}>
+            <button type="button" className={styles.buttonRight}>Retour</button>
+            <button type="button" className={styles.buttonRight_green} onClick={() => { props.popModal('addedToCart'), props.reset(); }}>
               <img src="/static/cart_white.svg" alt="panier" />
               Valider
             </button>
@@ -115,16 +115,15 @@ const AddCart = (props) => {
     </div>
 
   );
-
 };
 
 AddCart.propTypes = {
-  duvet: PropTypes.object.isRequired,
-  smallPillow: PropTypes.object.isRequired,
-  mediumPillow: PropTypes.object.isRequired,
-  bigPillow: PropTypes.object.isRequired,
-  flatSheet: PropTypes.object.isRequired,
-  fittedSheet: PropTypes.object.isRequired,
+  duvet: PropTypes.string.isRequired,
+  bigPillow: PropTypes.string.isRequired,
+  smallPillow: PropTypes.string.isRequired,
+  mediumPillow: PropTypes.string.isRequired,
+  fittedSheet: PropTypes.string.isRequired,
+  flatSheet: PropTypes.string.isRequired,
 };
 
 export default AddCart;
