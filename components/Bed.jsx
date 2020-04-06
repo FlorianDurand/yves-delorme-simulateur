@@ -8,7 +8,7 @@ const Bed = (props) => {
   const [duvet, setDuvet] = useState({ image: '/static/Bed/couette2.png', name: 'aucun' });
   const [flatSheet, setFlatSheet] = useState({ image: '', name: 'aucun' });
   const [fittedSheet, setFittedSheet] = useState({ image: '', name: 'aucun' });
-  const [smallPillow, setSmallPillow] = useState({ image: '/static/Bed/petitcoussin.png', name: 'aucun' });
+  const [smallPillow, setSmallPillow] = useState({ image: '/static/Bed/petitcoussin2.png', name: 'aucun' });
   const [centerPillow, setCenterPillow] = useState({ image: '/static/Bed/centrecoussin.png', name: 'aucun' });
   const [mediumPillow, setMediumPillow] = useState({ image: '/static/Bed/moyencoussin.png', name: 'aucun' });
   const [bigPillow, setBigPillow] = useState({ image: '/static/Bed/groscoussin.png', name: 'aucun' });

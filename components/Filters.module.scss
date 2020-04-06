@@ -16,7 +16,7 @@
     flex-wrap: wrap;
     justify-content: start;
 
-    .item {
+    .itemNotActive {
       width: 225px;
       margin-bottom: 20px;
       padding: 16px 0px;
@@ -29,5 +29,22 @@
         margin-left: 20px;
       }
     }
+
+    .itemActive {
+      width: 225px;
+      margin-bottom: 20px;
+      padding: 16px 0px;
+      color: white;
+      font-size: 24px;
+      text-align: center;
+      background-color: color(primary-500);
+      border: 1px solid color(tertiary-300);
+
+      &:nth-child(2n) {
+        margin-left: 20px;
+      }
+    }
+
+
   }
 }

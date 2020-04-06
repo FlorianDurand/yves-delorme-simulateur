@@ -7,11 +7,11 @@ $mediumPillowHeight: 243px;
 $centerPillowWidth: 378px;
 $centerPillowHeight: 201px;
 
-$smallPillowWidth: 213px;
-$smallPillowHeight: 194px;
+$smallPillowWidth: 200px;
+$smallPillowHeight: 186px;
 
-$duvetWidth: 1259px;
-$duvetHeight: 493px;
+$duvetWidth: 1245px;
+$duvetHeight: 476px;
 
 .background {
   width: 100%;
@@ -67,7 +67,7 @@ $duvetHeight: 493px;
 
 .middle {
   position: absolute;
-  top: 269px;
+  top: 277px;
   left: 388px;
   width: $mediumPillowWidth;
   height: $mediumPillowHeight;
@@ -75,7 +75,7 @@ $duvetHeight: 493px;
 
 .middleRight {
   position: absolute;
-  top: 271px;
+  top: 278px;
   right: 410px;
   width: $mediumPillowWidth;
   height: $mediumPillowHeight;
@@ -84,15 +84,15 @@ $duvetHeight: 493px;
 .frontCenter {
   position: absolute;
   top: 316px;
-  left: 496px;
+  left: 486px;
   width: $centerPillowWidth;
   height: $centerPillowHeight;
 }
 
 .front {
   position: absolute;
-  top: 326px;
-  left: 572px;
+  top: 332px;
+  left: 575px;
   width: $smallPillowWidth;
   height: $smallPillowHeight;
 }
