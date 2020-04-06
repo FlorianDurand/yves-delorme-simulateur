@@ -1,13 +1,10 @@
 $colors: (
-  primary-700: #454545,
   primary-500: #3E8087,
-  primary-400: #599298,
-  primary-300: #66A8AF,
-  secondary: #fff,
-  tertiary-700: #323232,
-  tertiary-500: #4E4E56,
-  tertiary-300: #D3D3D3,
-  dark: #000,
+  secondary-700: #454545,
+  secondary-400: #777777,
+  secondary-100: #DDDDDD,
+  light: #fff,
+  notification: #E93C3C,
 );
 
 @function color($name, $opacity: 1) {
