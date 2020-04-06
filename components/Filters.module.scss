@@ -5,7 +5,7 @@
 
   .title {
     margin-bottom: 24px;
-    color: #565656;
+    color: color(secondary-700);
     font-weight: bold;
     font-size: 24px;
   }
@@ -17,13 +17,13 @@
     justify-content: start;
 
     .itemNotActive {
-      width: 225px;
+      width: 244px;
       margin-bottom: 20px;
       padding: 16px 0px;
-      color: #222;
+      color: color(secondary-400);
       font-size: 24px;
       text-align: center;
-      border: 1px solid color(tertiary-300);
+      border: 1px solid color(secondary-100);
 
       &:nth-child(2n) {
         margin-left: 20px;
@@ -31,14 +31,15 @@
     }
 
     .itemActive {
-      width: 225px;
+      width: 244px;
       margin-bottom: 20px;
       padding: 16px 0px;
       color: white;
+      font-weight: bold;
       font-size: 24px;
       text-align: center;
       background-color: color(primary-500);
-      border: 1px solid color(tertiary-300);
+      border: 1px solid color(secondary-100);
 
       &:nth-child(2n) {
         margin-left: 20px;

@@ -1,0 +1,46 @@
+.colors {
+  display: block;
+  margin: auto;
+  margin-top: 46px;
+
+  .title {
+    margin-bottom: 24px;
+    color: color(secondary-700);
+    font-weight: bold;
+    font-size: 24px;
+  }
+
+  .items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+
+    .itemNotActive {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 20px;
+      margin-left: 31px;
+      border-radius: 50%;
+
+      &:nth-child(6n + 1) {
+        margin-left: 0px;
+      }
+    }
+
+    .itemActive {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 20px;
+      margin-left: 32px;
+      border: 2px solid color(secondary-400);
+      border-radius: 50%;
+
+      &:nth-child(6n + 1) {
+        margin-left: 0px;
+      }
+    }
+
+
+  }
+}
