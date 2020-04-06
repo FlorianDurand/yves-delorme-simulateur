@@ -33,12 +33,20 @@ const duvet = [
 
 const smallPillow = [
   {
+    name: 'Aucun',
+    image: '/static/none.svg',
+    material: '',
+    grammage: '',
+    imageItem: '',
+    id: '0',
+  },
+  {
     name: 'Escale',
     image: '/static/MenuTaies/coussin3.png',
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/petitcoussin.png',
-    id: '0',
+    id: '1',
   },
   {
     name: 'Calypso',
@@ -46,7 +54,7 @@ const smallPillow = [
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/petitcoussin3.png',
-    id: '1',
+    id: '2',
   },
   {
     name: 'Palmea',
@@ -54,18 +62,26 @@ const smallPillow = [
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/petitcoussin2.png',
-    id: '2',
+    id: '3',
   },
 ];
 
 const centerPillow = [
+  {
+    name: 'Aucun',
+    image: '/static/none.svg',
+    material: '',
+    grammage: '',
+    imageItem: '',
+    id: '0',
+  },
   {
     name: 'Escale',
     image: '/static/MenuTaies/coussin3.png',
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/centrecoussin.png',
-    id: '0',
+    id: '1',
   },
   {
     name: 'Calypso',
@@ -73,18 +89,26 @@ const centerPillow = [
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/centrecoussin2.png',
-    id: '1',
+    id: '2',
   },
 ];
 
 const mediumPillow = [
+  {
+    name: 'Aucun',
+    image: '/static/none.svg',
+    material: '',
+    grammage: '',
+    imageItem: '',
+    id: '0',
+  },
   {
     name: 'Palmea',
     image: '/static/MenuTaies/coussin3.png',
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/moyencoussin.png',
-    id: '0',
+    id: '1',
   },
   {
     name: 'Escale',
@@ -92,7 +116,7 @@ const mediumPillow = [
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/moyencoussin2.png',
-    id: '1',
+    id: '2',
   },
   {
     name: 'Calypso',
@@ -100,19 +124,27 @@ const mediumPillow = [
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/moyencoussin3.png',
-    id: '2',
+    id: '3',
   },
 
 ];
 
 const bigPillow = [
   {
+    name: 'Aucun',
+    image: '/static/none.svg',
+    material: '',
+    grammage: '',
+    imageItem: '',
+    id: '0',
+  },
+  {
     name: 'Ecume Céladonn',
     image: '/static/MenuTaies/coussin2.png',
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/groscoussin.png',
-    id: '0',
+    id: '1',
   },
   {
     name: 'Escale',
@@ -120,7 +152,7 @@ const bigPillow = [
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/groscoussin2.png',
-    id: '1',
+    id: '2',
   },
 ];
 const flatSheet = [
@@ -249,10 +281,10 @@ const ListArticles = (props) => {
   // set the active duvet
   const [duvetId, setDuvetId] = useState('1');
   // set the id of the active pillow
-  const [bigPillowId, setBigPillowId] = useState('0');
-  const [mediumPillowId, setMediumPillowId] = useState('0');
-  const [centerPillowId, setCenterPillowId] = useState('0');
-  const [smallPillowId, setSmallPillowId] = useState('0');
+  const [bigPillowId, setBigPillowId] = useState('1');
+  const [mediumPillowId, setMediumPillowId] = useState('1');
+  const [centerPillowId, setCenterPillowId] = useState('1');
+  const [smallPillowId, setSmallPillowId] = useState('1');
   // set the active sheet
   const [flatSheetId, setFlatSheetId] = useState('0');
   const [fittedSheetId, setFittedSheetId] = useState('0');

@@ -25,12 +25,12 @@ const Bed = (props) => {
         <img className={styles.joint} src={joint} alt="joint" />
         <img className={styles.floor} src={floor} alt="sol" />
         <img className={styles.tete} src={tete} alt="tete de lit" />
-        <img className={styles.back} src={bigPillow.image} alt="Grands Oreillers" />
-        <img className={styles.backRight} src={bigPillow.image} alt="Grands Oreillers" />
-        <img className={styles.middle} src={mediumPillow.image} alt="Oreilles du milieu" />
-        <img className={styles.middleRight} src={mediumPillow.image} alt="Oreilles du milieu" />
-        <img className={styles.frontCenter} src={centerPillow.image} alt="Centre Oreiller" />
-        <img className={styles.front} src={smallPillow.image} alt="Petit Oreiller" />
+        {bigPillow.image !== '' ? <img className={styles.back} src={bigPillow.image} alt="Grands Oreillers" /> : null}
+        {bigPillow.image !== '' ? <img className={styles.backRight} src={bigPillow.image} alt="Grands Oreillers" /> : null}
+        {mediumPillow.image !== '' ? <img className={styles.middle} src={mediumPillow.image} alt="Oreilles du milieu" /> : null}
+        {mediumPillow.image !== '' ? <img className={styles.middleRight} src={mediumPillow.image} alt="Oreilles du milieu" /> : null}
+        {centerPillow.image !== '' ? <img className={styles.frontCenter} src={centerPillow.image} alt="Centre Oreiller" /> : null}
+        {smallPillow.image !== '' ? <img className={styles.front} src={smallPillow.image} alt="Petit Oreiller" /> : null}
         <img className={styles.duvet} src={duvet.image} alt="Couette" />
       </div>
 
