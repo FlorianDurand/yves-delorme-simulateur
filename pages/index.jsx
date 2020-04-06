@@ -2,28 +2,29 @@ import React, { useState } from 'react';
 import Header from '../components/Header';
 import Bed from '../components/Bed';
 import Footer from '../components/Footer';
-import Menu from '../components/Menu';
-import MenuLeft from '../components/MenuLeft';
-import MenuLeftDecor from '../components/MenuLeftDecor';
+import Modal from '../components/Modal';
+
 
 
 import styles from './index.module.scss';
 
 export default function Index() {
   const [menu, setMenu] = useState(false);
-  const [menuLeft, setMenuLeft] = useState(false);
+  // const [menuLeft, setMenuLeft] = useState(false);
   const [menuLeftDecor, setMenuLeftDecor] = useState(false);
   const [addCart, setAddCart] = useState(false);
+  const [typeOfModal, setTypeOfModal] = useState('');
   const [typeArticle, setTypeArticle] = useState('');
   const [titleArticle, setTitleArticle] = useState('');
   const [preview, setPreview] = useState();
+  const [modal, setModal] = useState(false);
 
   return (
     <div className={styles.background}>
-      <Header toggleMenuLeft={toggleMenuLeft} toggleMenuLeftDecor={toggleMenuLeftDecor} />
-      <Bed menu={menu} addCart={addCart} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} />
-      {menuLeft ? (<MenuLeft />) : null}
-      <Footer toggleMenu={toggleMenu} toggleCart={toggleCart} preview={previewF} />
+      <Header toggleMenuLeftDecor={toggleMenuLeftDecor} />
+      <Bed menu={menu} addCart={addCart} popModal={popModal} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} />
+      {modal ? (<Modal type={typeOfModal} resetModal={resetModal}/>) : null}
+      <Footer popModal={popModal} toggleMenu={toggleMenu} toggleCart={toggleCart} preview={previewF} />
       <div id="trashCanvas">
         <canvas id="canvas" />
       </div>
@@ -46,13 +47,13 @@ export default function Index() {
     }
   }
 
-  function toggleMenuLeft() {
-    if (!menuLeft) {
-      setMenuLeft(true);
-    } else {
-      setMenuLeft(false);
-    }
-  }
+  // function toggleMenuLeft() {
+  //   if (!menuLeft) {
+  //     setMenuLeft(true);
+  //   } else {
+  //     setMenuLeft(false);
+  //   }
+  // }
 
   function toggleMenuLeftDecor() {
     if (!menuLeftDecor) {
@@ -72,8 +73,17 @@ export default function Index() {
 
   function resetMenu() {
     setAddCart(false);
-    setMenuLeft(false);
+    // setMenuLeft(false);
     setMenu(false);
     setMenuLeftDecor(false);
+  }
+
+  function resetModal() {
+    setModal(false)
+  }
+
+  function popModal(typeOfModal) {
+    typeOfModal === 'addedToCart' ?  (setTypeOfModal(typeOfModal), setModal(true)) : null;
+    typeOfModal === 'unlogged' ?  (setTypeOfModal(typeOfModal), setModal(true)) : null
   }
 }

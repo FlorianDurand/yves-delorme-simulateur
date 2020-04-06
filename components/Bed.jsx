@@ -52,7 +52,8 @@ const Bed = (props) => {
       {props.addCart ? (
         <AddCart
           preview={props.preview}
-          reset={resetMenu}
+          reset={props.resetMenu}
+          popModal={props.popModal}
           duvet={duvet}
           smallPillow={smallPillow}
           centerPillow={centerPillow}
@@ -64,9 +65,6 @@ const Bed = (props) => {
       ) : null}
     </div>
   );
-  function resetMenu() {
-    props.resetMenu();
-  }
 
   function handleItemChange(item, typeItem) {
     if (typeItem == 'duvet') {
