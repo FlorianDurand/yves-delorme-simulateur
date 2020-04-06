@@ -29,7 +29,6 @@ const Filters = (props) => {
     } else {
       setIsFilterActive(isFilterActive + filter);
     }
-    console.log(isFilterActive);
   }
 };
 

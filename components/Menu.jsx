@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 // Component
@@ -11,18 +11,27 @@ import styles from './Menu.module.scss';
 
 
 const Menu = (props) => {
-  const [isFilterActive, setIsFilterActive] = useState(true);
+  const [isFilterActive, setIsFilterActive] = useState(false);
+
+  useEffect(() => {
+    setIsFilterActive(false);
+  }, [props.title]);
 
   return (
     <div className={styles.menu}>
       <h1 className={styles.title}>{props.title}</h1>
-      <FilterBar />
+      <FilterBar onFilterActive={onFilterActive} isFilterActive={isFilterActive} />
       {isFilterActive
         ? <ListFilters />
         : <ListArticles typeItem={props.typeItem} onItemChange={props.onItemChange} />}
     </div>
   );
+
+  function onFilterActive() {
+    setIsFilterActive(!isFilterActive);
+  }
 };
+
 
 Menu.propTypes = {
   title: PropTypes.string.isRequired,

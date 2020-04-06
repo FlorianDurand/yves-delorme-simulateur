@@ -5,7 +5,6 @@ import Footer from '../components/Footer';
 import Modal from '../components/Modal';
 
 
-
 import styles from './index.module.scss';
 
 export default function Index() {
@@ -23,7 +22,7 @@ export default function Index() {
     <div className={styles.background}>
       <Header toggleMenuLeftDecor={toggleMenuLeftDecor} />
       <Bed menu={menu} addCart={addCart} popModal={popModal} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} />
-      {modal ? (<Modal type={typeOfModal} resetModal={resetModal}/>) : null}
+      {modal ? (<Modal type={typeOfModal} resetModal={resetModal} />) : null}
       <Footer popModal={popModal} toggleMenu={toggleMenu} toggleCart={toggleCart} preview={previewF} />
       <div id="trashCanvas">
         <canvas id="canvas" />
@@ -41,6 +40,7 @@ export default function Index() {
       setTitleArticle(title);
     } else if (typeArticle != type) {
       setTypeArticle(type);
+      setTitleArticle(title);
     } else {
       setMenu(false);
       setTypeArticle(type);
@@ -79,11 +79,11 @@ export default function Index() {
   }
 
   function resetModal() {
-    setModal(false)
+    setModal(false);
   }
 
   function popModal(typeOfModal) {
-    typeOfModal === 'addedToCart' ?  (setTypeOfModal(typeOfModal), setModal(true)) : null;
-    typeOfModal === 'unlogged' ?  (setTypeOfModal(typeOfModal), setModal(true)) : null
+    typeOfModal === 'addedToCart' ? (setTypeOfModal(typeOfModal), setModal(true)) : null;
+    typeOfModal === 'unlogged' ? (setTypeOfModal(typeOfModal), setModal(true)) : null;
   }
 }
