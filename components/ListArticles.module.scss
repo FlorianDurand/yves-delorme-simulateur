@@ -14,14 +14,14 @@
 .pillowSelector {
   position: relative;
   display: block;
-  width: 391px;
-  height: 200px;
+  width: 342px;
+  height: 128px;
   margin: 50px auto;
 }
 
 .pillowSelector::after {
   position: absolute;
-  bottom: 0;
+  bottom: -20px;
   left: -25px;
   width: 441px;
   height: 2px;
@@ -39,23 +39,23 @@
 }
 
 .pillowSelector svg:nth-child(3) {
-  top: 33px;
+  top: 12px;
   left: 42px;
 }
 
 .pillowSelector svg:nth-child(4) {
-  top: 33px;
+  top: 12px;
   right: 42px;
 }
 
 .pillowSelector svg:nth-child(5) {
-  top: 69px;
+  top: 34px;
   left: 120px;
 }
 
 .pillowSelector svg:last-child {
-  top: 115px;
-  left: 150px;
+  top: 73px;
+  left: 143px;
 }
 
 .bluePillow {
