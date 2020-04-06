@@ -10,6 +10,13 @@
     border: 1px solid #9C9C9C;
     border-radius: 5px;
   }
+
+  .title {
+    color: color(primary-500);
+    font-weight: bold;
+    font-size: 32px;
+    font-family: $font-title;
+  }
 }
 
 .searchButton,
