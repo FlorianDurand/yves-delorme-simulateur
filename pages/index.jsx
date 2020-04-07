@@ -17,12 +17,13 @@ export default function Index() {
   const [titleArticle, setTitleArticle] = useState('');
   const [preview, setPreview] = useState();
   const [modal, setModal] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className={styles.background}>
       <Header toggleMenuLeftDecor={toggleMenuLeftDecor} />
-      <Bed menu={menu} addCart={addCart} popModal={popModal} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} />
-      {modal ? (<Modal type={typeOfModal} resetModal={resetModal} />) : null}
+      <Bed menu={menu} addCart={addCart} popModal={popModal} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} menuOpen={menuOpen}/>
+      {modal ? (<Modal type={typeOfModal} resetModal={resetModal}/>) : null}
       <Footer popModal={popModal} toggleMenu={toggleMenu} toggleCart={toggleCart} preview={previewF} />
       <div id="trashCanvas">
         <canvas id="canvas" />
@@ -38,12 +39,14 @@ export default function Index() {
       setMenu(true);
       setTypeArticle(type);
       setTitleArticle(title);
+      setMenuOpen(!menuOpen);
     } else if (typeArticle != type) {
       setTypeArticle(type);
       setTitleArticle(title);
     } else {
       setMenu(false);
       setTypeArticle(type);
+      setMenuOpen(false);
     }
   }
 
@@ -76,6 +79,7 @@ export default function Index() {
     // setMenuLeft(false);
     setMenu(false);
     setMenuLeftDecor(false);
+    setMenuOpen(false);
   }
 
   function resetModal() {

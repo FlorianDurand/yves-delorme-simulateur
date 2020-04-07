@@ -10,6 +10,19 @@
   background-color: white;
 }
 
+.close{
+  position: absolute;
+  top: 20px;
+  right: 598px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+}
+
 .title {
   margin: 25px 0px;
   color: rgba(62, 128, 135, 86%);

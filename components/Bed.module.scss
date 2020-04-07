@@ -15,7 +15,12 @@ $duvetHeight: 476px;
 
 .background {
   width: 100%;
-  height: 100%;
+  height: 100vh;//peut causer des pbm lors des tests sur ipad, à voir
+  position: relative;
+}
+
+.openedMenu{
+  left: -285px;
 }
 
 .wall {

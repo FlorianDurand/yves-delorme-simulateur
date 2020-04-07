@@ -16,11 +16,10 @@ const Bed = (props) => {
   const [floor, setFloor] = useState({image: '/static/Background/floor_2.png', id : 1});
   const [joint, setJoint] = useState('/static/Background/joint_2.png');
   const [tete, setTete] = useState({image: '/static/Background/teteLit_1.png', id : 1});
-
   return (
     <div>
       {/* La parure de lit composé des différentes images */}
-      <div className={styles.background} id="bed" onClick={() => props.resetMenu()}>
+      <div className={props.menuOpen ? (`${styles.openedMenu} ${styles.background}`) : (styles.background)} id="bed" onClick={() => props.resetMenu()}>
         <img className={styles.wall} src={wall.image} alt="wall" />
         <img className={styles.joint} src={joint} alt="joint" />
         <img className={styles.floor} src={floor.image} alt="sol" />
@@ -41,6 +40,7 @@ const Bed = (props) => {
           typeItem={props.typeItem}
           title={props.title}
           activeBed={{flatSheet : flatSheet, fittedSheet : fittedSheet, smallPillow : smallPillow, centerPillow : centerPillow, mediumPillow : mediumPillow, bigPillow : bigPillow, duvet : duvet}}
+          resetMenu={props.resetMenu}
         />
       ) : null}
 
@@ -48,13 +48,14 @@ const Bed = (props) => {
         <MenuLeftDecor
           onItemChange={handleItemChange}
           activeBackground={{wall: wall, tete: tete, floor: floor}}
+          resetMenu={props.resetMenu}
         />
       ) : null}
 
       {props.addCart ? (
         <AddCart
           preview={props.preview}
-          reset={props.resetMenu}
+          resetMenu={props.resetMenu}
           popModal={props.popModal}
           duvet={duvet}
           smallPillow={smallPillow}

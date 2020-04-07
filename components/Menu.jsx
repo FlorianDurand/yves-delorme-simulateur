@@ -18,13 +18,19 @@ const Menu = (props) => {
   }, [props.title]);
 
   return (
-    <div className={styles.menu}>
+    <div>
+      <div className={styles.close} onClick={ () => props.resetMenu()}>
+        <img src="/static/close_green.svg" alt="Fermer le menu" className={styles.closeMenu} />
+      </div>
+      <div className={styles.menu}>
       <h1 className={styles.title}>{props.title}</h1>
       <FilterBar onFilterActive={onFilterActive} isFilterActive={isFilterActive} />
       {isFilterActive
         ? <ListFilters />
         : <ListArticles typeItem={props.typeItem} onItemChange={props.onItemChange} activeArticle={props.activeBed}/>}
     </div>
+    </div>
+
   );
 
   function onFilterActive() {

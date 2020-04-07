@@ -15,7 +15,10 @@ const AddCart = (props) => {
 
   return (
     <div>
-      <div className={styles.addcart} onClick={() => props.reset()} />
+      <div className={styles.addcart} onClick={() => props.resetMenu()} />
+      <div className={styles.close} onClick={ () => props.resetMenu()}>
+        <img src="/static/close_green.svg" alt="Fermer le menu" className={styles.closeMenu} />
+      </div>
       <div className={styles.addcartContent}>
         <div className={styles.header}>
           <input type="text" placeholder="Parure 1" />
