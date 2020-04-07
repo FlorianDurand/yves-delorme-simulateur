@@ -118,12 +118,12 @@ const AddCart = (props) => {
 };
 
 AddCart.propTypes = {
-  duvet: PropTypes.string.isRequired,
-  bigPillow: PropTypes.string.isRequired,
-  smallPillow: PropTypes.string.isRequired,
-  mediumPillow: PropTypes.string.isRequired,
-  fittedSheet: PropTypes.string.isRequired,
-  flatSheet: PropTypes.string.isRequired,
+  duvet: PropTypes.object.isRequired,
+  bigPillow: PropTypes.object.isRequired,
+  smallPillow: PropTypes.object.isRequired,
+  mediumPillow: PropTypes.object.isRequired,
+  fittedSheet: PropTypes.object.isRequired,
+  flatSheet: PropTypes.object.isRequired,
 };
 
 export default AddCart;

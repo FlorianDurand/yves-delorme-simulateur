@@ -19,7 +19,7 @@ const Article = (props) => (
       )
 
       : (
-        <div className={`${styles.article}`} onClick={() => { props.onItemChange({ image: props.imageItem, name: props.name }, props.typeItem), props.onArticleChange(props.id, props.typeItem); }}>
+        <div className={`${styles.article}`} onClick={() => { props.onItemChange({ image: props.imageItem, name: props.name, id : props.id }, props.typeItem), props.onArticleChange(props.id, props.typeItem); }}>
           <img className={styles.image} src={props.image} />
           <h2 className={styles.subtitle}>{props.name}</h2>
           <div className={styles.description}>

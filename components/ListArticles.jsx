@@ -162,7 +162,7 @@ const flatSheet = [
     material: '',
     grammage: '',
     imageItem: '/static/Bed/none.png',
-    id: 0,
+    id: '0',
   },
   {
     name: 'Bel Ami',
@@ -170,7 +170,7 @@ const flatSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrap/DP_Bel_ami_the-satin-120.jpg',
     imageItem: '/static/MenuDrap/DP_Bel_ami_the-satin-120.jpg',
-    id: 1,
+    id: '1',
   },
   {
     name: 'Boudoir',
@@ -178,7 +178,7 @@ const flatSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrap/DP_Boudoir-percale-120.jpg',
     imageItem: '/static/MenuDrap/DP_Boudoir-percale-120.jpg',
-    id: 2,
+    id: '2',
   },
   {
     name: 'Herba',
@@ -186,7 +186,7 @@ const flatSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrap/DP_Herba-percale-120.jpg',
     imageItem: '/static/MenuDrap/DP_Herba-percale-120.jpg',
-    id: 3,
+    id: '3',
   },
   {
     name: 'Luna',
@@ -194,7 +194,7 @@ const flatSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrap/DP_Luna-satin-120.jpg',
     imageItem: '/static/MenuDrap/DP_Luna-satin-120.jpg',
-    id: 4,
+    id: '4',
   },
   {
     name: 'Palmio',
@@ -202,7 +202,7 @@ const flatSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrap/DP_Palmio-satin-120.jpg',
     imageItem: '/static/MenuDrap/DP_Palmio-satin-120.jpg',
-    id: 5,
+    id: '5',
   },
   {
     name: 'Triophe',
@@ -210,7 +210,7 @@ const flatSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrap/DP_Triomphe-satin-120.jpg',
     imageItem: '/static/MenuDrap/DP_Triomphe-satin-120.jpg',
-    id: 6,
+    id: '6',
   },
 ];
 const fittedSheet = [
@@ -228,7 +228,7 @@ const fittedSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrapHousse/DH_Calypso-satin-120.jpg',
     imageItem: '/static/MenuDrapHousse/DH_Calypso-satin-120.jpg',
-    id: 1,
+    id: '1',
   },
   {
     name: 'Eolie',
@@ -236,7 +236,7 @@ const fittedSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrapHousse/DH_Eolie-percale-120.jpg',
     imageItem: '/static/MenuDrapHousse/DH_Eolie-percale-120.jpg',
-    id: 2,
+    id: '2',
   },
   {
     name: 'Odysse',
@@ -244,7 +244,7 @@ const fittedSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrapHousse/DH_Odysse-satin-120.jpg',
     imageItem: '/static/MenuDrapHousse/DH_Odysse-satin-120.jpg',
-    id: 3,
+    id: '3',
   },
   {
     name: 'Ondee',
@@ -252,7 +252,7 @@ const fittedSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrapHousse/DH_Ondee-satin-120.jpg',
     imageItem: '/static/MenuDrapHousse/DH_Ondee-satin-120.jpg',
-    id: 4,
+    id: '4',
   },
   {
     name: 'Palmio',
@@ -260,7 +260,7 @@ const fittedSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrapHousse/DH_Palmio-satin-120.jpg',
     imageItem: '/static/MenuDrapHousse/DH_Palmio-satin-120.jpg',
-    id: 5,
+    id: '5',
   },
   {
     name: 'Riviera',
@@ -268,7 +268,7 @@ const fittedSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrapHousse/DH_Riviera-satin-120.jpg',
     imageItem: '/static/MenuDrapHousse/DH_Riviera-satin-120.jpg',
-    id: 6,
+    id: '6',
   },
 ];
 
@@ -279,15 +279,16 @@ const ListArticles = (props) => {
   const [arrayItem, setArrayItem] = useState(duvet);
   const [isPillowSelectorActive, setIsPillowSelectorActive] = useState(false);
   // set the active duvet
-  const [duvetId, setDuvetId] = useState('1');
+  const [duvetId, setDuvetId] = useState(props.activeArticle.duvet.id);
   // set the id of the active pillow
-  const [bigPillowId, setBigPillowId] = useState('1');
-  const [mediumPillowId, setMediumPillowId] = useState('1');
-  const [centerPillowId, setCenterPillowId] = useState('1');
-  const [smallPillowId, setSmallPillowId] = useState('1');
+  const [bigPillowId, setBigPillowId] = useState(props.activeArticle.bigPillow.id);
+  const [mediumPillowId, setMediumPillowId] = useState(props.activeArticle.mediumPillow.id);
+  const [centerPillowId, setCenterPillowId] = useState(props.activeArticle.centerPillow.id);
+  const [smallPillowId, setSmallPillowId] = useState(props.activeArticle.smallPillow.id);
   // set the active sheet
-  const [flatSheetId, setFlatSheetId] = useState('0');
-  const [fittedSheetId, setFittedSheetId] = useState('0');
+  const [flatSheetId, setFlatSheetId] = useState(props.activeArticle.flatSheet.id);
+  const [fittedSheetId, setFittedSheetId] = useState(props.activeArticle.fittedSheet.id);
+  // console.log(props.activeArticle.fittedSheet.id)
 
   useEffect(() => {
     if (props.typeItem === 'duvet') {
@@ -396,7 +397,7 @@ const ListArticles = (props) => {
 
 
       <div className={styles.articles}>
-        {arrayItem.map((article) => <Article idActiveArticle={itemId(typeItem)} onArticleChange={onIdChange} onItemChange={props.onItemChange} typeItem={typeItem} {...article} key={article.name} />)}
+        {arrayItem.map((article) => <Article idActiveArticle={itemId(typeItem)} onArticleChange={onIdChange} onItemChange={props.onItemChange} typeItem={typeItem} {...article} key={article.id} />)}
       </div>
     </div>
   );

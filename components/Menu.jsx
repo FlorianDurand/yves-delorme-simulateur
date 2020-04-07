@@ -23,7 +23,7 @@ const Menu = (props) => {
       <FilterBar onFilterActive={onFilterActive} isFilterActive={isFilterActive} />
       {isFilterActive
         ? <ListFilters />
-        : <ListArticles typeItem={props.typeItem} onItemChange={props.onItemChange} />}
+        : <ListArticles typeItem={props.typeItem} onItemChange={props.onItemChange} activeArticle={props.activeBed}/>}
     </div>
   );
 

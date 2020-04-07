@@ -23,7 +23,7 @@ const MenuLeftBase = (props) => (
     {props.contentWalls
       ? (
         <div className={styles.contents}>
-          {props.contentWalls.map((contentWall) => <div className={contentWall.id === props.activeWall ? (styles.activeWall) : (styles.notActiveWall)}><img onClick={() => { props.onWallChange(contentWall.image, 'wall'); props.onArticleChange(contentWall.id); }} className={styles.wallPreview} src={contentWall.imagePreview} alt="wall Preview" /></div>)}
+          {props.contentWalls.map((contentWall) => <div key={contentWall.id} className={contentWall.id == props.activeWall ? (styles.activeWall) : (styles.notActiveWall)}><img onClick={() => { props.onWallChange({image : contentWall.image, id : contentWall.id}, 'wall'); props.onArticleChange(contentWall.id); }} className={styles.wallPreview} src={contentWall.imagePreview} alt="wall Preview" /></div>)}
         </div>
       )
       : null }
@@ -31,7 +31,7 @@ const MenuLeftBase = (props) => (
     {props.contentFloors
       ? (
         <div className={styles.contents}>
-          {props.contentFloors.map((contentFloor) => <div className={contentFloor.id === props.activeFloor ? (styles.activeFloor) : (styles.notActiveFloor)}><img onClick={() => { props.onFloorChange(contentFloor.image, 'floor'), props.onJointChange(contentFloor.joint, 'joint'); props.onArticleChange(contentFloor.id); }} className={styles.floorPreview} src={contentFloor.imagePreview} alt="floor Preview" /></div>)}
+          {props.contentFloors.map((contentFloor) => <div key={contentFloor.id} className={contentFloor.id == props.activeFloor ? (styles.activeFloor) : (styles.notActiveFloor)}><img onClick={() => { props.onFloorChange({image : contentFloor.image, id: contentFloor.id}, 'floor'), props.onJointChange(contentFloor.joint, 'joint'); props.onArticleChange(contentFloor.id); }} className={styles.floorPreview} src={contentFloor.imagePreview} alt="floor Preview" /></div>)}
         </div>
       )
       : null }
@@ -39,7 +39,7 @@ const MenuLeftBase = (props) => (
     {props.contentTeteLits
       ? (
         <div className={styles.contents}>
-          {props.contentTeteLits.map((contentTeteLit) => <div className={contentTeteLit.id === props.activeTeteLit ? (`${styles.activeFloor} ${styles.teteLit}`) : (`${styles.notActiveFloor} ${styles.teteLit}`)}><img onClick={() => { props.onTeteLitChange(contentTeteLit.image, 'tete'); props.onArticleChange(contentTeteLit.id); }} className={styles.teteLitPreview} src={contentTeteLit.imagePreview} alt="Tete de Lit Preview" /></div>)}
+          {props.contentTeteLits.map((contentTeteLit) => <div key={contentTeteLit.id} className={contentTeteLit.id == props.activeTeteLit ? (`${styles.activeFloor} ${styles.teteLit}`) : (`${styles.notActiveFloor} ${styles.teteLit}`)}><img onClick={() => { props.onTeteLitChange({image : contentTeteLit.image, id : contentTeteLit.id}, 'tete'); props.onArticleChange(contentTeteLit.id); }} className={styles.teteLitPreview} src={contentTeteLit.imagePreview} alt="Tete de Lit Preview" /></div>)}
         </div>
       )
       : null }

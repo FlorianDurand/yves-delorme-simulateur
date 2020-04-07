@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './AddCart.module.scss';
 
 const CartItem = (props) => {
-  const [state, setState] = useState({ stock_wanted: props.number });
+  const [number, setNumber] = useState({ stock_wanted: props.number });
 
   return (
     <div className={styles.addedToCart}>
@@ -21,9 +21,9 @@ const CartItem = (props) => {
         </select>
       </div>
       <div className={styles.number}>
-        <button type="button" onClick={() => setState({ stock_wanted: state.stock_wanted - 1 })}><img className={styles.btn} src="/static/moins.svg" alt="moins" /></button>
-        <input className={styles.inputNumber} type="number" value={state.stock_wanted} />
-        <button type="button" onClick={() => setState({ stock_wanted: state.stock_wanted + 1 })}><img className={styles.btn} src="/static/plus.svg" alt="plus" /></button>
+        <button type="button" onClick={() => setNumber({ stock_wanted: number.stock_wanted - 1 })}><img className={styles.btn} src="/static/moins.svg" alt="moins" /></button>
+        <input className={styles.inputNumber} type="number" value={number.stock_wanted} />
+        <button type="button" onClick={() => setNumber({ stock_wanted: number.stock_wanted + 1 })}><img className={styles.btn} src="/static/plus.svg" alt="plus" /></button>
       </div>
     </div>
   );
@@ -32,6 +32,7 @@ const CartItem = (props) => {
 CartItem.propTypes = {
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
+  number: PropTypes.number.isRequired
 };
 
 

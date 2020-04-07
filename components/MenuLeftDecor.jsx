@@ -58,9 +58,9 @@ const teteLits = [
 
 const MenuLeftDecor = (props) => {
   // Set active wall Id
-  const [activeWall, setWallActiveId] = useState('1');
-  const [activeFloor, setFloorActiveId] = useState('1');
-  const [activeTeteLit, setTeteLitActiveId] = useState('1');
+  const [activeWall, setWallActiveId] = useState(props.activeBackground.wall.id);
+  const [activeFloor, setFloorActiveId] = useState(props.activeBackground.floor.id);
+  const [activeTeteLit, setTeteLitActiveId] = useState(props.activeBackground.tete.id);
 
   return (
     <div className={styles.menu}>
