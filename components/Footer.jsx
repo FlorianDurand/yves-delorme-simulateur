@@ -38,7 +38,7 @@ const Footer = (props) => {
   function previewRender() {
     import('html2canvas').then((html2canvas) => {
       html2canvas.default(document.getElementById('bed'), {
-        width: 1146, height: 414, x: 100, y: 220,
+        width: 1146, height: 414, x: 100, y: 220,scale:1
       }).then((canvas) => {
         document.getElementById('trashCanvas').removeChild(document.getElementById('trashCanvas').childNodes[0]);
         document.getElementById('trashCanvas').appendChild(canvas);
