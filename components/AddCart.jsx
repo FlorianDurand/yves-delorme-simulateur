@@ -28,7 +28,7 @@ const AddCart = (props) => {
           <img className={styles.preview} src={props.preview} alt="preview" />
           <div className={styles.floatingButtons}>
             <button type="button" className={styles.buttonRight}>Retour</button>
-            <button type="button" className={styles.buttonRight_green} onClick={() => { props.popModal('addedToCart'), props.reset(); }}>
+            <button type="button" className={styles.buttonRight_green} onClick={() => { props.popModal('addedToCart'), props.resetMenu(); }}>
               <img src="/static/cart_white.svg" alt="panier" />
               Valider
             </button>
