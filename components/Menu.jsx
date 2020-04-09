@@ -12,6 +12,8 @@ import styles from './Menu.module.scss';
 
 const Menu = (props) => {
   const [isFilterActive, setIsFilterActive] = useState(false);
+  const [itemsShown, setItemsShown] = useState();
+  const [filtered, setFiltered] = useState();
 
   useEffect(() => {
     setIsFilterActive(false);
@@ -24,10 +26,10 @@ const Menu = (props) => {
       </div>
       <div className={styles.menu}>
       <h1 className={styles.title}>{props.title}</h1>
-      <FilterBar onFilterActive={onFilterActive} isFilterActive={isFilterActive} />
+      <FilterBar onFilterActive={onFilterActive} isFilterActive={isFilterActive} handleSearchChange={handleSearchChange}/>
       {isFilterActive
         ? <ListFilters />
-        : <ListArticles typeItem={props.typeItem} onItemChange={props.onItemChange} activeArticle={props.activeBed}/>}
+        : <ListArticles typeItem={props.typeItem} onItemChange={props.onItemChange} activeArticle={props.activeBed} itemsfunction={itemsfunction} filtered={filtered}/>}
     </div>
     </div>
 
@@ -36,7 +38,33 @@ const Menu = (props) => {
   function onFilterActive() {
     setIsFilterActive(!isFilterActive);
   }
-};
+
+  function handleSearchChange(e) {
+    let currentList = [];
+
+    let newList = [];
+    // If the search bar isn't empty
+    if (e.target.value !== "") {
+      currentList = itemsShown;
+      newList = currentList.filter( (item) => {
+
+        const lc = item.name.toLowerCase();
+        const filter = e.target.value.toLowerCase();
+
+        return lc.includes(filter);
+      });
+    } else {
+        // If the search bar is empty, set newList to original task list
+        newList = itemsShown;
+    };
+    setFiltered(newList);
+  }
+
+  function itemsfunction(items) {
+    setItemsShown(items)
+  }
+
+}
 
 
 Menu.propTypes = {

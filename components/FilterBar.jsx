@@ -11,7 +11,7 @@ const FilterBar = (props) => (
       ? <h2 className={styles.title}>Filtres</h2>
       : (
         <div className={styles.search}>
-          <input className={styles.searchInput} type="search" id="item-search" name="item-search" placeholder="Rechercher..." />
+          <input className={styles.searchInput} type="search" id="item-search" name="item-search" placeholder="Rechercher..." onChange={props.handleSearchChange}/>
           <button type="button" className={styles.searchButton}>
             {' '}
             <img src="/static/search.png" alt="search" />
