@@ -5,13 +5,13 @@ import MenuLeftDecor from './MenuLeftDecor';
 import AddCart from './AddCart';
 
 const Bed = (props) => {
-  const [duvet, setDuvet] = useState({ image: '/static/Bed/couette2.png', name: 'aucun', id: '1' });
-  const [flatSheet, setFlatSheet] = useState({ image: '', name: 'aucun', id: '0' });
-  const [fittedSheet, setFittedSheet] = useState({ image: '', name: 'aucun', id: '0' });
-  const [smallPillow, setSmallPillow] = useState({ image: '/static/Bed/petitcoussin2.png', name: 'aucun', id: '1' });
-  const [centerPillow, setCenterPillow] = useState({ image: '/static/Bed/centrecoussin.png', name: 'aucun', id: '1' });
-  const [mediumPillow, setMediumPillow] = useState({ image: '/static/Bed/moyencoussin.png', name: 'aucun', id: '1' });
-  const [bigPillow, setBigPillow] = useState({ image: '/static/Bed/groscoussin.png', name: 'aucun', id: '1' });
+  const [duvet, setDuvet] = useState({ image: '/static/Bed/couette2.png', name: 'Aucun', id: '1' });
+  const [flatSheet, setFlatSheet] = useState({ image: '', name: 'Aucun', id: '0' });
+  const [fittedSheet, setFittedSheet] = useState({ image: '', name: 'Aucun', id: '0' });
+  const [smallPillow, setSmallPillow] = useState({ image: '/static/Bed/petitcoussin2.png', name: 'Aucun', id: '1' });
+  const [centerPillow, setCenterPillow] = useState({ image: '/static/Bed/centrecoussin.png', name: 'Aucun', id: '1' });
+  const [mediumPillow, setMediumPillow] = useState({ image: '/static/Bed/moyencoussin.png', name: 'Aucun', id: '1' });
+  const [bigPillow, setBigPillow] = useState({ image: '/static/Bed/groscoussin.png', name: 'Aucun', id: '1' });
   const [wall, setWall] = useState({ image: '/static/Background/wall_2.png', id : 1});
   const [floor, setFloor] = useState({image: '/static/Background/floor_2.png', id : 1});
   const [joint, setJoint] = useState('/static/Background/joint_2.png');
@@ -23,7 +23,7 @@ const Bed = (props) => {
         <img className={styles.wall} src={wall.image} alt="wall" />
         <img className={styles.joint} src={joint} alt="joint" />
         <img className={styles.floor} src={floor.image} alt="sol" />
-        <img className={styles.tete} src={tete.image} alt="tete de lit" />
+        {tete.image !== '' ? <img className={styles.tete} src={tete.image} alt="tete de lit" /> : null}
         {bigPillow.image !== '' ? <img className={styles.back} src={bigPillow.image} alt="Grands Oreillers" /> : null}
         {bigPillow.image !== '' ? <img className={styles.backRight} src={bigPillow.image} alt="Grands Oreillers" /> : null}
         {mediumPillow.image !== '' ? <img className={styles.middle} src={mediumPillow.image} alt="Oreilles du milieu" /> : null}

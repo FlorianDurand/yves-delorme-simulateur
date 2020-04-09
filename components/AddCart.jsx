@@ -8,10 +8,11 @@ const AddCart = (props) => {
   const { duvet } = props;
   const { smallPillow } = props;
   const { mediumPillow } = props;
+  const { centerPillow } = props;
   const { bigPillow } = props;
   const { flatSheet } = props;
   const { fittedSheet } = props;
-  const base = 'aucun';
+  const base = 'Aucun';
 
   return (
     <div>
@@ -61,6 +62,18 @@ const AddCart = (props) => {
                 color="Blanc"
                 widths={['140x200 cm', '140x220 cm', '200x200 cm', '200x220 cm', '240x220 cm', '260x240 cm']}
                 number={2}
+              />
+            )
+            : null}
+
+          {centerPillow.name !== base
+            ? (
+              <CartItem
+                image={centerPillow.image}
+                name={centerPillow.name}
+                color="Blanc"
+                widths={['140x200 cm', '140x220 cm', '200x200 cm', '200x220 cm', '240x220 cm', '260x240 cm']}
+                number={1}
               />
             )
             : null}

@@ -5,7 +5,7 @@ import Article from './Article';
 
 const duvet = [
   {
-    name: 'aucun',
+    name: 'Aucun',
     image: '/static/none.svg',
     material: '',
     grammage: '',
@@ -288,7 +288,6 @@ const ListArticles = (props) => {
   // set the active sheet
   const [flatSheetId, setFlatSheetId] = useState(props.activeArticle.flatSheet.id);
   const [fittedSheetId, setFittedSheetId] = useState(props.activeArticle.fittedSheet.id);
-  // console.log(props.activeArticle.fittedSheet.id)
 
   useEffect(() => {
     if (props.typeItem === 'duvet') {
