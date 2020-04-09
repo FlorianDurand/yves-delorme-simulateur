@@ -277,6 +277,8 @@ const ListArticles = (props) => {
   // define the item and the array that will be call
   const [typeItem, setTypeItem] = useState(props.typeItem);
   const [arrayItem, setArrayItem] = useState(duvet);
+  let itemsToShow;
+  props.filtered ? itemsToShow = props.filtered : itemsToShow = arrayItem;
   const [isPillowSelectorActive, setIsPillowSelectorActive] = useState(false);
   // set the active duvet
   const [duvetId, setDuvetId] = useState(props.activeArticle.duvet.id);
@@ -304,6 +306,8 @@ const ListArticles = (props) => {
       return (setArrayItem(bigPillow), setIsPillowSelectorActive(true), setTypeItem(props.typeItem));
     }
   }, [props.typeItem]);
+
+  useEffect(() => props.itemsfunction(arrayItem), [arrayItem]);
 
   return (
     <div className={styles.listArticles}>
@@ -396,7 +400,7 @@ const ListArticles = (props) => {
 
 
       <div className={styles.articles}>
-        {arrayItem.map((article) => <Article idActiveArticle={itemId(typeItem)} onArticleChange={onIdChange} onItemChange={props.onItemChange} typeItem={typeItem} {...article} key={article.id} />)}
+        {itemsToShow.map((article) => <Article idActiveArticle={itemId(typeItem)} onArticleChange={onIdChange} onItemChange={props.onItemChange} typeItem={typeItem} {...article} key={article.id} />)}
       </div>
     </div>
   );
