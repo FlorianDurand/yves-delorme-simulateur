@@ -15,7 +15,7 @@ const Filters = (props) => {
 
   return (
     <div className={styles.filters}>
-      <h2 className={styles.title}>{props.title}</h2>
+      {props.title ? <h2 className={styles.title}>{props.title}</h2> : null}
       <div className={styles.items}>
         {listFilters}
       </div>
@@ -33,7 +33,7 @@ const Filters = (props) => {
 
 
 Filters.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   arrayFilters: PropTypes.array.isRequired,
 };
 

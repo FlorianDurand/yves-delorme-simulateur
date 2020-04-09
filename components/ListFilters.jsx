@@ -11,7 +11,7 @@ const Couleurs = ['#EB5757', '#F2994A', '#F2C94C', '#219653', '#27AE60', '#6FCF9
 
 const ListFilters = () => (
   <div className={styles.listFilters}>
-    <Filters title="Motif" arrayFilters={Motif} />
+    <Filters arrayFilters={Motif} />
     <FilterColor title="Couleurs" arrayFilters={Couleurs} />
     <Filters title="Style" arrayFilters={Style} />
     <Filters title="Tissu" arrayFilters={Tissu} />
