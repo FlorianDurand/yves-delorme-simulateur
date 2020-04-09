@@ -277,7 +277,7 @@ const ListArticles = (props) => {
   // define the item and the array that will be call
   const [typeItem, setTypeItem] = useState(props.typeItem);
   const [arrayItem, setArrayItem] = useState(duvet);
-  props.itemsfunction(arrayItem);
+
   let itemsToShow;
   props.filtered ? itemsToShow = props.filtered : itemsToShow = arrayItem;
   const [isPillowSelectorActive, setIsPillowSelectorActive] = useState(false);
@@ -294,17 +294,17 @@ const ListArticles = (props) => {
 
   useEffect(() => {
     if (props.typeItem === 'duvet') {
-      return (setArrayItem(duvet), setIsPillowSelectorActive(false), setTypeItem(props.typeItem));
+      return (setArrayItem(duvet), setIsPillowSelectorActive(false), setTypeItem(props.typeItem), props.itemsfunction(arrayItem));
     }
     if (props.typeItem === 'flatSheet') {
-      return (setArrayItem(flatSheet), setIsPillowSelectorActive(false), setTypeItem(props.typeItem));
+      return (setArrayItem(flatSheet), setIsPillowSelectorActive(false), setTypeItem(props.typeItem), props.itemsfunction(arrayItem));
     }
     if (props.typeItem === 'fittedSheet') {
-      return (setArrayItem(fittedSheet), setIsPillowSelectorActive(false), setTypeItem(props.typeItem));
+      return (setArrayItem(fittedSheet), setIsPillowSelectorActive(false), setTypeItem(props.typeItem), props.itemsfunction(arrayItem));
     }
 
     if (props.typeItem === 'bigPillow') {
-      return (setArrayItem(bigPillow), setIsPillowSelectorActive(true), setTypeItem(props.typeItem));
+      return (setArrayItem(bigPillow), setIsPillowSelectorActive(true), setTypeItem(props.typeItem), props.itemsfunction(arrayItem));
     }
   }, [props.typeItem]);
 

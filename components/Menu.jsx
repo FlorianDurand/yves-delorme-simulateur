@@ -21,16 +21,16 @@ const Menu = (props) => {
 
   return (
     <div>
-      <div className={styles.close} onClick={ () => props.resetMenu()}>
+      <div className={styles.close} onClick={() => props.resetMenu()}>
         <img src="/static/close_green.svg" alt="Fermer le menu" className={styles.closeMenu} />
       </div>
       <div className={styles.menu}>
-      <h1 className={styles.title}>{props.title}</h1>
-      <FilterBar onFilterActive={onFilterActive} isFilterActive={isFilterActive} handleSearchChange={handleSearchChange}/>
-      {isFilterActive
-        ? <ListFilters />
-        : <ListArticles typeItem={props.typeItem} onItemChange={props.onItemChange} activeArticle={props.activeBed} itemsfunction={itemsfunction} filtered={filtered}/>}
-    </div>
+        <h1 className={styles.title}>{props.title}</h1>
+        <FilterBar onFilterActive={onFilterActive} isFilterActive={isFilterActive} handleSearchChange={handleSearchChange} />
+        {isFilterActive
+          ? <ListFilters />
+          : <ListArticles typeItem={props.typeItem} onItemChange={props.onItemChange} activeArticle={props.activeBed} itemsfunction={itemsfunction} filtered={filtered} />}
+      </div>
     </div>
 
   );
@@ -44,27 +44,25 @@ const Menu = (props) => {
 
     let newList = [];
     // If the search bar isn't empty
-    if (e.target.value !== "") {
+    if (e.target.value !== '') {
       currentList = itemsShown;
-      newList = currentList.filter( (item) => {
-
+      newList = currentList.filter((item) => {
         const lc = item.name.toLowerCase();
         const filter = e.target.value.toLowerCase();
 
         return lc.includes(filter);
       });
     } else {
-        // If the search bar is empty, set newList to original task list
-        newList = itemsShown;
-    };
+      // If the search bar is empty, set newList to original task list
+      newList = itemsShown;
+    }
     setFiltered(newList);
   }
 
   function itemsfunction(items) {
-    setItemsShown(items)
+    setItemsShown(items);
   }
-
-}
+};
 
 
 Menu.propTypes = {

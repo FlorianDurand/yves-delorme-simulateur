@@ -4,7 +4,6 @@ import Bed from '../components/Bed';
 import Footer from '../components/Footer';
 import Modal from '../components/Modal';
 
-
 import styles from './index.module.scss';
 
 export default function Index() {
@@ -22,8 +21,8 @@ export default function Index() {
   return (
     <div className={styles.background}>
       <Header toggleMenuLeftDecor={toggleMenuLeftDecor} />
-      <Bed menu={menu} addCart={addCart} popModal={popModal} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} menuOpen={menuOpen}/>
-      {modal ? (<Modal type={typeOfModal} resetModal={resetModal}/>) : null}
+      <Bed menu={menu} addCart={addCart} popModal={popModal} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} menuOpen={menuOpen} />
+      {modal ? (<Modal type={typeOfModal} resetModal={resetModal} />) : null}
       <Footer popModal={popModal} toggleMenu={toggleMenu} toggleCart={toggleCart} preview={previewF} />
       <div id="trashCanvas" className={styles.trashCanvas}>
         <canvas id="canvas" />
