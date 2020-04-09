@@ -8,7 +8,6 @@ import styles from './index.module.scss';
 
 export default function Index() {
   const [menu, setMenu] = useState(false);
-  // const [menuLeft, setMenuLeft] = useState(false);
   const [menuLeftDecor, setMenuLeftDecor] = useState(false);
   const [addCart, setAddCart] = useState(false);
   const [typeOfModal, setTypeOfModal] = useState('');
@@ -49,14 +48,6 @@ export default function Index() {
     }
   }
 
-  // function toggleMenuLeft() {
-  //   if (!menuLeft) {
-  //     setMenuLeft(true);
-  //   } else {
-  //     setMenuLeft(false);
-  //   }
-  // }
-
   function toggleMenuLeftDecor() {
     if (!menuLeftDecor) {
       setMenuLeftDecor(true);
@@ -75,7 +66,6 @@ export default function Index() {
 
   function resetMenu() {
     setAddCart(false);
-    // setMenuLeft(false);
     setMenu(false);
     setMenuLeftDecor(false);
     setMenuOpen(false);
@@ -86,7 +76,6 @@ export default function Index() {
   }
 
   function popModal(typeOfModal) {
-    typeOfModal === 'addedToCart' ? (setTypeOfModal(typeOfModal), setModal(true)) : null;
-    typeOfModal === 'unlogged' ? (setTypeOfModal(typeOfModal), setModal(true)) : null;
+    typeOfModal === 'addedToCart' || typeOfModal === 'unlogged' ? (setTypeOfModal(typeOfModal), setModal(true)) : null;
   }
 }
