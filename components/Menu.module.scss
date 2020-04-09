@@ -5,19 +5,19 @@
   z-index: 100;
   width: 578px;
   height: 100%;
-  padding: 0 30px;
+  padding: 0 36px;
   overflow-y: scroll;
   background-color: white;
 }
 
-.close{
+.close {
   position: absolute;
   top: 20px;
   right: 598px;
   z-index: 100;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 60px;
   height: 60px;
   background-color: white;
