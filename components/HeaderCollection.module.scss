@@ -1,0 +1,72 @@
+.headerCollection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 90px;
+  padding: 0 25px;
+  color: color(primary-500);
+  font-size: 24px;
+  font-family: $font-base;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.11);
+
+  .back {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: color(secondary-100);
+
+    svg {
+      fill: color(secondary-100);
+      stroke: color(secondary-100);
+    }
+
+    p {
+      margin-left: 10px;
+    }
+  }
+
+  .mail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+
+    path {
+      fill: color(primary-500);
+      stroke: color(primary-500);
+    }
+
+    p {
+      margin-left: 10px;
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+
+    .action {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 19px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      p {
+        margin-left: 10px;
+      }
+    }
+
+    path {
+      fill: color(primary-500);
+      stroke: color(primary-500);
+    }
+  }
+}
