@@ -47,10 +47,10 @@ const Menu = (props) => {
     if (e.target.value !== '') {
       currentList = itemsShown;
       newList = currentList.filter((item) => {
-        const lc = item.name.toLowerCase();
-        const filter = e.target.value.toLowerCase();
+      const lc = item.name.toLowerCase();
+      const filter = e.target.value.toLowerCase();
 
-        return lc.includes(filter);
+      return lc.includes(filter);
       });
     } else {
       // If the search bar is empty, set newList to original task list

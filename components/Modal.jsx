@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import Link from 'next/link';
 import styles from './Modal.module.scss';
 
 
@@ -44,10 +44,12 @@ const Modal = (props) => (
           <button type="button" className={styles.buttonBottom} onClick={() => props.resetModal()}>
             Retour
           </button>
-          <button type="button" className={styles.buttonTop} onClick={() => props.resetModal()}>
-            <img src="/static/save.svg" alt="Valider" />
-            Valider
-          </button>
+          <Link href="/collection">
+            <button type="button" className={styles.buttonTop}>
+              <img src="/static/save.svg" alt="Valider" />
+              Valider
+            </button>
+          </Link>
         </div>
       </div>
     ) : null}

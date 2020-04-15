@@ -30,6 +30,7 @@ const Bed = (props) => {
         {mediumPillow.image !== '' ? <img className={styles.middleRight} src={mediumPillow.image} alt="Oreilles du milieu" /> : null}
         {centerPillow.image !== '' ? <img className={styles.frontCenter} src={centerPillow.image} alt="Centre Oreiller" /> : null}
         {smallPillow.image !== '' ? <img className={styles.front} src={smallPillow.image} alt="Petit Oreiller" /> : null}
+        <div className={styles.blackRectangle}></div>
         <img className={styles.duvet} src={duvet.image} alt="Couette" />
       </div>
 

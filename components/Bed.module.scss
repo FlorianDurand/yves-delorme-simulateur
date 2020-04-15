@@ -54,6 +54,15 @@ $duvetHeight: 476px;
   height: $duvetHeight;
 }
 
+.blackRectangle {
+  position: absolute;
+  bottom: 133px;
+  left: 211px;
+  width: 927px;
+  height: 73px;
+  background-color: color(secondary-900);
+}
+
 .back {
   position: absolute;
   top: 254px;
