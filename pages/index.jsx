@@ -3,10 +3,11 @@ import Header from '../components/Header';
 import Bed from '../components/Bed';
 import Footer from '../components/Footer';
 import Modal from '../components/Modal';
+import { withRedux } from '../lib/redux';
 
 import styles from './index.module.scss';
 
-export default function Index() {
+const Index = () => {
   const [menu, setMenu] = useState(false);
   const [menuLeftDecor, setMenuLeftDecor] = useState(false);
   const [addCart, setAddCart] = useState(false);
@@ -16,12 +17,13 @@ export default function Index() {
   const [preview, setPreview] = useState();
   const [modal, setModal] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [myParure, setMyParure] = useState();
 
   return (
     <div className={styles.background}>
       <Header toggleMenuLeftDecor={toggleMenuLeftDecor} />
-      <Bed menu={menu} addCart={addCart} popModal={popModal} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} menuOpen={menuOpen} />
-      {modal ? (<Modal type={typeOfModal} resetModal={resetModal} />) : null}
+      <Bed menu={menu} addCart={addCart} popModal={popModal} parureContent={parureContent} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} menuOpen={menuOpen} />
+      {modal ? (<Modal type={typeOfModal} resetModal={resetModal} myParure={myParure} />) : null}
       <Footer popModal={popModal} toggleMenu={toggleMenu} toggleCart={toggleCart} preview={previewF} />
       <div id="trashCanvas" className={styles.trashCanvas}>
         <canvas id="canvas" />
@@ -78,4 +80,10 @@ export default function Index() {
   function popModal(typeOfModal) {
     typeOfModal === 'addedToCart' || typeOfModal === 'unlogged' ? (setTypeOfModal(typeOfModal), setModal(true)) : null;
   }
+
+  function parureContent(myParure) {
+    setMyParure(myParure);
+  }
 }
+
+export default withRedux(Index);

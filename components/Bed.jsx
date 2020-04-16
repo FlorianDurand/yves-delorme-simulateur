@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './Bed.module.scss';
 import Menu from './Menu';
 import MenuLeftDecor from './MenuLeftDecor';
@@ -16,6 +16,17 @@ const Bed = (props) => {
   const [floor, setFloor] = useState({image: '/static/Background/floor_2.png', id : 1});
   const [joint, setJoint] = useState('/static/Background/joint_2.png');
   const [tete, setTete] = useState({image: '/static/Background/teteLit_1.png', id : 1});
+
+  useEffect(() =>
+    props.parureContent({
+      parurePreview : "xxx",
+      parureContent : [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow],
+      parureName : "xxx",
+      parureId : 0
+    }), [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow]
+  );
+
+
   return (
     <div>
       {/* La parure de lit composé des différentes images */}
@@ -114,6 +125,26 @@ const Bed = (props) => {
     if (typeItem === 'tete') {
       setTete(item);
     }
+    //   props.parureContent({
+    //   parurePreview : "xxx",
+    //   parureContent : [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow],
+    //   parureName : "xxx",
+    //   parureId : 0
+    // })
+  }
+      // props.parureContent({
+    //   parurePreview : "xxx",
+    //   parureContent : [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow],
+    //   parureName : "xxx",
+    //   parureId : 0
+    // })
+  function update() {
+      props.parureContent({
+      parurePreview : "xxx",
+      parureContent : [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow],
+      parureName : "xxx",
+      parureId : 0
+    })
   }
 };
 

@@ -2,10 +2,43 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 import styles from './Modal.module.scss';
+import { useSelector, useDispatch } from 'react-redux'
 
+const useSave = () => {
+  const parure = useSelector(state => state.parure)
+  const dispatch = useDispatch()
+  const saveParure = myParure =>
+    dispatch({
+      type: 'saveParure',
+      parure : myParure
+    })
+  return { parure, saveParure }
+}
 
-const Modal = (props) => (
+const Modal = (props) => {
+  const { parure, saveParure } = useSave()
+  console.log(parure)
+  const save = myParure => {
+    if (myParure) {
+    const index = parure.findIndex((e) => e.parureId === myParure.parureId);
+    var parures;
+    if (index === -1) {
+      parure.push(myParure);
+      parures = parure;
+    } else {
+        parure[index] = myParure;
+        parures = parure;
+    }
+    // console.log(parures)
+    // console.log(index)
+    console.log(myParure)
+    saveParure(parures);
+    // const parures = parure.includes(myParure) ? parure : parure.push(myParure);
+    // saveParure(parures);
+    }
+  }
 
+  return(
   <div className={styles.modalContainer}>
     <div className={styles.modalOpacityBg} onClick={() => props.resetModal()} />
 
@@ -41,11 +74,11 @@ const Modal = (props) => (
           <input type="email" name="" id="" placeholder="exemple@gmail.com" className={styles.mailInput} />
         </div>
         <div className={styles.groupButtonsRow}>
-          <button type="button" className={styles.buttonBottom} onClick={() => props.resetModal()}>
+          <button type="button" className={styles.buttonBottom} onClick={() => {props.resetModal(), console.log(parure)}}>
             Retour
           </button>
           <Link href="/collection">
-            <button type="button" className={styles.buttonTop}>
+            <button type="button" className={styles.buttonTop} onClick={() => {save(props.myParure), console.log(props.myParure)}}>
               <img src="/static/save.svg" alt="Valider" />
               Valider
             </button>
@@ -56,8 +89,8 @@ const Modal = (props) => (
     ;
 
   </div>
-
-);
+  );
+};
 
 Modal.propTypes = {
   type: PropTypes.string.isRequired,
