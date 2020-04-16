@@ -3,7 +3,15 @@ div {
   font-family: "Roboto", sans-serif;
 }
 
+html {
+  position: relative;
+  width: 1366px;
+  height: 1024px;
+}
+
 body {
+  position: relative;
+  height: 100%;
   margin: 0;
 }
 

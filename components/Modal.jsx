@@ -17,7 +17,7 @@ const useSave = () => {
 
 const Modal = (props) => {
   const { parure, saveParure } = useSave()
-  console.log(parure)
+
   const save = myParure => {
     if (myParure) {
     const index = parure.findIndex((e) => e.parureId === myParure.parureId);
@@ -31,7 +31,7 @@ const Modal = (props) => {
     }
     // console.log(parures)
     // console.log(index)
-    console.log(myParure)
+    // console.log(myParure)
     saveParure(parures);
     // const parures = parure.includes(myParure) ? parure : parure.push(myParure);
     // saveParure(parures);
