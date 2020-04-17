@@ -20,8 +20,13 @@
   },
   "homepage": "https://github.com/EaudeJavel/yves-delorme-H4#readme",
   "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "express-generator": "^4.16.1",
+    "mysql": "^2.18.1",
     "next": "^9.3.1",
     "node-sass": "^4.13.1",
+    "isomorphic-unfetch": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "reset-css": "^5.0.1",
