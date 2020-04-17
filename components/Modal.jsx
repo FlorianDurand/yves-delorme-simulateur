@@ -27,7 +27,9 @@ const Modal = (props) => {
     myParure = props.myParure;
     myParure.parureName = parureName;
   }, [parureName]);
-  const { parure, saveParure } = useSave()
+
+  //Recupère les variables globales
+  const { parure, saveParure } = useSave();
 
   //Sauvegarde la parure dans un state global (via redux), mais avant regarde si l'id de la parure n'est pas déjà éxistant et dans ce cas, update la parure existante dans le state global
   const save = myParure => {

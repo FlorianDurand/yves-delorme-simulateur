@@ -1,13 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Bed from '../components/Bed';
 import Footer from '../components/Footer';
 import Modal from '../components/Modal';
 import { withRedux } from '../lib/redux';
+import { useSelector, useDispatch } from 'react-redux'
 
 import styles from './index.module.scss';
 
+const SaveIdLog = () => {
+  const idLog = useSelector(state => state.idLog)
+  const parure = useSelector(state => state.parure)
+  const dispatch = useDispatch()
+  const saveLog = idLogLocal =>
+  dispatch({
+    type: 'updateLog',
+    idLog : idLogLocal
+  })
+  return { idLog, saveLog, parure }
+}
+
 const Index = () => {
+
+  //Recupère les variables globales
+  const { idLog, saveLog, parure } = SaveIdLog();
+
+  let parureId = parure[0].parureId;
+  if (parure.length < 998) {
+    if (parure[0].parureName) {
+      let index = parure.findIndex((e) => e.parureId === parureId);
+      while ( index !== -1 ) {
+        parureId = Math.floor(Math.random() * 1000);
+        index = parure.findIndex((e) => e.parureId === parureId);
+      }
+    }
+  } else {
+    alert("Nombre maximal de parure enregistré")
+  }
+
+
+  const [ currentParureId, setCurrentParureId ] = useState(parureId)
+
   const [menu, setMenu] = useState(false);
   const [menuLeftDecor, setMenuLeftDecor] = useState(false);
   const [addCart, setAddCart] = useState(false);
@@ -18,13 +51,16 @@ const Index = () => {
   const [modal, setModal] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [myParure, setMyParure] = useState();
+  const [idLogLocal, setIDLogLocal] = useState(idLog);
   const [logged, setLogged] = useState(false);
-  const [idLog, setIDLog] = useState();
   const [ savedBed, setSavedBed ] = useState(false);
+
+  useEffect(() => saveId(), [idLogLocal]);
+
   return (
     <div className={styles.background}>
       <Header toggleMenuLeftDecor={toggleMenuLeftDecor} />
-      <Bed menu={menu} addCart={addCart} popModal={popModal} parureContent={parureContent} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} menuOpen={menuOpen} saveParure={saveParure} />
+      <Bed menu={menu} addCart={addCart} popModal={popModal} parureContent={parureContent} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} menuOpen={menuOpen} saveParure={saveParure} currentParureId={currentParureId} />
       {modal ? (<Modal type={typeOfModal} resetModal={resetModal} myParure={myParure} logIn={logIn} popModal={popModal} saveParure={saveParure}/>) : null}
       <Footer popModal={popModal} toggleMenu={toggleMenu} toggleCart={toggleCart} preview={previewF}  savedBed={savedBed}/>
       <div id="trashCanvas" className={styles.trashCanvas}>
@@ -92,12 +128,17 @@ const Index = () => {
   }
 
   function logIn(log) {
-    setIDLog(log);
+    setIDLogLocal(log);
     log ? setLogged(true): null;
   }
 
   function saveParure() {
     setSavedBed(!savedBed);
+  }
+
+  function saveId() {
+    saveLog(idLogLocal);
+    idLogLocal ? setLogged(true) : null;
   }
 }
 

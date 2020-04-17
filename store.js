@@ -1,8 +1,11 @@
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
+const initialParureId = Math.floor(Math.random() * 1000);
+
 const initialState = {
-  parure: [{parureId : 1}]
+  parure: [{parureId : initialParureId}],
+  idLog: ''
 }
 
 const reducer = (state = initialState, action) => {
@@ -11,6 +14,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         parure: action.parure
+      }
+      case 'updateLog':
+      return {
+        ...state,
+        idLog: action.idLog
       }
     default:
       return state

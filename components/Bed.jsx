@@ -22,7 +22,7 @@ const Bed = (props) => {
       parurePreview : props.preview,
       parureContent : [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow],
       parureName : "xxx",
-      parureId : 0
+      parureId : props.currentParureId
     }), [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow, props.preview]
   );
 

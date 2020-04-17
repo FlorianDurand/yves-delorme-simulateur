@@ -6,17 +6,18 @@ import styles from './collection.module.scss';
 import ParureCard from '../components/ParureCard';
 import HeaderCollection from '../components/HeaderCollection';
 
-const getParure = () => {
+const getInfo = () => {
   const parure = useSelector(state => state.parure)
-  return { parure }
+  const idLog = useSelector(state => state.idLog)
+  return { parure, idLog }
   }
 
 const Collection = () => {
-  const { parure } = getParure()
-	console.log(parure)
+  const { parure, idLog } = getInfo()
+  console.log(parure)
   return(
   <div className={styles.collection}>
-    <HeaderCollection />
+    <HeaderCollection idLog={idLog}/>
     <div className={styles.parures}>
       <Link href="/">
         <div className={styles.add}>
