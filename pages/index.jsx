@@ -18,13 +18,15 @@ const Index = () => {
   const [modal, setModal] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [myParure, setMyParure] = useState();
-
+  const [logged, setLogged] = useState(false);
+  const [idLog, setIDLog] = useState();
+  const [ savedBed, setSavedBed ] = useState(false);
   return (
     <div className={styles.background}>
       <Header toggleMenuLeftDecor={toggleMenuLeftDecor} />
-      <Bed menu={menu} addCart={addCart} popModal={popModal} parureContent={parureContent} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} menuOpen={menuOpen} />
-      {modal ? (<Modal type={typeOfModal} resetModal={resetModal} myParure={myParure} />) : null}
-      <Footer popModal={popModal} toggleMenu={toggleMenu} toggleCart={toggleCart} preview={previewF} />
+      <Bed menu={menu} addCart={addCart} popModal={popModal} parureContent={parureContent} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} menuOpen={menuOpen} saveParure={saveParure} />
+      {modal ? (<Modal type={typeOfModal} resetModal={resetModal} myParure={myParure} logIn={logIn} popModal={popModal} saveParure={saveParure}/>) : null}
+      <Footer popModal={popModal} toggleMenu={toggleMenu} toggleCart={toggleCart} preview={previewF}  savedBed={savedBed}/>
       <div id="trashCanvas" className={styles.trashCanvas}>
         <canvas id="canvas" />
       </div>
@@ -78,11 +80,24 @@ const Index = () => {
   }
 
   function popModal(typeOfModal) {
-    typeOfModal === 'addedToCart' || typeOfModal === 'unlogged' ? (setTypeOfModal(typeOfModal), setModal(true)) : null;
+    typeOfModal === 'addedToCart' || typeOfModal === 'saved' ? (setTypeOfModal(typeOfModal), setModal(true)) : null;
+    typeOfModal === 'save' && logged == true ?   (setTypeOfModal(typeOfModal), setModal(true)) : null;
+    typeOfModal === 'save' && logged == false ?   (setTypeOfModal('unlogged'), setModal(true)) : null;
+    typeOfModal === 'list' && logged == false ?   (setTypeOfModal('unlogged'), setModal(true)) : null;
+    typeOfModal === 'list' && logged == true && savedBed == false ?   (setTypeOfModal('list'), setModal(true)) : null;
   }
 
   function parureContent(myParure) {
     setMyParure(myParure);
+  }
+
+  function logIn(log) {
+    setIDLog(log);
+    log ? setLogged(true): null;
+  }
+
+  function saveParure() {
+    setSavedBed(!savedBed);
   }
 }
 

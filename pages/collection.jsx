@@ -6,13 +6,13 @@ import styles from './collection.module.scss';
 import ParureCard from '../components/ParureCard';
 import HeaderCollection from '../components/HeaderCollection';
 
-const useCounter = () => {
+const getParure = () => {
   const parure = useSelector(state => state.parure)
   return { parure }
   }
 
 const Collection = () => {
-  const { parure } = useCounter()
+  const { parure } = getParure()
 	console.log(parure)
   return(
   <div className={styles.collection}>

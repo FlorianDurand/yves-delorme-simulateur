@@ -19,11 +19,11 @@ const Bed = (props) => {
 
   useEffect(() =>
     props.parureContent({
-      parurePreview : "xxx",
+      parurePreview : props.preview,
       parureContent : [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow],
       parureName : "xxx",
       parureId : 0
-    }), [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow]
+    }), [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow, props.preview]
   );
 
 
@@ -125,27 +125,9 @@ const Bed = (props) => {
     if (typeItem === 'tete') {
       setTete(item);
     }
-    //   props.parureContent({
-    //   parurePreview : "xxx",
-    //   parureContent : [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow],
-    //   parureName : "xxx",
-    //   parureId : 0
-    // })
+    props.saveParure();
   }
-      // props.parureContent({
-    //   parurePreview : "xxx",
-    //   parureContent : [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow],
-    //   parureName : "xxx",
-    //   parureId : 0
-    // })
-  function update() {
-      props.parureContent({
-      parurePreview : "xxx",
-      parureContent : [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow],
-      parureName : "xxx",
-      parureId : 0
-    })
-  }
+
 };
 
 

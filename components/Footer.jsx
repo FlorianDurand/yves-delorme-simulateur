@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import PropTypes from 'prop-types';
 import styles from './Footer.module.scss';
 import Button from './Styles/Button';
@@ -15,16 +16,24 @@ const Footer = (props) => {
       </div>
 
       <div className={styles.buttonsRight}>
-        <button type="button" className={styles.buttonRight_green} onClick={previewRender}>
-          <img src="/static/cart_white.svg" alt="panier" />
+        <button type="button" className={styles.buttonRight_green} onClick={() => previewRender('cart')}>
+          <img src="/static/cart_plus_white.svg" alt="panier" />
           Ajouter au panier
         </button>
 
         <div className={styles.bottomGroup}>
-          <button type="button" className={styles.buttonRightLeft} onClick={() => { props.popModal('unlogged'); }}>
-            <img src="/static/list_green.svg" alt="Voir la liste" />
-          </button>
-          <button type="button" className={styles.buttonRight} onClick={() => { props.popModal('unlogged'); }}>
+          {props.savedBed ? (
+            <Link href="/collection">
+              <button type="button" className={styles.buttonRightLeft}>
+                <img src="/static/list_green.svg" alt="Voir la liste" />
+              </button>
+            </Link>
+          ) : (
+            <button type="button" className={styles.buttonRightLeft} onClick={() => { props.popModal('list'), previewRender()}}>
+              <img src="/static/list_green.svg" alt="Voir la liste" />
+            </button>
+          )}
+          <button type="button" className={styles.buttonRight} onClick={() => { props.popModal('save'), previewRender()}}>
             <img src="/static/list_plus_green.svg" alt="Ajouter dans la liste" />
             Enregistrer le lit
           </button>
@@ -35,15 +44,15 @@ const Footer = (props) => {
 
   );
   // Supprime le premier Canvas de #trashCanvas, creer un Canvas "caché" contenant tous les éléments de #bed en se servant de html2canvas (non utilisé comme import car à besoin ), puis stocke l'image du Canvas dans la variable dataURI (source de l'image) et la passe ensuite au composant parent. désolé pour la fonction qui fait 1000 choses
-  function previewRender() {
+  function previewRender(cart) {
     import('html2canvas').then((html2canvas) => {
       html2canvas.default(document.getElementById('bed'), {
-        width: 1146, height: 414, x: 100, y: 220,scale:1
+        width: 1146, height: 414, x: 100, y: 220,scale:0.1
       }).then((canvas) => {
         document.getElementById('trashCanvas').removeChild(document.getElementById('trashCanvas').childNodes[0]);
         document.getElementById('trashCanvas').appendChild(canvas);
       }).then(() => {
-        props.toggleCart();
+        cart ? props.toggleCart() : null ;
         const dataURI = document.getElementById('trashCanvas').childNodes[0].toDataURL();
         props.preview(dataURI);
       });
