@@ -3,15 +3,23 @@ import styles from './Bed.module.scss';
 import Menu from './Menu';
 import MenuLeftDecor from './MenuLeftDecor';
 import AddCart from './AddCart';
+import { useSelector, useDispatch } from 'react-redux';
+
+const getInfo = () => {
+  const activeBed = useSelector(state => state.activeParure)
+  return { activeBed }
+}
 
 const Bed = (props) => {
-  const [duvet, setDuvet] = useState({ image: '/static/Bed/couette2.png', name: 'Aucun', id: '1' });
-  const [flatSheet, setFlatSheet] = useState({ image: '', name: 'Aucun', id: '0' });
-  const [fittedSheet, setFittedSheet] = useState({ image: '', name: 'Aucun', id: '0' });
-  const [smallPillow, setSmallPillow] = useState({ image: '/static/Bed/petitcoussin2.png', name: 'Aucun', id: '1' });
-  const [centerPillow, setCenterPillow] = useState({ image: '/static/Bed/centrecoussin.png', name: 'Aucun', id: '1' });
-  const [mediumPillow, setMediumPillow] = useState({ image: '/static/Bed/moyencoussin.png', name: 'Aucun', id: '1' });
-  const [bigPillow, setBigPillow] = useState({ image: '/static/Bed/groscoussin.png', name: 'Aucun', id: '1' });
+  const { activeBed } = getInfo();
+
+  const [duvet, setDuvet] = useState(activeBed.duvet);
+  const [flatSheet, setFlatSheet] = useState(activeBed.flatSheet);
+  const [fittedSheet, setFittedSheet] = useState(activeBed.fittedSheet);
+  const [smallPillow, setSmallPillow] = useState(activeBed.smallPillow);
+  const [centerPillow, setCenterPillow] = useState(activeBed.centerPillow);
+  const [mediumPillow, setMediumPillow] = useState(activeBed.mediumPillow);
+  const [bigPillow, setBigPillow] = useState(activeBed.bigPillow);
   const [wall, setWall] = useState({ image: '/static/Background/wall_2.png', id : 1});
   const [floor, setFloor] = useState({image: '/static/Background/floor_2.png', id : 1});
   const [joint, setJoint] = useState('/static/Background/joint_2.png');
@@ -20,7 +28,7 @@ const Bed = (props) => {
   useEffect(() =>
     props.parureContent({
       parurePreview : props.preview,
-      parureContent : [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow],
+      parureContent : {duvet : duvet, flatSheet : flatSheet, fittedSheet : fittedSheet, smallPillow : smallPillow, centerPillow : centerPillow, mediumPillow : mediumPillow, bigPillow : bigPillow},
       parureName : "xxx",
       parureId : props.currentParureId
     }), [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow, props.preview]
