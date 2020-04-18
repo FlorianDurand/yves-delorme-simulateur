@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Article.module.scss';
@@ -6,7 +6,7 @@ import styles from './Article.module.scss';
 const Article = (props) => (
   <div className={styles.articleContent}>
 
-    {props.idActiveArticle === props.id
+    { props.idActiveArticle === props.id
       ? (
         <div className={`${styles.article} ${styles.articleActive}`}>
           <img className={styles.image} src={props.image} alt="article" />
@@ -19,7 +19,7 @@ const Article = (props) => (
       )
 
       : (
-        <div className={`${styles.article}`} onClick={() => { props.onItemChange({ image: props.imageItem, name: props.name, id : props.id }, props.typeItem), props.onArticleChange(props.id, props.typeItem); }}>
+        <div className={`${styles.article}`} onClick={() => { props.onItemChange({ image: props.imageItem, name: props.name, id: props.id }, props.typeItem), props.onArticleChange(props.id, props.typeItem); }}>
           <img className={styles.image} src={props.image} />
           <h2 className={styles.subtitle}>{props.name}</h2>
           <div className={styles.description}>
@@ -28,6 +28,8 @@ const Article = (props) => (
           </div>
         </div>
       )}
+
+
   </div>
 );
 

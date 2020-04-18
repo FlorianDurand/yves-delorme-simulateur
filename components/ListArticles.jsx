@@ -166,15 +166,15 @@ const flatSheet = [
   },
   {
     name: 'Bel Ami',
-    material: 'Satin',
-    grammage: '120 fils/cm²',
+    material: 'Satin de coton',
+    grammage: '200 fils/cm²',
     image: '/static/MenuDrap/DP_Bel_ami_the-satin-120.jpg',
     imageItem: '/static/MenuDrap/DP_Bel_ami_the-satin-120.jpg',
     id: '1',
   },
   {
     name: 'Boudoir',
-    material: 'Percale',
+    material: 'Percale de coton',
     grammage: '120 fils/cm²',
     image: '/static/MenuDrap/DP_Boudoir-percale-120.jpg',
     imageItem: '/static/MenuDrap/DP_Boudoir-percale-120.jpg',
@@ -182,7 +182,7 @@ const flatSheet = [
   },
   {
     name: 'Herba',
-    material: 'Percale',
+    material: 'Percale de coton',
     grammage: '120 fils/cm²',
     image: '/static/MenuDrap/DP_Herba-percale-120.jpg',
     imageItem: '/static/MenuDrap/DP_Herba-percale-120.jpg',
@@ -190,15 +190,15 @@ const flatSheet = [
   },
   {
     name: 'Luna',
-    material: 'Satin',
-    grammage: '120 fils/cm²',
+    material: 'Satin de coton',
+    grammage: '200 fils/cm²',
     image: '/static/MenuDrap/DP_Luna-satin-120.jpg',
     imageItem: '/static/MenuDrap/DP_Luna-satin-120.jpg',
     id: '4',
   },
   {
     name: 'Palmio',
-    material: 'Satin',
+    material: 'Satin de coton',
     grammage: '120 fils/cm²',
     image: '/static/MenuDrap/DP_Palmio-satin-120.jpg',
     imageItem: '/static/MenuDrap/DP_Palmio-satin-120.jpg',
@@ -206,8 +206,8 @@ const flatSheet = [
   },
   {
     name: 'Triophe',
-    material: 'Satin',
-    grammage: '120 fils/cm²',
+    material: 'Satin de coton',
+    grammage: '80 fils/cm²',
     image: '/static/MenuDrap/DP_Triomphe-satin-120.jpg',
     imageItem: '/static/MenuDrap/DP_Triomphe-satin-120.jpg',
     id: '6',
@@ -275,6 +275,12 @@ const fittedSheet = [
 
 const ListArticles = (props) => {
   // define the item and the array that will be call
+  const [itemFiltered, setItemFiltered] = useState(true);
+
+  useEffect(() => {
+    { (props.listFilter.includes(props.material)) || (props.listFilter.includes(props.grammage)) || (props.listFilter === '') ? setItemFiltered(true) : setItemFiltered(false); }
+  }, [props.listFilter]);
+
   const [typeItem, setTypeItem] = useState(props.typeItem);
   const [arrayItem, setArrayItem] = useState(duvet);
   let itemsToShow;
@@ -400,10 +406,19 @@ const ListArticles = (props) => {
 
 
       <div className={styles.articles}>
-        {itemsToShow.map((article) => <Article idActiveArticle={itemId(typeItem)} onArticleChange={onIdChange} onItemChange={props.onItemChange} typeItem={typeItem} {...article} key={article.id} />)}
+        {props.listFilter == ''
+          ? itemsToShow.map((article) => <Article idActiveArticle={itemId(typeItem)} onArticleChange={onIdChange} onItemChange={props.onItemChange} typeItem={typeItem} {...article} key={article.id} />)
+          : itemsToShow.map((article) => filterItem(article))}
       </div>
     </div>
   );
+
+  function filterItem(article) {
+    if ((props.listFilter.includes(article.material)) || (props.listFilter.includes(article.grammage))) {
+      return <Article idActiveArticle={itemId(typeItem)} onArticleChange={onIdChange} onItemChange={props.onItemChange} typeItem={typeItem} {...article} />;
+    }
+    return null;
+  }
 
   function onIdChange(id, type) {
     if (type === 'duvet') {
