@@ -47,9 +47,11 @@ const Collection = () => {
             </div>
           </Link>
           {parures[0].parureName ? parures.map((parure) => (
-            <div className={styles.parure} key={parure.parureId}>
+          <Link href="/">
+            <div className={styles.parure} key={parure.parureId} onClick={() => setActiveParure(parure.parureContent)}>
               <ParureCard parure={parure} setActiveParure={setActiveParure} toggleCart={toggleCart} />
             </div>
+            </Link>
           )) : null}
         </div>
       </div>
