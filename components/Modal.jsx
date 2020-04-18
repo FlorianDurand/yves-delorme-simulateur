@@ -6,14 +6,14 @@ import { useSelector, useDispatch } from 'react-redux'
 import styles from './Modal.module.scss';
 
 const useSave = () => {
-  const parure = useSelector(state => state.parure)
+  const parures = useSelector(state => state.parures)
   const dispatch = useDispatch()
   const saveParure = myParure =>
     dispatch({
       type: 'saveParure',
-      parure : myParure
+      parures : myParure
     })
-  return { parure, saveParure }
+  return { parures, saveParure }
 }
 
 const Modal = (props) => {
@@ -29,21 +29,21 @@ const Modal = (props) => {
   }, [parureName]);
 
   //Recupère les variables globales
-  const { parure, saveParure } = useSave();
+  const { parures, saveParure } = useSave();
 
   //Sauvegarde la parure dans un state global (via redux), mais avant regarde si l'id de la parure n'est pas déjà éxistant et dans ce cas, update la parure existante dans le state global
   const save = myParure => {
     if (myParure) {
-    const index = parure.findIndex((e) => e.parureId === myParure.parureId);
-    var parures;
+    const index = parures.findIndex((e) => e.parureId === myParure.parureId);
+    var paruresToSave;
     if (index === -1) {
-      parure.push(myParure);
-      parures = parure;
+      parures.push(myParure);
+      paruresToSave = parures;
     } else {
-        parure[index] = myParure;
-        parures = parure;
+        parures[index] = myParure;
+        paruresToSave = parures;
     }
-    saveParure(parures);
+    saveParure(paruresToSave);
     }
   }
 

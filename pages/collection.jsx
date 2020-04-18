@@ -7,14 +7,14 @@ import ParureCard from '../components/ParureCard';
 import HeaderCollection from '../components/HeaderCollection';
 
 const getInfo = () => {
-  const parure = useSelector(state => state.parure)
+  const parures = useSelector(state => state.parures)
   const idLog = useSelector(state => state.idLog)
-  return { parure, idLog }
+  return { parures, idLog }
   }
 
 const Collection = () => {
-  const { parure, idLog } = getInfo()
-  console.log(parure)
+  const { parures, idLog } = getInfo()
+  console.log(parures)
   return(
   <div className={styles.collection}>
     <HeaderCollection idLog={idLog}/>
@@ -27,15 +27,11 @@ const Collection = () => {
           <h2>Nouvelle Parure</h2>
         </div>
       </Link>
-      <div className={styles.parure}>
-        <ParureCard />
+      {parures.map((parure) => {
+        <div className={styles.parure}>
+        <ParureCard parureId={parure.parureId} parurePreview={parure.parurePreview} parureContent={parure.parureContent} parureName={parure.parureName} key={parure.parureId} />
       </div>
-      <div className={styles.parure}>
-        <ParureCard />
-      </div>
-      <div className={styles.parure}>
-        <ParureCard />
-      </div>
+      })}
     </div>
 
   </div>

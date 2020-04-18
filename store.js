@@ -4,7 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 const initialParureId = Math.floor(Math.random() * 1000);
 
 const initialState = {
-  parure: [{parureId : initialParureId}],
+  parures: [{parureId : initialParureId}],
   idLog: ''
 }
 
@@ -13,7 +13,7 @@ const reducer = (state = initialState, action) => {
     case 'saveParure':
       return {
         ...state,
-        parure: action.parure
+        parures: action.parures
       }
       case 'updateLog':
       return {

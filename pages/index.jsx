@@ -10,28 +10,28 @@ import styles from './index.module.scss';
 
 const SaveIdLog = () => {
   const idLog = useSelector(state => state.idLog)
-  const parure = useSelector(state => state.parure)
+  const parures = useSelector(state => state.parures)
   const dispatch = useDispatch()
   const saveLog = idLogLocal =>
   dispatch({
     type: 'updateLog',
     idLog : idLogLocal
   })
-  return { idLog, saveLog, parure }
+  return { idLog, saveLog, parures }
 }
 
 const Index = () => {
 
   //Recupère les variables globales
-  const { idLog, saveLog, parure } = SaveIdLog();
+  const { idLog, saveLog, parures } = SaveIdLog();
 
-  let parureId = parure[0].parureId;
-  if (parure.length < 998) {
-    if (parure[0].parureName) {
-      let index = parure.findIndex((e) => e.parureId === parureId);
+  let parureId = parures[0].parureId;
+  if (parures.length < 998) {
+    if (parures[0].parureName) {
+      let index = parures.findIndex((e) => e.parureId === parureId);
       while ( index !== -1 ) {
         parureId = Math.floor(Math.random() * 1000);
-        index = parure.findIndex((e) => e.parureId === parureId);
+        index = parures.findIndex((e) => e.parureId === parureId);
       }
     }
   } else {
