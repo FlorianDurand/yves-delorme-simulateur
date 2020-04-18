@@ -12,11 +12,11 @@ const Couleurs = ['#EB5757', '#F2994A', '#F2C94C', '#219653', '#27AE60', '#6FCF9
 
 const ListFilters = (props) => (
   <div className={styles.listFilters}>
-    <Filters arrayFilters={Motif} handleFilterChange={props.handleFilterChange} />
-    <FilterColor title="Couleurs" arrayFilters={Couleurs} handleFilterChange={props.handleFilterChange} />
-    <Filters title="Style" arrayFilters={Style} handleFilterChange={props.handleFilterChange} />
-    <Filters title="Tissu" arrayFilters={Tissu} handleFilterChange={props.handleFilterChange} />
-    <Filters title="Nombre de fils/cm²" arrayFilters={Fils} handleFilterChange={props.handleFilterChange} />
+    <Filters arrayFilters={Motif} handleFilterChange={props.handleFilterChange} listFilter={props.listFilter} />
+    <FilterColor title="Couleurs" arrayFilters={Couleurs} handleFilterChange={props.handleFilterChange} listFilter={props.listFilter} />
+    <Filters title="Style" arrayFilters={Style} handleFilterChange={props.handleFilterChange} listFilter={props.listFilter} />
+    <Filters title="Tissu" arrayFilters={Tissu} handleFilterChange={props.handleFilterChange} listFilter={props.listFilter} />
+    <Filters title="Nombre de fils/cm²" arrayFilters={Fils} handleFilterChange={props.handleFilterChange} listFilter={props.listFilter} />
   </div>
 );
 

@@ -1,11 +1,15 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Filters.module.scss';
 
 const Filters = (props) => {
   const [isFilterActive, setIsFilterActive] = useState('');
   const filters = props.arrayFilters;
+
+  useEffect(() => {
+    setIsFilterActive(props.listFilter);
+  }, [props.listFilter]);
 
   const listFilters = filters.map((filter) => (
     <button type="button" className={isFilterActive.includes(filter) ? (styles.itemActive) : (styles.itemNotActive)} onClick={() => activeFilter(filter)}>

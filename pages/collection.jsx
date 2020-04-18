@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { withRedux } from '../lib/redux';
 import { useSelector, useDispatch } from 'react-redux';
+import { withRedux } from '../lib/redux';
 import ParureCard from '../components/ParureCard';
 import AddCart from '../components/AddCart';
 import HeaderCollection from '../components/HeaderCollection';
@@ -9,31 +9,34 @@ import HeaderCollection from '../components/HeaderCollection';
 import styles from './collection.module.scss';
 
 const getInfo = () => {
-  const parures = useSelector(state => state.parures)
-  const idLog = useSelector(state => state.idLog)
-  const initialParureContent = useSelector(state => state.initialParureContent)
-  const dispatch = useDispatch()
-  const setActiveParure = parureContent =>
-  dispatch({
+  const parures = useSelector((state) => state.parures);
+  const idLog = useSelector((state) => state.idLog);
+  const initialParureContent = useSelector((state) => state.initialParureContent);
+  const dispatch = useDispatch();
+  const setActiveParure = (parureContent) => dispatch({
     type: 'activeParure',
-    activeParure : parureContent
-  })
+    activeParure: parureContent,
+  });
 
-  return { parures, idLog, initialParureContent, setActiveParure }
-  }
+  return {
+    parures, idLog, initialParureContent, setActiveParure,
+  };
+};
 
 const Collection = () => {
-  const { parures, idLog, initialParureContent, setActiveParure } = getInfo()
-  console.log(parures)
+  const {
+    parures, idLog, initialParureContent, setActiveParure,
+  } = getInfo();
+  console.log(parures);
 
   const [addCart, setAddCart] = useState(false);
   const [cartContent, setCartContent] = useState();
 
 
-  return(
+  return (
     <div>
       <div className={styles.collection}>
-        <HeaderCollection idLog={idLog}/>
+        <HeaderCollection idLog={idLog} />
         <div className={styles.parures}>
           <Link href="/">
             <div className={styles.add} onClick={() => setActiveParure(initialParureContent)}>
@@ -44,10 +47,10 @@ const Collection = () => {
             </div>
           </Link>
           {parures[0].parureName ? parures.map((parure) => (
-            <div className={styles.parure}  key={parure.parureId}>
-              <ParureCard parure={parure} setActiveParure={setActiveParure} toggleCart={toggleCart}/>
+            <div className={styles.parure} key={parure.parureId}>
+              <ParureCard parure={parure} setActiveParure={setActiveParure} toggleCart={toggleCart} />
             </div>
-          )): null}
+          )) : null}
         </div>
       </div>
       {addCart ? (
@@ -61,12 +64,11 @@ const Collection = () => {
   function toggleCart(cartContent) {
     if (!addCart) {
       setAddCart(true);
-      setCartContent(cartContent)
+      setCartContent(cartContent);
     } else {
       setAddCart(false);
     }
   }
-
 };
 
 

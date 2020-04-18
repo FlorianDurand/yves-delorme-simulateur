@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './FilterColor.module.scss';
 
 const FilterColor = (props) => {
   const [colorActive, setColorActive] = useState('');
   const colors = props.arrayFilters;
+
+  useEffect(() => {
+    setColorActive(props.listFilter);
+  }, [props.listFilter]);
 
   const listFilters = colors.map((color) => (
     <button type="button" className={colorActive.includes(color) ? (styles.itemActive) : (styles.itemNotActive)} onClick={() => activeColor(color)} style={{ backgroundColor: color }} />
