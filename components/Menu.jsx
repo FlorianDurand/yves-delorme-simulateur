@@ -18,6 +18,7 @@ const Menu = (props) => {
 
   useEffect(() => {
     setIsFilterActive(false);
+    setListFilter('');
   }, [props.title]);
 
   return (
