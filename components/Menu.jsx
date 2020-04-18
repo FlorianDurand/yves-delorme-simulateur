@@ -14,6 +14,7 @@ const Menu = (props) => {
   const [isFilterActive, setIsFilterActive] = useState(false);
   const [itemsShown, setItemsShown] = useState();
   const [filtered, setFiltered] = useState();
+  const [listFilter, setListFilter] = useState('');
 
   useEffect(() => {
     setIsFilterActive(false);
@@ -28,12 +29,20 @@ const Menu = (props) => {
         <h1 className={styles.title}>{props.title}</h1>
         <FilterBar onFilterActive={onFilterActive} isFilterActive={isFilterActive} handleSearchChange={handleSearchChange} />
         {isFilterActive
-          ? <ListFilters />
-          : <ListArticles typeItem={props.typeItem} onItemChange={props.onItemChange} activeArticle={props.activeBed} itemsfunction={itemsfunction} filtered={filtered} />}
+          ? <ListFilters handleFilterChange={handleFilterChange} />
+          : <ListArticles typeItem={props.typeItem} onItemChange={props.onItemChange} activeArticle={props.activeBed} itemsfunction={itemsfunction} filtered={filtered} listFilter={listFilter} />}
       </div>
     </div>
 
   );
+
+  function handleFilterChange(filter) {
+    if (listFilter.includes(filter)) {
+      setListFilter(listFilter.replace(filter, ''));
+    } else {
+      setListFilter(listFilter + filter);
+    }
+  }
 
   function onFilterActive() {
     setIsFilterActive(!isFilterActive);
@@ -47,10 +56,10 @@ const Menu = (props) => {
     if (e.target.value !== '') {
       currentList = itemsShown;
       newList = currentList.filter((item) => {
-      const lc = item.name.toLowerCase();
-      const filter = e.target.value.toLowerCase();
+        const lc = item.name.toLowerCase();
+        const filter = e.target.value.toLowerCase();
 
-      return lc.includes(filter);
+        return lc.includes(filter);
       });
     } else {
       // If the search bar is empty, set newList to original task list

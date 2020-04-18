@@ -56,8 +56,6 @@ const Collection = () => {
         />
       ) : null}
     </div>
-
-
   );
 
   function toggleCart(cartContent) {

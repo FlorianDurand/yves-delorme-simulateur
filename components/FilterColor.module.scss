@@ -29,10 +29,11 @@
     }
 
     .itemActive {
+      box-sizing: border-box;
       width: 60px;
       height: 60px;
       margin-bottom: 20px;
-      margin-left: 32px;
+      margin-left: 31px;
       border: 6px solid color(secondary-400);
       border-radius: 50%;
 

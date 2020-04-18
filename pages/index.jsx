@@ -1,45 +1,43 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Header from '../components/Header';
 import Bed from '../components/Bed';
 import Footer from '../components/Footer';
 import Modal from '../components/Modal';
 import { withRedux } from '../lib/redux';
-import { useSelector, useDispatch } from 'react-redux'
 
 import styles from './index.module.scss';
 
 const SaveIdLog = () => {
-  const idLog = useSelector(state => state.idLog)
-  const parures = useSelector(state => state.parures)
-  const dispatch = useDispatch()
-  const saveLog = idLogLocal =>
-  dispatch({
+  const idLog = useSelector((state) => state.idLog);
+  const parures = useSelector((state) => state.parures);
+  const dispatch = useDispatch();
+  const saveLog = (idLogLocal) => dispatch({
     type: 'updateLog',
-    idLog : idLogLocal
-  })
-  return { idLog, saveLog, parures }
-}
+    idLog: idLogLocal,
+  });
+  return { idLog, saveLog, parures };
+};
 
 const Index = () => {
-
-  //Recupère les variables globales
+  // Recupère les variables globales
   const { idLog, saveLog, parures } = SaveIdLog();
 
-  let parureId = parures[0].parureId;
+  let { parureId } = parures[0];
   if (parures.length < 998) {
     if (parures[0].parureName) {
       let index = parures.findIndex((e) => e.parureId === parureId);
-      while ( index !== -1 ) {
+      while (index !== -1) {
         parureId = Math.floor(Math.random() * 1000);
         index = parures.findIndex((e) => e.parureId === parureId);
       }
     }
   } else {
-    alert("Nombre maximal de parure enregistré")
+    alert('Nombre maximal de parure enregistré');
   }
 
 
-  const [ currentParureId, setCurrentParureId ] = useState(parureId)
+  const [currentParureId, setCurrentParureId] = useState(parureId);
 
   const [menu, setMenu] = useState(false);
   const [menuLeftDecor, setMenuLeftDecor] = useState(false);
@@ -53,7 +51,7 @@ const Index = () => {
   const [myParure, setMyParure] = useState();
   const [idLogLocal, setIDLogLocal] = useState(idLog);
   const [logged, setLogged] = useState(false);
-  const [ savedBed, setSavedBed ] = useState(false);
+  const [savedBed, setSavedBed] = useState(false);
 
   useEffect(() => saveId(), [idLogLocal]);
 
@@ -61,8 +59,8 @@ const Index = () => {
     <div className={styles.background}>
       <Header toggleMenuLeftDecor={toggleMenuLeftDecor} />
       <Bed menu={menu} addCart={addCart} popModal={popModal} parureContent={parureContent} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} menuOpen={menuOpen} saveParure={saveParure} currentParureId={currentParureId} />
-      {modal ? (<Modal type={typeOfModal} resetModal={resetModal} myParure={myParure} logIn={logIn} popModal={popModal} saveParure={saveParure}/>) : null}
-      <Footer popModal={popModal} toggleMenu={toggleMenu} toggleCart={toggleCart} preview={previewF}  savedBed={savedBed}/>
+      {modal ? (<Modal type={typeOfModal} resetModal={resetModal} myParure={myParure} logIn={logIn} popModal={popModal} saveParure={saveParure} />) : null}
+      <Footer popModal={popModal} toggleMenu={toggleMenu} toggleCart={toggleCart} preview={previewF} savedBed={savedBed} />
       <div id="trashCanvas" className={styles.trashCanvas}>
         <canvas id="canvas" />
       </div>
@@ -117,10 +115,10 @@ const Index = () => {
 
   function popModal(typeOfModal) {
     typeOfModal === 'addedToCart' || typeOfModal === 'saved' ? (setTypeOfModal(typeOfModal), setModal(true)) : null;
-    typeOfModal === 'save' && logged == true ?   (setTypeOfModal(typeOfModal), setModal(true)) : null;
-    typeOfModal === 'save' && logged == false ?   (setTypeOfModal('unlogged'), setModal(true)) : null;
-    typeOfModal === 'list' && logged == false ?   (setTypeOfModal('unlogged'), setModal(true)) : null;
-    typeOfModal === 'list' && logged == true && savedBed == false ?   (setTypeOfModal('list'), setModal(true)) : null;
+    typeOfModal === 'save' && logged == true ? (setTypeOfModal(typeOfModal), setModal(true)) : null;
+    typeOfModal === 'save' && logged == false ? (setTypeOfModal('unlogged'), setModal(true)) : null;
+    typeOfModal === 'list' && logged == false ? (setTypeOfModal('unlogged'), setModal(true)) : null;
+    typeOfModal === 'list' && logged == true && savedBed == false ? (setTypeOfModal('list'), setModal(true)) : null;
   }
 
   function parureContent(myParure) {
@@ -129,7 +127,7 @@ const Index = () => {
 
   function logIn(log) {
     setIDLogLocal(log);
-    log ? setLogged(true): null;
+    log ? setLogged(true) : null;
   }
 
   function saveParure() {
@@ -140,6 +138,6 @@ const Index = () => {
     saveLog(idLogLocal);
     idLogLocal ? setLogged(true) : null;
   }
-}
+};
 
 export default withRedux(Index);

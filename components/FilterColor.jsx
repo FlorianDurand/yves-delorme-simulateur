@@ -1,14 +1,13 @@
-
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './FilterColor.module.scss';
 
 const FilterColor = (props) => {
-  const [isColorActive, setIsColorActive] = useState('');
+  const [colorActive, setColorActive] = useState('');
   const colors = props.arrayFilters;
 
   const listFilters = colors.map((color) => (
-    <button type="button" className={isColorActive === color ? (styles.itemActive) : (styles.itemNotActive)} onClick={() => activeColor(color)} style={{ backgroundColor: color }} />
+    <button type="button" className={colorActive.includes(color) ? (styles.itemActive) : (styles.itemNotActive)} onClick={() => activeColor(color)} style={{ backgroundColor: color }} />
   ));
 
   return (
@@ -21,7 +20,12 @@ const FilterColor = (props) => {
   );
 
   function activeColor(color) {
-    setIsColorActive(color);
+    if (colorActive.includes(color)) {
+      setColorActive(colorActive.replace(color, ''));
+    } else {
+      setColorActive(colorActive + color);
+    }
+    props.handleFilterChange(color);
   }
 };
 
@@ -29,6 +33,7 @@ const FilterColor = (props) => {
 FilterColor.propTypes = {
   title: PropTypes.string.isRequired,
   arrayFilters: PropTypes.array.isRequired,
+  handleFilterChange: PropTypes.func.isRequired,
 };
 
 export default FilterColor;

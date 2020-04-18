@@ -28,6 +28,7 @@ const Filters = (props) => {
     } else {
       setIsFilterActive(isFilterActive + filter);
     }
+    props.handleFilterChange(filter);
   }
 };
 
@@ -35,6 +36,7 @@ const Filters = (props) => {
 Filters.propTypes = {
   title: PropTypes.string,
   arrayFilters: PropTypes.array.isRequired,
+  handleFilterChange: PropTypes.func.isRequired,
 };
 
 export default Filters;
