@@ -13,13 +13,18 @@ const useSave = () => {
       type: 'saveParure',
       parures : myParure
     })
-  return { parures, saveParure }
+    const setActiveParure = (parureContent) => dispatch({
+      type: 'activeParure',
+      activeParure: parureContent,
+    });
+  return { parures, saveParure, setActiveParure }
 }
 
 const Modal = (props) => {
 
   const [ email, setEmail ] = useState();
   const [ parureName, setParureName] = useState();
+  const [ popModal, setPopModal ] = useState();
   var myParure;
 
   //Ajoute le nom de la parure renseigné par le client
@@ -28,8 +33,12 @@ const Modal = (props) => {
     myParure.parureName = parureName;
   }, [parureName]);
 
+  useEffect(() => {
+    props.popModal(popModal)
+  }, [popModal]);
+
   //Recupère les variables globales
-  const { parures, saveParure } = useSave();
+  const { parures, saveParure, setActiveParure } = useSave();
 
   //Sauvegarde la parure dans un state global (via redux), mais avant regarde si l'id de la parure n'est pas déjà éxistant et dans ce cas, update la parure existante dans le state global
   const save = myParure => {
@@ -69,7 +78,7 @@ const Modal = (props) => {
       </div>
     ) : null}
 
-    {props.type === 'unlogged' ? (
+    {props.type[0] === 'unlogged' ? (
       <div className={styles.modal}>
         <div className={styles.basicText}>
           Pour
@@ -85,7 +94,7 @@ const Modal = (props) => {
           <button type="button" className={styles.buttonBottom} onClick={() => {props.resetModal(), props.logIn()}}>
             Retour
           </button>
-          <button type="button" className={styles.buttonTop} onClick={() => {props.resetModal(), props.logIn(email)}}>
+          <button type="button" className={styles.buttonTop} onClick={() => {setPopModal(props.type[1]), props.logIn(email)}}>
             <img src="/static/save.svg" alt="Valider" />
             Valider
           </button>
@@ -105,10 +114,12 @@ const Modal = (props) => {
           <button type="button" className={styles.buttonBottom} onClick={() => {props.resetModal()}}>
             Retour
           </button>
-          <button type="button" className={styles.buttonTop} onClick={() => {save(myParure), props.popModal('saved'), props.saveParure()}}>
-            <img src="/static/save.svg" alt="Valider" />
-            Valider
-          </button>
+          <Link href="/">
+            <button type="button" className={styles.buttonTop} onClick={() => {save(myParure), props.popModal('saved'), props.saveParure(true), setActiveParure({parureContent : myParure.parureContent, newParure : true})}}>
+              <img src="/static/save.svg" alt="Valider" />
+              Valider
+            </button>
+          </Link>
         </div>
       </div>
     ) : null}
@@ -157,7 +168,7 @@ const Modal = (props) => {
 };
 
 Modal.propTypes = {
-  type: PropTypes.string.isRequired,
+  // type: PropTypes.string.isRequired,
   resetModal: PropTypes.func.isRequired,
 };
 
