@@ -5,12 +5,12 @@ import MenuLeftBase from './MenuLeftBase';
 
 const walls = [
   {
-    id: '0',
+    id: 0,
     imagePreview: '/static/Background/wall_preview_1.png',
     image: '/static/Background/wall_1.png',
   },
   {
-    id: '1',
+    id: 1,
     imagePreview: '/static/Background/wall_preview_2.png',
     image: '/static/Background/wall_2.png',
   },
@@ -19,13 +19,13 @@ const walls = [
 
 const floors = [
   {
-    id: '0',
+    id: 0,
     imagePreview: '/static/Background/floor_preview_1.png',
     image: '/static/Background/floor_1.png',
     joint: '/static/Background/joint_1.png',
   },
   {
-    id: '1',
+    id: 1,
     imagePreview: '/static/Background/floor_preview_2.png',
     image: '/static/Background/floor_2.png',
     joint: '/static/Background/joint_2.png',
@@ -34,22 +34,22 @@ const floors = [
 ];
 const teteLits = [
   {
-    id: '0',
+    id: 0,
     imagePreview: '/static/none_white.svg',
     image: '',
   },
   {
-    id: '1',
+    id: 1,
     imagePreview: '/static/Background/teteLit_preview_1.png',
     image: '/static/Background/teteLit_1.png',
   },
   {
-    id: '2',
+    id: 2,
     imagePreview: '/static/Background/teteLit_preview_2.png',
     image: '/static/Background/teteLit_2.png',
   },
   {
-    id: '3',
+    id: 3,
     imagePreview: '/static/Background/teteLit_preview_3.png',
     image: '/static/Background/teteLit_3.png',
   },
@@ -64,7 +64,7 @@ const MenuLeftDecor = (props) => {
 
   return (
     <div>
-      <div className={styles.close} onClick={ () => props.resetMenu()}>
+      <div className={styles.close} onClick={() => props.resetMenu()}>
         <img src="/static/close_green.svg" alt="Fermer le menu" className={styles.closeMenu} />
       </div>
       <div className={styles.menu}>

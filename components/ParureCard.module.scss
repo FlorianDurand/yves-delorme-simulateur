@@ -21,7 +21,8 @@
       right: 24px;
       z-index: 50;
 
-      .cart {
+      .cart,
+      .cartRemove {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -30,6 +31,17 @@
         margin-bottom: 24px;
         background-color: color(primary-500);
         border-radius: 5px;
+      }
+
+      .cartRemove {
+        background-color: white;
+
+        path,
+        rect,
+        svg {
+          fill: color(primary-500);
+          stroke: color(primary-500);
+        }
       }
 
       .bin {

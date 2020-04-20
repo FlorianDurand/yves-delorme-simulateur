@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import styles from './Footer.module.scss';
@@ -6,13 +6,14 @@ import Button from './Styles/Button';
 
 
 const Footer = (props) => {
+  const [isActive, setIsActive] = useState('');
   return (
     <div className={styles.footer}>
       <div className={styles.buttons}>
-        <div className={styles.button} onClick={() => props.toggleMenu('Taies', 'bigPillow')}><Button>Taies</Button></div>
-        <div className={styles.button} onClick={() => props.toggleMenu('Housse de couette', 'duvet')}><Button>Housse de couette</Button></div>
-        <div className={styles.button} onClick={() => props.toggleMenu('Drap plat', 'flatSheet')}><Button>Drap plat</Button></div>
-        <div className={styles.button} onClick={() => props.toggleMenu('Drap housse', 'fittedSheet')}><Button>Drap housse</Button></div>
+        <div className={isActive === 'Taies' ? (styles.activeButton) : (styles.notActiveButton)} onClick={() => { props.toggleMenu('Taies', 'bigPillow'), setIsActive('Taies'); }}>Taies</div>
+        <div className={isActive === 'Housse' ? (styles.activeButton) : (styles.notActiveButton)} onClick={() => { props.toggleMenu('Housse de couette', 'duvet'), setIsActive('Housse'); }}>Housse de couette</div>
+        <div className={isActive === 'flat' ? (styles.activeButton) : (styles.notActiveButton)} onClick={() => { props.toggleMenu('Drap plat', 'flatSheet'), setIsActive('flat'); }}>Drap plat</div>
+        <div className={isActive === 'fitted' ? (styles.activeButton) : (styles.notActiveButton)} onClick={() => { props.toggleMenu('Drap housse', 'fittedSheet'), setIsActive('fitted'); }}>Drap housse</div>
       </div>
 
       <div className={styles.buttonsRight}>
@@ -29,11 +30,11 @@ const Footer = (props) => {
               </button>
             </Link>
           ) : (
-            <button type="button" className={styles.buttonRightLeft} onClick={() => { props.popModal('list'), previewRender()}}>
+            <button type="button" className={styles.buttonRightLeft} onClick={() => { props.popModal('list'), previewRender(); }}>
               <img src="/static/list_green.svg" alt="Voir la liste" />
             </button>
           )}
-          <button type="button" className={styles.buttonRight} onClick={() => { props.popModal('save'), previewRender()}}>
+          <button type="button" className={styles.buttonRight} onClick={() => { props.popModal('save'), previewRender(); }}>
             <img src="/static/list_plus_green.svg" alt="Ajouter dans la liste" />
             Enregistrer le lit
           </button>
@@ -47,12 +48,12 @@ const Footer = (props) => {
   function previewRender(cart) {
     import('html2canvas').then((html2canvas) => {
       html2canvas.default(document.getElementById('bed'), {
-        width: 1146, height: 414, x: 100, y: 220,scale:1
+        width: 1146, height: 414, x: 100, y: 220, scale: 1,
       }).then((canvas) => {
         document.getElementById('trashCanvas').removeChild(document.getElementById('trashCanvas').childNodes[0]);
         document.getElementById('trashCanvas').appendChild(canvas);
       }).then(() => {
-        cart ? props.toggleCart() : null ;
+        cart ? props.toggleCart() : null;
         const dataURI = document.getElementById('trashCanvas').childNodes[0].toDataURL();
         props.preview(dataURI);
       });

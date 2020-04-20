@@ -20,12 +20,29 @@ $background-color: white;
   margin-left: 40px;
 }
 
-.button {
+.notActiveButton,
+.activeButton {
+  width: auto;
+  height: 60px;
   margin-left: 20px;
+  padding: 16px 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 22px;
+  background-color: color(secondary-700, 0.2);
+  border: solid 1px white;
+  border-radius: 5px;
+  transition-duration: 250ms;
 }
 
-.button:first-child {
+.notActiveButton:first-child,
+.activeButton:first-child {
   margin-left: 0;
+}
+
+.activeButton {
+  background-color: color(light, 50%);
+  transition-duration: 250ms;
 }
 
 .buttonsRight {
