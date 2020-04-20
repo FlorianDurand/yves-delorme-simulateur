@@ -26,7 +26,7 @@ const ParureCard = (props) => {
           )
           : (
             <div className={styles.buttons}>
-              <button className={styles.button} onClick={() => deleteParure()}>Supprimer la parure</button>
+              <button className={styles.button} onClick={() => props.deleteParure(props.parure)}>Supprimer la parure</button>
               <button className={styles.button} onClick={() => toggleDelete()}>Annuler</button>
             </div>
           )}
@@ -42,20 +42,6 @@ const ParureCard = (props) => {
 
   function toggleDelete() {
     setIsDelete(!isDelete);
-  }
-
-  function deleteParure() {
-    console.log(parures);
-    for (let i = 0; i < parures.length; i++) {
-      if (parures[i] === props.parure) {
-        delete parures[i];
-      }
-    }
-    // parures.remove(props.parure);
-    // const saveParure = (parures) => dispatch({
-    //   type: 'saveParure',
-    //   parures,
-    // });
   }
 };
 
