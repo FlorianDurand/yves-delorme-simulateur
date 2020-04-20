@@ -5,7 +5,7 @@
   background-color: grey;
 
   .image {
-
+    position: relative;
     width: 100%;
     height: 463px;
 
@@ -19,6 +19,7 @@
       position: absolute;
       top: 24px;
       right: 24px;
+      z-index: 50;
 
       .cart {
         display: flex;
@@ -41,6 +42,52 @@
         border: 1px solid white;
         border-radius: 5px;
       }
+    }
+
+    .buttons {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding-top: 157px;
+      padding-left: 159px;
+      background-color: color(secondary-700, 0.6);
+      animation: fadein 500ms;
+
+      @keyframes fadein {
+
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 311px;
+        height: 60px;
+        font-weight: bold;
+        font-size: 24px;
+        font-family: $font-base;
+
+        &:first-child {
+          margin-bottom: 30px;
+          color: white;
+          background-color: color(primary-500);
+        }
+
+        &:last-child {
+          color: color(primary-500);
+          background-color: white;
+        }
+      }
+
     }
   }
 

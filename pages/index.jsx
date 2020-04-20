@@ -18,38 +18,38 @@ const SaveIdLog = () => {
     type: 'updateLog',
     idLog: idLogLocal,
   });
-  return { idLog, saveLog, parures, activeParure, activeParureId };
+  return {
+    idLog, saveLog, parures, activeParure, activeParureId,
+  };
 };
 
 const Index = () => {
+  const {
+    idLog, saveLog, parures, activeParure, activeParureId,
+  } = SaveIdLog();
 
-  const { idLog, saveLog, parures, activeParure, activeParureId } = SaveIdLog();
-
-  let parureId  = activeParureId;
+  let parureId = activeParureId;
   let tempParureId;
   if (activeParure.parureId) {
-    parureId = activeParure.parureId
-  } else  {
-
-    if (parures.length < 998) {
-      if (parures[0].parureName) {
-        tempParureId = Math.floor(Math.random() * 1000);
-        let index = parures.findIndex((e) => e.parureId == tempParureId);
-        while (index !== -1) {
+    parureId = activeParure.parureId;
+  } else if (parures.length < 998) {
+    if (parures[0].parureName) {
+      tempParureId = Math.floor(Math.random() * 1000);
+      let index = parures.findIndex((e) => e.parureId == tempParureId);
+      while (index !== -1) {
         tempParureId = Math.floor(Math.random() * 1000);
         index = parures.findIndex((e) => e.parureId === tempParureId);
-        }
-        parureId = tempParureId;
       }
-    } else {
-      alert('Nombre maximal de parure enregistré');
+      parureId = tempParureId;
     }
+  } else {
+    alert('Nombre maximal de parure enregistré');
   }
   const [currentParureId, setCurrentParureId] = useState(parureId);
 
   useEffect(() => {
-    setCurrentParureId(parureId)
-  }, [activeParure.newParure])
+    setCurrentParureId(parureId);
+  }, [activeParure.newParure]);
 
   const [menu, setMenu] = useState(false);
   const [menuLeftDecor, setMenuLeftDecor] = useState(false);

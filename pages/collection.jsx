@@ -42,7 +42,7 @@ const Collection = () => {
         <HeaderCollection idLog={idLog} />
         <div className={styles.parures}>
           <Link href="/">
-            <div className={styles.add} onClick={() => setActiveParure({parureContent : initialParureContent})}>
+            <div className={styles.add} onClick={() => setActiveParure({ parureContent: initialParureContent })}>
               <button type="button">
                 <img src="/static/icons/iconMore.svg" alt="add" />
               </button>
