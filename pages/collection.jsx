@@ -17,15 +17,19 @@ const getInfo = () => {
     type: 'activeParure',
     activeParure: parureContent,
   });
+  const saveWantedParures = (parures) => dispatch({
+    type: 'saveWantedParures',
+    parures: parures,
+  });
 
   return {
-    parures, idLog, initialParureContent, setActiveParure,
+    parures, idLog, initialParureContent, setActiveParure, saveWantedParures
   };
 };
 
 const Collection = () => {
   const {
-    parures, idLog, initialParureContent, setActiveParure,
+    parures, idLog, initialParureContent, setActiveParure, saveWantedParures
   } = getInfo();
   console.log(parures);
 

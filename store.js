@@ -73,6 +73,11 @@ const reducer = (state = initialState, action) => {
         ...state,
         activeParure: action.activeParure,
       };
+      case 'saveWantedParures':
+      return {
+        ...state,
+        parures: action.parures,
+      };
     default:
       return state;
   }
