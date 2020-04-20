@@ -19,10 +19,10 @@ const HeaderCollection = props => {
             <input type="email" name="" id="" defaultValue={props.idLog} className={styles.mailInput}/>
           </div>
           <div className={styles.groupButtonsRow}>
-            <button type="button" className={styles.buttonBottom}>
+            <button type="button" className={styles.buttonBottom} onClick={() => resetShareCard()}>
               Retour
             </button>
-            <button type="button" className={styles.buttonTop}>
+            <button type="button" className={styles.buttonTop} onClick={() => resetShareCard()}>
               Envoyer par email
             </button>
           </div>
@@ -68,6 +68,9 @@ const HeaderCollection = props => {
   function popShare() {
     setShareCard(!shareCard)
   };
+  function resetShareCard() {
+    setShareCard(false)
+  }
 };
 
 
