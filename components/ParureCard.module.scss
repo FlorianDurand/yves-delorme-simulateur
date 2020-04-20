@@ -5,7 +5,9 @@
   background-color: grey;
 
   .image {
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 463px;
 
@@ -41,6 +43,28 @@
         border: 1px solid white;
         border-radius: 5px;
       }
+    }
+
+    .buttons {
+
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 311px;
+        height: 60px;
+
+        &:first-child {
+          color: white;
+          background-color: color(primary-500);
+        }
+
+        &:last-child {
+          color: color(primary-500);
+          background-color: white;
+        }
+      }
+
     }
   }
 
