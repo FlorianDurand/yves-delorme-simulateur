@@ -10,7 +10,7 @@ import MenuLeftDecor from '../components/MenuLeftDecor';
 
 import styles from './index.module.css'
 
-export default function Index({ collection }) {
+export default function Index({ productInfos, productVisu }) {
 	
 	const [menu, setMenu] = useState(false);
 	const [menuLeft, setMenuLeft] = useState(false);
@@ -23,7 +23,8 @@ export default function Index({ collection }) {
 			<Header toggleMenuLeft={toggleMenuLeft} toggleMenuLeftDecor={toggleMenuLeftDecor}/>
 			<Bed menu = {menu} addCart={addCart} menuLeftDecor={menuLeftDecor} title={typeArticle} resetMenu={resetMenu}/>
 			{menuLeft ? (<MenuLeft />) : null}
-			<div>YDL collection: {collection}</div>
+			<div>YDL collections: { productInfos.collection }</div>
+			{/* <div>YDL visu: { productVisu.bedlinen_sku }</div> */}
 			<Footer toggleMenu={toggleMenu} toggleCart={toggleCart} />
 		</div>
 	);
@@ -80,12 +81,25 @@ export default function Index({ collection }) {
 }
 
 Index.getInitialProps = async ctx => {
-	const res = await fetch('https://france.yvesdelorme.com/shell/digitalhome/flux/hetic/HeticProducts.php')
-	const data = await res.json()
-	console.log('new')
-	console.log(data[2192])
+	const res = await fetch('https://france.yvesdelorme.com/bedlinenconfigurator/products/get')
+	const productInfos = await res.json()
+
+	const visu = await fetch('https://france.yvesdelorme.com/bedlinenconfigurator/products/getDefault')
+	const productVisu = await visu.json()
+
+	const getAllParure = await fetch('https://france.yvesdelorme.com/bedlinenconfigurator/selection/get')	
+	const getParure = await getAllParure.json()
+
+	const addParureDefault = await fetch('https://france.yvesdelorme.com/bedlinenconfigurator/selection/add')	
+	const addParure = await addParureDefault.json()
+
+	const addPanierDefault = await fetch('https://france.yvesdelorme.com/bedlinenconfigurator/cart/add')	
+	const addPanier = await addPanierDefault.json()
+	
+	console.log(productVisu)
 
 	return { 
-		collection: data[0].collection + data[1].collection 
+		productInfos: productInfos[0],
+		productVisu: productVisu[0]
 	}
   }
