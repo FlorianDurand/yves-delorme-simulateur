@@ -39,7 +39,7 @@ const Collection = () => {
         <HeaderCollection idLog={idLog} />
         <div className={styles.parures}>
           <Link href="/">
-            <div className={styles.add} onClick={() => setActiveParure(initialParureContent)}>
+            <div className={styles.add} onClick={() => setActiveParure({parureContent : initialParureContent})}>
               <button type="button">
                 <img src="/static/icons/iconMore.svg" alt="add" />
               </button>
@@ -48,7 +48,7 @@ const Collection = () => {
           </Link>
           {parures[0].parureName ? parures.map((parure) => (
           <Link href="/">
-            <div className={styles.parure} key={parure.parureId} onClick={() => setActiveParure(parure.parureContent)}>
+            <div className={styles.parure} key={parure.parureId} onClick={() => setActiveParure({ parureContent : parure.parureContent, parureId : parure.parureId })}>
               <ParureCard parure={parure} setActiveParure={setActiveParure} toggleCart={toggleCart} />
             </div>
             </Link>

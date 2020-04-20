@@ -11,33 +11,45 @@ import styles from './index.module.scss';
 const SaveIdLog = () => {
   const idLog = useSelector((state) => state.idLog);
   const parures = useSelector((state) => state.parures);
+  const activeParure = useSelector((state) => state.activeParure);
+  const activeParureId = useSelector((state) => state.activeParureId);
   const dispatch = useDispatch();
   const saveLog = (idLogLocal) => dispatch({
     type: 'updateLog',
     idLog: idLogLocal,
   });
-  return { idLog, saveLog, parures };
+  return { idLog, saveLog, parures, activeParure, activeParureId };
 };
 
 const Index = () => {
-  // Recupère les variables globales
-  const { idLog, saveLog, parures } = SaveIdLog();
 
-  let { parureId } = parures[0];
-  if (parures.length < 998) {
-    if (parures[0].parureName) {
-      let index = parures.findIndex((e) => e.parureId === parureId);
-      while (index !== -1) {
-        parureId = Math.floor(Math.random() * 1000);
-        index = parures.findIndex((e) => e.parureId === parureId);
+  const { idLog, saveLog, parures, activeParure, activeParureId } = SaveIdLog();
+
+  let parureId  = activeParureId;
+  let tempParureId;
+  if (activeParure.parureId) {
+    parureId = activeParure.parureId
+  } else  {
+
+    if (parures.length < 998) {
+      if (parures[0].parureName) {
+        tempParureId = Math.floor(Math.random() * 1000);
+        let index = parures.findIndex((e) => e.parureId == tempParureId);
+        while (index !== -1) {
+        tempParureId = Math.floor(Math.random() * 1000);
+        index = parures.findIndex((e) => e.parureId === tempParureId);
+        }
+        parureId = tempParureId;
       }
+    } else {
+      alert('Nombre maximal de parure enregistré');
     }
-  } else {
-    alert('Nombre maximal de parure enregistré');
   }
-
-
   const [currentParureId, setCurrentParureId] = useState(parureId);
+
+  useEffect(() => {
+    setCurrentParureId(parureId)
+  }, [activeParure.newParure])
 
   const [menu, setMenu] = useState(false);
   const [menuLeftDecor, setMenuLeftDecor] = useState(false);
@@ -116,8 +128,8 @@ const Index = () => {
   function popModal(typeOfModal) {
     typeOfModal === 'addedToCart' || typeOfModal === 'saved' ? (setTypeOfModal(typeOfModal), setModal(true)) : null;
     typeOfModal === 'save' && logged == true ? (setTypeOfModal(typeOfModal), setModal(true)) : null;
-    typeOfModal === 'save' && logged == false ? (setTypeOfModal('unlogged'), setModal(true)) : null;
-    typeOfModal === 'list' && logged == false ? (setTypeOfModal('unlogged'), setModal(true)) : null;
+    typeOfModal === 'save' && logged == false ? (setTypeOfModal(['unlogged', 'save']), setModal(true)) : null;
+    typeOfModal === 'list' && logged == false ? (setTypeOfModal(['unlogged', 'list']), setModal(true)) : null;
     typeOfModal === 'list' && logged == true && savedBed == false ? (setTypeOfModal('list'), setModal(true)) : null;
   }
 
@@ -130,8 +142,8 @@ const Index = () => {
     log ? setLogged(true) : null;
   }
 
-  function saveParure() {
-    setSavedBed(!savedBed);
+  function saveParure(state) {
+    setSavedBed(state);
   }
 
   function saveId() {

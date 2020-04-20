@@ -6,7 +6,7 @@ import AddCart from './AddCart';
 import { useSelector, useDispatch } from 'react-redux';
 
 const getInfo = () => {
-  const activeBed = useSelector(state => state.activeParure)
+  const activeBed = useSelector(state => state.activeParure.parureContent)
   return { activeBed }
 }
 
@@ -133,7 +133,7 @@ const Bed = (props) => {
     if (typeItem === 'tete') {
       setTete(item);
     }
-    props.saveParure();
+    props.saveParure(false);
   }
 
 };

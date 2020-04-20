@@ -4,19 +4,55 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 const initialParureId = Math.floor(Math.random() * 1000);
 
 const initialParureContent = {
-  duvet : { image: '/static/Bed/couette2.png', name: 'Aucun', id: '1' },
+  duvet : {
+  name: 'Escale',
+  image: '/static/Bed/couette2.png',
+  material: 'Percale',
+  grammage: '120 fils/cm²',
+  imageItem: '/static/Bed/couette2.png',
+  id: '1',
+  },
   flatSheet : { image: '', name: 'Aucun', id: '0' },
   fittedSheet : { image: '', name: 'Aucun', id: '0' },
-  smallPillow : { image: '/static/Bed/petitcoussin2.png', name: 'Aucun', id: '1' },
-  centerPillow : { image: '/static/Bed/centrecoussin.png', name: 'Aucun', id: '1' },
-  mediumPillow : { image: '/static/Bed/moyencoussin.png', name: 'Aucun', id: '1' },
-  bigPillow : { image: '/static/Bed/groscoussin.png', name: 'Aucun', id: '1' }
+  smallPillow : {
+    name: 'Escale',
+    image: '/static/Bed/petitcoussin.png',
+    material: 'Percale',
+    grammage: '120 fils/cm²',
+    imageItem: '/static/Bed/petitcoussin.png',
+    id: '1',
+  },
+  centerPillow : {
+    name: 'Escale',
+    image: '/static/Bed/centrecoussin.png',
+    material: 'Percale',
+    grammage: '120 fils/cm²',
+    imageItem: '/static/Bed/centrecoussin.png',
+    id: '1',
+  },
+  mediumPillow : {
+    name: 'Palmea',
+    image: '/static/Bed/moyencoussin.png',
+    material: 'Percale',
+    grammage: '120 fils/cm²',
+    imageItem: '/static/Bed/moyencoussin.png',
+    id: '1',
+  },
+  bigPillow : {
+    name: 'Ecume Céladonn',
+    image: '/static/Bed/groscoussin.png',
+    material: 'Percale',
+    grammage: '120 fils/cm²',
+    imageItem: '/static/Bed/groscoussin.png',
+    id: '1',
+  }
 }
 
 const initialState = {
   parures: [{parureId : initialParureId}],
   idLog: '',
-  activeParure: initialParureContent,
+  activeParure: {parureContent : initialParureContent},
+  activeParureId: initialParureId,
   initialParureContent : initialParureContent
 }
 
