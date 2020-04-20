@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-unfetch'
 import Header from '../components/Header';
 import Bed from '../components/Bed';
 import Footer from '../components/Footer';
@@ -9,7 +10,7 @@ import MenuLeftDecor from '../components/MenuLeftDecor';
 
 import styles from './index.module.css'
 
-export default function Index() {
+export default function Index({ collection }) {
 	
 	const [menu, setMenu] = useState(false);
 	const [menuLeft, setMenuLeft] = useState(false);
@@ -22,6 +23,7 @@ export default function Index() {
 			<Header toggleMenuLeft={toggleMenuLeft} toggleMenuLeftDecor={toggleMenuLeftDecor}/>
 			<Bed menu = {menu} addCart={addCart} menuLeftDecor={menuLeftDecor} title={typeArticle} resetMenu={resetMenu}/>
 			{menuLeft ? (<MenuLeft />) : null}
+			<div>YDL collections: {collection}</div>
 			<Footer toggleMenu={toggleMenu} toggleCart={toggleCart} />
 		</div>
 	);
@@ -76,3 +78,13 @@ export default function Index() {
 		setMenuLeftDecor(false)
 	}
 }
+
+Index.getInitialProps = async ctx => {
+	const res = await fetch('https://france.yvesdelorme.com/shell/digitalhome/flux/hetic/HeticProducts.php')
+	const data = await res.json()
+	console.log(data[0].collection)
+
+	return { 
+		collection: data[0].collection + data[1].collection 
+	}
+  }
