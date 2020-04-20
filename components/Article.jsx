@@ -36,7 +36,7 @@ const Article = (props) => (
 Article.propTypes = {
   imageMenu: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   idActiveArticle: PropTypes.string.isRequired,
   onItemChange: PropTypes.func.isRequired,
   onArticleChange: PropTypes.func.isRequired,

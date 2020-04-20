@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from './Bed.module.scss';
 import Menu from './Menu';
 import MenuLeftDecor from './MenuLeftDecor';
 import AddCart from './AddCart';
-import { useSelector, useDispatch } from 'react-redux';
 
 const getInfo = () => {
-  const activeBed = useSelector(state => state.activeParure.parureContent)
-  return { activeBed }
-}
+  const activeBed = useSelector((state) => state.activeParure.parureContent);
+  return { activeBed };
+};
 
 const Bed = (props) => {
   const { activeBed } = getInfo();
@@ -20,19 +20,19 @@ const Bed = (props) => {
   const [centerPillow, setCenterPillow] = useState(activeBed.centerPillow);
   const [mediumPillow, setMediumPillow] = useState(activeBed.mediumPillow);
   const [bigPillow, setBigPillow] = useState(activeBed.bigPillow);
-  const [wall, setWall] = useState({ image: '/static/Background/wall_2.png', id : 1});
-  const [floor, setFloor] = useState({image: '/static/Background/floor_2.png', id : 1});
+  const [wall, setWall] = useState({ image: '/static/Background/wall_2.png', id: 1 });
+  const [floor, setFloor] = useState({ image: '/static/Background/floor_2.png', id: 1 });
   const [joint, setJoint] = useState('/static/Background/joint_2.png');
-  const [tete, setTete] = useState({image: '/static/Background/teteLit_1.png', id : 1});
+  const [tete, setTete] = useState({ image: '/static/Background/teteLit_1.png', id: 1 });
 
-  useEffect(() =>
-    props.parureContent({
-      parurePreview : props.preview,
-      parureContent : {duvet : duvet, flatSheet : flatSheet, fittedSheet : fittedSheet, smallPillow : smallPillow, centerPillow : centerPillow, mediumPillow : mediumPillow, bigPillow : bigPillow},
-      parureName : "xxx",
-      parureId : props.currentParureId
-    }), [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow, props.preview]
-  );
+  useEffect(() => props.parureContent({
+    parurePreview: props.preview,
+    parureContent: {
+      duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow,
+    },
+    parureName: 'xxx',
+    parureId: props.currentParureId,
+  }), [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow, props.preview]);
 
 
   return (
@@ -49,7 +49,7 @@ const Bed = (props) => {
         {mediumPillow.image !== '' ? <img className={styles.middleRight} src={mediumPillow.image} alt="Oreilles du milieu" /> : null}
         {centerPillow.image !== '' ? <img className={styles.frontCenter} src={centerPillow.image} alt="Centre Oreiller" /> : null}
         {smallPillow.image !== '' ? <img className={styles.front} src={smallPillow.image} alt="Petit Oreiller" /> : null}
-        <div className={styles.blackRectangle}></div>
+        <div className={styles.blackRectangle} />
         <img className={styles.duvet} src={duvet.image} alt="Couette" />
       </div>
 
@@ -59,7 +59,9 @@ const Bed = (props) => {
           onItemChange={handleItemChange}
           typeItem={props.typeItem}
           title={props.title}
-          activeBed={{flatSheet : flatSheet, fittedSheet : fittedSheet, smallPillow : smallPillow, centerPillow : centerPillow, mediumPillow : mediumPillow, bigPillow : bigPillow, duvet : duvet}}
+          activeBed={{
+            flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow, duvet,
+          }}
           resetMenu={props.resetMenu}
         />
       ) : null}
@@ -67,7 +69,7 @@ const Bed = (props) => {
       {props.menuLeftDecor ? (
         <MenuLeftDecor
           onItemChange={handleItemChange}
-          activeBackground={{wall: wall, tete: tete, floor: floor}}
+          activeBackground={{ wall, tete, floor }}
           resetMenu={props.resetMenu}
         />
       ) : null}
@@ -135,7 +137,6 @@ const Bed = (props) => {
     }
     props.saveParure(false);
   }
-
 };
 
 

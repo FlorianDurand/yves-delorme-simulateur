@@ -17,7 +17,7 @@
       align-items: center;
       justify-content: center;
 
-      .image {
+      .imageMenu {
         width: 95px;
         margin-bottom: 40px;
       }
@@ -32,11 +32,11 @@
   border-radius: 5px;
 }
 
-.image {
+.imageMenu {
   display: block;
   width: 159px;
-  margin: 10px auto 0 auto;
   max-height: 165px;
+  margin: 10px auto 0 auto;
 }
 
 .subtitle {
