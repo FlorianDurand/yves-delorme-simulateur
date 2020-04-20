@@ -9,7 +9,7 @@ const initialParureContent = {
     material: 'Percale',
     grammage: '120 fils/cm²',
     image: '/static/Bed/escale/couette.png',
-    imageItem: '/static/Bed/escale/couette.png',
+    imageMenu: '/static/Bed/Menu/escale/couette.png',
     id: 1,
   },
   flatSheet: { image: '', name: 'Aucun', id: 0 },
@@ -19,7 +19,7 @@ const initialParureContent = {
     material: 'Percale',
     grammage: '120 fils/cm²',
     image: '/static/Bed/escale/small.png',
-    imageItem: '/static/Bed/escale/small.png',
+    imageMenu: '/static/Bed/escale/small.png',
     id: 1,
   },
   centerPillow: {
@@ -27,7 +27,7 @@ const initialParureContent = {
     material: 'Percale',
     grammage: '120 fils/cm²',
     image: '/static/Bed/escale/center.png',
-    imageItem: '/static/Bed/escale/center.png',
+    imageMenu: '/static/Bed/escale/center.png',
     id: 1,
   },
   mediumPillow: {
@@ -35,7 +35,7 @@ const initialParureContent = {
     material: 'Percale',
     grammage: '120 fils/cm²',
     image: '/static/Bed/escale/medium.png',
-    imageItem: '/static/Bed/escale/medium.png',
+    imageMenu: '/static/Bed/escale/medium.png',
     id: 1,
   },
   bigPillow: {
@@ -43,7 +43,7 @@ const initialParureContent = {
     material: 'Percale',
     grammage: '120 fils/cm²',
     image: '/static/Bed/escale/big.png',
-    imageItem: '/static/Bed/escale/big.png',
+    imageMenu: '/static/Bed/escale/big.png',
     id: 1,
   },
 };
