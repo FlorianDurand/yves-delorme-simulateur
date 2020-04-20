@@ -9,7 +9,113 @@
   color: color(primary-500);
   font-size: 24px;
   font-family: $font-base;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.11);
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, .11);
+
+  .popShareCard {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    .triangle {
+      position: absolute;
+      top: 90px;
+      right: 181px;
+      z-index: 150;
+      width: 60px;
+      height: 30px;
+      background-color: white;
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+
+    .shareCard {
+      position: absolute;
+      top: 120px;
+      right: 40px;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      width: 600px;
+      height: 256px;
+      padding: 30px 0;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, .11);
+
+      .basicText {
+        color: color(secondary-700);
+        font-size: 24px;
+        font-family: Roboto;
+        font-style: normal;
+        line-height: 150%;
+      }
+
+      .mail {
+        width: 423px;
+        height: 60px;
+        padding: 10px 20px;
+        color: color(secondary-700);
+        font-size: 24px;
+        font-family: Roboto;
+        font-style: normal;
+        line-height: 150%;
+        border: 1px solid #DDDDDD;
+      }
+
+      .groupButtonsRow {
+        display: flex;
+        flex-direction: row;
+        width: 392px;
+
+        .buttonTop {
+          justify-content: center;
+          width: 240px;
+          margin-bottom: 10px;
+          margin-left: 10px;
+        }
+
+        .buttonBottom {
+          justify-content: center;
+          width: 132px;
+          margin-right: 10px;
+          padding: 0;
+        }
+      }
+
+      .buttonTop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 60px;
+        margin-bottom: 20px;
+        color: white;
+        font-weight: bold;
+        font-size: 24px;
+        background-color: #3E8087;
+        border: 0;
+        border-radius: 5px;
+      }
+
+      .buttonBottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 60px;
+        padding: 0 48px;
+        color: #3E8087;
+        font-weight: bold;
+        font-size: 24px;
+        font-family: Roboto;
+        font-style: normal;
+        line-height: 28px;
+        border: 1.62px solid #3E8087;
+        border-radius: 5px;
+      }
+    }
+  }
 
   .back {
     display: flex;

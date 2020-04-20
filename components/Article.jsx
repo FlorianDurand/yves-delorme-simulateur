@@ -37,7 +37,7 @@ Article.propTypes = {
   imageMenu: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
-  idActiveArticle: PropTypes.string.isRequired,
+  idActiveArticle: PropTypes.number.isRequired,
   onItemChange: PropTypes.func.isRequired,
   onArticleChange: PropTypes.func.isRequired,
   typeItem: PropTypes.string.isRequired,

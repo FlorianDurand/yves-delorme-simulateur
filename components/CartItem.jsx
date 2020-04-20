@@ -22,7 +22,7 @@ const CartItem = (props) => {
       </div>
       <div className={styles.number}>
         <button type="button" onClick={() => setNumber({ stock_wanted: number.stock_wanted - 1 })}><img className={styles.btn} src="/static/moins.svg" alt="moins" /></button>
-        <input className={styles.inputNumber} type="number" value={number.stock_wanted} />
+        <input className={styles.inputNumber} type="number" defaultValue={number.stock_wanted} />
         <button type="button" onClick={() => setNumber({ stock_wanted: number.stock_wanted + 1 })}><img className={styles.btn} src="/static/plus.svg" alt="plus" /></button>
       </div>
     </div>
