@@ -19,17 +19,17 @@ const getInfo = () => {
   });
   const saveWantedParures = (parures) => dispatch({
     type: 'saveWantedParures',
-    parures: parures,
+    parures,
   });
 
   return {
-    parures, idLog, initialParureContent, setActiveParure, saveWantedParures
+    parures, idLog, initialParureContent, setActiveParure, saveWantedParures,
   };
 };
 
 const Collection = () => {
   const {
-    parures, idLog, initialParureContent, setActiveParure, saveWantedParures
+    parures, idLog, initialParureContent, setActiveParure, saveWantedParures,
   } = getInfo();
   console.log(parures);
 
@@ -38,7 +38,6 @@ const Collection = () => {
   const [cartPreview, setCartPreview] = useState();
   const [cartName, setCartName] = useState();
   const [cartId, setCartId] = useState();
-
 
   return (
     <div>
@@ -53,7 +52,7 @@ const Collection = () => {
               <h2>Nouvelle Parure</h2>
             </div>
           </Link>
-          {parures[0].parureName ? parures.map((parure) => (
+          {parures[0] ? parures.map((parure) => (
             <div className={styles.parure} key={parure.parureId}>
               <ParureCard parure={parure} setActiveParure={setActiveParure} toggleCart={toggleCart} deleteParure={deleteParure} />
             </div>
@@ -97,6 +96,7 @@ const Collection = () => {
     const index = parures.indexOf(parure);
     if (index > -1) {
       parures.splice(index, 1);
+      setActiveParure(parures);
     }
   }
 };

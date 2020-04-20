@@ -1,18 +1,16 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import Link from 'next/link';
 
 import styles from './ParureCard.module.scss';
 
 
 const ParureCard = (props) => {
   const [isDelete, setIsDelete] = useState(false);
-  const dispatch = useDispatch();
-  const parures = useSelector((state) => state.parures);
 
   return (
     <div className={styles.parureCard}>
       <div className={styles.image}>
-        <img src={props.parure.parurePreview} alt="Ma parure" />
+        <img className={styles.imgBackground} src={props.parure.parurePreview} alt="Ma parure" />
         {!isDelete
           ? (
             <div className={styles.icons}>
@@ -26,7 +24,7 @@ const ParureCard = (props) => {
           )
           : (
             <div className={styles.buttons}>
-              <button className={styles.button} onClick={() => props.deleteParure(props.parure)}>Supprimer la parure</button>
+              <Link href="/collection"><button className={styles.button} onClick={() => props.deleteParure(props.parure)}>Supprimer la parure</button></Link>
               <button className={styles.button} onClick={() => toggleDelete()}>Annuler</button>
             </div>
           )}
