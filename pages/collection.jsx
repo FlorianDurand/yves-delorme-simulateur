@@ -31,6 +31,9 @@ const Collection = () => {
 
   const [addCart, setAddCart] = useState(false);
   const [cartContent, setCartContent] = useState();
+  const [cartPreview, setCartPreview] = useState();
+  const [cartName, setCartName] = useState();
+  const [cartId, setCartId] = useState();
 
 
   return (
@@ -47,26 +50,39 @@ const Collection = () => {
             </div>
           </Link>
           {parures[0].parureName ? parures.map((parure) => (
-          <Link href="/">
-            <div className={styles.parure} key={parure.parureId} onClick={() => setActiveParure({ parureContent : parure.parureContent, parureId : parure.parureId })}>
+            <div className={styles.parure} key={parure.parureId}>
               <ParureCard parure={parure} setActiveParure={setActiveParure} toggleCart={toggleCart} />
             </div>
-            </Link>
           )) : null}
         </div>
       </div>
       {addCart ? (
         <AddCart
+          defineActiveParure={defineActiveParure}
+          resetMenu={resetMenu}
+          parureName={cartName}
+          preview={cartPreview}
           cartContent={cartContent}
+          cartId={cartId}
         />
       ) : null}
     </div>
   );
 
-  function toggleCart(cartContent) {
+  function defineActiveParure(parure) {
+    setActiveParure(parure)
+  }
+  function resetMenu() {
+    setAddCart(false);
+  }
+
+  function toggleCart(parure) {
     if (!addCart) {
       setAddCart(true);
-      setCartContent(cartContent);
+      setCartContent(parure.parureContent);
+      setCartPreview(parure.parurePreview);
+      setCartName(parure.parureName);
+      setCartId(parure.parureId);
     } else {
       setAddCart(false);
     }
