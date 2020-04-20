@@ -33,14 +33,16 @@ const Index = () => {
   if (activeParure.parureId) {
     parureId = activeParure.parureId;
   } else if (parures.length < 998) {
-    if (parures[0].parureName) {
-      tempParureId = Math.floor(Math.random() * 1000);
-      let index = parures.findIndex((e) => e.parureId == tempParureId);
-      while (index !== -1) {
+    if (parures[0]) {
+      if (parures[0].parureName) {
         tempParureId = Math.floor(Math.random() * 1000);
-        index = parures.findIndex((e) => e.parureId === tempParureId);
+        let index = parures.findIndex((e) => e.parureId === tempParureId);
+        while (index !== -1) {
+          tempParureId = Math.floor(Math.random() * 1000);
+          index = parures.findIndex((e) => e.parureId === tempParureId);
+        }
+        parureId = tempParureId;
       }
-      parureId = tempParureId;
     }
   } else {
     alert('Nombre maximal de parure enregistré');
