@@ -23,7 +23,7 @@ export default function Index({ collection }) {
 			<Header toggleMenuLeft={toggleMenuLeft} toggleMenuLeftDecor={toggleMenuLeftDecor}/>
 			<Bed menu = {menu} addCart={addCart} menuLeftDecor={menuLeftDecor} title={typeArticle} resetMenu={resetMenu}/>
 			{menuLeft ? (<MenuLeft />) : null}
-			<div>YDL collections: {collection}</div>
+			<div>YDL collection: {collection}</div>
 			<Footer toggleMenu={toggleMenu} toggleCart={toggleCart} />
 		</div>
 	);
