@@ -25,6 +25,7 @@ const Modal = (props) => {
   const [ email, setEmail ] = useState();
   const [ parureName, setParureName] = useState();
   const [ popModal, setPopModal ] = useState();
+  console.log(parureName)
   var myParure;
 
   //Ajoute le nom de la parure renseigné par le client
@@ -114,12 +115,19 @@ const Modal = (props) => {
           <button type="button" className={styles.buttonBottom} onClick={() => {props.resetModal()}}>
             Retour
           </button>
-          <Link href="/">
-            <button type="button" className={styles.buttonTop} onClick={() => {save(myParure), props.popModal('saved'), props.saveParure(true), setActiveParure({parureContent : myParure.parureContent, newParure : true})}}>
+          {parureName ? (
+            <Link href="/">
+              <button type="button" className={styles.buttonTop} onClick={() => {save(myParure), props.popModal('saved'), props.saveParure(true), setActiveParure({parureContent : myParure.parureContent, newParure : true})}}>
+                <img src="/static/save.svg" alt="Valider" />
+                pas disable
+              </button>
+            </Link>
+          ) : (
+          <button type="button" className={styles.buttonTop}>
               <img src="/static/save.svg" alt="Valider" />
-              Valider
-            </button>
-          </Link>
+              ouille disable
+          </button>
+          )}
         </div>
       </div>
     ) : null}
