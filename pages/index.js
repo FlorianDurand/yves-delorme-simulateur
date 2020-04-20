@@ -82,7 +82,8 @@ export default function Index({ collection }) {
 Index.getInitialProps = async ctx => {
 	const res = await fetch('https://france.yvesdelorme.com/shell/digitalhome/flux/hetic/HeticProducts.php')
 	const data = await res.json()
-	console.log(data[0].collection)
+	console.log('new')
+	console.log(data[2192])
 
 	return { 
 		collection: data[0].collection + data[1].collection 
