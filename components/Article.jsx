@@ -9,7 +9,7 @@ const Article = (props) => (
     { props.idActiveArticle === props.id
       ? (
         <div className={`${styles.article} ${styles.articleActive}`}>
-          <img className={styles.image} src={props.image} alt="article" />
+          <img className={styles.imageMenu} src={props.imageMenu} alt="article" />
           <h2 className={styles.subtitle}>{props.name}</h2>
           <div className={styles.description}>
             <p>{props.material}</p>
@@ -19,8 +19,8 @@ const Article = (props) => (
       )
 
       : (
-        <div className={`${styles.article}`} onClick={() => { props.onItemChange({ image: props.imageItem, name: props.name, id: props.id }, props.typeItem), props.onArticleChange(props.id, props.typeItem); }}>
-          <img className={styles.image} src={props.image} />
+        <div className={`${styles.article}`} onClick={() => { props.onItemChange({ image: props.image, name: props.name, id: props.id }, props.typeItem), props.onArticleChange(props.id, props.typeItem); }}>
+          <img className={styles.imageMenu} src={props.imageMenu} />
           <h2 className={styles.subtitle}>{props.name}</h2>
           <div className={styles.description}>
             <p>{props.material}</p>
@@ -34,7 +34,7 @@ const Article = (props) => (
 );
 
 Article.propTypes = {
-  image: PropTypes.string.isRequired,
+  imageMenu: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
   idActiveArticle: PropTypes.string.isRequired,
