@@ -79,13 +79,7 @@ const Bed = (props) => {
           preview={props.preview}
           resetMenu={props.resetMenu}
           popModal={props.popModal}
-          duvet={duvet}
-          smallPillow={smallPillow}
-          centerPillow={centerPillow}
-          mediumPillow={mediumPillow}
-          bigPillow={bigPillow}
-          flatSheet={flatSheet}
-          fittedSheet={fittedSheet}
+          cartContent={{flatSheet : flatSheet, fittedSheet : fittedSheet, smallPillow : smallPillow, centerPillow : centerPillow, mediumPillow : mediumPillow, bigPillow : bigPillow, duvet : duvet}}
         />
       ) : null}
     </div>
