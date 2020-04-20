@@ -10,17 +10,17 @@ const initialParureContent = {
     grammage: '120 fils/cm²',
     image: '/static/Bed/escale/couette.png',
     imageItem: '/static/Bed/escale/couette.png',
-    id: '1',
+    id: 1,
   },
-  flatSheet: { image: '', name: 'Aucun', id: '0' },
-  fittedSheet: { image: '', name: 'Aucun', id: '0' },
+  flatSheet: { image: '', name: 'Aucun', id: 0 },
+  fittedSheet: { image: '', name: 'Aucun', id: 0 },
   smallPillow: {
     name: 'Escale',
     material: 'Percale',
     grammage: '120 fils/cm²',
     image: '/static/Bed/escale/small.png',
     imageItem: '/static/Bed/escale/small.png',
-    id: '1',
+    id: 1,
   },
   centerPillow: {
     name: 'Escale',
@@ -28,7 +28,7 @@ const initialParureContent = {
     grammage: '120 fils/cm²',
     image: '/static/Bed/escale/center.png',
     imageItem: '/static/Bed/escale/center.png',
-    id: '1',
+    id: 1,
   },
   mediumPillow: {
     name: 'Escale',
@@ -36,7 +36,7 @@ const initialParureContent = {
     grammage: '120 fils/cm²',
     image: '/static/Bed/escale/medium.png',
     imageItem: '/static/Bed/escale/medium.png',
-    id: '1',
+    id: 1,
   },
   bigPillow: {
     name: 'Escale',
@@ -44,7 +44,7 @@ const initialParureContent = {
     grammage: '120 fils/cm²',
     image: '/static/Bed/escale/big.png',
     imageItem: '/static/Bed/escale/big.png',
-    id: '1',
+    id: 1,
   },
 };
 
