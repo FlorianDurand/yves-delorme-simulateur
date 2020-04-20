@@ -51,7 +51,7 @@ const Collection = () => {
           </Link>
           {parures[0].parureName ? parures.map((parure) => (
             <div className={styles.parure} key={parure.parureId}>
-              <ParureCard parure={parure} setActiveParure={setActiveParure} toggleCart={toggleCart} />
+              <ParureCard parure={parure} setActiveParure={setActiveParure} toggleCart={toggleCart} deleteParure={deleteParure} />
             </div>
           )) : null}
         </div>
@@ -70,7 +70,7 @@ const Collection = () => {
   );
 
   function defineActiveParure(parure) {
-    setActiveParure(parure)
+    setActiveParure(parure);
   }
   function resetMenu() {
     setAddCart(false);
@@ -85,6 +85,14 @@ const Collection = () => {
       setCartId(parure.parureId);
     } else {
       setAddCart(false);
+    }
+  }
+
+  function deleteParure(parure) {
+    console.log(parures);
+    const index = parures.indexOf(parure);
+    if (index > -1) {
+      parures.splice(index, 1);
     }
   }
 };
