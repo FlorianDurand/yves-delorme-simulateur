@@ -10,7 +10,7 @@ const duvet = [
     material: '',
     grammage: '',
     imageItem: '/static/Bed/none.png',
-    id: '0',
+    id: 0,
   },
   {
     name: 'Escale',
@@ -18,7 +18,7 @@ const duvet = [
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/couette2.png',
-    id: '1',
+    id: 1,
   },
   {
     name: 'Calypso',
@@ -26,7 +26,7 @@ const duvet = [
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/couette.png',
-    id: '2',
+    id: 2,
   },
 
 ];
@@ -38,7 +38,7 @@ const smallPillow = [
     material: '',
     grammage: '',
     imageItem: '',
-    id: '0',
+    id: 0,
   },
   {
     name: 'Escale',
@@ -46,7 +46,7 @@ const smallPillow = [
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/petitcoussin.png',
-    id: '1',
+    id: 1,
   },
   {
     name: 'Calypso',
@@ -54,7 +54,7 @@ const smallPillow = [
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/petitcoussin3.png',
-    id: '2',
+    id: 2,
   },
   {
     name: 'Palmea',
@@ -62,7 +62,7 @@ const smallPillow = [
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/petitcoussin2.png',
-    id: '3',
+    id: 3,
   },
 ];
 
@@ -73,7 +73,7 @@ const centerPillow = [
     material: '',
     grammage: '',
     imageItem: '',
-    id: '0',
+    id: 0,
   },
   {
     name: 'Escale',
@@ -81,7 +81,7 @@ const centerPillow = [
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/centrecoussin.png',
-    id: '1',
+    id: 1,
   },
   {
     name: 'Calypso',
@@ -89,7 +89,7 @@ const centerPillow = [
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/centrecoussin2.png',
-    id: '2',
+    id: 2,
   },
 ];
 
@@ -100,7 +100,7 @@ const mediumPillow = [
     material: '',
     grammage: '',
     imageItem: '',
-    id: '0',
+    id: 0,
   },
   {
     name: 'Palmea',
@@ -108,7 +108,7 @@ const mediumPillow = [
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/moyencoussin.png',
-    id: '1',
+    id: 1,
   },
   {
     name: 'Escale',
@@ -116,7 +116,7 @@ const mediumPillow = [
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/moyencoussin2.png',
-    id: '2',
+    id: 2,
   },
   {
     name: 'Calypso',
@@ -124,7 +124,7 @@ const mediumPillow = [
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/moyencoussin3.png',
-    id: '3',
+    id: 3,
   },
 
 ];
@@ -136,7 +136,7 @@ const bigPillow = [
     material: '',
     grammage: '',
     imageItem: '',
-    id: '0',
+    id: 0,
   },
   {
     name: 'Ecume Céladonn',
@@ -144,7 +144,7 @@ const bigPillow = [
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/groscoussin.png',
-    id: '1',
+    id: 1,
   },
   {
     name: 'Escale',
@@ -152,7 +152,7 @@ const bigPillow = [
     material: 'Percale',
     grammage: '120 fils/cm²',
     imageItem: '/static/Bed/groscoussin2.png',
-    id: '2',
+    id: 2,
   },
 ];
 const flatSheet = [
@@ -162,7 +162,7 @@ const flatSheet = [
     material: '',
     grammage: '',
     imageItem: '/static/Bed/none.png',
-    id: '0',
+    id: 0,
   },
   {
     name: 'Bel Ami',
@@ -170,7 +170,7 @@ const flatSheet = [
     grammage: '200 fils/cm²',
     image: '/static/MenuDrap/DP_Bel_ami_the-satin-120.jpg',
     imageItem: '/static/MenuDrap/DP_Bel_ami_the-satin-120.jpg',
-    id: '1',
+    id: 1,
   },
   {
     name: 'Boudoir',
@@ -178,7 +178,7 @@ const flatSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrap/DP_Boudoir-percale-120.jpg',
     imageItem: '/static/MenuDrap/DP_Boudoir-percale-120.jpg',
-    id: '2',
+    id: 2,
   },
   {
     name: 'Herba',
@@ -186,7 +186,7 @@ const flatSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrap/DP_Herba-percale-120.jpg',
     imageItem: '/static/MenuDrap/DP_Herba-percale-120.jpg',
-    id: '3',
+    id: 3,
   },
   {
     name: 'Luna',
@@ -194,7 +194,7 @@ const flatSheet = [
     grammage: '200 fils/cm²',
     image: '/static/MenuDrap/DP_Luna-satin-120.jpg',
     imageItem: '/static/MenuDrap/DP_Luna-satin-120.jpg',
-    id: '4',
+    id: 4,
   },
   {
     name: 'Palmio',
@@ -202,7 +202,7 @@ const flatSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrap/DP_Palmio-satin-120.jpg',
     imageItem: '/static/MenuDrap/DP_Palmio-satin-120.jpg',
-    id: '5',
+    id: 5,
   },
   {
     name: 'Triophe',
@@ -210,7 +210,7 @@ const flatSheet = [
     grammage: '80 fils/cm²',
     image: '/static/MenuDrap/DP_Triomphe-satin-120.jpg',
     imageItem: '/static/MenuDrap/DP_Triomphe-satin-120.jpg',
-    id: '6',
+    id: 6,
   },
 ];
 const fittedSheet = [
@@ -220,7 +220,7 @@ const fittedSheet = [
     material: '',
     grammage: '',
     imageItem: '/static/Bed/none.png',
-    id: '0',
+    id: 0,
   },
   {
     name: 'Calypso',
@@ -228,7 +228,7 @@ const fittedSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrapHousse/DH_Calypso-satin-120.jpg',
     imageItem: '/static/MenuDrapHousse/DH_Calypso-satin-120.jpg',
-    id: '1',
+    id: 1,
   },
   {
     name: 'Eolie',
@@ -236,7 +236,7 @@ const fittedSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrapHousse/DH_Eolie-percale-120.jpg',
     imageItem: '/static/MenuDrapHousse/DH_Eolie-percale-120.jpg',
-    id: '2',
+    id: 2,
   },
   {
     name: 'Odysse',
@@ -244,7 +244,7 @@ const fittedSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrapHousse/DH_Odysse-satin-120.jpg',
     imageItem: '/static/MenuDrapHousse/DH_Odysse-satin-120.jpg',
-    id: '3',
+    id: 3,
   },
   {
     name: 'Ondee',
@@ -252,7 +252,7 @@ const fittedSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrapHousse/DH_Ondee-satin-120.jpg',
     imageItem: '/static/MenuDrapHousse/DH_Ondee-satin-120.jpg',
-    id: '4',
+    id: 4,
   },
   {
     name: 'Palmio',
@@ -260,7 +260,7 @@ const fittedSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrapHousse/DH_Palmio-satin-120.jpg',
     imageItem: '/static/MenuDrapHousse/DH_Palmio-satin-120.jpg',
-    id: '5',
+    id: 5,
   },
   {
     name: 'Riviera',
@@ -268,7 +268,7 @@ const fittedSheet = [
     grammage: '120 fils/cm²',
     image: '/static/MenuDrapHousse/DH_Riviera-satin-120.jpg',
     imageItem: '/static/MenuDrapHousse/DH_Riviera-satin-120.jpg',
-    id: '6',
+    id: 6,
   },
 ];
 
