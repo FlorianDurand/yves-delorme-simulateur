@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import styles from './Footer.module.scss';
-import Button from './Styles/Button';
 
 
 const Footer = (props) => {

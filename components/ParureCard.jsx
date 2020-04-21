@@ -11,7 +11,7 @@ const ParureCard = (props) => {
   return (
     <div className={styles.parureCard}>
       <div className={styles.image}>
-        <img className={styles.imgBackground} src={props.parure.parurePreview} alt="Ma parure" />
+        <img className={styles.imgBackground} src={props.parure.parurePreview} alt="Ma parure" onClick={() => props.toggleCart(props.parure)} />
         {!isDelete
           ? (
             <div className={styles.icons}>
