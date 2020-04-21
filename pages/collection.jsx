@@ -91,7 +91,6 @@ const Collection = () => {
   }
 
   function deleteParure(parure) {
-    console.log(parures);
     const index = parures.indexOf(parure);
     if (index > -1) {
       parures.splice(index, 1);

@@ -1,7 +1,7 @@
 .addcart {
   position: fixed;
   top: 0;
-  z-index: 99;
+  z-index: 175;
   width: 1366px;
   height: 1024px;
   background: rgba(69, 69, 69, .5);
@@ -11,7 +11,7 @@
   position: absolute;
   top: 60px;
   left: 20px;
-  z-index: 100;
+  z-index: 200;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -25,7 +25,7 @@
   position: absolute;
   top: 40px;
   left: 110px;
-  z-index: 100;
+  z-index: 200;
   width: 1146px;
   height: 984px;
   overflow-y: scroll;
@@ -90,7 +90,7 @@
 
   .header {
     position: fixed;
-    z-index: 101;
+    z-index: 250;
     display: flex;
     align-items: center;
     justify-content: center;
