@@ -7,11 +7,13 @@ import AddCart from './AddCart';
 
 const getInfo = () => {
   const activeBed = useSelector((state) => state.activeParure.parureContent);
-  return { activeBed };
+  const parures = useSelector(state => state.parures)
+  const activeParure = useSelector((state) => state.activeParure);
+  return { activeBed, activeParure, parures };
 };
 
 const Bed = (props) => {
-  const { activeBed } = getInfo();
+  const { activeBed, activeParure, parures } = getInfo();
 
   const [duvet, setDuvet] = useState(activeBed.duvet);
   const [flatSheet, setFlatSheet] = useState(activeBed.flatSheet);
@@ -24,13 +26,16 @@ const Bed = (props) => {
   const [floor, setFloor] = useState({ image: '/static/Background/floor_2.png', id: 1 });
   const [joint, setJoint] = useState('/static/Background/joint_2.png');
   const [tete, setTete] = useState({ image: '/static/Background/teteLit_1.png', id: 1 });
+  const numberOfParure = parures.length + 1;
+  const parureName = activeParure.parureName ? activeParure.parureName : 'Parure ' + numberOfParure;
+
 
   useEffect(() => props.parureContent({
     parurePreview: props.preview,
     parureContent: {
       duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow,
     },
-    parureName: 'xxx',
+    parureName: parureName,
     parureId: props.currentParureId,
   }), [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow, props.preview]);
 

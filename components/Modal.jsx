@@ -7,6 +7,7 @@ import styles from './Modal.module.scss';
 
 const useSave = () => {
   const parures = useSelector(state => state.parures)
+  const activeParure = useSelector((state) => state.activeParure);
   const dispatch = useDispatch()
   const saveParure = myParure =>
     dispatch({
@@ -17,7 +18,7 @@ const useSave = () => {
       type: 'activeParure',
       activeParure: parureContent,
     });
-  return { parures, saveParure, setActiveParure }
+  return { parures, saveParure, setActiveParure, activeParure }
 }
 
 const Modal = (props) => {
@@ -25,11 +26,9 @@ const Modal = (props) => {
   const [ email, setEmail ] = useState();
   const [ parureName, setParureName] = useState();
   const [ popModal, setPopModal ] = useState();
-  var myParure;
-
+  let myParure = props.myParure;
   //Ajoute le nom de la parure renseigné par le client
   useEffect(() => {
-    myParure = props.myParure;
     myParure.parureName = parureName;
   }, [parureName]);
 
@@ -38,7 +37,9 @@ const Modal = (props) => {
   }, [popModal]);
 
   //Recupère les variables globales
-  const { parures, saveParure, setActiveParure } = useSave();
+  const { parures, saveParure, setActiveParure, activeParure } = useSave();
+
+  const defaultValueName = activeParure.parureName
 
   //Sauvegarde la parure dans un state global (via redux), mais avant regarde si l'id de la parure n'est pas déjà éxistant et dans ce cas, update la parure existante dans le state global
   const save = myParure => {
@@ -108,25 +109,18 @@ const Modal = (props) => {
           Enregistrer le lit
         </div>
         <div className={styles.mail}>
-          <input type="text" name="" id="" placeholder="Parure 1" className={styles.mailInput} onChange={ e => {setParureName(e.target.value)} }/>
+          <input type="text" name="" id="" placeholder="Parure 1" defaultValue={myParure.parureName} className={styles.mailInput} onChange={ e => {setParureName(e.target.value)} }/>
         </div>
         <div className={styles.groupButtonsRow}>
           <button type="button" className={styles.buttonBottom} onClick={() => {props.resetModal()}}>
             Retour
           </button>
-          {parureName ? (
             <Link href="/">
               <button type="button" className={styles.buttonTop} onClick={() => {save(myParure), props.popModal('saved'), props.saveParure(true), setActiveParure({parureContent : myParure.parureContent, newParure : true})}}>
                 <img src="/static/save.svg" alt="Valider" />
                 Valider
               </button>
             </Link>
-          ) : (
-          <button type="button" className={styles.buttonTop} style={{ opacity : "20%" }}>
-              <img src="/static/save.svg" alt="Valider" />
-              Valider
-          </button>
-          )}
         </div>
       </div>
     ) : null}

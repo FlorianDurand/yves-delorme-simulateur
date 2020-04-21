@@ -31,7 +31,6 @@ const Collection = () => {
   const {
     parures, idLog, initialParureContent, setActiveParure, saveWantedParures,
   } = getInfo();
-  console.log(parures);
 
   const [addCart, setAddCart] = useState(false);
   const [cartContent, setCartContent] = useState();
@@ -66,7 +65,7 @@ const Collection = () => {
           parureName={cartName}
           preview={cartPreview}
           cartContent={cartContent}
-          cartId={cartId}
+          parureId={cartId}
         />
       ) : null}
     </div>

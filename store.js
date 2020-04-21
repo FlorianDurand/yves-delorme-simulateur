@@ -49,10 +49,10 @@ const initialParureContent = {
 };
 
 const initialState = {
-  parures: [{ parureId: initialParureId }],
+  parures: [],
   idLog: '',
   activeParure: { parureContent: initialParureContent },
-  activeParureId: initialParureId,
+  initialParureId: initialParureId,
   initialParureContent,
 };
 

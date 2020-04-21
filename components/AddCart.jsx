@@ -31,7 +31,7 @@ const AddCart = (props) => {
           {props.parureName ? (
             <div className={styles.floatingButtons}>
                <Link href="/">
-                <button type="button" className={styles.buttonRight} onClick={() => props.defineActiveParure({ parureContent : props.cartContent, parureId : props.cardId })}>Modifier le lit</button>
+                <button type="button" className={styles.buttonRight} onClick={() => props.defineActiveParure({ parureContent : props.cartContent, parureId : props.parureId, parureName : props.parureName })}>Modifier le lit</button>
                </Link>
                <button type="button" className={styles.buttonRight_green} onClick={() => { props.popModal('addedToCart'), props.resetMenu(); }}>
                  <img src="/static/cart_white.svg" alt="panier" />

@@ -12,23 +12,23 @@ const SaveIdLog = () => {
   const idLog = useSelector((state) => state.idLog);
   const parures = useSelector((state) => state.parures);
   const activeParure = useSelector((state) => state.activeParure);
-  const activeParureId = useSelector((state) => state.activeParureId);
+  const initialParureId = useSelector((state) => state.initialParureId);
   const dispatch = useDispatch();
   const saveLog = (idLogLocal) => dispatch({
     type: 'updateLog',
     idLog: idLogLocal,
   });
   return {
-    idLog, saveLog, parures, activeParure, activeParureId,
+    idLog, saveLog, parures, activeParure, initialParureId,
   };
 };
 
 const Index = () => {
   const {
-    idLog, saveLog, parures, activeParure, activeParureId,
+    idLog, saveLog, parures, activeParure, initialParureId,
   } = SaveIdLog();
 
-  let parureId = activeParureId;
+  let parureId = initialParureId;
   let tempParureId;
   if (activeParure.parureId) {
     parureId = activeParure.parureId;
