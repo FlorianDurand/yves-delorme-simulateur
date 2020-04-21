@@ -2,6 +2,14 @@
   position: relative;
   width: 1366px;
   height: 1024px;
+
+}
+
+@media screen and (max-width: 1370px) {
+
+  .background {
+    height: 100vh;
+  }
 }
 
 .trashCanvas {
