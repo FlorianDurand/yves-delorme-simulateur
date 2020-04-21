@@ -1,4 +1,7 @@
 .headerCollection {
+  position: fixed;
+  top: 0;
+  z-index: 150;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -9,6 +12,7 @@
   color: color(primary-500);
   font-size: 24px;
   font-family: $font-base;
+  background-color: white;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, .11);
 
   .popShareCard {
