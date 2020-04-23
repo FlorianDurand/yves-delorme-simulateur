@@ -53,7 +53,7 @@ const ListArticles = (props) => {
   useEffect(() => props.itemsfunction(arrayItem), [arrayItem]);
 
   return (
-    <div className={styles.listArticles}>
+    <div className={isPillowSelectorActive ? (`${styles.listArticles} ${styles.listArticlesTaies}`) : (styles.listArticles)}>
 
 
       {isPillowSelectorActive
