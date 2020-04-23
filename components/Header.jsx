@@ -15,7 +15,7 @@ const getInfo = () => {
 const Header = (props) => {
 
   const {idLog} = getInfo();
-  const [ connectionBar, setConnectionBar ] = useState(false)
+  const [connectionBar, setConnectionBar] = useState(false)
   const [email, setEmail] = useState();
   const [connected, setConnected] = useState(false)
 
@@ -44,12 +44,12 @@ const Header = (props) => {
             <input type="email" name="" id="" placeholder="exemple@gmail.com" className={styles.mailInput} onChange={(e) => { setEmail(e.target.value); }} />
           </div>
           <div className={styles.groupButtonsRow}>
-            <button type="button" className={styles.buttonBottom} onClick={() => {toggleConnection(), props.logIn(); }}>
+            <button type="button" className={styles.buttonBottom} onClick={() => {toggleConnection(), props.logIn(), setEmail(""); }}>
               Retour
             </button>
-            <button type="button" className={styles.buttonTop} onClick={() => {toggleConnection(), props.logIn(email), setConnected(true) }}>
-              Connexion
-            </button>
+              <button type="button" style={email ? null : {opacity:"0.2"}} className={styles.buttonTop} onClick={email ? () => {toggleConnection(), props.logIn(email), setConnected(true) } : null}>
+                Connexion
+              </button>
           </div>
       </div>
     ): null}
@@ -64,7 +64,7 @@ const Header = (props) => {
           <button type="button" className={styles.buttonBottom} onClick={() => {toggleConnection() }}>
             Retour
           </button>
-          <button type="button" className={styles.buttonTop} onClick={() => {toggleConnection(), props.logIn(), setConnected(false) }}>
+          <button type="button" className={styles.buttonTop} onClick={() => {toggleConnection(), props.logIn(), setConnected(false), setEmail(""); }}>
             Se déconnecter
           </button>
           </div>
