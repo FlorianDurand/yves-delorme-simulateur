@@ -6,6 +6,7 @@ import styles from './Footer.module.scss';
 
 const Footer = (props) => {
   const [isActive, setIsActive] = useState('');
+  const numberParures = props.parures.length;
   return (
     <div className={styles.footer}>
       <div className={styles.buttons}>
@@ -21,6 +22,9 @@ const Footer = (props) => {
           {props.logged ? (
             <Link href="/collection">
               <button type="button" className={styles.buttonRightLeft}>
+                <div className={styles.numberFilter} style={numberParures === 0 ? {opacity:"0", scale:"0"} : null}>
+                  <p>{numberParures}</p>
+                </div>
                 <img src="/static/icons/iconFolder.svg" alt="Voir la liste" />
               </button>
             </Link>

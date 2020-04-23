@@ -74,8 +74,35 @@ $background-color: white;
   justify-content: space-between;
   margin-bottom: 20px;
 
+  .numberFilter {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background-color: color(primary-500);
+    border-radius: 50%;
+    opacity: 1;
+    scale: 1;
+    transition: all .2s;
+
+    p {
+      width: 26px;
+      height: 26px;
+      padding-top: 2px;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+      font-family: $font-base;
+    }
+  }
+
   .buttonRight,
   .buttonRightLeft {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;

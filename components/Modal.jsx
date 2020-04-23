@@ -122,7 +122,8 @@ const Modal = (props) => {
               Retour
             </button>
             <Link href="/">
-              <button type="button" className={styles.buttonTop} onClick={() => { save(myParure), props.popModal('saved'), props.saveParure(true), setActiveParure({ parureContent: myParure.parureContent, newParure: true }); }}>
+              {/* Le Math.random à la fin ne sert qu'a ce que "newParure" ait une valeur différente pour update le useEffect d'index.js  */}
+              <button type="button" className={styles.buttonTop} onClick={() => { save(myParure), props.popModal('saved'), props.saveParure(true), setActiveParure({ parureContent: myParure.parureContent, newParure:  Math.floor(Math.random() * 1000) }); }}>
                 <img src="/static/save.svg" alt="Valider" />
                 Valider
               </button>
