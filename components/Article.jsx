@@ -9,7 +9,9 @@ const Article = (props) => (
     { props.idActiveArticle === props.id
       ? (
         <div className={`${styles.article} ${styles.articleActive}`}>
-          <img className={styles.imageMenu} src={props.imageMenu} alt="article" />
+          <div className={styles.imageMenu}>
+            <img src={props.imageMenu} alt="article" />
+          </div>
           <h2 className={styles.subtitle}>{props.name}</h2>
           <div className={styles.description}>
             <p>{props.material}</p>
@@ -20,7 +22,9 @@ const Article = (props) => (
 
       : (
         <div className={`${styles.article}`} onClick={() => { props.onItemChange({ image: props.image, name: props.name, id: props.id }, props.typeItem), props.onArticleChange(props.id, props.typeItem); }}>
-          <img className={styles.imageMenu} src={props.imageMenu} />
+          <div className={styles.imageMenu}>
+            <img src={props.imageMenu} />
+          </div>
           <h2 className={styles.subtitle}>{props.name}</h2>
           <div className={styles.description}>
             <p>{props.material}</p>
