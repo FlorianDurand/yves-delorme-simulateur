@@ -15,6 +15,8 @@ const Menu = (props) => {
   const [itemsShown, setItemsShown] = useState();
   const [filtered, setFiltered] = useState();
   const [listFilter, setListFilter] = useState('');
+  const [numberFilter, setNumberFilter] = useState();
+
 
   useEffect(() => {
     setIsFilterActive(false);
@@ -35,7 +37,7 @@ const Menu = (props) => {
         <div className={styles.menuContainer}>
           <div className={styles.menuHeader}>
             <h1 className={styles.title}>{props.title}</h1>
-            <FilterBar onFilterActive={onFilterActive} isFilterActive={isFilterActive} handleSearchChange={handleSearchChange} />
+            <FilterBar onFilterActive={onFilterActive} isFilterActive={isFilterActive} handleSearchChange={handleSearchChange} numberFilter={numberFilter} />
           </div>
           {isFilterActive
             ? <ListFilters handleFilterChange={handleFilterChange} listFilter={listFilter} />
@@ -46,11 +48,14 @@ const Menu = (props) => {
 
   );
 
+
   function handleFilterChange(filter) {
     if (listFilter.includes(filter)) {
       setListFilter(listFilter.replace(filter, ''));
+      setNumberFilter(numberFilter - 1);
     } else {
       setListFilter(listFilter + filter);
+      setNumberFilter(numberFilter + 1);
     }
   }
 

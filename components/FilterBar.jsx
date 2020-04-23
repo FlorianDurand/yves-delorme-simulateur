@@ -6,16 +6,13 @@ import Filters from './Filters';
 
 const FilterBar = (props) => (
   <div className={styles.filter}>
-
     {props.isFilterActive
       ? <h2 className={styles.title}>Filtres</h2>
       : (
         <div className={styles.search}>
-          <input className={styles.searchInput} type="search" id="item-search" name="item-search" placeholder="Rechercher..." onChange={props.handleSearchChange}/>
+          <input className={styles.searchInput} type="search" id="item-search" name="item-search" placeholder="Rechercher..." onChange={props.handleSearchChange} />
           <button type="button" className={styles.searchButton}>
-            {' '}
             <img src="/static/search.png" alt="search" />
-            {' '}
           </button>
         </div>
       )}

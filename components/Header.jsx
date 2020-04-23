@@ -23,14 +23,13 @@ const Header = (props) => {
 
   return (
     <div className={styles.header}>
-      {props.isMenuOpen ? null : (
-        <Link href="/">
-          <a className={styles.link}>
-            <img src="/static/return.png" alt="Retour au site" className={styles.back} />
-            Retour au site
-          </a>
-        </Link>
-      )}
+
+      <Link href="/">
+        <a className={styles.link}>
+          <img src="/static/return.png" alt="Retour au site" className={styles.back} />
+          Retour au site
+        </a>
+      </Link>
       <div className={styles.center} onClick={() => toggleConnection()}>
         <img src="/static/icons/IconUser.svg" alt="petit bonhomme de connexion" />
         <div className={styles.name}>
