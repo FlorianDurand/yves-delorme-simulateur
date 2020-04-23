@@ -71,7 +71,7 @@ const Index = () => {
 
   return (
     <div className={styles.background}>
-      <Header toggleMenuLeftDecor={toggleMenuLeftDecor} />
+      <Header toggleMenuLeftDecor={toggleMenuLeftDecor} logIn={logIn}/>
       <Bed menu={menu} addCart={addCart} popModal={popModal} parureContent={parureContent} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} menuOpen={menuOpen} saveParure={saveParure} currentParureId={currentParureId} />
       {modal ? (<Modal type={typeOfModal} resetModal={resetModal} myParure={myParure} logIn={logIn} popModal={popModal} saveParure={saveParure} />) : null}
       <Footer popModal={popModal} toggleMenu={toggleMenu} toggleCart={toggleCart} preview={previewF} savedBed={savedBed} />
