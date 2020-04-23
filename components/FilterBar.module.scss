@@ -28,6 +28,26 @@
     font-size: 32px;
     font-family: $font-title;
   }
+
+  .numberFilter {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background-color: color(primary-500);
+    border-radius: 50%;
+
+    p {
+      width: 26px;
+      height: 26px;
+      padding-top: 2px;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+      font-family: $font-base;
+    }
+  }
 }
 
 .searchButton,

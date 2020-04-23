@@ -108,7 +108,6 @@ const Header = (props) => {
 
 Header.propTypes = {
   toggleMenuLeftDecor: PropTypes.func.isRequired,
-  isMenuOpen: PropTypes.bool.isRequired,
 };
 
 export default Header;
