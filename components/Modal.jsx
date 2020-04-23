@@ -6,28 +6,29 @@ import { useSelector, useDispatch } from 'react-redux';
 import styles from './Modal.module.scss';
 
 const useSave = () => {
-  const parures = useSelector(state => state.parures)
+  const parures = useSelector((state) => state.parures);
   const activeParure = useSelector((state) => state.activeParure);
-  const dispatch = useDispatch()
-  const saveParure = myParure =>
-    dispatch({
-      type: 'saveParure',
-      parures : myParure
-    })
-    const setActiveParure = (parureContent) => dispatch({
-      type: 'activeParure',
-      activeParure: parureContent,
-    });
-  return { parures, saveParure, setActiveParure, activeParure }
-}
+  const dispatch = useDispatch();
+  const saveParure = (myParure) => dispatch({
+    type: 'saveParure',
+    parures: myParure,
+  });
+  const setActiveParure = (parureContent) => dispatch({
+    type: 'activeParure',
+    activeParure: parureContent,
+  });
+  return {
+    parures, saveParure, setActiveParure, activeParure,
+  };
+};
 
 const Modal = (props) => {
-  const [ email, setEmail ] = useState();
-  const [ parureName, setParureName] = useState();
-  const [ popModal, setPopModal ] = useState();
-  let myParure = props.myParure;
+  const [email, setEmail] = useState();
+  const [parureName, setParureName] = useState();
+  const [popModal, setPopModal] = useState();
+  const { myParure } = props;
 
-  //Ajoute le nom de la parure renseigné par le client
+  // Ajoute le nom de la parure renseigné par le client
   useEffect(() => {
     myParure.parureName = parureName;
   }, [parureName]);
@@ -36,10 +37,12 @@ const Modal = (props) => {
     props.popModal(popModal);
   }, [popModal]);
 
-  //Recupère les variables globales
-  const { parures, saveParure, setActiveParure, activeParure } = useSave();
+  // Recupère les variables globales
+  const {
+    parures, saveParure, setActiveParure, activeParure,
+  } = useSave();
 
-  const defaultValueName = activeParure.parureName
+  const defaultValueName = activeParure.parureName;
 
 
   // Sauvegarde la parure dans un state global (via redux), mais avant regarde si l'id de la parure n'est pas déjà éxistant et dans ce cas, update la parure existante dans le state global
@@ -102,24 +105,24 @@ const Modal = (props) => {
               <img src="/static/save.svg" alt="Valider" />
               Valider
             </button>
-        </div>
+          </div>
         </div>
       ) : null}
 
       {props.type === 'save' ? (
         <div className={styles.modal}>
           <div className={styles.greenText}>
-            Enregistrer le lit
+            Nommez votre parure
           </div>
           <div className={styles.mail}>
-            <input type="text" name="" id="" placeholder="Parure 1" defaultValue={myParure.parureName} className={styles.mailInput} onChange={ e => {setParureName(e.target.value)} }/>
+            <input type="text" name="" id="" placeholder="Parure 1" defaultValue={myParure.parureName} className={styles.mailInput} onChange={(e) => { setParureName(e.target.value); }} />
           </div>
           <div className={styles.groupButtonsRow}>
-            <button type="button" className={styles.buttonBottom} onClick={() => {props.resetModal()}}>
+            <button type="button" className={styles.buttonBottom} onClick={() => { props.resetModal(); }}>
               Retour
             </button>
             <Link href="/">
-              <button type="button" className={styles.buttonTop} onClick={() => {save(myParure), props.popModal('saved'), props.saveParure(true), setActiveParure({parureContent : myParure.parureContent, newParure : true})}}>
+              <button type="button" className={styles.buttonTop} onClick={() => { save(myParure), props.popModal('saved'), props.saveParure(true), setActiveParure({ parureContent: myParure.parureContent, newParure: true }); }}>
                 <img src="/static/save.svg" alt="Valider" />
                 Valider
               </button>

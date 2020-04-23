@@ -16,28 +16,30 @@ const Footer = (props) => {
       </div>
 
       <div className={styles.buttonsRight}>
-        <button type="button" className={styles.buttonRight_green} onClick={() => previewRender('cart')}>
-          <img src="/static/cart_plus_white.svg" alt="panier" />
-          Ajouter au panier
-        </button>
 
         <div className={styles.bottomGroup}>
           {props.savedBed ? (
             <Link href="/collection">
               <button type="button" className={styles.buttonRightLeft}>
-                <img src="/static/list_green.svg" alt="Voir la liste" />
+                <img src="/static/icons/iconFolder.svg" alt="Voir la liste" />
               </button>
             </Link>
           ) : (
             <button type="button" className={styles.buttonRightLeft} onClick={() => { props.popModal('list'), previewRender(); }}>
-              <img src="/static/list_green.svg" alt="Voir la liste" />
+              <img src="/static/icons/iconFolder.svg" alt="Voir la liste" />
             </button>
           )}
           <button type="button" className={styles.buttonRight} onClick={() => { props.popModal('save'), previewRender(); }}>
-            <img src="/static/list_plus_green.svg" alt="Ajouter dans la liste" />
-            Enregistrer le lit
+            <img src="/static/icons/iconSave.svg" alt="Ajouter dans la liste" />
+            Enregistrer
           </button>
         </div>
+
+
+        <button type="button" className={styles.buttonRight_green} onClick={() => previewRender('cart')}>
+          <img src="/static/cart_plus_white.svg" alt="panier" />
+          Ajouter au panier
+        </button>
 
       </div>
     </div>

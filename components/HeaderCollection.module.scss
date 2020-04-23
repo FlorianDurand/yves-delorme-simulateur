@@ -125,15 +125,18 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    color: color(secondary-100);
+    color: color(secondary-400);
 
     svg {
-      fill: color(secondary-100);
-      stroke: color(secondary-100);
+      fill: color(secondary-400);
+      stroke: color(secondary-400);
     }
 
     p {
       margin-left: 10px;
+      font-weight: bold;
+      font-size: 24px;
+      font-family: $font-base;
     }
   }
 
