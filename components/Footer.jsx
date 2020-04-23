@@ -18,7 +18,7 @@ const Footer = (props) => {
       <div className={styles.buttonsRight}>
 
         <div className={styles.bottomGroup}>
-          {props.savedBed ? (
+          {props.logged ? (
             <Link href="/collection">
               <button type="button" className={styles.buttonRightLeft}>
                 <img src="/static/icons/iconFolder.svg" alt="Voir la liste" />
