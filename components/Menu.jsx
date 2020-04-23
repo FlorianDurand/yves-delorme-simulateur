@@ -15,7 +15,7 @@ const Menu = (props) => {
   const [itemsShown, setItemsShown] = useState();
   const [filtered, setFiltered] = useState();
   const [listFilter, setListFilter] = useState('');
-  const [numberFilter, setNumberFilter] = useState();
+  const [numberFilter, setNumberFilter] = useState(0);
 
 
   useEffect(() => {

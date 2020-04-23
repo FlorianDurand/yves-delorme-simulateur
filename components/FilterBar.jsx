@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './FilterBar.module.scss';
@@ -17,7 +17,12 @@ const FilterBar = (props) => (
         </div>
       )}
     <button type="button" className={styles.filterButton} onClick={() => props.onFilterActive()}>
-      {props.isFilterActive ? <img src="/static/validate.svg" alt="search" /> : <img src="/static/filter.png" alt="search" /> }
+      {/* {props.isFilterActive ? <img src="/static/validate.svg" alt="search" /> : <img src="/static/filter.png" alt="search" /> } */}
+      {props.numberFilter > 0 && !props.isFilterActive ? (
+        <div className={styles.numberFilter}>
+          <p>{props.numberFilter}</p>
+        </div>
+      ) : <img src={props.isFilterActive ? ('/static/validate.svg') : ('/static/filter.png')} alt="search" /> }
       {props.isFilterActive ? 'Valider' : 'Filtres' }
     </button>
   </div>
