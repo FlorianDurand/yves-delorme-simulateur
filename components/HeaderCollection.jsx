@@ -1,11 +1,24 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useSelector, useDispatch } from 'react-redux';
 
 import styles from './HeaderCollection.module.scss';
 
+const SaveIdLog = () => {;
+  const dispatch = useDispatch();
+  const saveLog = (idLogLocal) => dispatch({
+    type: 'updateLog',
+    idLog: idLogLocal,
+  });
+  return {
+   saveLog
+  };
+};
 
 const HeaderCollection = (props) => {
+  const { saveLog }  = SaveIdLog()
   const [shareCard, setShareCard] = useState(false);
+  const [connectionBar, setConnectionBar] = useState(false);
 
   return (
     <div className={styles.headerCollection}>
@@ -17,19 +30,41 @@ const HeaderCollection = (props) => {
               Entrez l'adresse mail du destinataire
             </div>
             <div className={styles.mail}>
-              <input type="email" name="" id="" defaultValue={props.idLog} className={styles.mailInput} />
+              <input type="email" name="" id="" className={styles.mailInput} />
             </div>
             <div className={styles.groupButtonsRow}>
-              <button type="button" className={styles.buttonBottom} onClick={() => resetShareCard()}>
+              <button type="button" className={styles.buttonBottom} onClick={() => resetCard()}>
                 Retour
               </button>
-              <button type="button" className={styles.buttonTop} onClick={() => resetShareCard()}>
+              <button type="button" className={styles.buttonTop} onClick={() => resetCard()}>
                 Envoyer
               </button>
             </div>
           </div>
         </div>
       ) : null}
+
+      {connectionBar && props.idLog ? (
+        <div className={styles.connectionBar}>
+          <div className={styles.triangle} />
+          <div className={styles.basicText}>
+            Voulez-vous quitter cette sélection ?
+          </div>
+          <div className={styles.groupButtonsRow}>
+            <button type="button" className={styles.buttonBottom} onClick={() => { resetCard(); }}>
+              Retour
+            </button>
+            <Link href="/">
+              <button type="button" className={styles.buttonTop} onClick={() => {saveLog("")}}>
+                Se déconnecter
+              </button>
+            </Link>
+          </div>
+        </div>
+      ) : null}
+
+
+
       <Link href="/">
         <div className={styles.back}>
           <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +77,7 @@ const HeaderCollection = (props) => {
         </div>
       </Link>
 
-      <div className={styles.mail}>
+      <div className={styles.mail} onClick={popConnect}>
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M24.056 17.9903C25.4741 16.8514 26.3796 15.1292 26.3796 13.2047C26.3796 9.78366 23.5178 7 20.0002 7C16.4826 7 13.6204 9.78366 13.6204 13.2047C13.6204 15.1288 14.5259 16.8514 15.944 17.9903C11.8807 19.5641 9 23.4257 9 27.9315C9 31.6726 14.926 33 20.0002 33C25.074 33 31 31.6726 31 27.9315C30.9996 23.4257 28.1189 19.5641 24.056 17.9903ZM15.8572 13.2047C15.8572 10.9832 17.7156 9.17581 19.9998 9.17581C22.284 9.17581 24.142 10.9832 24.142 13.2047C24.142 15.4262 22.284 17.2332 19.9998 17.2332C17.7156 17.2332 15.8572 15.4262 15.8572 13.2047ZM19.9998 30.8246C15.1679 30.8246 11.2368 29.5268 11.2368 27.9315C11.2368 23.2323 15.1679 19.409 19.9998 19.409C24.8317 19.409 28.7624 23.2323 28.7624 27.9315C28.7624 29.5268 24.8313 30.8246 19.9998 30.8246Z" fill="white" stroke="white" strokeWidth="0.5" />
         </svg>
@@ -72,8 +107,14 @@ const HeaderCollection = (props) => {
   function popShare() {
     setShareCard(!shareCard);
   }
-  function resetShareCard() {
+
+  function popConnect() {
+    setConnectionBar(!connectionBar);
+  }
+
+  function resetCard() {
     setShareCard(false);
+    setConnectionBar(false);
   }
 };
 

@@ -7,14 +7,14 @@
   background: rgba(69, 69, 69, .5);
 }
 
-.close{
+.close {
   position: absolute;
   top: 60px;
   left: 20px;
   z-index: 200;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 60px;
   height: 60px;
   background-color: white;
@@ -40,6 +40,8 @@
   .preview {
     width: 1146px;
     height: 414px;
+    object-fit: cover;
+    object-position: top;
   }
 
   .floatingButtons {

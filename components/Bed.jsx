@@ -29,7 +29,6 @@ const Bed = (props) => {
   const numberOfParure = parures.length + 1;
   const parureName = activeParure.parureName ? activeParure.parureName : `Parure ${numberOfParure}`;
 
-
   useEffect(() => props.parureContent({
     parurePreview: props.preview,
     parureContent: {

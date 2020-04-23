@@ -30,7 +30,7 @@ const Modal = (props) => {
 
   // Ajoute le nom de la parure renseigné par le client
   useEffect(() => {
-    myParure.parureName = parureName;
+    parureName ? myParure.parureName = parureName : null;
   }, [parureName]);
 
   useEffect(() => {

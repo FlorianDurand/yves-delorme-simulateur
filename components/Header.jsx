@@ -75,14 +75,6 @@ const Header = (props) => {
               Se déconnecter
             </button>
           </div>
-          <div className={styles.groupButtonsRow}>
-            <button type="button" className={styles.buttonBottom} onClick={() => { toggleConnection(); }}>
-              Retour
-            </button>
-            <button type="button" className={styles.buttonTop} onClick={() => { toggleConnection(), props.logIn(), setConnected(false), setEmail(''); }}>
-              Se déconnecter
-            </button>
-          </div>
         </div>
       ) : null}
 
