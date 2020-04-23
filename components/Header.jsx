@@ -8,82 +8,87 @@ import Button from './Styles/Button';
 const getInfo = () => {
   const idLog = useSelector((state) => state.idLog);
   return {
-    idLog
+    idLog,
   };
 };
 
 const Header = (props) => {
-
-  const {idLog} = getInfo();
-  const [connectionBar, setConnectionBar] = useState(false)
+  const { idLog } = getInfo();
+  const [connectionBar, setConnectionBar] = useState(false);
   const [email, setEmail] = useState();
-  const [connected, setConnected] = useState(false)
+  const [connected, setConnected] = useState(false);
 
   return (
-  <div className={styles.header}>
-    <Link href="/">
-      <a className={styles.link}>
-        <img src="/static/return.png" alt="Retour au site" className={styles.back} />
-        Retour au site
-      </a>
-    </Link>
-    <div className={styles.center} onClick={() => toggleConnection()}>
-      <img src="/static/icons/IconUser.svg" alt="petit bonhomme de connexion"/>
-      <div className={styles.name}>
-        {idLog ? idLog : "Connexion"}
-      </div>
+    <div className={styles.header}>
+      {props.isMenuOpen ? null : (
+        <Link href="/">
+          <a className={styles.link}>
+            <img src="/static/return.png" alt="Retour au site" className={styles.back} />
+            Retour au site
+          </a>
+        </Link>
+      )}
+      <div className={styles.center} onClick={() => toggleConnection()}>
+        <img src="/static/icons/IconUser.svg" alt="petit bonhomme de connexion" />
+        <div className={styles.name}>
+          {idLog || 'Connexion'}
+        </div>
 
-    </div>
-    {connectionBar && !connected? (
-      <div className={styles.connectionBar}>
-        <div className={styles.triangle} />
-        <div className={styles.basicText}>
-          Entrez votre <span>adresse e-mail</span> pour enregistrer une parure.
+      </div>
+      {connectionBar && !connected ? (
+        <div className={styles.connectionBar}>
+          <div className={styles.triangle} />
+          <div className={styles.basicText}>
+            Entrez votre
+            {' '}
+            <span>adresse e-mail</span>
+            {' '}
+            pour enregistrer une parure.
           </div>
           <div className={styles.mail}>
             <input type="email" name="" id="" placeholder="exemple@gmail.com" className={styles.mailInput} onChange={(e) => { setEmail(e.target.value); }} />
           </div>
           <div className={styles.groupButtonsRow}>
-            <button type="button" className={styles.buttonBottom} onClick={() => {toggleConnection(), props.logIn(), setEmail(""); }}>
+            <button type="button" className={styles.buttonBottom} onClick={() => { toggleConnection(), props.logIn(), setEmail(''); }}>
               Retour
             </button>
-              <button type="button" style={email ? null : {opacity:"0.2"}} className={styles.buttonTop} onClick={email ? () => {toggleConnection(), props.logIn(email), setConnected(true) } : null}>
-                Connexion
-              </button>
+            <button type="button" style={email ? null : { opacity: '0.2' }} className={styles.buttonTop} onClick={email ? () => { toggleConnection(), props.logIn(email), setConnected(true); } : null}>
+              Connexion
+            </button>
           </div>
-      </div>
-    ): null}
-
-    {connectionBar && connected? (
-      <div className={styles.connectionBar}>
-        <div className={styles.triangle} />
-        <div className={styles.basicText}>
-          Voulez-vous quitter cette sélection ?
         </div>
-        <div className={styles.groupButtonsRow}>
-          <button type="button" className={styles.buttonBottom} onClick={() => {toggleConnection() }}>
-            Retour
-          </button>
-          <button type="button" className={styles.buttonTop} onClick={() => {toggleConnection(), props.logIn(), setConnected(false), setEmail(""); }}>
-            Se déconnecter
-          </button>
+      ) : null}
+
+      {connectionBar && connected ? (
+        <div className={styles.connectionBar}>
+          <div className={styles.triangle} />
+          <div className={styles.basicText}>
+            Voulez-vous quitter cette sélection ?
           </div>
-      </div>
-    ): null}
-
-    <div className={styles.right}>
-
-      <div onClick={() => props.toggleMenuLeftDecor()}>
-        <Button classCustom="settings">
-          <div className={styles.image}>
-            <img src="/static/decor.svg" alt="Décor" className={styles.iconMenu} />
+          <div className={styles.groupButtonsRow}>
+            <button type="button" className={styles.buttonBottom} onClick={() => { toggleConnection(); }}>
+              Retour
+            </button>
+            <button type="button" className={styles.buttonTop} onClick={() => { toggleConnection(), props.logIn(), setConnected(false), setEmail(''); }}>
+              Se déconnecter
+            </button>
           </div>
-          Décor
-        </Button>
-      </div>
+        </div>
+      ) : null}
 
+      <div className={styles.right}>
+
+        <div onClick={() => props.toggleMenuLeftDecor()}>
+          <Button classCustom="settings">
+            <div className={styles.image}>
+              <img src="/static/decor.svg" alt="Décor" className={styles.iconMenu} />
+            </div>
+            Décor
+          </Button>
+        </div>
+
+      </div>
     </div>
-  </div>
   );
 
   function toggleConnection() {
@@ -93,6 +98,7 @@ const Header = (props) => {
 
 Header.propTypes = {
   toggleMenuLeftDecor: PropTypes.func.isRequired,
+  isMenuOpen: PropTypes.bool.isRequired,
 };
 
 export default Header;
