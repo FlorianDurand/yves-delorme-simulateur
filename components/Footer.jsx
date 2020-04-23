@@ -9,10 +9,10 @@ const Footer = (props) => {
   return (
     <div className={styles.footer}>
       <div className={styles.buttons}>
-        <div className={isActive === 'Taies' ? (styles.activeButton) : (styles.notActiveButton)} onClick={() => { props.toggleMenu('Taies', 'bigPillow'), setIsActive('Taies'); }}>Taies</div>
-        <div className={isActive === 'Housse' ? (styles.activeButton) : (styles.notActiveButton)} onClick={() => { props.toggleMenu('Housse de couette', 'duvet'), setIsActive('Housse'); }}>Housse de couette</div>
-        <div className={isActive === 'flat' ? (styles.activeButton) : (styles.notActiveButton)} onClick={() => { props.toggleMenu('Drap plat', 'flatSheet'), setIsActive('flat'); }}>Drap plat</div>
-        <div className={isActive === 'fitted' ? (styles.activeButton) : (styles.notActiveButton)} onClick={() => { props.toggleMenu('Drap housse', 'fittedSheet'), setIsActive('fitted'); }}>Drap housse</div>
+        <div className={isActive === 'Taies' && props.isMenuOpen ? (styles.activeButton) : (styles.notActiveButton)} onClick={() => { props.toggleMenu('Taies', 'bigPillow'), setIsActive('Taies'); }}>Taies</div>
+        <div className={isActive === 'Housse' && props.isMenuOpen ? (styles.activeButton) : (styles.notActiveButton)} onClick={() => { props.toggleMenu('Housse de couette', 'duvet'), setIsActive('Housse'); }}>Housse de couette</div>
+        <div className={isActive === 'flat' && props.isMenuOpen ? (styles.activeButton) : (styles.notActiveButton)} onClick={() => { props.toggleMenu('Drap plat', 'flatSheet'), setIsActive('flat'); }}>Drap plat</div>
+        <div className={isActive === 'fitted' && props.isMenuOpen ? (styles.activeButton) : (styles.notActiveButton)} onClick={() => { props.toggleMenu('Drap housse', 'fittedSheet'), setIsActive('fitted'); }}>Drap housse</div>
       </div>
 
       <div className={styles.buttonsRight}>
