@@ -1,10 +1,10 @@
 $bigPillowWidth: 300px;
 $bigPillowHeight: 259px;
 
-$mediumPillowWidth: 300px;
-$mediumPillowHeight: 243px;
+$mediumPillowWidth: $bigPillowWidth;
+$mediumPillowHeight: $bigPillowHeight;
 
-$centerPillowWidth: 378px;
+$centerPillowWidth: 280px;
 $centerPillowHeight: 201px;
 
 $smallPillowWidth: 200px;
@@ -98,7 +98,7 @@ $duvetHeight: 476px;
 .frontCenter {
   position: absolute;
   top: 316px;
-  left: 486px;
+  left: 535px;
   width: $centerPillowWidth;
   height: $centerPillowHeight;
 }

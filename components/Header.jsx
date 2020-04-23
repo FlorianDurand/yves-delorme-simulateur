@@ -20,7 +20,7 @@ const Header = (props) => (
           <div className={styles.image}>
             <img src="/static/decor.svg" alt="Décor" className={styles.iconMenu} />
           </div>
-          Décoration intérieure
+          Décor
         </Button>
       </div>
 
