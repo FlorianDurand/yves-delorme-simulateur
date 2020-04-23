@@ -32,11 +32,15 @@ const Menu = (props) => {
         <img src="/static/close_green.svg" alt="Fermer le menu" className={styles.closeMenu} />
       </div>
       <div className={styles.menu}>
-        <h1 className={styles.title}>{props.title}</h1>
-        <FilterBar onFilterActive={onFilterActive} isFilterActive={isFilterActive} handleSearchChange={handleSearchChange} />
-        {isFilterActive
-          ? <ListFilters handleFilterChange={handleFilterChange} listFilter={listFilter} />
-          : <ListArticles typeItem={props.typeItem} onItemChange={props.onItemChange} activeArticle={props.activeBed} itemsfunction={itemsfunction} filtered={filtered} listFilter={listFilter} />}
+        <div className={styles.menuContainer}>
+          <div className={styles.menuHeader}>
+            <h1 className={styles.title}>{props.title}</h1>
+            <FilterBar onFilterActive={onFilterActive} isFilterActive={isFilterActive} handleSearchChange={handleSearchChange} />
+          </div>
+          {isFilterActive
+            ? <ListFilters handleFilterChange={handleFilterChange} listFilter={listFilter} />
+            : <ListArticles typeItem={props.typeItem} onItemChange={props.onItemChange} activeArticle={props.activeBed} itemsfunction={itemsfunction} filtered={filtered} listFilter={listFilter} />}
+        </div>
       </div>
     </div>
 

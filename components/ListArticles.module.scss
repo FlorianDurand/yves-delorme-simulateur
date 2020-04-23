@@ -1,5 +1,10 @@
-.listArticles{
+.listArticles {
+  position: relative;
+}
 
+.listArticlesTaies {
+  position: relative;
+  padding-top: 140px;
 }
 
 .articles {
@@ -7,55 +12,49 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 100%;
+  width: 517px;
   margin-top: 40px;
 }
 
 .pillowSelector {
-  position: relative;
-  display: block;
-  width: 342px;
-  height: 128px;
-  margin: 50px auto;
-}
-
-.pillowSelector::after {
-  position: absolute;
-  bottom: -20px;
-  left: -25px;
-  width: 441px;
-  height: 2px;
-  background-color: #E2E2E2;
-  content: "";
+  position: fixed;
+  top: 190px;
+  right: 0;
+  width: 577px;
+  height: 178px;
+  padding: 50px 0;
+  background-color: white;
+  //box-shadow: 0px 2px 15px rgba($color: #000000, $alpha: 0.11);
 }
 
 .pillowSelector svg {
   position: absolute;
   top: 0;
+  left: 119px;
 }
 
 .pillowSelector svg:nth-child(2) {
-  right: 0;
+  left: 361px;
 }
 
 .pillowSelector svg:nth-child(3) {
   top: 12px;
-  left: 42px;
+  left: 165px;
 }
 
 .pillowSelector svg:nth-child(4) {
   top: 12px;
-  right: 42px;
+  left: 313px;
 }
 
 .pillowSelector svg:nth-child(5) {
   top: 34px;
-  left: 120px;
+  left: 239px;
 }
 
 .pillowSelector svg:last-child {
   top: 73px;
-  left: 143px;
+  left: 261px;
 }
 
 .bluePillow {

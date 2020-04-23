@@ -6,8 +6,15 @@
   width: 578px;
   height: 100%;
   padding: 0 30px;
+  padding-top: 190px;
   overflow-y: scroll;
   background-color: white;
+
+  .menuContainer {
+    position: relative;
+    width: 579px;
+    height: 100%;
+  }
 }
 
 .close {
@@ -23,12 +30,25 @@
   background-color: white;
 }
 
-.title {
-  margin: 25px 0px;
-  color: rgba(62, 128, 135, 86%);
-  font-weight: bold;
-  font-size: 48px;
-  font-family: $font-title;
+.menuHeader {
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 50;
+  width: 579px;
+  padding: 0 30px;
+  padding-bottom: 31px;
+  background-color: white;
+
+  .title {
+    margin: 25px 0px;
+    color: rgba(62, 128, 135, 86%);
+    font-weight: bold;
+    font-size: 48px;
+    font-family: $font-title;
+  }
+
 }
 
 .articles {
