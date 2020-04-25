@@ -1,11 +1,34 @@
 import React from 'react';
 import Link from 'next/link';
+import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import CartItem from './CartItem';
 
 import styles from './AddCart.module.scss';
 
+
+const cartInfo = () => {
+  const cart = useSelector((state) => state.cart);
+  const paruresAddedToCart = useSelector((state) => state.paruresAddedToCart);
+  const dispatch = useDispatch();
+  const saveCart = (cartContent, parureId) => dispatch({
+    type: 'addToCart',
+    cart: cartContent,
+    parureAddedToCart : parureId
+  });
+  return {
+    cart, paruresAddedToCart, saveCart,
+  };
+};
+
 const AddCart = (props) => {
+  const {
+    cart, paruresAddedToCart, saveCart
+  } = cartInfo();
+
+  let currentCart = cart;
+  let currentParuresAddedToCart = paruresAddedToCart;
+
   const  duvet  = props.cartContent.duvet;
   const  smallPillow  = props.cartContent.smallPillow;
   const  mediumPillow  = props.cartContent.mediumPillow;
@@ -15,6 +38,8 @@ const AddCart = (props) => {
   const  fittedSheet  = props.cartContent.fittedSheet;
   const base = 'Aucun';
 
+  console.log(cart)
+  console.log(paruresAddedToCart)
   return (
     <div>
       <div className={styles.addcart} onClick={() => props.resetMenu()} />
@@ -33,17 +58,15 @@ const AddCart = (props) => {
                <Link href="/">
                 <button type="button" className={styles.buttonRight} onClick={() => props.defineActiveParure({ parureContent : props.cartContent, parureId : props.parureId, parureName : props.parureName })}>Modifier le lit</button>
                </Link>
-               <button type="button" className={styles.buttonRight_green} onClick={() => { props.popModal('addedToCart'), props.resetMenu(); }}>
-                 <img src="/static/cart_white.svg" alt="panier" />
+               <button type="button" className={styles.buttonRight_green} onClick={() => { props.resetMenu(), currentCart.push({id : duvet.id, stock : 1}, {id : smallPillow.id, stock : 1}, {id : mediumPillow.id, stock : 1}, {id : centerPillow.id, stock : 1}, {id : bigPillow.id, stock : 1}, {id : flatSheet.id, stock : 1}, {id : fittedSheet.id, stock : 1}), currentParuresAddedToCart.push(props.parureId), saveCart(currentCart, currentParuresAddedToCart) }}>
                  Ajouter au panier
                </button>
             </div>
           ) :
           <div className={styles.floatingButtons}>
             <button type="button" className={styles.buttonRight} onClick={() => props.resetMenu()}>Retour</button>
-            <button type="button" className={styles.buttonRight_green} onClick={() => { props.popModal('addedToCart'), props.resetMenu(); }}>
-              <img src="/static/cart_white.svg" alt="panier" />
-              Valider
+            <button type="button" className={styles.buttonRight_green} onClick={() => { props.popModal('addedToCart'), props.resetMenu(), currentCart.push({id : duvet.id, stock : 1}, {id : smallPillow.id, stock : 1}, {id : mediumPillow.id, stock : 1}, {id : centerPillow.id, stock : 1}, {id : bigPillow.id, stock : 1}, {id : flatSheet.id, stock : 1}, {id : fittedSheet.id, stock : 1}), currentParuresAddedToCart.push(props.parureId), saveCart(currentCart, currentParuresAddedToCart) }}>
+              Ajouter au panier
             </button>
           </div>
           }

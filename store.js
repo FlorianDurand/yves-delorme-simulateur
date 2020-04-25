@@ -54,6 +54,8 @@ const initialState = {
   activeParure: { parureContent: initialParureContent },
   initialParureId: initialParureId,
   initialParureContent,
+  cart : [],
+  paruresAddedToCart : []
 };
 
 const reducer = (state = initialState, action) => {
@@ -73,11 +75,16 @@ const reducer = (state = initialState, action) => {
         ...state,
         activeParure: action.activeParure,
       };
-      case 'saveWantedParures':
+    case 'saveWantedParures':
       return {
         ...state,
         parures: action.parures,
       };
+    case 'addToCart':
+        return {
+          ...state,
+          cart: action.cart,
+        };
     default:
       return state;
   }

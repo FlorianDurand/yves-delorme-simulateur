@@ -86,6 +86,7 @@ const Bed = (props) => {
           cartContent={{
             flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow, duvet,
           }}
+          parureId={props.currentParureId}
         />
       ) : null}
     </div>

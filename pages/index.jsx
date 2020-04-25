@@ -149,7 +149,7 @@ const Index = () => {
 
   function logIn(log) {
     setIDLogLocal(log);
-    log ? setLogged(true) : null;
+    log ? setLogged(true) : setLogged(false);
   }
 
   function saveParure(state) {

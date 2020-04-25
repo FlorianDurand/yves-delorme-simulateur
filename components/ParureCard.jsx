@@ -1,12 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useSelector, useDispatch } from 'react-redux';
 
 import styles from './ParureCard.module.scss';
 
+const cartInfo = () => {
+  const cart = useSelector((state) => state.cart);
+  const paruresAddedToCart = useSelector((state) => state.paruresAddedToCart);
+  return {
+    cart, paruresAddedToCart
+  };
+};
 
 const ParureCard = (props) => {
   const [isDelete, setIsDelete] = useState(false);
   const [isAddedBasket, setIsAddedBasket] = useState(false);
+
+  const {
+    cart, paruresAddedToCart
+  } = cartInfo();
+
+  const alreadyAdded = paruresAddedToCart.includes(props.parure.parureId)
+
+  useEffect(() => {
+    setIsAddedBasket(alreadyAdded)
+  }, [alreadyAdded])
 
   return (
     <div className={styles.parureCard}>

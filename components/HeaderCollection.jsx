@@ -5,21 +5,25 @@ import { useSelector, useDispatch } from 'react-redux';
 import styles from './HeaderCollection.module.scss';
 
 const SaveIdLog = () => {;
+  const paruresAddedToCart = useSelector((state) => state.paruresAddedToCart);
   const dispatch = useDispatch();
   const saveLog = (idLogLocal) => dispatch({
     type: 'updateLog',
     idLog: idLogLocal,
   });
   return {
-   saveLog
+   saveLog, paruresAddedToCart
   };
 };
 
 const HeaderCollection = (props) => {
-  const { saveLog }  = SaveIdLog()
+  const { saveLog, paruresAddedToCart }  = SaveIdLog()
   const [shareCard, setShareCard] = useState(false);
   const [connectionBar, setConnectionBar] = useState(false);
+  const [callBackMail, setCallBackMail] = useState(false);
 
+  const somethingInCart = paruresAddedToCart.length;
+  console.log(somethingInCart)
   return (
     <div className={styles.headerCollection}>
       {shareCard ? (
@@ -36,9 +40,21 @@ const HeaderCollection = (props) => {
               <button type="button" className={styles.buttonBottom} onClick={() => resetCard()}>
                 Retour
               </button>
-              <button type="button" className={styles.buttonTop} onClick={() => resetCard()}>
+              <button type="button" className={styles.buttonTop} onClick={() => {resetCard(), popCallBackMail()}}>
                 Envoyer
               </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
+
+      {callBackMail ? (
+        <div className={`${styles.popShareCard} ${styles.callBackMail}`}>
+          <div className={styles.triangle} />
+          <div className={styles.shareCard}>
+            <div className={styles.basicText}>
+              <img src="/static/icons/iconCheckGrey.svg" />
+              Selection envoyée
             </div>
           </div>
         </div>
@@ -94,6 +110,7 @@ const HeaderCollection = (props) => {
         </div>
         <Link href="/basket">
           <div className={styles.action}>
+          <div className={styles.somethingInCart} style={somethingInCart === 0 ? {opacity:"0", transform: 'scale(0)'} : null}></div>
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M29.3387 16.5236L24.2416 10.3083C24.103 10.1395 23.9004 10.0306 23.6783 10.0055C23.4562 9.98045 23.2328 10.0412 23.0573 10.1746C22.8818 10.3079 22.7685 10.5028 22.7425 10.7164C22.7164 10.93 22.7796 11.1448 22.9182 11.3136L27.1892 16.5236H12.1536L16.4134 11.3136C16.482 11.23 16.5328 11.1342 16.563 11.0318C16.5932 10.9293 16.602 10.8221 16.5891 10.7164C16.5762 10.6106 16.5417 10.5083 16.4877 10.4153C16.4337 10.3224 16.3612 10.2406 16.2743 10.1746C16.1874 10.1085 16.0878 10.0596 15.9813 10.0306C15.8747 10.0016 15.7633 9.99312 15.6533 10.0055C15.5433 10.018 15.437 10.0511 15.3403 10.103C15.2436 10.155 15.1586 10.2247 15.0899 10.3083L9.99282 16.5236H6.84296C6.61939 16.5236 6.40498 16.609 6.2469 16.7611C6.08881 16.9131 6 17.1193 6 17.3343C6 17.5493 6.08881 17.7555 6.2469 17.9076C6.40498 18.0596 6.61939 18.145 6.84296 18.145H8.09897L9.66968 27.2977C9.80231 28.0523 10.2082 28.7375 10.8155 29.232C11.4228 29.7265 12.1924 29.9986 12.9881 30H26.0203C26.8161 29.9986 27.5857 29.7265 28.193 29.232C28.8003 28.7375 29.2061 28.0523 29.3387 27.2977L30.901 18.1585H32.157C32.3806 18.1585 32.595 18.0731 32.7531 17.9211C32.9112 17.769 33 17.5628 33 17.3478C33 17.1328 32.9112 16.9266 32.7531 16.7746C32.595 16.6225 32.3806 16.5371 32.157 16.5371L29.3387 16.5236ZM27.6837 27.0275C27.6173 27.4055 27.4138 27.7486 27.1092 27.9959C26.8047 28.2433 26.4189 28.3789 26.0203 28.3786H12.9881C12.5895 28.3789 12.2037 28.2433 11.8992 27.9959C11.5947 27.7486 11.3911 27.4055 11.3247 27.0275L9.80737 18.1504H29.1954L27.6837 27.0275Z" fill="white" stroke="white" strokeWidth="1.4" />
             </svg>
@@ -115,6 +132,11 @@ const HeaderCollection = (props) => {
   function resetCard() {
     setShareCard(false);
     setConnectionBar(false);
+  }
+
+  function popCallBackMail() {
+    setCallBackMail(true);
+    setTimeout(() => setCallBackMail(false), 3000);
   }
 };
 
