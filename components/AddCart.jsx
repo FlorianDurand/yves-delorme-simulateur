@@ -38,8 +38,6 @@ const AddCart = (props) => {
   const  fittedSheet  = props.cartContent.fittedSheet;
   const base = 'Aucun';
 
-  console.log(cart)
-  console.log(paruresAddedToCart)
   return (
     <div>
       <div className={styles.addcart} onClick={() => props.resetMenu()} />

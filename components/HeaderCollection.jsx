@@ -23,7 +23,7 @@ const HeaderCollection = (props) => {
   const [callBackMail, setCallBackMail] = useState(false);
 
   const somethingInCart = paruresAddedToCart.length;
-  console.log(somethingInCart)
+
   return (
     <div className={styles.headerCollection}>
       {shareCard ? (
