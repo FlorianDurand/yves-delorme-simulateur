@@ -40,7 +40,7 @@ const Collection = () => {
   return (
     <div>
       <div className={styles.collection}>
-        <HeaderCollection idLog={idLog} />
+        <HeaderCollection idLog={idLog} setActiveParure={setActiveParure({ parureContent: initialParureContent })}/>
         <div className={styles.parures}>
           <Link href="/">
             <div className={styles.add} onClick={() => setActiveParure({ parureContent: initialParureContent })}>

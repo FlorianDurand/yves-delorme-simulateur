@@ -26,6 +26,7 @@ const AddCart = (props) => {
     cart, paruresAddedToCart, saveCart
   } = cartInfo();
 
+  console.log(cart)
   let currentCart = cart;
   let currentParuresAddedToCart = paruresAddedToCart;
 

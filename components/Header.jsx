@@ -7,13 +7,18 @@ import Button from './Styles/Button';
 
 const getInfo = () => {
   const idLog = useSelector((state) => state.idLog);
+  const dispatch = useDispatch();
+  const disconnect = (idLogLocal) => dispatch({
+    type: 'disconnect',
+    idLog: idLogLocal
+  });
   return {
-    idLog,
+    disconnect, idLog
   };
 };
 
 const Header = (props) => {
-  const { idLog } = getInfo();
+  const { disconnect, idLog } = getInfo();
   const [connectionBar, setConnectionBar] = useState(false);
   const [email, setEmail] = useState();
 
@@ -71,7 +76,7 @@ const Header = (props) => {
             <button type="button" className={styles.buttonBottom} onClick={() => { toggleConnection(); }}>
               Retour
             </button>
-            <button type="button" className={styles.buttonTop} onClick={() => { toggleConnection(), props.logIn(), setEmail(''); }}>
+            <button type="button" className={styles.buttonTop} onClick={() => { toggleConnection(), props.logIn(), setEmail(''), disconnect("") }}>
               Se déconnecter
             </button>
           </div>

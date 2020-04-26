@@ -70,6 +70,14 @@ const reducer = (state = initialState, action) => {
         ...state,
         idLog: action.idLog,
       };
+    case 'disconnect':
+      return {
+        ...state,
+        idLog: action.idLog,
+        parures: [],
+        cart : [],
+        paruresAddedToCart : []
+      };
     case 'activeParure':
       return {
         ...state,
@@ -84,6 +92,7 @@ const reducer = (state = initialState, action) => {
         return {
           ...state,
           cart: action.cart,
+          paruresAddedToCart: action.paruresAddedToCart
         };
     default:
       return state;
