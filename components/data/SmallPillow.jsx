@@ -1,13 +1,5 @@
 const smallPillow = [
   {
-    name: 'Aucun',
-    material: '',
-    grammage: '',
-    imageMenu: '/static/none.svg',
-    image: '',
-    id: 0,
-  },
-  {
     name: 'Escale',
     material: 'Percale',
     grammage: '120 fils/cm²',

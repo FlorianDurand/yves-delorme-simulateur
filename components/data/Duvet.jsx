@@ -1,13 +1,5 @@
 const duvet = [
   {
-    name: 'Aucun',
-    material: '',
-    grammage: '',
-    imageMenu: '/static/none.svg',
-    image: '/static/Bed/none.png',
-    id: 0,
-  },
-  {
     name: 'Escale',
     material: 'Percale',
     grammage: '120 fils/cm²',

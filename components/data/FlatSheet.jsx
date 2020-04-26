@@ -1,14 +1,6 @@
 
 const flatSheet = [
   {
-    name: 'Aucun',
-    imageMenu: '/static/none.svg',
-    material: '',
-    grammage: '',
-    image: '/static/Bed/none.png',
-    id: 0,
-  },
-  {
     name: 'Bel Ami',
     material: 'Satin de coton',
     grammage: '200 fils/cm²',

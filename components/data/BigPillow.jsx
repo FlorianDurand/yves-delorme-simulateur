@@ -1,14 +1,6 @@
 
 const bigPillow = [
   {
-    name: 'Aucun',
-    imageMenu: '/static/none.svg',
-    material: '',
-    grammage: '',
-    image: '',
-    id: 0,
-  },
-  {
     name: 'Escale',
     material: 'Percale',
     grammage: '120 fils/cm²',

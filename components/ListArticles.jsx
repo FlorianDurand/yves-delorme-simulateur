@@ -143,6 +143,12 @@ const ListArticles = (props) => {
 
 
       <div className={styles.articles}>
+        <div className={itemId(typeItem) === -1 ? (`${styles.none} ${styles.noneActive}`) : (styles.none)} onClick={() => { props.onItemChange({ image: typeItem === 'duvet' ? '/static/Bed/none.png' : '', name: 'aucun', id: -1 }, typeItem), onIdChange(-1, typeItem); }}>
+          <div className={styles.imageMenu}>
+            <img src="/static/none.svg" alt="none" />
+          </div>
+          <p>Aucun</p>
+        </div>
         {props.listFilter == ''
           ? itemsToShow.map((article) => <Article idActiveArticle={itemId(typeItem)} onArticleChange={onIdChange} onItemChange={props.onItemChange} typeItem={typeItem} {...article} key={article.id} />)
           : itemsToShow.map((article) => filterItem(article))}

@@ -1,14 +1,6 @@
 
 const fittedSheet = [
   {
-    name: 'Aucun',
-    imageMenu: '/static/none.svg',
-    material: '',
-    grammage: '',
-    image: '/static/Bed/none.png',
-    id: 0,
-  },
-  {
     name: 'Calypso',
     material: 'Satin de coton',
     grammage: '120 fils/cm²',
