@@ -25,7 +25,6 @@ const ParureCard = (props) => {
   const {
     cart, paruresAddedToCart, saveCart
   } = cartInfo();
-  console.log(cart)
   let currentCart = cart;
   let currentParuresAddedToCart = paruresAddedToCart;
 
@@ -36,7 +35,7 @@ const ParureCard = (props) => {
   const  bigPillow  = props.parure.parureContent.bigPillow;
   const  flatSheet  = props.parure.parureContent.flatSheet;
   const  fittedSheet  = props.parure.parureContent.fittedSheet;
-  console.log(paruresAddedToCart)
+  const  parureContentCart = [{id : duvet.id, stock : 1}, {id : smallPillow.id, stock : 1}, {id : mediumPillow.id, stock : 1}, {id : centerPillow.id, stock : 1}, {id : bigPillow.id, stock : 1}, {id : flatSheet.id, stock : 1}, {id : fittedSheet.id, stock : 1}]
 
   const alreadyAdded = paruresAddedToCart.includes(props.parure.parureId)
 
@@ -55,14 +54,14 @@ const ParureCard = (props) => {
 
               {!isAddedBasket
                 ? (
-                  <Link href="/collection">
-                    <div className={styles.cart} onClick={() => {toggleBasket(), currentCart.push({id : duvet.id, stock : 1}, {id : smallPillow.id, stock : 1}, {id : mediumPillow.id, stock : 1}, {id : centerPillow.id, stock : 1}, {id : bigPillow.id, stock : 1}, {id : flatSheet.id, stock : 1}, {id : fittedSheet.id, stock : 1}), currentParuresAddedToCart.push(props.parure.parureId), saveCart(currentCart, currentParuresAddedToCart)}}>
+                  <Link href="/collection" scroll={false}>
+                    <div className={styles.cart} onClick={() => {toggleBasket(), currentCart.push(...parureContentCart), currentParuresAddedToCart.push(props.parure.parureId), saveCart(currentCart, currentParuresAddedToCart), props.parureNameAddedToCart(props.parure.parureName)}}>
                       <img src="/static/icons/iconAddBasket.svg" alt="cart" />
                     </div>
                   </Link>
                 )
                 : (
-                  <Link href="/collection">
+                  <Link href="/collection" scroll={false}>
                     <div className={styles.cartRemove} onClick={() => {toggleBasket(), removeFromCart()}}>
                       <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="35.5" y="10.5" width="2" height="12" rx="1" transform="rotate(90 35.5 10.5)" fill="white" stroke="white" />
@@ -102,33 +101,11 @@ const ParureCard = (props) => {
   }
 
   function removeFromCart() {
-    const temp = [{id : duvet.id, stock : 1}, {id : smallPillow.id, stock : 1}, {id : mediumPillow.id, stock : 1}, {id : centerPillow.id, stock : 1}, {id : bigPillow.id, stock : 1}, {id : flatSheet.id, stock : 1}, {id : fittedSheet.id, stock : 1}]
 
-    // let index;
-    for (let i = 0; i < temp.length; i++) {
-      const index = currentCart.indexOf(temp[i]);
-      console.log(index)
+    for (let i = 0; i < parureContentCart.length; i++) {
+      const index = currentCart.findIndex(i => i.item === parureContentCart[i]);
       index > -1 ? currentCart.splice(index,1):null;
     }
-    // temp.map(itemToRemove => {
-    //   index = currentCart.indexOf(itemToRemove);
-    //   index > -1 ? currentCart.splice(index,1):null;
-    // })
-    console.log(currentCart)
-
-    // = currentCart.indexOf({id : duvet.id, stock : 1});
-    // index > -1 ? currentCart.splice(index,1):null;
-    // index = currentCart.indexOf({id : smallPillow.id, stock : 1});
-    // index > -1 ? currentCart.splice(index,1):null;
-    // index = currentCart.indexOf({id : mediumPillow.id, stock : 1});
-    // index > -1 ? currentCart.splice(index,1):null;
-
-
-
-
-
-      // {id : duvet.id, stock : 1}, {id : smallPillow.id, stock : 1}, {id : mediumPillow.id, stock : 1}, {id : centerPillow.id, stock : 1}, {id : bigPillow.id, stock : 1}, {id : flatSheet.id, stock : 1}, {id : fittedSheet.id, stock : 1}
-      // );
     const indexOfParureToRemove = currentParuresAddedToCart.indexOf(props.parure.parureId);
     indexOfParureToRemove > -1 ? currentParuresAddedToCart.splice(indexOfParureToRemove, 1) : null;
     saveCart(currentCart, currentParuresAddedToCart)

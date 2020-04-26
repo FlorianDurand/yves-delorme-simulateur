@@ -36,11 +36,12 @@ const Collection = () => {
   const [cartPreview, setCartPreview] = useState();
   const [cartName, setCartName] = useState();
   const [cartId, setCartId] = useState();
+  const [nameOfParureAddedToCart, setNameOfParureAdded] = useState(false);
 
   return (
     <div>
       <div className={styles.collection}>
-        <HeaderCollection idLog={idLog} setActiveParure={setActiveParure({ parureContent: initialParureContent })}/>
+        <HeaderCollection idLog={idLog} setActiveParure={setActiveParure({ parureContent: initialParureContent })} nameOfParureAddedToCart={nameOfParureAddedToCart}/>
         <div className={styles.parures}>
           <Link href="/">
             <div className={styles.add} onClick={() => setActiveParure({ parureContent: initialParureContent })}>
@@ -52,7 +53,7 @@ const Collection = () => {
           </Link>
           {parures[0] ? parures.map((parure) => (
             <div className={styles.parure} key={parure.parureId}>
-              <ParureCard parure={parure} setActiveParure={setActiveParure} toggleCart={toggleCart} deleteParure={deleteParure} />
+              <ParureCard parure={parure} setActiveParure={setActiveParure} toggleCart={toggleCart} deleteParure={deleteParure} parureNameAddedToCart={parureNameAddedToCart} />
             </div>
           )) : null}
         </div>
@@ -65,6 +66,7 @@ const Collection = () => {
           preview={cartPreview}
           cartContent={cartContent}
           parureId={cartId}
+          parureNameAddedToCart={parureNameAddedToCart}
         />
       ) : null}
     </div>
@@ -95,6 +97,11 @@ const Collection = () => {
       parures.splice(index, 1);
       setActiveParure(parures);
     }
+  }
+
+  function parureNameAddedToCart(name) {
+    setNameOfParureAdded(name + ' ajouté au panier.')
+    setTimeout(() => setNameOfParureAdded(false), 3000);
   }
 };
 

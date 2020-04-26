@@ -22,11 +22,8 @@ const HeaderCollection = (props) => {
   const [connectionBar, setConnectionBar] = useState(false);
   const [callBackMail, setCallBackMail] = useState(false);
 
-  const [somethingInCart, setSomethingInCart] = useState(paruresAddedToCart);
-  // useEffect(() => {
-  //   setSomethingInCart(paruresAddedToCart);
-  //   console.log('hihi')
-  // }, [paruresAddedToCart])
+  const somethingInCart = paruresAddedToCart;
+
 
   return (
     <div className={styles.headerCollection}>
@@ -83,6 +80,17 @@ const HeaderCollection = (props) => {
         </div>
       ) : null}
 
+      {props.nameOfParureAddedToCart ? (
+        <div className={`${styles.popShareCard} ${styles.callBackMail} ${styles.callBackCart}`}>
+          <div className={styles.triangle} />
+          <div className={styles.shareCard}>
+            <div className={styles.basicText}>
+              <img src="/static/icons/iconCheckGrey.svg" />
+              {props.nameOfParureAddedToCart}
+            </div>
+          </div>
+        </div>
+      ) : null}
 
 
       <Link href="/">
