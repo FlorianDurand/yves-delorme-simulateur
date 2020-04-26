@@ -101,6 +101,14 @@
       flex-direction: column;
       width: 330px;
       margin-top: 40px;
+
+      .exit {
+        justify-content: center;
+
+        img {
+          margin-right: 15px;
+        }
+      }
     }
 
     .groupButtonsRow {

@@ -76,7 +76,7 @@ const Modal = (props) => {
               Continuer
             </button>
             <Link href="/basket">
-              <button type="button" className={styles.buttonBottom}>
+              <button type="button" className={`${styles.buttonBottom} ${styles.exit}`}>
                 <img src="/static/cart.svg" alt="panier" />
                 Mon panier
               </button>
