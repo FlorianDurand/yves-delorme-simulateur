@@ -30,6 +30,7 @@ const AddCart = (props) => {
   const currentParuresAddedToCart = paruresAddedToCart;
   const parureContentCart = [];
   const arrayParure = Object.keys(props.cartContent);
+  const finalArray = [];
 
   for (let i = 0; i < arrayParure.length; i += 1) {
     console.log(`${arrayParure[i]} a un id de ${props.cartContent[arrayParure[i]].id} - Il est l'id ${i}`);
@@ -84,6 +85,7 @@ const AddCart = (props) => {
               color="Blanc"
               widths={['140x200 cm', '140x220 cm', '200x200 cm', '200x220 cm', '240x220 cm', '260x240 cm']}
               number={1}
+              key={props.cartContent[item].id}
             />
           ))}
 

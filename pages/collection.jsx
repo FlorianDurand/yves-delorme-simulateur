@@ -41,7 +41,7 @@ const Collection = () => {
   return (
     <div>
       <div className={styles.collection}>
-        <HeaderCollection idLog={idLog} setActiveParure={setActiveParure({ parureContent: initialParureContent })} nameOfParureAddedToCart={nameOfParureAddedToCart}/>
+        <HeaderCollection idLog={idLog} setActiveParure={setActiveParure({ parureContent: initialParureContent })} nameOfParureAddedToCart={nameOfParureAddedToCart} />
         <div className={styles.parures}>
           <Link href="/">
             <div className={styles.add} onClick={() => setActiveParure({ parureContent: initialParureContent })}>
@@ -100,7 +100,7 @@ const Collection = () => {
   }
 
   function parureNameAddedToCart(name) {
-    setNameOfParureAdded(name + ' ajouté au panier.')
+    setNameOfParureAdded(`${name} ajouté au panier.`);
     setTimeout(() => setNameOfParureAdded(false), 3000);
   }
 };
