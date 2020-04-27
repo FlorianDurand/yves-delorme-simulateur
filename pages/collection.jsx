@@ -31,6 +31,7 @@ const Collection = () => {
   const {
     parures, idLog, initialParureContent, setActiveParure, saveWantedParures,
   } = getInfo();
+
   const [addCart, setAddCart] = useState(false);
   const [cartContent, setCartContent] = useState();
   const [cartPreview, setCartPreview] = useState();

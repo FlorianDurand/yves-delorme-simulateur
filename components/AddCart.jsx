@@ -9,6 +9,7 @@ import styles from './AddCart.module.scss';
 
 const cartInfo = () => {
   const cart = useSelector((state) => state.cart);
+  const parures = useSelector((state) => state.parures);
   const paruresAddedToCart = useSelector((state) => state.paruresAddedToCart);
   const dispatch = useDispatch();
   const saveCart = (cartContent, parureId) => dispatch({
@@ -16,14 +17,18 @@ const cartInfo = () => {
     cart: cartContent,
     paruresAddedToCart: parureId,
   });
+  const saveParure = (myParure) => dispatch({
+    type: 'saveParure',
+    parures: myParure,
+  });
   return {
-    cart, paruresAddedToCart, saveCart,
+    cart, parures, paruresAddedToCart, saveCart, saveParure
   };
 };
 
 const AddCart = (props) => {
   const {
-    cart, paruresAddedToCart, saveCart,
+    cart, parures, paruresAddedToCart, saveCart, saveParure
   } = cartInfo();
 
   const currentCart = cart;
@@ -33,11 +38,27 @@ const AddCart = (props) => {
   const finalArray = [];
 
   for (let i = 0; i < arrayParure.length; i += 1) {
-    console.log(`${arrayParure[i]} a un id de ${props.cartContent[arrayParure[i]].id} - Il est l'id ${i}`);
     if (props.cartContent[arrayParure[i]].id !== -1) {
       parureContentCart.push({ id: props.cartContent[arrayParure[i]].id, stock: 1 });
       finalArray.push(arrayParure[i]);
     }
+  }
+
+  let currentParure;
+  if (props.parureName) {
+    currentParure = {
+      parurePreview: props.preview,
+      parureContent: props.cartContent,
+      parureName : props.parureName,
+      parureId: props.parureId
+    }
+  }
+  const saveName = (newParureName) => {
+    currentParure.parureName = newParureName
+    const index = parures.findIndex((e) => e.parureId === currentParure.parureId);
+    parures[index] = currentParure;
+    const paruresToSave = parures;
+    saveParure(paruresToSave);
   }
 
   return (
@@ -47,9 +68,16 @@ const AddCart = (props) => {
         <img src="/static/close_green.svg" alt="Fermer le menu" className={styles.closeMenu} />
       </div>
       <div className={styles.addcartContent}>
-        <div className={styles.header}>
-          {props.parureName ? props.parureName : 'Ma parure'}
-        </div>
+          {props.parureName ? (
+            <div className={styles.header}>
+              <input type="text" defaultValue={props.parureName} onChange={(e) => { saveName(e.target.value); }} />
+              <img src="/static/icons/iconPenGreen.svg" alt="petit stylo pour modifier l'input" />
+            </div>
+          ) : (
+            <div className={styles.header}>
+              Ma parure
+            </div>
+          )}
 
         <div className={styles.background}>
           <img className={styles.preview} src={props.preview} alt="preview" />
