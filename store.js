@@ -12,8 +12,8 @@ const initialParureContent = {
     imageMenu: '/static/Bed/Menu/escale/couette.png',
     id: 1,
   },
-  flatSheet: { image: '', name: 'Aucun', id: 0 },
-  fittedSheet: { image: '', name: 'Aucun', id: 0 },
+  flatSheet: { image: '', name: 'Aucun', id: -1 },
+  fittedSheet: { image: '', name: 'Aucun', id: -1 },
   smallPillow: {
     name: 'Escale',
     material: 'Percale',
@@ -52,10 +52,10 @@ const initialState = {
   parures: [],
   idLog: '',
   activeParure: { parureContent: initialParureContent },
-  initialParureId: initialParureId,
+  initialParureId,
   initialParureContent,
-  cart : [],
-  paruresAddedToCart : []
+  cart: [],
+  paruresAddedToCart: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -75,8 +75,8 @@ const reducer = (state = initialState, action) => {
         ...state,
         idLog: action.idLog,
         parures: [],
-        cart : [],
-        paruresAddedToCart : []
+        cart: [],
+        paruresAddedToCart: [],
       };
     case 'activeParure':
       return {
@@ -89,11 +89,11 @@ const reducer = (state = initialState, action) => {
         parures: action.parures,
       };
     case 'addToCart':
-        return {
-          ...state,
-          cart: action.cart,
-          paruresAddedToCart: action.paruresAddedToCart
-        };
+      return {
+        ...state,
+        cart: action.cart,
+        paruresAddedToCart: action.paruresAddedToCart,
+      };
     default:
       return state;
   }
