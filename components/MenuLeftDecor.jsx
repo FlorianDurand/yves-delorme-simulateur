@@ -14,6 +14,16 @@ const walls = [
     imagePreview: '/static/Background/wall_preview_2.png',
     image: '/static/Background/wall_2.png',
   },
+  {
+    id: 2,
+    imagePreview: '/static/Background/wall_preview_2.png',
+    image: '/static/Background/wall_2.png',
+  },
+  {
+    id: 3,
+    imagePreview: '/static/Background/wall_preview_2.png',
+    image: '/static/Background/wall_2.png',
+  },
 
 ];
 
@@ -26,6 +36,18 @@ const floors = [
   },
   {
     id: 1,
+    imagePreview: '/static/Background/floor_preview_2.png',
+    image: '/static/Background/floor_2.png',
+    joint: '/static/Background/joint_2.png',
+  },
+  {
+    id: 2,
+    imagePreview: '/static/Background/floor_preview_2.png',
+    image: '/static/Background/floor_2.png',
+    joint: '/static/Background/joint_2.png',
+  },
+  {
+    id: 3,
     imagePreview: '/static/Background/floor_preview_2.png',
     image: '/static/Background/floor_2.png',
     joint: '/static/Background/joint_2.png',
@@ -50,6 +72,21 @@ const teteLits = [
   },
   {
     id: 3,
+    imagePreview: '/static/Background/teteLit_preview_3.png',
+    image: '/static/Background/teteLit_3.png',
+  },
+  {
+    id: 4,
+    imagePreview: '/static/Background/teteLit_preview_3.png',
+    image: '/static/Background/teteLit_3.png',
+  },
+  {
+    id: 5,
+    imagePreview: '/static/Background/teteLit_preview_3.png',
+    image: '/static/Background/teteLit_3.png',
+  },
+  {
+    id: 6,
     imagePreview: '/static/Background/teteLit_preview_3.png',
     image: '/static/Background/teteLit_3.png',
   },

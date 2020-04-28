@@ -5,7 +5,7 @@
   z-index: 50;
   width: 714px;
   height: 100%;
-  padding: 0 0 0 40px;
+  padding: 120px 0 0 30px;
   overflow-y: scroll;
   font-family: $font-base;
   background-color: white;
@@ -29,13 +29,20 @@
 }
 
 .title {
-  margin-top: 25px;
-  margin-bottom: 33px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 714px;
+  height: 100px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  padding-left: 30px;
   color: rgba(62, 128, 135, 86%);
   font-weight: bold;
   font-size: 48px;
   font-family: $font-title;
-  line-height: 72px;
+  background-color: white;
 }
 
 .subtitle {
@@ -120,12 +127,14 @@
 .notActiveWall {
   display: flex;
   margin-right: 40px;
+  margin-bottom: 40px;
 }
 
 .activeFloor,
 .notActiveFloor {
   display: flex;
   margin-right: 30px;
+  margin-bottom: 40px;
 }
 
 .floorPreview {
