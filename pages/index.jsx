@@ -73,7 +73,7 @@ const Index = () => {
   return (
     <div className={styles.background}>
       {menu ? null
-        : <Header toggleMenuLeftDecor={toggleMenuLeftDecor} logIn={logIn} needToLog={needToLog} toggleNeedToLog={toggleNeedToLog} />}
+        : <Header toggleMenuLeftDecor={toggleMenuLeftDecor} logIn={logIn} needToLog={needToLog} toggleNeedToLog={toggleNeedToLog} popModal={popModal}/>}
       <Bed menu={menu} addCart={addCart} popModal={popModal} parureContent={parureContent} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} menuOpen={menuOpen} saveParure={saveParure} currentParureId={currentParureId} />
       {modal ? (<Modal type={typeOfModal} resetModal={resetModal} myParure={myParure} logIn={logIn} popModal={popModal} saveParure={saveParure} />) : null}
       <Footer popModal={popModal} toggleMenu={toggleMenu} toggleCart={toggleCart} preview={previewF} parures={parures} logged={logged} isMenuOpen={menu} />
@@ -130,7 +130,7 @@ const Index = () => {
   }
 
   function popModal(typeOfModal) {
-    typeOfModal === 'addedToCart' || typeOfModal === 'saved' ? (setTypeOfModal(typeOfModal), setModal(true)) : null;
+    typeOfModal === 'addedToCart' || typeOfModal === 'saved' || typeOfModal === 'returnSite' ? (setTypeOfModal(typeOfModal), setModal(true)) : null;
     typeOfModal === 'save' && logged == true ? (setTypeOfModal(typeOfModal), setModal(true)) : null;
     // typeOfModal === 'save' && logged == false ? (setTypeOfModal(['unlogged', 'save']), setModal(true)) : null;
     // typeOfModal === 'list' && logged == false ? (setTypeOfModal(['unlogged', 'list']), setModal(true)) : null;

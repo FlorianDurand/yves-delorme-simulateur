@@ -182,5 +182,35 @@
       padding: 0;
     }
   }
+
+  .modalOut {
+
+    .greenText {
+      margin-bottom: 40px;
+    }
+
+    .groupButtonsRow {
+      width: auto;
+      margin-top: 40px;
+
+      .buttonTop {
+        width: auto;
+        margin-right: 20px;
+        color: color(primary-500);
+        text-align: center;
+        background-color: white;
+        border: color(primary-500) 1px solid;
+      }
+
+      .buttonBottom {
+        padding: 0 20px;
+        border: color(primary-500) 1px solid;
+
+        img {
+          width: auto;
+        }
+      }
+    }
+  }
 }
 

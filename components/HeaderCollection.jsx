@@ -162,6 +162,7 @@ const HeaderCollection = (props) => {
   function resetCard() {
     setShareCard(false);
     setConnectionBar(false);
+    setPopExitModal(false)
   }
 
   function popCallBackMail() {

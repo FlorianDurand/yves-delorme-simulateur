@@ -66,6 +66,28 @@ const Modal = (props) => {
     <div className={styles.modalContainer}>
       <div className={styles.modalOpacityBg} onClick={() => props.resetModal()} />
 
+      {props.type === 'returnSite' ? (
+        <div className={`${styles.modal} ${styles.modalOut}`}>
+          <div className={styles.greenText}>
+            Vous allez retourner vers le site.
+          </div>
+          <div className={styles.basicText}>
+            Si vous quittez l’espace Configurateur pour rejoindre votre Panier, vous allez quitter l’application.
+          </div>
+          <div className={styles.groupButtonsRow}>
+            <button type="button" className={styles.buttonTop} onClick={() => props.resetModal()}>
+              Annuler
+            </button>
+            <Link href="/basket">
+              <button type="button" className={`${styles.buttonBottom} ${styles.exit}`}>
+                <img src="/static/icons/iconArrowBackGreen.svg" alt="panier" />
+                Retour au site
+              </button>
+            </Link>
+          </div>
+        </div>
+      ) : null}
+
       {props.type === 'addedToCart' ? (
         <div className={styles.modal}>
           <div className={styles.greenText}>

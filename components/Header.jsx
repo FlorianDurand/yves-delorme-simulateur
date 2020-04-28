@@ -30,13 +30,13 @@ const Header = (props) => {
     <div className={styles.header}>
 
       <Link href="/">
-        <a className={styles.link}>
+        <a className={styles.link} onClick={() => props.popModal('returnSite')}>
           <img src="/static/return.png" alt="Retour au site" className={styles.back} />
           Retour au site
         </a>
       </Link>
       <div className={styles.center} onClick={() => toggleConnection()}>
-        <img src="/static/icons/IconUser.svg" alt="petit bonhomme de connexion" />
+        <img src="/static/icons/iconUser.svg" alt="petit bonhomme de connexion" />
         <div className={styles.name}>
           {idLog || 'Connexion'}
         </div>
