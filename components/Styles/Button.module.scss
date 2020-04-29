@@ -1,0 +1,31 @@
+.home {
+  width: auto;
+  height: 60px;
+  padding: 16px 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 22px;
+  background-color: color(secondary-700, 0.2);
+  border: solid 1px white;
+  border-radius: 5px;
+}
+
+.buttonSettings {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+  height: 60px;
+  padding: 0 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 22px;
+  background-color: color(secondary-700, 0.2);
+  border: solid 1px white;
+  border-radius: 5px;
+}
+
+.buttonSettings img {
+  max-width: 45px;
+  margin-right: 20px;
+}

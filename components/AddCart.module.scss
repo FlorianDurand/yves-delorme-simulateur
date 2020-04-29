@@ -1,0 +1,247 @@
+.addcart {
+  position: fixed;
+  top: 0;
+  z-index: 175;
+  width: 1366px;
+  height: 1024px;
+  background: rgba(69, 69, 69, .5);
+}
+
+.close {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+}
+
+
+.addcartContent {
+  position: absolute;
+  top: 40px;
+  left: 110px;
+  z-index: 200;
+  width: 1146px;
+  height: 984px;
+  overflow-y: scroll;
+  background-color: color(light);
+  border-radius: 5px;
+}
+
+.addcartContent .background {
+  position: relative;
+  margin-top: 70px;
+
+  .preview {
+    width: 1146px;
+    height: 414px;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .floatingButtons {
+    position: absolute;
+    bottom: 35px;
+    left: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .buttonRight_green {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 226px;
+      height: 60px;
+      margin-left: 10px;
+      padding-right: 20px;
+      padding-left: 20px;
+      color: white;
+      font-weight: bold;
+      font-size: 22px;
+      background-color: #3E8087;
+      border: 0;
+      border-radius: 5px;
+    }
+
+    .buttonRight {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 166px;
+      height: 60px;
+      margin-right: 10px;
+      color: #3E8087;
+      font-weight: bold;
+      font-size: 22px;
+      background-color: white;
+      border: 0;
+      border-radius: 5px;
+    }
+  }
+}
+
+
+.addcartContent {
+
+  .header {
+    position: fixed;
+    z-index: 250;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1146px;
+    height: 80px;
+    color: color(primary-500);
+    font-weight: bold;
+    font-size: 24px;
+    font-family: $font-title;
+    font-style: normal;
+    line-height: 36px;
+    background-color: white;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  input {
+    width: 250px;
+    color: color(primary-500);
+    font-weight: bold;
+    font-size: 24px;
+    font-family: $font-title;
+    font-style: normal;
+    line-height: 36px;
+    text-align: center;
+    border: 0;
+    border-bottom: 1px solid #C8C8C8;
+
+    &::placeholder {
+      color: color(primary-500);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+}
+
+.addcartContent {
+
+  .cartContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 38px 0 38px 0;
+  }
+
+  .subtitle {
+    width: fit-content;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    color: color(primary-500);
+    font-weight: bold;
+    font-size: 32px;
+    font-family: $font-title;
+    font-style: normal;
+    line-height: 48px;
+  }
+
+  .addedToCart {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    padding: 30px 0;
+    border-bottom: 1px solid #E0E0E0;
+
+    .imgContainer {
+      display: flex;
+      justify-content: center;
+      width: 138px;
+      height: 100px;
+      margin-left: 30px;
+    }
+
+    .img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .name {
+      width: 20%;
+      margin-left: 30px;
+      color: color(primary-500);
+      font-weight: bold;
+      font-size: 24px;
+      font-family: $font-title;
+      font-style: normal;
+      line-height: 36px;
+    }
+
+    .color {
+      margin-left: 87px;
+      color: #444444;
+      font-weight: 500;
+      font-size: 20px;
+      font-family: $font-base;
+      font-style: normal;
+      line-height: 23px;
+    }
+
+    .picker {
+      margin-left: 137px;
+    }
+
+    .number {
+      display: inline-flex;
+      margin-left: 40px;
+
+      .inputnumber
+      ,
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        width: 60px;
+        height: 60px;
+        padding: 0;
+        color: #444444;
+        font-weight: 500;
+        font-size: 24px;
+        font-family: $font-base;
+        font-style: normal;
+        line-height: 28px;
+        background: #FFFFFF;
+        border: 1px solid color(secondary-400);
+        border-radius: 5px;
+      }
+
+      .inputNumber {
+        width: 90px;
+        margin-right: 20px;
+        margin-left: 20px;
+        text-align: center;
+      }
+
+      button {
+
+        .btn {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}
+
+.number button:focus,
+.number input:focus {
+  outline: none;
+}

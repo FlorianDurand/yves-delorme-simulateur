@@ -1,0 +1,216 @@
+.modalContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  .modalOpacityBg {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    width: 1366px;
+    height: 1024px;
+    background: rgba(69, 69, 69, .5);
+  }
+
+  .modal {
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    max-height: 500px;
+    padding: 30px 100px;
+    background: #FFFFFF;
+    border-radius: 5px;
+
+    .greenText {
+      display: flex;
+      align-items: center;
+      color: #3E8087;
+      font-weight: bold;
+      font-size: 32px;
+      font-family: Poppins;
+      font-style: normal;
+      line-height: 48px;
+
+    }
+
+    .basicText {
+      width: 600px;
+      color: #454545;
+      font-weight: normal;
+      font-size: 24px;
+      font-family: Roboto;
+      font-style: normal;
+      line-height: 150%;
+      text-align: center;
+
+      span {
+        font-weight: bold;
+      }
+    }
+
+    .mail {
+      display: flex;
+      flex-direction: column;
+      width: 375px;
+      margin-top: 40px;
+      margin-bottom: 30px;
+
+      .mailInput {
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        width: 100%;
+        height: 60px;
+        padding-left: 25px;
+        color: #454545;
+        font-weight: normal;
+        font-size: 24px;
+        font-family: Roboto;
+        font-style: normal;
+        line-height: 28px;
+        border: 1px solid #9C9C9C;
+        border-radius: 5px;
+
+        &::placeholder {
+          color: #A6A6A6;
+
+        }
+      }
+
+      .mailLabel {
+        display: flex;
+        align-items: center;
+        margin-bottom: 6px;
+        color: #454545;
+        font-weight: normal;
+        font-size: 24px;
+        font-family: Roboto;
+        font-style: normal;
+        line-height: 150%;
+
+      }
+    }
+
+    .groupButtonsColumn {
+      display: flex;
+      flex-direction: column;
+      width: 330px;
+      margin-top: 40px;
+
+      .exit {
+        justify-content: center;
+
+        img {
+          margin-right: 15px;
+        }
+      }
+    }
+
+    .groupButtonsRow {
+      display: flex;
+      flex-direction: row;
+      width: 330px;
+
+      .buttonTop {
+        justify-content: space-between;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        padding: 0 30px;
+      }
+
+      .buttonBottom {
+        justify-content: center;
+        margin-right: 10px;
+        padding: 0;
+      }
+    }
+
+    .buttonTop {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 60px;
+      margin-bottom: 20px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      background-color: #3E8087;
+      border: 0;
+      border-radius: 5px;
+    }
+
+    .buttonTop2 {
+      justify-content: space-between;
+      padding: 0 51px;
+
+      img {
+        width: 40px;
+        height: 40px;
+        margin: 8px 0 12px 0;
+      }
+    }
+
+    .buttonBottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 60px;
+      padding: 0 48px;
+      color: #3E8087;
+      font-weight: bold;
+      font-size: 24px;
+      font-family: Roboto;
+      font-style: normal;
+      line-height: 28px;
+      border: 1.62px solid #3E8087;
+      border-radius: 5px;
+
+      img {
+        width: 25px;
+      }
+    }
+
+    .buttonBottom2 {
+      justify-content: center;
+      padding: 0;
+    }
+  }
+
+  .modalOut {
+
+    .greenText {
+      margin-bottom: 40px;
+    }
+
+    .groupButtonsRow {
+      width: auto;
+      margin-top: 40px;
+
+      .buttonTop {
+        width: auto;
+        margin-right: 20px;
+        color: color(primary-500);
+        text-align: center;
+        background-color: white;
+        border: color(primary-500) 1px solid;
+      }
+
+      .buttonBottom {
+        padding: 0 20px;
+        border: color(primary-500) 1px solid;
+
+        img {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+

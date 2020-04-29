@@ -1,0 +1,112 @@
+$bigPillowWidth: 300px;
+$bigPillowHeight: 259px;
+
+$mediumPillowWidth: $bigPillowWidth;
+$mediumPillowHeight: $bigPillowHeight;
+
+$centerPillowWidth: 280px;
+$centerPillowHeight: 201px;
+
+$smallPillowWidth: 200px;
+$smallPillowHeight: 186px;
+
+$duvetWidth: 1245px;
+$duvetHeight: 476px;
+
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;//peut causer des pbm lors des tests sur ipad, à voir
+}
+
+.openedMenu {
+  left: -285px;
+}
+
+.wall {
+  position: absolute;
+  top: 0;
+}
+
+.joint {
+  position: absolute;
+  bottom: 316px;
+}
+
+.floor {
+  position: absolute;
+  bottom: 0;
+}
+
+.tete {
+  position: absolute;
+  top: 230px;
+  left: 290px;
+  width: 775px;
+  height: 492px;
+}
+
+.duvet {
+  position: absolute;
+  top: 480px;
+  left: 53px;
+  width: $duvetWidth;
+  height: $duvetHeight;
+}
+
+.blackRectangle {
+  position: absolute;
+  bottom: 133px;
+  left: 211px;
+  width: 927px;
+  height: 73px;
+  background-color: color(secondary-900);
+}
+
+.back {
+  position: absolute;
+  top: 254px;
+  left: 336px;
+  width: $bigPillowWidth;
+  height: $bigPillowHeight;
+}
+
+.backRight {
+  position: absolute;
+  top: 260px;
+  right: 346px;
+  width: $bigPillowWidth;
+  height: $bigPillowHeight;
+}
+
+.middle {
+  position: absolute;
+  top: 277px;
+  left: 388px;
+  width: $mediumPillowWidth;
+  height: $mediumPillowHeight;
+}
+
+.middleRight {
+  position: absolute;
+  top: 278px;
+  right: 410px;
+  width: $mediumPillowWidth;
+  height: $mediumPillowHeight;
+}
+
+.frontCenter {
+  position: absolute;
+  top: 316px;
+  left: 535px;
+  width: $centerPillowWidth;
+  height: $centerPillowHeight;
+}
+
+.front {
+  position: absolute;
+  top: 332px;
+  left: 575px;
+  width: $smallPillowWidth;
+  height: $smallPillowHeight;
+}

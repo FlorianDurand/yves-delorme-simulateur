@@ -1,0 +1,346 @@
+.headerCollection {
+  position: fixed;
+  top: 0;
+  z-index: 150;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 90px;
+  padding: 0 25px;
+  color: color(primary-500);
+  font-size: 24px;
+  font-family: $font-base;
+  background-color: white;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, .11);
+
+  .connectionBar {
+    position: absolute;
+    top: 119px;
+    left: 450px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    max-height: 500px;
+    padding: 30px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, .11);
+
+    .triangle {
+      position: absolute;
+      top: -29px;
+      left: 202px;
+      z-index: 150;
+      width: 60px;
+      height: 30px;
+      background-color: white;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, .11);
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+
+    .basicText {
+      width: 600px;
+      color: #454545;
+      font-weight: normal;
+      font-size: 24px;
+      font-family: Roboto;
+      font-style: normal;
+      line-height: 150%;
+      text-align: center;
+
+      span {
+        font-weight: bold;
+      }
+    }
+
+
+    .groupButtonsRow {
+      display: flex;
+      flex-direction: row;
+      margin-top: 30px;
+
+      .buttonTop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        padding: 0 30px;
+        color: white;
+        font-weight: bold;
+        font-size: 24px;
+        background-color: #3E8087;
+        border: 0;
+        border-radius: 5px;
+      }
+
+      .buttonBottom {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        margin-right: 10px;
+        padding: 0 20px;
+        color: #3E8087;
+        font-weight: bold;
+        font-size: 24px;
+        font-family: Roboto;
+        font-style: normal;
+        line-height: 28px;
+        border: 1.62px solid #3E8087;
+        border-radius: 5px;
+      }
+    }
+
+
+  }
+
+  .exit {
+    right: 25px;
+    left: auto;
+    width: 600px;
+
+    .triangle {
+      right: 30px;
+      left: auto;
+    }
+
+  }
+
+  .popShareCard {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    .triangle {
+      position: absolute;
+      top: 90px;
+      right: 181px;
+      z-index: 150;
+      width: 60px;
+      height: 30px;
+      background-color: white;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, .11);
+      clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+
+    .shareCard {
+      position: absolute;
+      top: 119px;
+      right: 40px;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      width: 600px;
+      height: 256px;
+      padding: 30px 0;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0px 2px 15px rgba(0, 0, 0, .11);
+
+      .basicText {
+        color: color(secondary-700);
+        font-size: 24px;
+        font-family: Roboto;
+        font-style: normal;
+        line-height: 150%;
+      }
+
+      .mail {
+        width: 423px;
+        height: 60px;
+        padding: 10px 20px;
+        color: color(secondary-700);
+        font-size: 24px;
+        font-family: Roboto;
+        font-style: normal;
+        line-height: 150%;
+        border: 1px solid #DDDDDD;
+      }
+
+      .groupButtonsRow {
+        display: flex;
+        flex-direction: row;
+        width: 392px;
+
+        .buttonTop {
+          justify-content: center;
+          width: 240px;
+          margin-bottom: 10px;
+          margin-left: 10px;
+        }
+
+        .buttonBottom {
+          justify-content: center;
+          width: 132px;
+          margin-right: 10px;
+          padding: 0;
+        }
+      }
+
+      .buttonTop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 60px;
+        margin-bottom: 20px;
+        color: white;
+        font-weight: bold;
+        font-size: 24px;
+        background-color: #3E8087;
+        border: 0;
+        border-radius: 5px;
+      }
+
+      .buttonBottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 60px;
+        padding: 0 48px;
+        color: #3E8087;
+        font-weight: bold;
+        font-size: 24px;
+        font-family: Roboto;
+        font-style: normal;
+        line-height: 28px;
+        border: 1.62px solid #3E8087;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  .callBackMail {
+    animation: fadeinout 3.1s;
+
+    @keyframes fadeinout {
+
+      0% {
+        opacity: 0;
+      }
+
+      30% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+
+
+    }
+
+    .shareCard {
+      right: 101px;
+      width: 283px;
+      height: auto;
+      padding: 20px 0;
+
+      .basicText {
+        display: inline-flex;
+        align-items: center;
+
+        img {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .callBackMail {
+
+    .triangle {
+      right: 40px;
+    }
+
+    .shareCard {
+      right: 10px;
+      width: 450px;
+    }
+  }
+
+  .back {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: color(secondary-400);
+
+    svg {
+      fill: color(secondary-400);
+      stroke: color(secondary-400);
+    }
+
+    p {
+      margin-left: 10px;
+      font-weight: bold;
+      font-size: 24px;
+      font-family: $font-base;
+    }
+  }
+
+  .mail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+
+    path {
+      fill: color(primary-500);
+      stroke: color(primary-500);
+    }
+
+    p {
+      margin-left: 10px;
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+
+    .action {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-right: 19px;
+
+      .somethingInCart {
+        position: absolute;
+        top: 5px;
+        left: 28px;
+        width: 7px;
+        height: 7px;
+        background-color: color(notification);
+        border-radius: 50%;
+        transform: scale(1);
+        opacity: 1;
+        transition: all .2s;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      p {
+        margin-left: 10px;
+      }
+    }
+
+    path {
+      fill: color(primary-500);
+      stroke: color(primary-500);
+    }
+  }
+}

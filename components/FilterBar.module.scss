@@ -1,0 +1,94 @@
+.filter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .search {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: content-box;
+    width: 340px;
+    height: 60px;
+    border: 1px solid #9C9C9C;
+    border-radius: 5px;
+
+    input {
+      border-radius: 5px;
+    }
+
+    button {
+      border-radius: 0 5px 5px 0;
+    }
+  }
+
+  .title {
+    color: color(primary-500);
+    font-weight: bold;
+    font-size: 32px;
+    font-family: $font-title;
+  }
+
+  .numberFilter {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background-color: color(primary-500);
+    border-radius: 50%;
+
+    p {
+      width: 26px;
+      height: 26px;
+      padding-top: 2px;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+      font-family: $font-base;
+    }
+  }
+}
+
+.searchButton,
+.filterButton,
+.searchInput {
+  height: 60px;
+  padding: 18px 20px;
+  color: #A6A6A6;
+  color: #A6A6A6;
+  font-weight: normal;
+  font-size: 20px;
+  font-family: $font-base;
+  font-style: normal;
+  line-height: 23px;
+  background-color: white;
+  border: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.searchInput {
+  width: 250px;
+}
+
+.searchButton {
+  width: 60px;
+  padding: 16px;
+  border-left: 1px solid #9C9C9C;
+
+}
+
+.filterButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 156px;
+  padding: 18px 20px 18px 31px;
+  font-size: 23px;
+  border: 1px solid #A6A6A6;
+  border-radius: 5px;
+}

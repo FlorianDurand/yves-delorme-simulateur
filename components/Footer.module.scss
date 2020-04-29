@@ -1,0 +1,138 @@
+$font-color : color(primary-500);
+$background-color: white;
+
+.footer {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  // font-family: $font-base;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-left: 40px;
+}
+
+.notActiveButton,
+.activeButton {
+  width: auto;
+  height: 60px;
+  margin-left: 20px;
+  padding: 16px 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 22px;
+  background-color: color(secondary-700, 0.2);
+  border: solid 1px white;
+  border-radius: 5px;
+  transition-duration: 250ms;
+}
+
+.notActiveButton:first-child,
+.activeButton:first-child {
+  margin-left: 0;
+}
+
+.activeButton {
+  background-color: color(light, 50%);
+  transition-duration: 250ms;
+}
+
+.buttonsRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 290px;
+  margin-right: 40px;
+}
+
+.buttonRight_green {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  padding-right: 30px;
+  padding-left: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  background-color: $font-color;
+  border: 0;
+  border-radius: 5px;
+}
+
+.bottomGroup {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  .numberFilter {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    background-color: color(primary-500);
+    border-radius: 50%;
+    opacity: 1;
+    scale: 1;
+    transition: all .2s;
+
+    p {
+      width: 26px;
+      height: 26px;
+      padding-top: 2px;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+      font-family: $font-base;
+    }
+  }
+
+  .buttonRight,
+  .buttonRightLeft {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding-right: 20px;
+    padding-left: 20px;
+    color: $font-color;
+    font-weight: bold;
+    font-size: 24px;
+    background-color: $background-color;
+    border: 0;
+    border-radius: 5px;
+
+  }
+
+  .buttonRight {
+    width: 210px;
+
+    img {
+      margin-top: -4px;
+    }
+  }
+
+  .buttonRightLeft {
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin-right: 18px;
+    padding: 0;
+  }
+}
+
+

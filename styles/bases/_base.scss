@@ -1,0 +1,31 @@
+html,
+div {
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  position: relative;
+  width: 1366px;
+  height: 1024px;
+}
+
+body {
+  position: relative;
+  height: 100%;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+#trashCanvas {
+  position: absolute;
+  top: 0;
+  z-index: -8000;
+  width: 100vw;
+}

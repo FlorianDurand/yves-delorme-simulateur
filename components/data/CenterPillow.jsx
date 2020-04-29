@@ -1,0 +1,60 @@
+const centerPillow = [
+  {
+    name: 'Escale',
+    material: 'Percale',
+    grammage: '120 fils/cm²',
+    imageMenu: '/static/Bed/escale/center.png',
+    image: '/static/Bed/escale/center.png',
+    id: 1,
+  },
+  {
+    name: 'Ombrage',
+    material: 'Percale',
+    grammage: '120 fils/cm²',
+    imageMenu: '/static/Bed/ombrage/center.png',
+    image: '/static/Bed/ombrage/center.png',
+    id: 2,
+  },
+  {
+    name: 'Elegante',
+    material: 'Percale',
+    grammage: '120 fils/cm²',
+    imageMenu: '/static/Bed/elegante/center.png',
+    image: '/static/Bed/elegante/center.png',
+    id: 3,
+  },
+  {
+    name: 'Miami',
+    material: 'Percale',
+    grammage: '120 fils/cm²',
+    imageMenu: '/static/Bed/miami/center.png',
+    image: '/static/Bed/miami/center.png',
+    id: 4,
+  },
+  {
+    name: 'Naussica',
+    material: 'Percale',
+    grammage: '120 fils/cm²',
+    imageMenu: '/static/Bed/naussica/center.png',
+    image: '/static/Bed/naussica/center.png',
+    id: 5,
+  },
+  {
+    name: 'Belami Thé',
+    material: 'Percale',
+    grammage: '120 fils/cm²',
+    imageMenu: '/static/Bed/the/center.png',
+    image: '/static/Bed/the/center.png',
+    id: 6,
+  },
+  {
+    name: 'Belami Ivoire',
+    material: 'Percale',
+    grammage: '120 fils/cm²',
+    imageMenu: '/static/Bed/ivoire/center.png',
+    image: '/static/Bed/ivoire/center.png',
+    id: 7,
+  },
+];
+
+export default centerPillow;

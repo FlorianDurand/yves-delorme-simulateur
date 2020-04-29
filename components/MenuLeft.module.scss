@@ -1,0 +1,166 @@
+.menu {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 50;
+  width: 714px;
+  height: 100%;
+  padding: 120px 0 0 30px;
+  overflow-y: scroll;
+  font-family: $font-base;
+  background-color: white;
+}
+
+.menu::-webkit-scrollbar {
+  display: none;
+}
+
+.close{
+  position: absolute;
+  top: 20px;
+  left: 734px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+}
+
+.title {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 714px;
+  height: 100px;
+  padding-top: 26px;
+  padding-bottom: 26px;
+  padding-left: 30px;
+  color: rgba(62, 128, 135, 86%);
+  font-weight: bold;
+  font-size: 48px;
+  font-family: $font-title;
+  background-color: white;
+}
+
+.subtitle {
+  margin-bottom: 25px;
+  color: #565656;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: $font-base;
+  font-style: normal;
+  line-height: 35px;
+}
+
+.contents {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.subSection {
+  margin-bottom: 33px;
+}
+
+.button {
+  box-sizing: border-box;
+  width: 187px;
+  height: 60px;
+  margin-right: 30px;
+  margin-bottom: 37px;
+  color: #222222;
+  font-weight: normal;
+  font-size: 24px;
+  font-family: $font-base;
+  font-style: normal;
+  line-height: 28px;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #D3D3D3;
+  border-radius: 5px;
+}
+
+.barre {
+  position: fixed;
+  top: 0;
+  left: 714px;
+  z-index: 8000;
+  width: 40px;
+  height: 100%;
+  border-left: 1px solid #E2E2E2;
+}
+
+.littleRectangle {
+  position: fixed;
+  top: 50%;
+  left: 730px;
+  width: 8px;
+  height: 80px;
+  background: #E2E2E2;
+  border-radius: 30px;
+}
+
+.activeWall,
+.activeFloor {
+  display: flex;
+  background: rgba(62, 128, 135, .5);
+  border-radius: 4px;
+  box-shadow: 0 0 0 4px #3E8087;
+
+  .wallPreview {
+    opacity: .8;
+  }
+
+  .floorPreview {
+    opacity: .8;
+  }
+
+  .teteLitPreview {
+    opacity: .8;
+  }
+
+}
+
+.activeWall,
+.notActiveWall {
+  display: flex;
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+
+.activeFloor,
+.notActiveFloor {
+  display: flex;
+  margin-right: 30px;
+  margin-bottom: 40px;
+}
+
+.floorPreview {
+  max-width: 200px;
+}
+
+.teteLit {
+
+  &:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 136px;
+    background-color: #E8E8E8;
+    border-radius: 5px;
+
+    .teteLitPreview {
+      width: 86px;
+      height: 77px;
+    }
+
+  }
+}
+
+.teteLitPreview {
+  width: 136px;
+  height: 136px;
+}
+
