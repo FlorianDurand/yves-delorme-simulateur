@@ -16,7 +16,7 @@ const FilterBar = (props) => (
           </button>
         </div>
       )}
-    <button type="button" className={styles.filterButton} onClick={() => props.onFilterActive()}>
+    <button type="button" className={props.numberFilter > 0 && props.isFilterActive ? (styles.filterButtonAble) : (styles.filterButton)} onClick={() => props.onFilterActive()}>
       {/* {props.isFilterActive ? <img src="/static/validate.svg" alt="search" /> : <img src="/static/filter.png" alt="search" /> } */}
       {props.numberFilter > 0 && !props.isFilterActive ? (
         <div className={styles.numberFilter}>

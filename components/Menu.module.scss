@@ -19,7 +19,7 @@
 .close {
   position: absolute;
   top: 20px;
-  right: 598px;
+  right: 575px;
   z-index: 100;
   display: flex;
   align-items: center;
@@ -33,7 +33,7 @@
 
   position: fixed;
   top: 0;
-  right: 0;
+  left: 788px;
   z-index: 50;
   width: 579px;
   padding: 0 30px;
@@ -70,7 +70,7 @@
 .pillowSelector::after {
   position: absolute;
   bottom: 0;
-  left: -25px;
+  left: 788px;
   width: 441px;
   height: 2px;
   background-color: #E2E2E2;

@@ -10,10 +10,10 @@ const getInfo = () => {
   const dispatch = useDispatch();
   const disconnect = (idLogLocal) => dispatch({
     type: 'disconnect',
-    idLog: idLogLocal
+    idLog: idLogLocal,
   });
   return {
-    disconnect, idLog
+    disconnect, idLog,
   };
 };
 
@@ -76,7 +76,7 @@ const Header = (props) => {
             <button type="button" className={styles.buttonBottom} onClick={() => { toggleConnection(); }}>
               Retour
             </button>
-            <button type="button" className={styles.buttonTop} onClick={() => { toggleConnection(), props.logIn(), setEmail(''), disconnect("") }}>
+            <button type="button" className={styles.buttonTop} onClick={() => { toggleConnection(), props.logIn(), setEmail(''), disconnect(''); }}>
               Se déconnecter
             </button>
           </div>
