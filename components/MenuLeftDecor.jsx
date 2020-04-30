@@ -2,59 +2,10 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './MenuLeft.module.scss';
 import MenuLeftBase from './MenuLeftBase';
+import walls from './data/Wall';
+import floors from './data/Floor';
+import teteLits from './data/TeteDeLit';
 
-const walls = [
-  {
-    id: 0,
-    imagePreview: '/static/Background/wall_preview_1.png',
-    image: '/static/Background/wall_1.png',
-  },
-  {
-    id: 1,
-    imagePreview: '/static/Background/wall_preview_2.png',
-    image: '/static/Background/wall_2.png',
-  },
-
-];
-
-const floors = [
-  {
-    id: 0,
-    imagePreview: '/static/Background/floor_preview_1.png',
-    image: '/static/Background/floor_1.png',
-    joint: '/static/Background/joint_1.png',
-  },
-  {
-    id: 1,
-    imagePreview: '/static/Background/floor_preview_2.png',
-    image: '/static/Background/floor_2.png',
-    joint: '/static/Background/joint_2.png',
-  },
-
-];
-const teteLits = [
-  {
-    id: 0,
-    imagePreview: '/static/none_white.svg',
-    image: '',
-  },
-  {
-    id: 1,
-    imagePreview: '/static/Background/teteLit_preview_1.png',
-    image: '/static/Background/teteLit_1.png',
-  },
-  {
-    id: 2,
-    imagePreview: '/static/Background/teteLit_preview_2.png',
-    image: '/static/Background/teteLit_2.png',
-  },
-  {
-    id: 3,
-    imagePreview: '/static/Background/teteLit_preview_3.png',
-    image: '/static/Background/teteLit_3.png',
-  },
-
-];
 
 const MenuLeftDecor = (props) => {
   // Set active wall Id
