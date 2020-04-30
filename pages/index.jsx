@@ -63,6 +63,7 @@ const Index = () => {
   const [modal, setModal] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [myParure, setMyParure] = useState();
+  const [myBg, setMyBg] = useState();
   const [idLogLocal, setIDLogLocal] = useState(idLog);
   const [logged, setLogged] = useState(false);
   const [savedBed, setSavedBed] = useState(false);
@@ -73,9 +74,9 @@ const Index = () => {
   return (
     <div className={styles.background}>
       {menu ? null
-        : <Header toggleMenuLeftDecor={toggleMenuLeftDecor} logIn={logIn} needToLog={needToLog} toggleNeedToLog={toggleNeedToLog} popModal={popModal}/>}
-      <Bed menu={menu} addCart={addCart} popModal={popModal} parureContent={parureContent} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} menuOpen={menuOpen} saveParure={saveParure} currentParureId={currentParureId} />
-      {modal ? (<Modal type={typeOfModal} resetModal={resetModal} myParure={myParure} logIn={logIn} popModal={popModal} saveParure={saveParure} />) : null}
+        : <Header toggleMenuLeftDecor={toggleMenuLeftDecor} logIn={logIn} popModal={popModal} needToLog={needToLog} toggleNeedToLog={toggleNeedToLog} popModal={popModal}/>}
+      <Bed menu={menu} addCart={addCart} popModal={popModal} parureContent={parureContent} backgroundContent={backgroundContent} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} menuOpen={menuOpen} saveParure={saveParure} currentParureId={currentParureId} />
+      {modal ? (<Modal type={typeOfModal} resetModal={resetModal} myParure={myParure} myBg={myBg} logIn={logIn} popModal={popModal} saveParure={saveParure} />) : null}
       <Footer popModal={popModal} toggleMenu={toggleMenu} toggleCart={toggleCart} preview={previewF} parures={parures} logged={logged} isMenuOpen={menu} />
       <div id="trashCanvas" className={styles.trashCanvas}>
         <canvas id="canvas" />
@@ -129,13 +130,11 @@ const Index = () => {
     setModal(false);
   }
 
-  function popModal(typeOfModal) {
+  function popModal(typeOfModal, tempLogged) {
     typeOfModal === 'addedToCart' || typeOfModal === 'saved' || typeOfModal === 'returnSite' ? (setTypeOfModal(typeOfModal), setModal(true)) : null;
-    typeOfModal === 'save' && logged == true ? (setTypeOfModal(typeOfModal), setModal(true)) : null;
-    // typeOfModal === 'save' && logged == false ? (setTypeOfModal(['unlogged', 'save']), setModal(true)) : null;
-    // typeOfModal === 'list' && logged == false ? (setTypeOfModal(['unlogged', 'list']), setModal(true)) : null;
-    typeOfModal === 'save' && logged == false ? (setNeedToLog(true)) : null;
-    typeOfModal === 'list' && logged == false ? (setNeedToLog(true)) : null;
+    typeOfModal === 'save' && (logged == true || tempLogged) ? (setTypeOfModal(typeOfModal), setModal(true)) : null;
+    typeOfModal === 'save' && logged == false && !tempLogged ? (setNeedToLog([true, typeOfModal])) : null;
+    typeOfModal === 'list' && logged == false ? (setNeedToLog([true, typeOfModal])) : null;
     typeOfModal === 'list' && logged == true && savedBed == false ? (setTypeOfModal('list'), setModal(true)) : null;
   }
 
@@ -145,6 +144,10 @@ const Index = () => {
 
   function parureContent(myParure) {
     setMyParure(myParure);
+  }
+
+  function backgroundContent(myBg) {
+    setMyBg(myBg);
   }
 
   function logIn(log) {

@@ -9,11 +9,18 @@ const getInfo = () => {
   const activeBed = useSelector((state) => state.activeParure.parureContent);
   const parures = useSelector((state) => state.parures);
   const activeParure = useSelector((state) => state.activeParure);
-  return { activeBed, activeParure, parures };
+  const activeBackground = useSelector((state) => state.activeBackground.backgroundContent);
+  const dispatch = useDispatch();
+  const setActiveBackground = (currentBackground) => dispatch({
+    type: 'activeBackground',
+    activeBackground: currentBackground,
+  });
+
+  return { activeBed, activeParure, parures, activeBackground, setActiveBackground };
 };
 
 const Bed = (props) => {
-  const { activeBed, activeParure, parures } = getInfo();
+  const { activeBed, activeParure, parures, activeBackground, setActiveBackground } = getInfo();
 
   const [duvet, setDuvet] = useState(activeBed.duvet);
   const [flatSheet, setFlatSheet] = useState(activeBed.flatSheet);
@@ -22,10 +29,9 @@ const Bed = (props) => {
   const [centerPillow, setCenterPillow] = useState(activeBed.centerPillow);
   const [mediumPillow, setMediumPillow] = useState(activeBed.mediumPillow);
   const [bigPillow, setBigPillow] = useState(activeBed.bigPillow);
-  const [wall, setWall] = useState({ image: '/static/Background/wall_2.png', id: 1 });
-  const [floor, setFloor] = useState({ image: '/static/Background/floor_2.png', id: 1 });
-  const [joint, setJoint] = useState('/static/Background/joint_2.png');
-  const [tete, setTete] = useState({ image: '/static/Background/teteLit_1.png', id: 1 });
+  const [wall, setWall] = useState(activeBackground.wall);
+  const [floor, setFloor] = useState(activeBackground.floor);
+  const [tete, setTete] = useState(activeBackground.tete);
   const numberOfParure = parures.length + 1;
   const parureName = activeParure.parureName ? activeParure.parureName : `Parure ${numberOfParure}`;
 
@@ -38,13 +44,23 @@ const Bed = (props) => {
     parureId: props.currentParureId,
   }), [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow, props.preview]);
 
+  useEffect(() => {
+    let currentBackground = {
+      wall : wall,
+    floor : floor,
+    tete : tete
+    }
+    setActiveBackground({
+      backgroundContent : currentBackground
+    })
+  }, [wall, tete, floor]);
+
 
   return (
     <div>
       {/* La parure de lit composé des différentes images */}
       <div className={props.menuOpen ? (`${styles.openedMenu} ${styles.background}`) : (styles.background)} id="bed" onClick={() => props.resetMenu()}>
         <img className={styles.wall} src={wall.image} alt="wall" />
-        <img className={styles.joint} src={joint} alt="joint" />
         <img className={styles.floor} src={floor.image} alt="sol" />
         {tete.image !== '' ? <img className={styles.tete} src={tete.image} alt="tete de lit" /> : null}
         {bigPillow.image !== '' ? <img className={styles.back} src={bigPillow.image} alt="Grands Oreillers" /> : null}
@@ -127,10 +143,6 @@ const Bed = (props) => {
 
     if (typeItem === 'floor') {
       setFloor(item);
-    }
-
-    if (typeItem === 'joint') {
-      setJoint(item);
     }
 
     if (typeItem === 'tete') {

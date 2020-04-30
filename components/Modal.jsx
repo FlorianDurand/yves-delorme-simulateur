@@ -42,8 +42,6 @@ const Modal = (props) => {
     parures, saveParure, setActiveParure, activeParure,
   } = useSave();
 
-  const defaultValueName = activeParure.parureName;
-
 
   // Sauvegarde la parure dans un state global (via redux), mais avant regarde si l'id de la parure n'est pas déjà éxistant et dans ce cas, update la parure existante dans le state global
   const save = (myParure) => {
@@ -103,30 +101,6 @@ const Modal = (props) => {
                 Mon panier
               </button>
             </Link>
-          </div>
-        </div>
-      ) : null}
-
-      {props.type[0] === 'unlogged' ? (
-        <div className={styles.modal}>
-          <div className={styles.basicText}>
-            Pour
-            {' '}
-            <span>créer une séléction de parures</span>
-            {' '}
-            ou en retrouver une déjà existante, veuillez entrer votre e-mail.
-          </div>
-          <div className={styles.mail}>
-            <input type="email" name="" id="" placeholder="exemple@gmail.com" className={styles.mailInput} onChange={(e) => { setEmail(e.target.value); }} />
-          </div>
-          <div className={styles.groupButtonsRow}>
-            <button type="button" className={styles.buttonBottom} onClick={() => { props.resetModal(), props.logIn(); }}>
-              Retour
-            </button>
-            <button type="button" className={styles.buttonTop} onClick={() => { setPopModal(props.type[1]), props.logIn(email); }}>
-              <img src="/static/save.svg" alt="Valider" />
-              Valider
-            </button>
           </div>
         </div>
       ) : null}
