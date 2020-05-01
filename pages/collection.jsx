@@ -17,19 +17,15 @@ const getInfo = () => {
     type: 'activeParure',
     activeParure: parureContent,
   });
-  const saveWantedParures = (parures) => dispatch({
-    type: 'saveWantedParures',
-    parures,
-  });
 
   return {
-    parures, idLog, initialParureContent, setActiveParure, saveWantedParures,
+    parures, idLog, initialParureContent, setActiveParure
   };
 };
 
 const Collection = () => {
   const {
-    parures, idLog, initialParureContent, setActiveParure, saveWantedParures,
+    parures, idLog, initialParureContent, setActiveParure
   } = getInfo();
 
   const [addCart, setAddCart] = useState(false);

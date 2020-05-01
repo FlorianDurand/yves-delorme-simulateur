@@ -48,6 +48,24 @@ const initialParureContent = {
   },
 };
 
+const initialBackgroundContent = {
+  wall : {
+    id: 1,
+    imagePreview: '/static/Background/wall_preview_2.png',
+    image: '/static/Background/wall_2.png',
+  },
+  floor : {
+    id: 1,
+    imagePreview: '/static/Background/floor_preview_2.png',
+    image: '/static/Background/floor_2.png',
+  },
+  tete : {
+    id: 1,
+    imagePreview: '/static/Background/teteLit_preview_1.png',
+    image: '/static/Background/teteLit_1.png',
+  }
+}
+
 const initialState = {
   parures: [],
   idLog: '',
@@ -56,6 +74,9 @@ const initialState = {
   initialParureContent,
   cart: [],
   paruresAddedToCart: [],
+  activeBackground: {
+    backgroundContent : initialBackgroundContent
+  }
 };
 
 const reducer = (state = initialState, action) => {
@@ -82,6 +103,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         activeParure: action.activeParure,
+      };
+    case 'activeBackground':
+      return {
+        ...state,
+        activeBackground: action.activeBackground,
       };
     case 'saveWantedParures':
       return {

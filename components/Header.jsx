@@ -23,7 +23,7 @@ const Header = (props) => {
   const [email, setEmail] = useState();
 
   useEffect(() => {
-    setConnectionBar(props.needToLog);
+    setConnectionBar(props.needToLog[0]);
   }, [props.needToLog]);
 
   return (
@@ -49,8 +49,7 @@ const Header = (props) => {
             Entrez votre
             {' '}
             <span>adresse e-mail</span>
-            {' '}
-            pour enregistrer une parure.
+            {props.needToLog[1] === 'save' ? ' pour enregistrer une parure' : ' et retrouvez vos enregistrements.'}
           </div>
           <div className={styles.mail}>
             <input type="email" name="" id="" placeholder="exemple@gmail.com" className={styles.mailInput} onChange={(e) => { setEmail(e.target.value); }} />
@@ -59,9 +58,17 @@ const Header = (props) => {
             <button type="button" className={styles.buttonBottom} onClick={() => { toggleConnection(), props.logIn(), setEmail(''), props.toggleNeedToLog(); }}>
               Retour
             </button>
-            <button type="button" style={email ? null : { opacity: '0.2' }} className={styles.buttonTop} onClick={email ? () => { toggleConnection(), props.logIn(email); } : null}>
-              Connexion
-            </button>
+            {props.needToLog[1] === 'list' && email ? (
+              <Link href="/collection">
+                <button type="button" style={email ? null : { opacity: '0.2' }} className={styles.buttonTop} onClick={email ? () => { toggleConnection(), props.logIn(email); } : null}>
+                  Connexion
+                </button>
+              </Link>
+            ) : (
+              <button type="button" style={email ? null : { opacity: '0.2' }} className={styles.buttonTop} onClick={email ? () => { props.toggleNeedToLog(), toggleConnection(), props.logIn(email); props.needToLog[1] === 'save' ? props.popModal('save', true) : null} : null}>
+                Connexion
+              </button>
+            )}
           </div>
         </div>
       ) : null}

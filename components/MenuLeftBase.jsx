@@ -31,7 +31,7 @@ const MenuLeftBase = (props) => (
     {props.contentFloors
       ? (
         <div className={styles.contents}>
-          {props.contentFloors.map((contentFloor) => <div key={contentFloor.id} className={contentFloor.id == props.activeFloor ? (styles.activeFloor) : (styles.notActiveFloor)}><img onClick={() => { props.onFloorChange({image : contentFloor.image, id: contentFloor.id}, 'floor'), props.onJointChange(contentFloor.joint, 'joint'); props.onArticleChange(contentFloor.id); }} className={styles.floorPreview} src={contentFloor.imagePreview} alt="floor Preview" /></div>)}
+          {props.contentFloors.map((contentFloor) => <div key={contentFloor.id} className={contentFloor.id == props.activeFloor ? (styles.activeFloor) : (styles.notActiveFloor)}><img onClick={() => { props.onFloorChange({image : contentFloor.image, id: contentFloor.id}, 'floor'),  props.onArticleChange(contentFloor.id); }} className={styles.floorPreview} src={contentFloor.imagePreview} alt="floor Preview" /></div>)}
         </div>
       )
       : null }
