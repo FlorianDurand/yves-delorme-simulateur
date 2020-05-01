@@ -74,9 +74,11 @@ const Index = () => {
   return (
     <div className={styles.background}>
       {menu ? null
-        : <Header toggleMenuLeftDecor={toggleMenuLeftDecor} logIn={logIn} popModal={popModal} needToLog={needToLog} toggleNeedToLog={toggleNeedToLog} popModal={popModal}/>}
+        : <Header toggleMenuLeftDecor={toggleMenuLeftDecor} logIn={logIn} popModal={popModal} needToLog={needToLog} toggleNeedToLog={toggleNeedToLog} popModal={popModal} />}
+      <div className={styles.radial} onClick={() => resetMenu()} />
       <Bed menu={menu} addCart={addCart} popModal={popModal} parureContent={parureContent} backgroundContent={backgroundContent} menuLeftDecor={menuLeftDecor} title={titleArticle} typeItem={typeArticle} resetMenu={resetMenu} preview={preview} menuOpen={menuOpen} saveParure={saveParure} currentParureId={currentParureId} />
       {modal ? (<Modal type={typeOfModal} resetModal={resetModal} myParure={myParure} myBg={myBg} logIn={logIn} popModal={popModal} saveParure={saveParure} />) : null}
+
       <Footer popModal={popModal} toggleMenu={toggleMenu} toggleCart={toggleCart} preview={previewF} parures={parures} logged={logged} isMenuOpen={menu} />
       <div id="trashCanvas" className={styles.trashCanvas}>
         <canvas id="canvas" />

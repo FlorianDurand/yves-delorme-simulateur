@@ -5,6 +5,7 @@ $background-color: white;
   position: absolute;
   bottom: 40px;
   left: 0;
+  z-index: 50; //Pour etre au dessus du dégradé
   display: flex;
   flex-direction: row;
   justify-content: space-between;

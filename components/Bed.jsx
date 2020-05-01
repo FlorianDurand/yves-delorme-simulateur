@@ -16,11 +16,15 @@ const getInfo = () => {
     activeBackground: currentBackground,
   });
 
-  return { activeBed, activeParure, parures, activeBackground, setActiveBackground };
+  return {
+    activeBed, activeParure, parures, activeBackground, setActiveBackground,
+  };
 };
 
 const Bed = (props) => {
-  const { activeBed, activeParure, parures, activeBackground, setActiveBackground } = getInfo();
+  const {
+    activeBed, activeParure, parures, activeBackground, setActiveBackground,
+  } = getInfo();
 
   const [duvet, setDuvet] = useState(activeBed.duvet);
   const [flatSheet, setFlatSheet] = useState(activeBed.flatSheet);
@@ -45,14 +49,14 @@ const Bed = (props) => {
   }), [duvet, flatSheet, fittedSheet, smallPillow, centerPillow, mediumPillow, bigPillow, props.preview]);
 
   useEffect(() => {
-    let currentBackground = {
-      wall : wall,
-    floor : floor,
-    tete : tete
-    }
+    const currentBackground = {
+      wall,
+      floor,
+      tete,
+    };
     setActiveBackground({
-      backgroundContent : currentBackground
-    })
+      backgroundContent: currentBackground,
+    });
   }, [wall, tete, floor]);
 
 
