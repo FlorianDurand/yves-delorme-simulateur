@@ -20,7 +20,7 @@ const Menu = (props) => {
 
   useEffect(() => {
     setIsFilterActive(false);
-    setListFilter('');
+    resetFilter();
   }, [props.title]);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const Menu = (props) => {
         <div className={styles.menuContainer}>
           <div className={styles.menuHeader}>
             <h1 className={styles.title}>{props.title}</h1>
-            <FilterBar onFilterActive={onFilterActive} isFilterActive={isFilterActive} handleSearchChange={handleSearchChange} numberFilter={numberFilter} />
+            <FilterBar onFilterActive={onFilterActive} isFilterActive={isFilterActive} handleSearchChange={handleSearchChange} numberFilter={numberFilter} resetFilter={resetFilter} />
           </div>
           {isFilterActive
             ? <ListFilters handleFilterChange={handleFilterChange} listFilter={listFilter} />
@@ -48,6 +48,10 @@ const Menu = (props) => {
 
   );
 
+  function resetFilter() {
+    setListFilter('');
+    setNumberFilter(0);
+  }
 
   function handleFilterChange(filter) {
     if (listFilter.includes(filter)) {

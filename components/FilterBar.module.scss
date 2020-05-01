@@ -48,6 +48,15 @@
       font-family: $font-base;
     }
   }
+
+  .filterTitle {
+    display: flex;
+    flex-direction: row;
+
+    img {
+      margin-left: 10px;
+    }
+  }
 }
 
 .searchButton,
