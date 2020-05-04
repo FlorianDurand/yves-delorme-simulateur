@@ -35,7 +35,7 @@ const Menu = (props) => {
       </div>
       <div className={styles.menu}>
         <div className={styles.menuContainer}>
-          <div className={styles.menuHeader}>
+          <div className={props.typeItem === 'bigPillow' ? (`${styles.menuHeader} ${styles.menuHeaderPillow}`) : styles.menuHeader}>
             <h1 className={styles.title}>{props.title}</h1>
             <FilterBar onFilterActive={onFilterActive} isFilterActive={isFilterActive} handleSearchChange={handleSearchChange} numberFilter={numberFilter} resetFilter={resetFilter} />
           </div>
