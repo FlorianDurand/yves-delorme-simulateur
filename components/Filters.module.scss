@@ -18,11 +18,13 @@
 
     .itemNotActive {
       width: 244px;
+      height: 60px;
       margin-bottom: 20px;
       padding: 16px 0px;
       color: color(secondary-400);
       font-size: 24px;
       text-align: center;
+      background-color: white;
       border: 1px solid color(secondary-100);
       border-radius: 5px;
 
@@ -33,6 +35,7 @@
 
     .itemActive {
       width: 244px;
+      height: 60px;
       margin-bottom: 20px;
       padding: 16px 0px;
       color: white;
@@ -40,12 +43,12 @@
       font-size: 24px;
       text-align: center;
       background-color: color(primary-500);
-      border: 1px solid color(secondary-100);
+      border: 0;
       border-radius: 5px;
 
 
       &:nth-child(2n) {
-        margin-left: 20px;
+        margin-left: 30px;
       }
     }
 

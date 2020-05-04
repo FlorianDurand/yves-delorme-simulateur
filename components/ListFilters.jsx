@@ -8,7 +8,7 @@ const Motif = ['Motif', 'Uni'];
 const Style = ['Luxe', 'Bord de Mer', 'Jardin', 'Déco'];
 const Tissu = ['Satin de coton', 'Percale de coton', 'Jacquard de coton', 'Lin lavé'];
 const Fils = ['80 fils/cm²', '120 fils/cm²', '200 fils/cm²'];
-const Couleurs = ['#FEFEFE', '#FAF0E6', '#FAF0E6', '#FEBFD2', '#87E990', '#CECECE', '#A9EAFE', '#2B3B74'];
+const Couleurs = ['#FEFEFE', '#FAF0E6', '#73C2FB', '#FEBFD2', '#87E990', '#CECECE', '#A9EAFE', '#2B3B74'];
 
 const ListFilters = (props) => (
   <div className={styles.listFilters}>
