@@ -7,11 +7,16 @@ html {
   position: relative;
   width: 1366px;
   height: 1024px;
+
+  @media (max-width: 1400px) {
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+    overflow-x: hidden;
+  }
 }
 
 body {
   position: relative;
-  height: 100%;
   margin: 0;
 }
 
